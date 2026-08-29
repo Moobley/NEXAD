@@ -14,7 +14,7 @@ export async function Corazon() {
   const services = project.services.map((s) => tsv(s))
 
   return (
-    <div className="surface-obsidian border-t border-border">
+    <div className="surface-obsidian">
       <div aria-hidden className="h-14 w-full bg-gradient-to-b from-ivory to-transparent md:h-24" />
 
       <div className="mx-auto w-full max-w-[1600px] px-6 pb-24 pt-14 md:px-10 md:pb-32 md:pt-20">

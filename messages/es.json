@@ -28,7 +28,7 @@
       "ctaSecondary": "Ver resultados"
     },
     "capabilities": {
-      "index": "03",
+      "index": "02",
       "title": "Capacidades",
       "panel": "Capacidades",
       "list": [
@@ -55,21 +55,21 @@
       ]
     },
     "statement": {
-      "index": "04",
+      "index": "03",
       "line1": "No vendemos canales.",
       "line2Prefix": "Resolvemos ",
       "line2Accent": "problemas digitales",
       "body": "Estrategia, marketing, contenido y tecnología funcionan como un único sistema. A veces la respuesta es una campaña; a veces, una web; a veces, software propio. Casi siempre, una combinación."
     },
     "technology": {
-      "index": "05",
+      "index": "07",
       "title": "Tecnología propia",
       "principle": "Estrategia primero. Tecnología cuando aporta valor.",
       "principleLabel": "Principio",
       "support": "Cuando la estrategia requiere una herramienta a medida, no dependemos de soluciones genéricas: la diseñamos y la construimos."
     },
     "process": {
-      "index": "06",
+      "index": "04",
       "title": "Cómo nos movemos",
       "steps": [
         {
@@ -95,7 +95,7 @@
       ]
     },
     "granCanaria": {
-      "index": "07",
+      "index": "05",
       "coordsLine1": "28.1° N",
       "coordsLine2": "15.4° W",
       "line1": "Con base en Gran Canaria.",
@@ -135,7 +135,7 @@
       "images": "Imágenes del proyecto pendientes"
     },
     "corazon": {
-      "index": "02",
+      "index": "06",
       "caseStudyLabel": "Caso de estudio",
       "title": "Corazón Napoletano",
       "intro": "Una estrategia digital construida alrededor del negocio.",

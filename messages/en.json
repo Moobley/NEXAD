@@ -29,7 +29,7 @@
       "ctaSecondary": "See results"
     },
     "capabilities": {
-      "index": "03",
+      "index": "02",
       "title": "Capabilities",
       "panel": "Capabilities",
       "list": [
@@ -56,21 +56,21 @@
       ]
     },
     "statement": {
-      "index": "04",
+      "index": "03",
       "line1": "We do not sell channels.",
       "line2Prefix": "We solve ",
       "line2Accent": "digital problems",
       "body": "Strategy, marketing, content and technology work as one system. Sometimes the answer is a campaign; sometimes a website; sometimes custom software. Almost always, a combination."
     },
     "technology": {
-      "index": "05",
+      "index": "07",
       "title": "Own technology",
       "principle": "Strategy first. Technology when it creates value.",
       "principleLabel": "Principle",
       "support": "When the strategy requires a custom tool, we do not rely on generic solutions: we design and build it."
     },
     "process": {
-      "index": "06",
+      "index": "04",
       "title": "How we move",
       "steps": [
         {
@@ -96,7 +96,7 @@
       ]
     },
     "granCanaria": {
-      "index": "07",
+      "index": "05",
       "coordsLine1": "28.1° N",
       "coordsLine2": "15.4° W",
       "line1": "Based in Gran Canaria.",
@@ -136,7 +136,7 @@
       "images": "Project images pending"
     },
     "corazon": {
-      "index": "02",
+      "index": "06",
       "caseStudyLabel": "Case study",
       "title": "Corazón Napoletano",
       "intro": "A digital strategy built around the business.",
