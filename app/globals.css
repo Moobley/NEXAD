@@ -197,128 +197,93 @@
     opacity: 0.75;
   }
 
-  /* Aurora background: large blurred pastel blobs behind hero content. */
-  .aurora-blob {
+  /* Aurora background: two large gradient layers of soft pastel light.
+     Softness comes from the radial-gradient color stops (fading into
+     transparency) — no `filter: blur()` anywhere. Each layer is a single
+     DOM node holding two radial gradients, rasterized once, then moved with
+     `transform` only. Sizes are percentage-based, so they scale with the
+     hero/viewport instead of using fixed pixel surfaces. */
+  .aurora-layer {
     position: absolute;
+    inset: -30% -35% -30% -35%;
+    background-repeat: no-repeat;
     will-change: transform;
-    animation-name: aurora-path-1;
-    animation-duration: var(--blob-dur, 16s);
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    animation-delay: var(--blob-del, 0s);
   }
 
-  /* Each blob gets its own multi-step trajectory. Only `transform` is
-     animated; the blurred paint below is never re-filtered. */
-  .aurora-blob-2 {
-    animation-name: aurora-path-2;
-    animation-direction: alternate-reverse;
+  .aurora-layer-a {
+    background-image:
+      radial-gradient(
+        circle at 30% 28%,
+        rgba(200, 214, 240, 0.55) 0%,
+        rgba(200, 214, 240, 0.28) 30%,
+        rgba(200, 214, 240, 0.12) 48%,
+        transparent 72%
+      ),
+      radial-gradient(
+        circle at 74% 66%,
+        rgba(216, 208, 238, 0.5) 0%,
+        rgba(216, 208, 238, 0.25) 32%,
+        rgba(216, 208, 238, 0.1) 50%,
+        transparent 74%
+      );
+    animation: aurora-layer-a 18s ease-in-out infinite alternate;
   }
 
-  .aurora-blob-3 {
-    animation-name: aurora-path-3;
-  }
-
-  .aurora-blob-4 {
-    animation-name: aurora-path-4;
-    animation-direction: alternate-reverse;
-  }
-
-  /* Static blurred layer: rasterized once, never re-filtered. */
-  .aurora-blob-paint {
-    width: 100%;
-    height: 100%;
-    border-radius: 9999px;
-    background: radial-gradient(
-      circle at 50% 50%,
-      var(--blob-color) 0%,
-      transparent 72%
-    );
-    filter: blur(var(--aurora-blur, 80px));
-    opacity: var(--blob-opacity, 0.6);
-  }
-
-  /* Subtle grain to break up banding. Kept extremely faint. */
-  .aurora-noise {
-    position: absolute;
-    inset: 0;
-    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.25'/%3E%3C/svg%3E");
-    background-size: 200px 200px;
-    opacity: 0.02;
+  .aurora-layer-b {
+    background-image:
+      radial-gradient(
+        circle at 26% 70%,
+        rgba(195, 226, 228, 0.5) 0%,
+        rgba(195, 226, 228, 0.26) 30%,
+        rgba(195, 226, 228, 0.1) 48%,
+        transparent 72%
+      ),
+      radial-gradient(
+        circle at 74% 30%,
+        rgba(241, 221, 214, 0.42) 0%,
+        rgba(241, 221, 214, 0.22) 32%,
+        rgba(241, 221, 214, 0.08) 50%,
+        transparent 74%
+      );
+    animation: aurora-layer-b 24s ease-in-out infinite alternate-reverse;
   }
 }
 
-/* Distinct wandering paths so blobs visibly travel, never synchronized. */
-@keyframes aurora-path-1 {
+/* Multi-step wandering paths: layers cross each other irregularly rather
+   than oscillating left/right. Translate-only, so no re-rasterization. */
+@keyframes aurora-layer-a {
   0% {
-    transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
+    transform: translate3d(0, 0, 0);
   }
   25% {
-    transform: translate3d(60px, 40px, 0) scale(1.04) rotate(2deg);
+    transform: translate3d(45px, 30px, 0);
   }
   50% {
-    transform: translate3d(160px, 90px, 0) scale(1.1) rotate(5deg);
+    transform: translate3d(110px, 75px, 0);
   }
   75% {
-    transform: translate3d(100px, 150px, 0) scale(1.05) rotate(3deg);
+    transform: translate3d(60px, 115px, 0);
   }
   100% {
-    transform: translate3d(-40px, 90px, 0) scale(0.95) rotate(0deg);
+    transform: translate3d(-25px, 60px, 0);
   }
 }
 
-@keyframes aurora-path-2 {
+@keyframes aurora-layer-b {
   0% {
-    transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
+    transform: translate3d(0, 0, 0);
   }
   25% {
-    transform: translate3d(-70px, 40px, 0) scale(0.95) rotate(-2deg);
+    transform: translate3d(-60px, 40px, 0);
   }
   50% {
-    transform: translate3d(-170px, -30px, 0) scale(1.08) rotate(-5deg);
+    transform: translate3d(-145px, -25px, 0);
   }
   75% {
-    transform: translate3d(-90px, -90px, 0) scale(1.03) rotate(-3deg);
+    transform: translate3d(-85px, -105px, 0);
   }
   100% {
-    transform: translate3d(30px, -50px, 0) scale(0.9) rotate(0deg);
-  }
-}
-
-@keyframes aurora-path-3 {
-  0% {
-    transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
-  }
-  25% {
-    transform: translate3d(50px, -70px, 0) scale(1.06) rotate(2deg);
-  }
-  50% {
-    transform: translate3d(100px, -160px, 0) scale(1.12) rotate(4deg);
-  }
-  75% {
-    transform: translate3d(40px, -90px, 0) scale(1.02) rotate(1deg);
-  }
-  100% {
-    transform: translate3d(-50px, -130px, 0) scale(0.92) rotate(0deg);
-  }
-}
-
-@keyframes aurora-path-4 {
-  0% {
-    transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
-  }
-  25% {
-    transform: translate3d(120px, 30px, 0) scale(0.92) rotate(-3deg);
-  }
-  50% {
-    transform: translate3d(60px, -130px, 0) scale(1.05) rotate(-6deg);
-  }
-  75% {
-    transform: translate3d(-100px, -50px, 0) scale(0.95) rotate(-3deg);
-  }
-  100% {
-    transform: translate3d(-20px, 80px, 0) scale(1.02) rotate(0deg);
+    transform: translate3d(30px, -45px, 0);
   }
 }
 
@@ -342,7 +307,7 @@
     animation: none;
   }
 
-  .aurora-blob {
+  .aurora-layer {
     animation: none;
   }
 
