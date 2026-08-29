@@ -1,0 +1,230 @@
+{
+  "_status": "TEMP — placeholder translations, pending final copy after Spanish approval",
+  "metadata": {
+    "title": "NEXO — Digital strategy & growth · Gran Canaria",
+    "description": "NEXO is a digital strategy and growth studio. Strategy, marketing, content and technology working as one single system to grow businesses. Gran Canaria, without borders."
+  },
+  "nav": {
+    "work": "Work",
+    "services": "Services",
+    "studio": "Studio",
+    "contact": "Contact",
+    "cta": "Start a project",
+    "menuOpen": "Open menu",
+    "menuClose": "Close menu",
+    "skip": "Skip to content",
+    "primary": "Primary navigation"
+  },
+  "language": {
+    "label": "Change language"
+  },
+  "home": {
+    "hero": {
+      "meta": "Digital strategy — Gran Canaria",
+      "coords": "28.1° N — 15.4° W",
+      "titleLine1": "We turn digital strategy",
+      "titleLine2": "into real growth.",
+      "support": "Strategy, marketing, content and technology working as one single system to grow businesses.",
+      "ctaPrimary": "Tell us your goal",
+      "ctaSecondary": "See results"
+    },
+    "capabilities": {
+      "index": "03",
+      "title": "Capabilities",
+      "panel": "Capabilities",
+      "list": [
+        {
+          "title": "Digital strategy",
+          "description": "Positioning, digital planning, customer journey, channel strategy and business objectives."
+        },
+        {
+          "title": "Paid media & growth",
+          "description": "Advertising strategy, campaign management, acquisition and continuous optimization."
+        },
+        {
+          "title": "Social & content",
+          "description": "Content strategy, social management, content production and communication."
+        },
+        {
+          "title": "Web & digital experiences",
+          "description": "Web design and development focused on brand, experience, conversion and performance."
+        },
+        {
+          "title": "Custom software & automation",
+          "description": "Web applications, management systems, booking systems and tailored digital tools."
+        }
+      ]
+    },
+    "statement": {
+      "index": "04",
+      "line1": "We do not sell channels.",
+      "line2Prefix": "We solve ",
+      "line2Accent": "digital problems",
+      "body": "Strategy, marketing, content and technology work as one system. Sometimes the answer is a campaign; sometimes a website; sometimes custom software. Almost always, a combination."
+    },
+    "technology": {
+      "index": "05",
+      "title": "Own technology",
+      "principle": "Strategy first. Technology when it creates value.",
+      "principleLabel": "Principle",
+      "support": "When the strategy requires a custom tool, we do not rely on generic solutions: we design and build it."
+    },
+    "process": {
+      "index": "06",
+      "title": "How we move",
+      "steps": [
+        {
+          "title": "Understand",
+          "description": "We listen and understand the business, the market and the real objective."
+        },
+        {
+          "title": "Strategy",
+          "description": "We define the plan: channels, messages, priorities and success metrics."
+        },
+        {
+          "title": "Create",
+          "description": "We produce content, campaigns, design and digital experiences."
+        },
+        {
+          "title": "Launch",
+          "description": "We execute and publish: campaigns, content and digital products."
+        },
+        {
+          "title": "Optimize",
+          "description": "We measure, learn and adjust continuously to improve results."
+        }
+      ]
+    },
+    "granCanaria": {
+      "index": "07",
+      "coordsLine1": "28.1° N",
+      "coordsLine2": "15.4° W",
+      "line1": "Based in Gran Canaria.",
+      "line2": "Working without borders.",
+      "fieldLabel": "Atlantic — light and shadow"
+    },
+    "cta": {
+      "index": "08",
+      "titlePrefix": "What is your ",
+      "titleAccent": "goal",
+      "titleSuffix": "?",
+      "action": "Tell us your goal"
+    },
+    "shared": {
+      "client": "Client",
+      "sector": "Sector",
+      "location": "Location",
+      "services": "Services",
+      "year": "Year"
+    }
+  },
+  "services": {
+    "web-development": "Web design & development",
+    "digital-menu": "Digital menu",
+    "paid-media": "Paid media",
+    "content": "Content",
+    "strategy": "Strategy",
+    "ux": "UX",
+    "product-design": "Product design",
+    "web-app": "Web application",
+    "development": "Development"
+  },
+  "projects": {
+    "placeholder": {
+      "client": "Client · to be confirmed",
+      "year": "Year · to be confirmed",
+      "images": "Project images pending"
+    },
+    "corazon": {
+      "index": "02",
+      "caseStudyLabel": "Case study",
+      "title": "Corazón Napoletano",
+      "intro": "A digital strategy built around the business.",
+      "support": "Web, content, advertising and strategy working as one single system.",
+      "sector": "Hospitality · Restaurant",
+      "resultAmount": "+20%",
+      "resultLabel": "in revenue",
+      "resultNote": "An integrated digital strategy, from the web experience to acquisition.",
+      "sections": {
+        "context": {
+          "heading": "Context",
+          "body": "A restaurant needs more than an attractive website. Its digital presence must help people discover the brand, understand the offering, see the menu, make a decision, contact or book, and remember the restaurant."
+        },
+        "approach": {
+          "heading": "Approach",
+          "steps": [
+            {
+              "title": "Digital presence",
+              "body": "Design and development of the website."
+            },
+            {
+              "title": "Digital menu",
+              "body": "A menu experience designed to make the restaurant offering immediately accessible online."
+            },
+            {
+              "title": "Acquisition",
+              "body": "Paid advertising campaigns through advertising platforms."
+            },
+            {
+              "title": "Content",
+              "body": "Creation and publishing of digital content."
+            },
+            {
+              "title": "Strategy",
+              "body": "Ongoing recommendations and strategic guidance based on the needs of the business and sector."
+            }
+          ]
+        },
+        "result": {
+          "heading": "Result",
+          "body": "The combined strategy contributed to an increase of approximately 20% in revenue."
+        }
+      }
+    },
+    "barber": {
+      "title": "Booking platform",
+      "intro": "Web application for barbershop bookings: clients book appointments online with autonomy. Product design, UX and development.",
+      "sector": "Digital product"
+    }
+  },
+  "workPage": {
+    "title": "Work",
+    "body": "The full selection of projects will be published here. For now, the portfolio is shown on the homepage."
+  },
+  "workSlug": {
+    "body": "The full case study is being built. Client and project information will be added soon."
+  },
+  "servicesPage": {
+    "title": "Services",
+    "body": "The services page is being built. Meanwhile, you can learn about our capabilities on the homepage."
+  },
+  "studioPage": {
+    "title": "Studio",
+    "body": "The NEXO story will be told here soon: the team, the way of working and the reason behind every decision."
+  },
+  "contactPage": {
+    "title": "Contact",
+    "body": "The project form will be added here soon. Meanwhile, write to hola@nexo.studio."
+  },
+  "notFound": {
+    "title": "Page not found",
+    "body": "The link is not valid or the page has moved."
+  },
+  "pages": {
+    "back": "Back to home"
+  },
+  "footer": {
+    "tagline": "Digital strategy and growth studio. Strategy, marketing, content and technology.",
+    "location": "Gran Canaria",
+    "coords": "28.1° N — 15.4° W",
+    "email": "hola@nexo.studio",
+    "nav": "Navigation",
+    "social": "Social",
+    "studio": "Studio",
+    "instagram": "Instagram",
+    "linkedin": "LinkedIn",
+    "privacy": "Privacy",
+    "cookies": "Cookies",
+    "legal": "Legal"
+  }
+}

@@ -1,0 +1,229 @@
+{
+  "metadata": {
+    "title": "NEXO — Estrategia digital y crecimiento · Gran Canaria",
+    "description": "NEXO es un estudio de estrategia digital y crecimiento. Estrategia, marketing, contenido y tecnología trabajando como un único sistema para hacer crecer negocios. Gran Canaria, sin fronteras."
+  },
+  "nav": {
+    "work": "Trabajos",
+    "services": "Servicios",
+    "studio": "Estudio",
+    "contact": "Contacto",
+    "cta": "Empezar un proyecto",
+    "menuOpen": "Abrir menú",
+    "menuClose": "Cerrar menú",
+    "skip": "Saltar al contenido",
+    "primary": "Navegación principal"
+  },
+  "language": {
+    "label": "Cambiar idioma"
+  },
+  "home": {
+    "hero": {
+      "meta": "Estrategia digital — Gran Canaria",
+      "coords": "28.1° N — 15.4° W",
+      "titleLine1": "Convertimos estrategia digital",
+      "titleLine2": "en crecimiento real.",
+      "support": "Estrategia, marketing, contenido y tecnología trabajando como un único sistema para hacer crecer negocios.",
+      "ctaPrimary": "Cuéntanos tu objetivo",
+      "ctaSecondary": "Ver resultados"
+    },
+    "capabilities": {
+      "index": "03",
+      "title": "Capacidades",
+      "panel": "Capacidades",
+      "list": [
+        {
+          "title": "Estrategia digital",
+          "description": "Posicionamiento, planificación digital, customer journey, estrategia de canales y objetivos de negocio."
+        },
+        {
+          "title": "Paid Media y crecimiento",
+          "description": "Estrategia publicitaria, gestión de campañas, captación y optimización continua."
+        },
+        {
+          "title": "Social y contenido",
+          "description": "Estrategia de contenido, gestión social, producción y comunicación."
+        },
+        {
+          "title": "Web y experiencias digitales",
+          "description": "Diseño y desarrollo web centrado en marca, experiencia, conversión y rendimiento."
+        },
+        {
+          "title": "Software y automatización",
+          "description": "Aplicaciones web, sistemas de gestión, reservas y herramientas digitales a medida."
+        }
+      ]
+    },
+    "statement": {
+      "index": "04",
+      "line1": "No vendemos canales.",
+      "line2Prefix": "Resolvemos ",
+      "line2Accent": "problemas digitales",
+      "body": "Estrategia, marketing, contenido y tecnología funcionan como un único sistema. A veces la respuesta es una campaña; a veces, una web; a veces, software propio. Casi siempre, una combinación."
+    },
+    "technology": {
+      "index": "05",
+      "title": "Tecnología propia",
+      "principle": "Estrategia primero. Tecnología cuando aporta valor.",
+      "principleLabel": "Principio",
+      "support": "Cuando la estrategia requiere una herramienta a medida, no dependemos de soluciones genéricas: la diseñamos y la construimos."
+    },
+    "process": {
+      "index": "06",
+      "title": "Cómo nos movemos",
+      "steps": [
+        {
+          "title": "Entender",
+          "description": "Escuchamos y entendemos el negocio, el mercado y el objetivo real."
+        },
+        {
+          "title": "Estrategia",
+          "description": "Definimos el plan: canales, mensajes, prioridades y métricas de éxito."
+        },
+        {
+          "title": "Crear",
+          "description": "Producimos contenido, campañas, diseño y experiencias digitales."
+        },
+        {
+          "title": "Lanzar",
+          "description": "Ejecutamos y publicamos: campañas, contenidos y productos digitales."
+        },
+        {
+          "title": "Optimizar",
+          "description": "Medimos, aprendemos y ajustamos continuamente para mejorar los resultados."
+        }
+      ]
+    },
+    "granCanaria": {
+      "index": "07",
+      "coordsLine1": "28.1° N",
+      "coordsLine2": "15.4° W",
+      "line1": "Con base en Gran Canaria.",
+      "line2": "Trabajamos sin fronteras.",
+      "fieldLabel": "Atlántico — luz y sombra"
+    },
+    "cta": {
+      "index": "08",
+      "titlePrefix": "¿Cuál es tu ",
+      "titleAccent": "objetivo",
+      "titleSuffix": "?",
+      "action": "Cuéntanos tu objetivo"
+    },
+    "shared": {
+      "client": "Cliente",
+      "sector": "Sector",
+      "location": "Ubicación",
+      "services": "Servicios",
+      "year": "Año"
+    }
+  },
+  "services": {
+    "web-development": "Diseño y desarrollo web",
+    "digital-menu": "Carta digital",
+    "paid-media": "Paid Media",
+    "content": "Contenido",
+    "strategy": "Estrategia",
+    "ux": "UX",
+    "product-design": "Diseño de producto",
+    "web-app": "Aplicación web",
+    "development": "Desarrollo"
+  },
+  "projects": {
+    "placeholder": {
+      "client": "Cliente · por confirmar",
+      "year": "Año · por confirmar",
+      "images": "Imágenes del proyecto pendientes"
+    },
+    "corazon": {
+      "index": "02",
+      "caseStudyLabel": "Caso de estudio",
+      "title": "Corazón Napoletano",
+      "intro": "Una estrategia digital construida alrededor del negocio.",
+      "support": "Web, contenido, publicidad y estrategia trabajando como un único sistema.",
+      "sector": "Hostelería · Restaurante",
+      "resultAmount": "+20%",
+      "resultLabel": "de facturación",
+      "resultNote": "Una estrategia digital integrada, desde la experiencia web hasta la captación.",
+      "sections": {
+        "context": {
+          "heading": "Contexto",
+          "body": "Un restaurante necesita más que una web atractiva. Su presencia digital debe ayudar a descubrir la marca, entender la oferta, ver la carta, tomar una decisión, contactar o reservar, y recordar el restaurante."
+        },
+        "approach": {
+          "heading": "Enfoque",
+          "steps": [
+            {
+              "title": "Presencia digital",
+              "body": "Diseño y desarrollo de la web."
+            },
+            {
+              "title": "Carta digital",
+              "body": "Una experiencia de carta diseñada para hacer la oferta del restaurante inmediatamente accesible online."
+            },
+            {
+              "title": "Captación",
+              "body": "Campañas de publicidad de pago a través de plataformas publicitarias."
+            },
+            {
+              "title": "Contenido",
+              "body": "Creación y publicación de contenido digital."
+            },
+            {
+              "title": "Estrategia",
+              "body": "Recomendaciones y dirección estratégica continuas, según las necesidades del negocio y del sector."
+            }
+          ]
+        },
+        "result": {
+          "heading": "Resultado",
+          "body": "La estrategia combinada contribuyó a un aumento de aproximadamente el 20% en la facturación."
+        }
+      }
+    },
+    "barber": {
+      "title": "Plataforma de reservas",
+      "intro": "Aplicación web de reservas para barbería: los clientes reservan cita online con autonomía. Diseño de producto, UX y desarrollo.",
+      "sector": "Producto digital"
+    }
+  },
+  "workPage": {
+    "title": "Trabajos",
+    "body": "La selección completa de proyectos se publicará aquí. Por ahora, la cartera se muestra en la portada."
+  },
+  "workSlug": {
+    "body": "El caso de estudio completo se está construyendo. La información del cliente y del proyecto se incorporará próximamente."
+  },
+  "servicesPage": {
+    "title": "Servicios",
+    "body": "La página de servicios se está construyendo. Mientras tanto, puedes conocer nuestras capacidades en la portada."
+  },
+  "studioPage": {
+    "title": "Estudio",
+    "body": "La historia de NEXO se contará aquí próximamente: el equipo, la manera de trabajar y el porqué de cada decisión."
+  },
+  "contactPage": {
+    "title": "Contacto",
+    "body": "El formulario de proyecto se añadirá aquí próximamente. Mientras tanto, escríbenos a hola@nexo.studio."
+  },
+  "notFound": {
+    "title": "Página no encontrada",
+    "body": "El enlace no es válido o la página se ha movido."
+  },
+  "pages": {
+    "back": "Volver al inicio"
+  },
+  "footer": {
+    "tagline": "Estudio de estrategia digital y crecimiento. Estrategia, marketing, contenido y tecnología.",
+    "location": "Gran Canaria",
+    "coords": "28.1° N — 15.4° W",
+    "email": "hola@nexo.studio",
+    "nav": "Navegación",
+    "social": "Social",
+    "studio": "Estudio",
+    "instagram": "Instagram",
+    "linkedin": "LinkedIn",
+    "privacy": "Privacidad",
+    "cookies": "Cookies",
+    "legal": "Legal"
+  }
+}
