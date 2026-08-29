@@ -29,7 +29,7 @@
       "ctaSecondary": "Vedi i risultati"
     },
     "capabilities": {
-      "index": "03",
+      "index": "02",
       "title": "Capacità",
       "panel": "Capacità",
       "list": [
@@ -56,21 +56,21 @@
       ]
     },
     "statement": {
-      "index": "04",
+      "index": "03",
       "line1": "Non vendiamo canali.",
       "line2Prefix": "Risolviamo ",
       "line2Accent": "problemi digitali",
       "body": "Strategia, marketing, contenuti e tecnologia funzionano come un unico sistema. A volte la risposta è una campagna; a volte un sito; a volte software su misura. Quasi sempre, una combinazione."
     },
     "technology": {
-      "index": "05",
+      "index": "07",
       "title": "Tecnologia propria",
       "principle": "Strategia prima. Tecnologia quando crea valore.",
       "principleLabel": "Principio",
       "support": "Quando la strategia richiede uno strumento su misura, non dipendiamo da soluzioni generiche: lo progettiamo e lo costruiamo."
     },
     "process": {
-      "index": "06",
+      "index": "04",
       "title": "Come ci muoviamo",
       "steps": [
         {
@@ -96,7 +96,7 @@
       ]
     },
     "granCanaria": {
-      "index": "07",
+      "index": "05",
       "coordsLine1": "28.1° N",
       "coordsLine2": "15.4° W",
       "line1": "Con base a Gran Canaria.",
@@ -136,7 +136,7 @@
       "images": "Immagini del progetto in sospeso"
     },
     "corazon": {
-      "index": "02",
+      "index": "06",
       "caseStudyLabel": "Caso studio",
       "title": "Corazón Napoletano",
       "intro": "Una strategia digitale costruita attorno al business.",
