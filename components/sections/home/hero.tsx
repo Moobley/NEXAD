@@ -9,7 +9,7 @@ export async function Hero() {
   const t = await getTranslations("home.hero")
 
   return (
-    <section className="relative flex min-h-svh flex-col justify-start overflow-hidden pt-24 md:pt-28 md:justify-between">
+    <section className="relative flex min-h-svh flex-col overflow-hidden pt-24 md:pt-28">
       <AuroraBackground />
       <div className="relative z-10 mx-auto w-full max-w-[1600px] px-6 md:px-10">
         <Reveal trigger="load" variant="fade" delay={0}>
@@ -24,7 +24,7 @@ export async function Hero() {
         </Reveal>
       </div>
 
-      <div className="relative z-10 mx-auto mt-[clamp(5rem,22svh,14rem)] w-full max-w-[1600px] px-6 pb-10 md:mt-0 md:px-10 md:pb-14">
+      <div className="relative z-10 mx-auto flex w-full max-w-[1600px] flex-1 flex-col justify-center px-6 pb-10 md:px-10 md:pb-14 md:justify-end">
         <h1 className="max-w-6xl font-sans text-[clamp(2.5rem,6.8vw,5.75rem)] font-medium leading-[1.02] tracking-[-0.03em]">
           <Reveal trigger="load" variant="mask-up" delay={120} as="span" className="block">
             {t("titleLine1")}
