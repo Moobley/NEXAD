@@ -3,6 +3,10 @@ import createNextIntlPlugin from "next-intl/plugin"
 
 const withNextIntl = createNextIntlPlugin()
 
-const nextConfig: NextConfig = {}
+const nextConfig: NextConfig = {
+  output: "export",
+  basePath: "/NEXO",
+  trailingSlash: true,
+}
 
 export default withNextIntl(nextConfig)
