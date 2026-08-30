@@ -84,16 +84,13 @@ export async function SiteFooter() {
               <li className="text-sm text-muted-foreground">
                 {t("location")}
               </li>
-              <li className="font-mono text-[11px] tracking-[0.2em] text-stone">
-                {t("coords")}
-              </li>
             </ul>
           </div>
         </div>
 
         <div className="mt-16 flex flex-col gap-5 border-t border-border pt-8 md:flex-row md:items-center md:justify-between">
           <p className="font-mono text-[11px] tracking-[0.15em] text-stone">
-            © {year} NEXO — {t("location")}
+            © {year} NEXO
           </p>
           <ul className="flex flex-wrap gap-x-8 gap-y-2 font-mono text-[11px] tracking-[0.15em] text-stone">
             <li>

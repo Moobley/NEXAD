@@ -369,188 +369,103 @@
   "workPage": {
     "hero": {
       "eyebrow": "Work",
-      "coords": "28.1° N — 15.4° W",
       "titleLine1": "The result matters.",
-      "titleLine2Prefix": "So does the thinking ",
-      "titleLine2Accent": "behind it.",
-      "support": "A selection of projects where strategy, design, marketing and technology connect around a real problem.",
-      "statement": "Client or lab. We always start by understanding what is actually worth solving."
+      "titleLine2Prefix": "So does the ",
+      "titleLine2Accent": "thinking.",
+      "support": "Projects where strategy, marketing, design and technology solve a concrete problem."
     },
     "back": "Back to work"
   },
   "servicesPage": {
     "hero": {
       "eyebrow": "Services",
-      "coords": "28.1° N — 15.4° W",
       "titleLine1": "You don't need more channels.",
       "titleLine2Prefix": "You need them working ",
       "titleLine2Accent": "together.",
-      "support": "We connect strategy, marketing, content and technology around one business objective.",
+      "support": "We start with the problem and activate only what it needs: strategy, marketing, content, web or software.",
       "cta": "Tell us your goal",
-      "systemLine": [
-        "Strategy",
-        "Marketing",
-        "Content",
-        "Experience",
-        "Technology"
-      ]
-    },
-    "principle": {
-      "index": "01",
-      "eyebrow": "How we think",
-      "line1": "The solution doesn't start with the service.",
-      "accent": "It starts with the problem.",
-      "body": "First, we understand what needs to change in the business. Sometimes the answer is a campaign. Sometimes it's a website, content or custom software. Most of the time, it's a well-orchestrated combination."
+      "statement": "Problem first. Service second."
     },
     "capabilities": {
-      "index": "02",
+      "index": "01",
       "eyebrow": "Capabilities",
       "title": "Five capabilities. One system.",
-      "support": "We activate only what the objective requires. Each discipline can work independently or connect with the rest.",
+      "support": "We activate only what the objective needs.",
       "principleLabel": "Principle",
       "list": [
         {
           "title": "Digital strategy",
-          "line": "Decide before you execute.",
-          "description": "We turn business goals into clear digital priorities: what to do, why it matters, where to invest and how to know whether it's working.",
-          "items": [
-            "Positioning and value proposition",
-            "Customer journey and friction points",
-            "Channel strategy",
-            "Goals, metrics and roadmap"
-          ]
+          "body": "We define what to do, why it matters and how to know if it's working.",
+          "tags": "Positioning · Channels · Roadmap"
         },
         {
-          "title": "Paid media & growth",
-          "line": "Invest with intent. Optimise with data.",
-          "description": "We design and manage acquisition systems focused on results, connecting campaigns, messaging, creative and the conversion experience.",
-          "items": [
-            "Meta Ads",
-            "Google Ads",
-            "Acquisition strategy",
-            "Testing and continuous optimisation"
-          ],
-          "note": "We evaluate other channels when the strategy justifies them."
+          "title": "Paid Media",
+          "body": "Meta and Google connected with message, creative and conversion.",
+          "tags": "Meta Ads · Google Ads · Optimisation",
+          "note": "Other channels when the strategy justifies them."
         },
         {
           "title": "Social & content",
-          "line": "Content that builds the brand and drives action.",
-          "description": "We define what to say, how to tell it and how to turn it into content that builds attention, trust and demand.",
-          "items": [
-            "Content strategy and direction",
-            "Copy, reels and editing",
-            "Production and shoots",
-            "Management and publishing"
-          ]
+          "body": "Strategy, production and publishing to build attention and demand.",
+          "tags": "Content · Reels · Production"
         },
         {
-          "title": "Web & digital experiences",
-          "line": "Digital experiences designed to convert.",
-          "description": "We design and build fast, clear digital experiences that feel like the brand and are shaped around what users need to do.",
-          "items": [
-            "Strategy, UX and UI",
-            "Web design and development",
-            "Landing pages and digital experiences",
-            "Performance, conversion and integrations"
-          ]
+          "title": "Web & experiences",
+          "body": "We design and build clear, fast, action-oriented experiences.",
+          "tags": "UX/UI · Development · Conversion"
         },
         {
           "title": "Software & automation",
-          "line": "When off-the-shelf doesn't fit, we build it.",
-          "description": "We design custom digital tools when the process, business or experience needs something a standard solution cannot solve properly.",
-          "items": [
-            "Management systems",
-            "Booking platforms",
-            "Web apps and dashboards",
-            "Automation and integrations"
-          ],
-          "principle": "Technology when it creates value. Not complexity for its own sake."
+          "body": "When a standard tool isn't enough, we build the right solution.",
+          "tags": "Management · Booking · Automation",
+          "principle": "Technology when it creates value."
         }
       ]
     },
     "system": {
-      "index": "03",
+      "index": "02",
       "eyebrow": "The system",
       "title": "One objective. The right combination.",
-      "support": "We don't force every service into every project. We design the system that makes sense for the problem we're solving.",
+      "support": "Not every project needs everything.",
       "examples": [
         {
-          "marker": "A",
-          "label": "Acquisition",
-          "objective": "More appointments, bookings or customers.",
+          "label": "More customers",
           "flow": [
             "Strategy",
             "Content",
             "Meta / Google",
-            "Website or landing page",
-            "Conversion",
-            "Optimisation"
+            "Web",
+            "Conversion"
           ],
-          "support": "Each point strengthens the next. The campaign creates attention; the digital experience turns that attention into measurable action."
+          "note": "From attention to a measurable action."
         },
         {
-          "marker": "B",
-          "label": "Operations",
-          "objective": "Less friction. More control.",
+          "label": "Better operations",
           "flow": [
             "Process",
-            "Tool",
+            "Software",
             "Automation",
-            "Data",
-            "Improvement"
+            "Data"
           ],
-          "support": "When the problem isn't getting more attention but working better, we can design and build the technology that connects the process."
+          "note": "Technology connects the process."
         }
       ]
     },
     "collaboration": {
-      "index": "04",
-      "eyebrow": "How we can work",
-      "title": "A focused project or a team that stays with you.",
-      "intro": "The model follows the objective, not a fixed formula.",
+      "index": "03",
+      "eyebrow": "Collaboration",
+      "title": "Two ways to work.",
       "project": {
-        "marker": "01",
         "title": "Project",
-        "body": "For challenges with a defined scope: a new website, a platform, a strategy, a launch or a specific problem that needs solving.",
-        "microcopy": "Clear objective · Defined scope · Delivery"
+        "body": "For a concrete need with a defined objective and scope."
       },
       "continuous": {
-        "marker": "02",
         "title": "Ongoing collaboration",
-        "body": "For businesses that need to execute, measure and evolve continuously across content, campaigns, growth, digital products and optimisation.",
-        "microcopy": "Execution · Learning · Evolution"
+        "body": "To execute, measure and improve consistently."
       }
     },
-    "process": {
-      "index": "05",
-      "eyebrow": "Process",
-      "title": "Understand first. Build second.",
-      "support": "Execution changes from project to project. The way we think doesn't.",
-      "steps": [
-        {
-          "title": "Understand",
-          "description": "Business, context, customer, friction points and the real objective."
-        },
-        {
-          "title": "Strategy",
-          "description": "We define priorities, channels, solution and success metrics."
-        },
-        {
-          "title": "Create",
-          "description": "We design and produce what the system requires."
-        },
-        {
-          "title": "Launch",
-          "description": "We put campaigns, content, experiences or products into motion."
-        },
-        {
-          "title": "Optimise",
-          "description": "We measure, learn and improve using real data."
-        }
-      ]
-    },
     "cta": {
-      "index": "06",
+      "index": "04",
       "titleLine1": "What needs to change ",
       "titleAccent": "for your business to grow?",
       "support": "Tell us the objective. We'll help define what is worth creating, launching or improving.",
@@ -560,136 +475,87 @@
   "studioPage": {
     "hero": {
       "eyebrow": "Studio",
-      "coords": "28.1° N — 15.4° W",
-      "titleLine1": "Digital works better",
-      "titleLine2Prefix": "when someone connects ",
-      "titleLine2Accent": "the dots.",
-      "support": "NEXO was born in Las Palmas to connect strategy, marketing, content and technology around businesses that want to move forward with direction.",
+      "titleLine1": "Digital, with someone",
+      "titleLine2": "on the other side.",
+      "support": "NEXO connects marketing and technology so the client doesn't have to coordinate separate pieces, suppliers and decisions.",
       "ctaPrimary": "How we think",
       "ctaSecondary": "Work with us",
-      "locationLine": "Las Palmas de Gran Canaria"
+      "location": "Las Palmas · Gran Canaria"
     },
-    "origin": {
+    "why": {
       "index": "01",
       "eyebrow": "Why NEXO",
-      "line1": "The market didn't need another list of services.",
-      "accent": "It needed the existing pieces to work better together.",
-      "body": "We saw businesses with a strong product, identity and potential, but a fragmented digital presence: one person handling campaigns, another building the website, another creating content — and nobody connecting the decisions.",
-      "body2": "NEXO was born from that opportunity. Bring the pieces together, understand what the business actually needs and build a digital system that makes sense as a whole.",
-      "closing": "Fewer isolated actions. More direction."
-    },
-    "metrics": {
-      "index": "02",
-      "eyebrow": "Beyond the dashboard",
-      "title": "Data is useless if nobody turns it into decisions.",
-      "body": "A client shouldn't receive a campaign, a chart and a list of metrics only to be left alone figuring out what to do with them.",
-      "body2": "We measure to learn. We interpret to decide. And we decide to improve what comes next.",
+      "title": "Fewer disconnected pieces. More direction.",
+      "body": "We saw businesses with real potential treating campaigns, content, web and technology as separate pieces — and too often leaving the client alone with the numbers.",
+      "body2": "NEXO exists to connect those decisions and stay involved after launch.",
       "flow": [
-        "Data",
-        "Insight",
-        "Decision",
-        "Action"
+        "Measure",
+        "Understand",
+        "Decide",
+        "Improve"
       ],
-      "closing": "The metric isn't the result. It's information that helps us reach it."
-    },
-    "approach": {
-      "index": "03",
-      "eyebrow": "How we work",
-      "title": "From the first decision to what comes next.",
-      "body": "We can step in while a business is still taking shape or after it has been operating for years. The starting point changes; the responsibility doesn't.",
-      "new": {
-        "marker": "01",
-        "label": "From scratch",
-        "title": "Build with clear direction from day one.",
-        "body": "Positioning, identity, digital presence, acquisition, experience and technology can be designed as one system before disconnected decisions become difficult to change."
-      },
-      "existing": {
-        "marker": "02",
-        "label": "Already moving",
-        "title": "Understand what's there and improve what actually matters.",
-        "body": "We analyse what's working, where value is being lost and what deserves to change before adding more actions, channels or tools."
-      },
-      "closing": "We don't want to deliver one piece and disappear. We want to understand what happens after it starts moving."
-    },
-    "principles": {
-      "index": "04",
-      "eyebrow": "Principles",
-      "title": "Judgement before noise.",
-      "intro": "Some decisions define how we want to work, regardless of the project.",
-      "list": [
-        {
-          "title": "If you don't need it, we'll say so.",
-          "body": "We don't recommend a campaign, platform or automation simply because we can build it. The solution has to justify its existence."
-        },
-        {
-          "title": "Measure before assuming.",
-          "body": "Opinions create hypotheses. Data helps test them. We'd rather learn from real behaviour than defend an intuition out of pride."
-        },
-        {
-          "title": "Less complexity.",
-          "body": "A good solution should simplify something: a decision, an experience, a process or an operation."
-        },
-        {
-          "title": "No black boxes.",
-          "body": "The client should understand what we're doing, why we're doing it, what we're seeing and what we recommend doing next."
-        },
-        {
-          "title": "Business first.",
-          "body": "Reach, clicks and followers can be useful, but they're never the objective on their own. We connect them to outcomes that matter to the business."
-        },
-        {
-          "title": "Design for people.",
-          "body": "Behind every conversion is someone trying to book, buy, decide or work. The experience has to work for that person."
-        }
-      ]
+      "closing": "Metrics inform. Decisions move the business."
     },
     "team": {
-      "index": "05",
+      "index": "02",
       "eyebrow": "The core",
       "title": "Two disciplines. One direction.",
-      "intro": "NEXO brings together two ways of looking at the same problem: how to make a brand grow and how to build the technology that makes it possible.",
+      "intro": "NEXO brings together two ways of looking at the same problem.",
       "members": [
         {
           "marker": "01",
           "initial": "A",
           "name": "Alessandro",
           "role": "Marketing & Brand",
-          "description": "Works across positioning, identity, communication and growth: understanding what a brand should stand for and turning that direction into actions capable of generating demand.",
-          "capabilities": "Strategy · Identity · Marketing · Content · Growth"
+          "description": "Positioning, identity, communication and growth: turning a brand direction into actions that generate demand.",
+          "capabilities": "Strategy · Identity · Marketing · Content"
         },
         {
           "marker": "02",
           "initial": "L",
           "name": "Lorenzo",
           "role": "Technology & Product",
-          "description": "Turns business needs into digital products and systems: from web experiences to platforms, automation and custom software, with particular attention to architecture and security.",
-          "capabilities": "Full Stack · Web · Software · Automation · Security"
+          "description": "Web, software and automation built around real business needs, with attention to architecture and security.",
+          "capabilities": "Full Stack · Web · Software · Automation"
+        }
+      ]
+    },
+    "principles": {
+      "index": "03",
+      "eyebrow": "Principles",
+      "list": [
+        {
+          "title": "If you don't need it, we'll say so.",
+          "body": "We don't sell complexity the problem doesn't need."
+        },
+        {
+          "title": "Measure before assuming.",
+          "body": "Opinions create hypotheses. Data helps test them."
+        },
+        {
+          "title": "No black boxes.",
+          "body": "The client should know what we do, why and what we propose next."
+        },
+        {
+          "title": "Business and people first.",
+          "body": "We design for the people using the system and measure what actually matters to the business."
         }
       ]
     },
     "network": {
-      "index": "06",
+      "index": "04",
       "eyebrow": "The right team",
-      "title": "A small core. The specialists each project needs.",
-      "body": "We don't believe in inflating a structure just to say everything happens in-house. NEXO keeps strategic direction and project responsibility, bringing in specialist profiles when the work requires them.",
+      "title": "A small core. Specialists when needed.",
+      "body": "NEXO keeps project direction and brings in specialist profiles when the work requires it.",
       "examples": [
         "Photography",
         "Video",
         "Production",
         "Project specialists"
-      ],
-      "closing": "One direction. The right team around it."
-    },
-    "location": {
-      "index": "07",
-      "eyebrow": "From the Canary Islands",
-      "title": "Based in Las Palmas. Looking beyond one island.",
-      "body": "NEXO was born in Gran Canaria and can work with businesses across the archipelago. Being close helps us understand the context; thinking digitally keeps that context from becoming a limit.",
-      "statement": "Atlantic base. Open perspective.",
-      "coords": "28.1° N — 15.4° W"
+      ]
     },
     "cta": {
-      "index": "08",
+      "index": "05",
       "titleLine1": "If something in your business should be working better, ",
       "titleAccent": "let's start by understanding it.",
       "support": "You don't need to arrive with the solution. Tell us what you want to change.",
@@ -699,12 +565,10 @@
   "contactPage": {
     "hero": {
       "eyebrow": "Contact",
-      "coords": "28.1° N — 15.4° W",
       "titleLine1": "Tell us what ",
       "titleLine2Prefix": "needs to ",
       "titleLine2Accent": "change.",
-      "support": "You don't need to know which service to hire. Tell us where you are, what you want to achieve and what isn't working as it should. We'll start from there.",
-      "microcopy": "Las Palmas · Working across the Canary Islands"
+      "support": "You don't need to know which service to hire. Tell us what you want to achieve and we'll start from there."
     },
     "intro": {
       "eyebrow": "Let's start",
@@ -720,20 +584,50 @@
       "businessPlaceholder": "What's it called?",
       "stageLabel": "Where are you now?",
       "stageOptions": [
-        { "value": "new_business", "label": "I'm launching a new business" },
-        { "value": "existing_business", "label": "I have an existing business" },
-        { "value": "software_product", "label": "I need to build a product or software" },
-        { "value": "other", "label": "I have another type of project" }
+        {
+          "value": "new_business",
+          "label": "I'm launching a new business"
+        },
+        {
+          "value": "existing_business",
+          "label": "I have an existing business"
+        },
+        {
+          "value": "software_product",
+          "label": "I need to build a product or software"
+        },
+        {
+          "value": "other",
+          "label": "I have another type of project"
+        }
       ],
       "servicesLabel": "Where do you think we can help?",
       "servicesSupport": "Choose as many as you need. If you're not sure yet, that's fine too.",
       "servicesOptions": [
-        { "value": "strategy", "label": "Digital strategy" },
-        { "value": "paid_media", "label": "Paid Media" },
-        { "value": "social_content", "label": "Social & content" },
-        { "value": "web", "label": "Web & digital experiences" },
-        { "value": "software_automation", "label": "Software & automation" },
-        { "value": "not_sure", "label": "I'm not sure yet" }
+        {
+          "value": "strategy",
+          "label": "Digital strategy"
+        },
+        {
+          "value": "paid_media",
+          "label": "Paid Media"
+        },
+        {
+          "value": "social_content",
+          "label": "Social & content"
+        },
+        {
+          "value": "web",
+          "label": "Web & digital experiences"
+        },
+        {
+          "value": "software_automation",
+          "label": "Software & automation"
+        },
+        {
+          "value": "not_sure",
+          "label": "I'm not sure yet"
+        }
       ],
       "messageLabel": "What do you want to change?",
       "messageSupport": "Tell us what you want to achieve, what's not working or what opportunity you see.",
@@ -755,10 +649,6 @@
       "heading": "We have the context.",
       "body": "Thanks for sharing it with us. We'll review what you've sent and continue the conversation with you.",
       "cta": "Back to home"
-    },
-    "philosophy": {
-      "flow": ["Problem", "Context", "Questions", "Direction"],
-      "support": "The first conversation doesn't start by selling a solution. It starts by understanding the problem better."
     }
   },
   "notFound": {
@@ -770,8 +660,7 @@
   },
   "footer": {
     "tagline": "Digital strategy and growth studio. Strategy, marketing, content and technology.",
-    "location": "Gran Canaria",
-    "coords": "28.1° N — 15.4° W",
+    "location": "Las Palmas · Gran Canaria",
     "email": "hola@nexo.studio",
     "nav": "Navigation",
     "social": "Social",

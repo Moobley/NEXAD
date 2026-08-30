@@ -16,7 +16,7 @@ export async function StudioNetwork() {
                 <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
                   {t("index")} — {t("eyebrow")}
                 </p>
-                <h2 className="mt-3 font-sans text-4xl font-medium tracking-tight md:text-6xl">
+                <h2 className="mt-3 font-sans text-4xl font-medium tracking-tight md:text-5xl">
                   {t("title")}
                 </h2>
               </Reveal>
@@ -30,9 +30,6 @@ export async function StudioNetwork() {
               </p>
               <p className="mt-8 font-mono text-[11px] uppercase tracking-[0.18em] text-foreground/70">
                 {examples.join(" · ")}
-              </p>
-              <p className="mt-12 max-w-2xl border-t border-obsidian/10 pt-8 font-serif text-2xl italic leading-snug md:text-3xl">
-                {t("closing")}
               </p>
             </Reveal>
           </div>

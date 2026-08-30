@@ -1,14 +1,12 @@
 import { getTranslations } from "next-intl/server"
-import { ArrowDown, ArrowRight } from "lucide-react"
 
 import { Reveal } from "@/components/ui/reveal"
+import { Flow } from "@/components/ui/flow"
 
 type Example = {
-  marker: string
   label: string
-  objective: string
   flow: string[]
-  support: string
+  note?: string
 }
 
 export async function ServicesSystem() {
@@ -32,48 +30,19 @@ export async function ServicesSystem() {
           </header>
         </Reveal>
 
-        <div className="mt-16 grid gap-16 md:mt-20 lg:gap-20">
+        <div className="mt-12 grid gap-14 md:mt-16 lg:gap-20">
           {examples.map((example, i) => (
-            <Reveal key={example.marker} variant="fade-up" delay={i * 80}>
-              <article className="grid gap-8 lg:grid-cols-12 lg:gap-8">
-                <div className="lg:col-span-4">
-                  <p className="font-mono text-xs tracking-[0.2em] text-muted-foreground">
-                    {example.marker} — {example.label}
+            <Reveal key={example.label} variant="fade-up" delay={i * 80}>
+              <article>
+                <p className="font-mono text-xs tracking-[0.2em] text-muted-foreground">
+                  {example.label}
+                </p>
+                <Flow steps={example.flow} className="mt-5" />
+                {example.note && (
+                  <p className="mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">
+                    {example.note}
                   </p>
-                  <h3 className="mt-4 max-w-sm font-sans text-3xl font-medium tracking-tight md:text-4xl">
-                    {example.objective}
-                  </h3>
-                </div>
-
-                <div className="lg:col-span-8">
-                  <ol className="flex flex-col lg:flex-row lg:flex-wrap lg:gap-y-4">
-                    {example.flow.map((step, j) => (
-                      <li key={step} className="flex items-center gap-x-2">
-                        {j > 0 && (
-                          <ArrowDown
-                            aria-hidden
-                            className="size-4 shrink-0 self-center text-muted-foreground lg:hidden"
-                            strokeWidth={1.5}
-                          />
-                        )}
-                        {j > 0 && (
-                          <ArrowRight
-                            aria-hidden
-                            className="hidden size-4 shrink-0 self-center text-muted-foreground lg:inline"
-                            strokeWidth={1.5}
-                          />
-                        )}
-                        <span className="inline-flex border border-obsidian/15 px-4 py-3 font-mono text-[11px] uppercase tracking-[0.15em] text-foreground">
-                          {step}
-                        </span>
-                      </li>
-                    ))}
-                  </ol>
-
-                  <p className="mt-8 max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">
-                    {example.support}
-                  </p>
-                </div>
+                )}
               </article>
             </Reveal>
           ))}

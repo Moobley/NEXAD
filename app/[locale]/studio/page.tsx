@@ -2,13 +2,10 @@ import { setRequestLocale } from "next-intl/server"
 
 import { SectionDivider } from "@/components/ui/section-divider"
 import { StudioHero } from "@/components/sections/studio/studio-hero"
-import { StudioOrigin } from "@/components/sections/studio/studio-origin"
-import { StudioMetrics } from "@/components/sections/studio/studio-metrics"
-import { StudioApproach } from "@/components/sections/studio/studio-approach"
-import { StudioPrinciples } from "@/components/sections/studio/studio-principles"
+import { StudioWhy } from "@/components/sections/studio/studio-why"
 import { StudioTeam } from "@/components/sections/studio/studio-team"
+import { StudioPrinciples } from "@/components/sections/studio/studio-principles"
 import { StudioNetwork } from "@/components/sections/studio/studio-network"
-import { StudioLocation } from "@/components/sections/studio/studio-location"
 import { StudioCta } from "@/components/sections/studio/studio-cta"
 
 type Props = {
@@ -23,19 +20,13 @@ export default async function StudioPage({ params }: Props) {
     <>
       <StudioHero />
       <SectionDivider />
-      <StudioOrigin />
-      <SectionDivider />
-      <StudioMetrics />
-      <SectionDivider />
-      <StudioApproach />
-      <SectionDivider />
-      <StudioPrinciples />
+      <StudioWhy />
       <SectionDivider />
       <StudioTeam />
       <SectionDivider />
-      <StudioNetwork />
+      <StudioPrinciples />
       <SectionDivider />
-      <StudioLocation />
+      <StudioNetwork />
       <SectionDivider />
       <StudioCta />
     </>

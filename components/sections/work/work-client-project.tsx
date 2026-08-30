@@ -13,42 +13,30 @@ export async function WorkClientProject() {
   return (
     <section>
       <div className="mx-auto w-full max-w-[1600px] px-6 py-24 md:px-10 md:py-32">
-        <div className="grid gap-12 lg:grid-cols-12 lg:gap-8">
-          <div className="lg:col-span-5">
+        <div className="grid gap-12 lg:grid-cols-12 lg:gap-8 lg:items-start">
+          <div className="lg:order-2 lg:col-span-5 lg:col-start-8">
             <div className="lg:sticky lg:top-28">
               <Reveal>
                 <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
                   {t("clientLabel")}
                 </p>
-                <h2 className="mt-4 font-sans text-4xl font-medium tracking-tight md:text-6xl">
+                <h2 className="mt-4 font-sans text-4xl font-medium tracking-tight md:text-5xl">
                   {t("title")}
                 </h2>
                 <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
                   {t("location")} — {t("category")}
                 </p>
-                <p className="mt-10 font-sans text-2xl font-medium leading-snug tracking-tight md:text-3xl">
+                <p className="mt-8 font-sans text-2xl font-medium leading-snug tracking-tight md:text-3xl">
                   {t("headline")}
                 </p>
-                <p className="mt-5 max-w-md text-base leading-relaxed text-muted-foreground">
+                <p className="mt-4 max-w-md text-base leading-relaxed text-muted-foreground">
                   {t("support")}
                 </p>
-                <div className="mt-10 border-t border-obsidian/10 pt-6">
-                  <p className="font-sans text-6xl font-medium leading-none tracking-[-0.03em] md:text-7xl">
-                    {t("resultAmount")}
-                  </p>
-                  <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
-                    {t("resultLabel")}
-                  </p>
-                </div>
-                <Link href="/work/corazon-napoletano" className="cta-primary mt-10">
-                  {t("cta")}
-                  <ArrowRight className="arrow size-4" strokeWidth={1.5} />
-                </Link>
               </Reveal>
             </div>
           </div>
 
-          <div className="lg:col-span-7">
+          <div className="lg:order-1 lg:col-span-7">
             <Reveal delay={120}>
               <Link href="/work/corazon-napoletano" className="group block">
                 <CaseMedia
@@ -67,6 +55,23 @@ export async function WorkClientProject() {
                     />
                   </div>
                 </CaseMedia>
+              </Link>
+            </Reveal>
+          </div>
+
+          <div className="lg:order-3 lg:col-span-5 lg:col-start-8">
+            <Reveal delay={200}>
+              <div className="border-t border-obsidian/10 pt-6">
+                <p className="font-sans text-6xl font-medium leading-none tracking-[-0.03em] md:text-7xl">
+                  {t("resultAmount")}
+                </p>
+                <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
+                  {t("resultLabel")}
+                </p>
+              </div>
+              <Link href="/work/corazon-napoletano" className="cta-primary mt-8">
+                {t("cta")}
+                <ArrowRight className="arrow size-4" strokeWidth={1.5} />
               </Link>
             </Reveal>
           </div>

@@ -4,6 +4,11 @@ interface AuroraBackgroundProps {
   className?: string
   /** Base canvas colour. Defaults to the page's own ivory background token. */
   baseColor?: string
+  /**
+   * Layer opacity variant. One visual family, quieter on internal pages:
+   * `full` (default, homepage), `soft` (Services/Studio), `quiet` (Work/Contact).
+   */
+  intensity?: "full" | "soft" | "quiet"
 }
 
 /**
@@ -24,10 +29,12 @@ interface AuroraBackgroundProps {
 export function AuroraBackground({
   className,
   baseColor = "var(--background)",
+  intensity = "full",
 }: AuroraBackgroundProps) {
   return (
     <div
       aria-hidden="true"
+      data-intensity={intensity === "full" ? undefined : intensity}
       className={cn(
         "aurora absolute inset-0 z-0 overflow-hidden pointer-events-none",
         className

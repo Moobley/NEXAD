@@ -4,9 +4,8 @@ import { Reveal } from "@/components/ui/reveal"
 
 type Capability = {
   title: string
-  line: string
-  description: string
-  items: string[]
+  body: string
+  tags: string
   note?: string
   principle?: string
 }
@@ -32,12 +31,12 @@ export async function ServicesCapabilities() {
           </header>
         </Reveal>
 
-        <ol className="mt-16 border-t border-obsidian/10 md:mt-20">
+        <ol className="mt-12 border-t border-obsidian/10 md:mt-16">
           {list.map((cap, i) => (
-            <li key={cap.title} className="border-b border-obsidian/10 py-12 md:py-16">
+            <li key={cap.title} className="border-b border-obsidian/10 py-8 last:border-b-0 md:py-10">
               <Reveal variant="fade-up">
-                <div className="grid gap-8 lg:grid-cols-12 lg:gap-8">
-                  <div className="lg:col-span-5">
+                <div className="grid gap-5 lg:grid-cols-12 lg:gap-8">
+                  <div className="lg:col-span-4">
                     <div className="flex items-baseline gap-5">
                       <span className="font-mono text-xs tracking-[0.2em] text-muted-foreground">
                         0{i + 1}
@@ -46,36 +45,26 @@ export async function ServicesCapabilities() {
                         {cap.title}
                       </h3>
                     </div>
-                    <p className="mt-4 pl-[2.4rem] font-serif text-[1.3rem] italic leading-snug text-foreground md:text-[1.5rem]">
-                      {cap.line}
+                  </div>
+
+                  <div className="lg:col-span-5">
+                    <p className="max-w-md text-base leading-relaxed text-muted-foreground">
+                      {cap.body}
                     </p>
                   </div>
 
-                  <div className="lg:col-span-6 lg:col-start-7">
-                    <p className="text-sm leading-relaxed text-muted-foreground md:text-base">
-                      {cap.description}
+                  <div className="lg:col-span-3">
+                    <p className="font-mono text-[11px] uppercase tracking-[0.15em] text-foreground/70">
+                      {cap.tags}
                     </p>
-                    <ul className="mt-6 space-y-2.5">
-                      {cap.items.map((item) => (
-                        <li
-                          key={item}
-                          className="flex gap-3 font-mono text-xs tracking-[0.04em] text-foreground/80"
-                        >
-                          <span aria-hidden className="text-muted-foreground">
-                            —
-                          </span>
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
                     {cap.note && (
-                      <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+                      <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.15em] text-muted-foreground">
                         {cap.note}
                       </p>
                     )}
                     {cap.principle && (
-                      <p className="mt-6 border-t border-obsidian/10 pt-5 font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
-                        <span className="text-foreground">{t("principleLabel")} — </span>
+                      <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.15em] text-muted-foreground">
+                        <span className="text-foreground/70">{t("principleLabel")} — </span>
                         {cap.principle}
                       </p>
                     )}

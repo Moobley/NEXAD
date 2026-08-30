@@ -209,10 +209,16 @@
      transparency) — no `filter: blur()` anywhere. Each layer is a single
      DOM node holding two radial gradients, rasterized once, then moved with
      `transform` only. Sizes are percentage-based, so they scale with the
-     hero/viewport instead of using fixed pixel surfaces. */
+     hero/viewport instead of using fixed pixel surfaces.
+
+     Seam-free movement: the overscan is generous (60% horizontal / 40%
+     vertical of the hero) and the keyframe translations are percentage-based,
+     so the amplitude always stays well inside the overscan — on every
+     viewport, including narrow mobile widths where a fixed-pixel translation
+     used to exceed the available overscan and expose the layer edge. */
   .aurora-layer {
     position: absolute;
-    inset: -30% -35% -30% -35%;
+    inset: -40% -60% -40% -60%;
     background-repeat: no-repeat;
     will-change: transform;
   }
@@ -254,43 +260,56 @@
       );
     animation: aurora-layer-b 14s ease-in-out infinite alternate-reverse;
   }
+
+  /* Intensity variants: a single visual family, quieter on internal pages.
+     Only opacity differs — geometry, motion and reduced-motion stay shared. */
+  .aurora[data-intensity="soft"] .aurora-layer {
+    opacity: 0.55;
+  }
+
+  .aurora[data-intensity="quiet"] .aurora-layer {
+    opacity: 0.3;
+  }
 }
 
 /* Multi-step wandering paths: layers cross each other irregularly rather
-   than oscillating left/right. Translate-only, so no re-rasterization. */
+   than oscillating left/right. Translate-only, so no re-rasterization.
+   Percentages are relative to the layer's own size, which scales with the
+   hero via the inset overscan — the amplitude is therefore proportional to
+   the viewport and can never outrun the overscan. */
 @keyframes aurora-layer-a {
   0% {
-    transform: translate3d(0, 0, 0);
+    transform: translate3d(0%, 0%, 0);
   }
   25% {
-    transform: translate3d(90px, 60px, 0);
+    transform: translate3d(5%, 4%, 0);
   }
   50% {
-    transform: translate3d(220px, 150px, 0);
+    transform: translate3d(12%, 10%, 0);
   }
   75% {
-    transform: translate3d(120px, 230px, 0);
+    transform: translate3d(6.5%, 15%, 0);
   }
   100% {
-    transform: translate3d(-50px, 120px, 0);
+    transform: translate3d(-3%, 8%, 0);
   }
 }
 
 @keyframes aurora-layer-b {
   0% {
-    transform: translate3d(0, 0, 0);
+    transform: translate3d(0%, 0%, 0);
   }
   25% {
-    transform: translate3d(-120px, 80px, 0);
+    transform: translate3d(-6%, 5%, 0);
   }
   50% {
-    transform: translate3d(-290px, -50px, 0);
+    transform: translate3d(-14%, -3%, 0);
   }
   75% {
-    transform: translate3d(-170px, -210px, 0);
+    transform: translate3d(-9%, -12%, 0);
   }
   100% {
-    transform: translate3d(60px, -90px, 0);
+    transform: translate3d(3%, -6%, 0);
   }
 }
 
