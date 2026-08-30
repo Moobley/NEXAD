@@ -344,3 +344,198 @@
     transition: none !important;
   }
 }
+
+/* ============================================================
+   Gateway root (/) — brand gateway, obsidian surface.
+   Single NEXO composition: wordmark + technical network + languages.
+   ============================================================ */
+
+.gateway {
+  position: relative;
+  min-height: 100svh;
+  background-color: var(--color-obsidian);
+  color: var(--color-ivory);
+}
+
+.gateway-grid {
+  background-image:
+    linear-gradient(to right, rgb(242 239 232 / 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(242 239 232 / 0.045) 1px, transparent 1px);
+  background-size: 72px 72px;
+}
+
+.gateway-glow {
+  background: radial-gradient(
+    55% 45% at 50% 42%,
+    rgb(155 147 173 / 0.13) 0%,
+    transparent 72%
+  );
+}
+
+/* Wordmark O — base state is the "normal" vertical letter O. It rotates
+   exactly once, on the signal, into the official horizontal wordmark O.
+   The origin is the O's own center in the 720x180 viewBox. */
+.gateway-o {
+  transform-box: view-box;
+  transform-origin: 540px 90px;
+  transform: rotate(-90deg);
+}
+
+/* Technical network — quiet, precise, never competing with the wordmark. */
+.gateway-network {
+  color: rgb(242 239 232 / 0.2);
+}
+
+.gateway-x-ring {
+  opacity: 0;
+  transform-box: view-box;
+  transform-origin: 375px 90px;
+  stroke: rgb(101 88 255 / 0.5);
+}
+
+.gateway-connector {
+  opacity: 0.45;
+}
+
+.gateway-traveler {
+  opacity: 0;
+  offset-path: path("M 420 90 L 462 90");
+  offset-distance: 0%;
+}
+
+/* Full intro timeline (~1.6s total) */
+.gateway-intro .gateway-logo-in {
+  animation: gateway-logo-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both;
+}
+
+.gateway-intro .gateway-network {
+  animation: gateway-network-in 0.7s ease 0.1s both;
+}
+
+.gateway-intro .gateway-x-ring {
+  animation: gateway-x-ring 0.3s ease-out 0.35s 2 forwards;
+}
+
+.gateway-intro .gateway-traveler {
+  animation: gateway-travel 0.36s cubic-bezier(0.16, 1, 0.3, 1) 0.49s forwards;
+}
+
+.gateway-intro .gateway-o {
+  animation: gateway-o-rotate 0.45s cubic-bezier(0.16, 1, 0.3, 1) 0.85s forwards;
+}
+
+.gateway-intro .gateway-descriptor {
+  animation: gateway-settle-in 0.5s ease 1.2s both;
+}
+
+.gateway-intro .gateway-langs {
+  animation: gateway-settle-in 0.5s ease 1.3s both;
+}
+
+/* Short variant — session revisit: logo already final, quick settle. */
+.gateway-short .gateway-o {
+  transform: rotate(0deg);
+}
+
+.gateway-short .gateway-logo-in,
+.gateway-short .gateway-descriptor,
+.gateway-short .gateway-langs {
+  animation: gateway-settle-in 0.45s ease 0.05s both;
+}
+
+.gateway-short .gateway-network {
+  opacity: 1;
+}
+
+.gateway-short .gateway-x-ring,
+.gateway-short .gateway-traveler {
+  opacity: 0;
+}
+
+@keyframes gateway-logo-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes gateway-network-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes gateway-x-ring {
+  from {
+    transform: scale(0.6);
+    opacity: 0.7;
+  }
+  to {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+
+@keyframes gateway-travel {
+  0% {
+    offset-distance: 0%;
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    offset-distance: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes gateway-o-rotate {
+  0% {
+    transform: rotate(-90deg);
+  }
+  70% {
+    transform: rotate(4deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes gateway-settle-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Reduced motion: gateway static — final logo, no impulses, languages ready. */
+@media (prefers-reduced-motion: reduce) {
+  .gateway-intro .gateway-logo-in,
+  .gateway-intro .gateway-network,
+  .gateway-intro .gateway-x-ring,
+  .gateway-intro .gateway-traveler,
+  .gateway-intro .gateway-o,
+  .gateway-intro .gateway-descriptor,
+  .gateway-intro .gateway-langs,
+  .gateway-short .gateway-logo-in,
+  .gateway-short .gateway-descriptor,
+  .gateway-short .gateway-langs {
+    animation: none !important;
+  }
+
+  .gateway-o {
+    transform: rotate(0deg) !important;
+  }
+}
