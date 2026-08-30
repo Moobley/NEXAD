@@ -1,6 +1,7 @@
 import Image from "next/image"
 
 import { cn } from "@/lib/utils"
+import { asset } from "@/lib/asset"
 
 type LogoProps = {
   /** obsidian — for light backgrounds; ivory — for dark backgrounds. */
@@ -16,7 +17,7 @@ export function Logo({
 }: LogoProps) {
   return (
     <Image
-      src={`/logos/nexo-wordmark-${variant}.svg`}
+      src={asset(`/logos/nexo-wordmark-${variant}.svg`)}
       alt="NEXO"
       width={720}
       height={180}

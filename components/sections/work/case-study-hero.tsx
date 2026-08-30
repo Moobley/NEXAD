@@ -2,6 +2,7 @@ import { getTranslations } from "next-intl/server"
 import Image from "next/image"
 
 import { Reveal } from "@/components/ui/reveal"
+import { asset } from "@/lib/asset"
 
 export async function CaseStudyHero() {
   const t = await getTranslations("projects.corazon.caseStudy.hero")
@@ -14,7 +15,7 @@ export async function CaseStudyHero() {
           <div className="flex items-center justify-between border-b border-obsidian/10 pb-6">
             <span className="flex items-center gap-4">
               <Image
-                src="/projects/corazon/logoCN.webp"
+                src={asset("/projects/corazon/logoCN.webp")}
                 alt={tm("client")}
                 width={700}
                 height={201}
