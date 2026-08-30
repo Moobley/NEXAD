@@ -1,17 +1,19 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { type MouseEvent, useEffect, useState } from "react"
 
 import { cn } from "@/lib/utils"
 import { GatewayLogo } from "@/components/gateway/gateway-logo"
 import { GatewayNetwork } from "@/components/gateway/gateway-network"
 
 const STORAGE_KEY = "nexo_gateway_seen"
+const ENTERED_KEY = "nexo_gateway_entered"
+const RETURN_KEY = "nexo_gateway_return_path"
 
 const LANGUAGES = [
-  { code: "es", href: "./es/", label: "Español" },
-  { code: "en", href: "./en/", label: "English" },
-  { code: "it", href: "./it/", label: "Italiano" },
+  { code: "es", label: "Español" },
+  { code: "en", label: "English" },
+  { code: "it", label: "Italiano" },
 ]
 
 function detectLanguage(): string {
@@ -45,6 +47,29 @@ function markSeen() {
   }
 }
 
+/** Marks that the user chose a language and can navigate the site freely. */
+function markEntered() {
+  try {
+    window.sessionStorage.setItem(ENTERED_KEY, "1")
+  } catch {
+    // storage unavailable — fall back to the plain language homepage
+  }
+}
+
+/**
+ * Reads the pending deep-link route (without its original locale) and clears
+ * it. Returns null when there is none.
+ */
+function takeReturnPath(): string | null {
+  try {
+    const pending = window.sessionStorage.getItem(RETURN_KEY)
+    if (pending) window.sessionStorage.removeItem(RETURN_KEY)
+    return pending
+  } catch {
+    return null
+  }
+}
+
 export function NexoGateway() {
   const [variant, setVariant] = useState<"full" | "short">("full")
   const [suggested, setSuggested] = useState<string>("es")
@@ -58,6 +83,15 @@ export function NexoGateway() {
     }
     init()
   }, [])
+
+  function handleLanguageSelect(event: MouseEvent<HTMLAnchorElement>, locale: string) {
+    event.preventDefault()
+    markEntered()
+    const pending = takeReturnPath()
+    // Pending routes always start with "/" and come from the site's own
+    // pathname, so the destination is always a same-site relative URL.
+    window.location.assign(pending ? `./${locale}${pending}` : `./${locale}/`)
+  }
 
   return (
     <main
@@ -89,8 +123,9 @@ export function NexoGateway() {
             return (
               <a
                 key={lang.code}
-                href={lang.href}
+                href={`./${lang.code}/`}
                 aria-label={lang.label}
+                onClick={(event) => handleLanguageSelect(event, lang.code)}
                 className={cn(
                   "group relative px-1 py-3 font-sans text-3xl font-medium tracking-tight transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-iris md:text-4xl",
                   isSuggested

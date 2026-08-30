@@ -7,6 +7,7 @@ import { Familjen_Grotesk, Geist_Mono, Instrument_Serif } from "next/font/google
 import { routing } from "@/i18n/routing"
 import { SiteHeader } from "@/components/layout/site-header"
 import { SiteFooter } from "@/components/layout/site-footer"
+import { GatewayGuardScript } from "@/components/gateway/gateway-guard"
 import { cn } from "@/lib/utils"
 
 import "../globals.css"
@@ -83,6 +84,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       )}
     >
       <body className="min-h-svh bg-background text-foreground antialiased">
+        <GatewayGuardScript />
         <NextIntlClientProvider>
           <a
             href="#main"
