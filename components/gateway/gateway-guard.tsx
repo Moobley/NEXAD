@@ -15,10 +15,13 @@ const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
  *   4. replaces the location with the gateway root.
  *
  * Skipped entirely once `nexo_gateway_entered` is set (a full reload after
- * entering the site stays on the page).
+ * entering the site stays on the page), or when the URL carries `?direct=1`
+ * (technical/QA access — the localized page renders as-is, no session state
+ * is written). The whole guard is fail-open: any unexpected error simply
+ * lets the requested page render.
  */
 export function GatewayGuardScript() {
-  const script = `(function(){try{var s=window.sessionStorage;if(!s||s.getItem("nexo_gateway_entered")==="1")return;var b=${JSON.stringify(BASE_PATH)};var p=window.location.pathname;var stripped=p;if(b&&stripped.slice(0,b.length)===b)stripped=stripped.slice(b.length);var m=stripped.match(/^\\/(es|en|it)(\\/|$)/);if(m){if(m[2]==="/"){stripped="/"+stripped.slice(m[0].length)}else{stripped="/"}}if(stripped.charAt(0)!=="/")stripped="/"+stripped;var dest=stripped+(window.location.search||"")+(window.location.hash||"");s.setItem("nexo_gateway_return_path",dest);window.location.replace(b+"/")}catch(e){}})();`
+  const script = `(function(){try{var s=window.sessionStorage;if(!s||s.getItem("nexo_gateway_entered")==="1")return;if(/[?&]direct=1(&|#|$)/.test(window.location.search))return;var b=${JSON.stringify(BASE_PATH)};var p=window.location.pathname;var stripped=p;if(b&&stripped.slice(0,b.length)===b)stripped=stripped.slice(b.length);var m=stripped.match(/^\\/(es|en|it)(\\/|$)/);if(m){if(m[2]==="/"){stripped="/"+stripped.slice(m[0].length)}else{stripped="/"}}if(stripped.charAt(0)!=="/")stripped="/"+stripped;var dest=stripped+(window.location.search||"")+(window.location.hash||"");s.setItem("nexo_gateway_return_path",dest);window.location.replace(b+"/")}catch(e){}})();`
 
   return <script dangerouslySetInnerHTML={{ __html: script }} />
 }
