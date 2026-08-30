@@ -55,12 +55,12 @@ export async function Corazon() {
             >
               <div className="absolute inset-0 flex items-center justify-center bg-[radial-gradient(130%_130%_at_70%_15%,#e7e3d6_0%,#f2efe8_48%,#d8d2c3_100%)] p-10 md:p-16">
                 <Image
-                  src={asset("/projects/corazon/logoCN.webp")}
+                  src={asset("/projects/corazon/logoCNxNexo.png")}
                   alt={tc("title")}
-                  width={700}
-                  height={201}
+                  width={1187}
+                  height={266}
                   unoptimized
-                  className="h-auto w-full max-w-sm object-contain"
+                  className="h-auto w-full max-w-lg object-contain"
                 />
               </div>
             </CaseMedia>
