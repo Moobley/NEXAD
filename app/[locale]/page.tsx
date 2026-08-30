@@ -8,6 +8,7 @@ import { GranCanaria } from "@/components/sections/home/gran-canaria"
 import { Corazon } from "@/components/sections/home/corazon"
 import { Technology } from "@/components/sections/home/technology"
 import { FinalCta } from "@/components/sections/home/final-cta"
+import { SectionDivider } from "@/components/ui/section-divider"
 
 type Props = {
   params: Promise<{ locale: string }>
@@ -20,12 +21,17 @@ export default async function HomePage({ params }: Props) {
   return (
     <>
       <Hero />
+      <SectionDivider />
       <Capabilities />
+      <SectionDivider />
       <Positioning />
+      <SectionDivider />
       <Process />
+      <SectionDivider />
       <GranCanaria />
       <Corazon />
       <Technology />
+      <SectionDivider />
       <FinalCta />
     </>
   )

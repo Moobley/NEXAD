@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server"
 
 import { routing } from "@/i18n/routing"
 import { PagePlaceholder } from "@/components/layout/page-placeholder"
+import { CorazonCaseStudy } from "@/components/sections/work/corazon-case-study"
 import { projects } from "@/content/projects"
 
 export function generateStaticParams() {
@@ -22,6 +23,10 @@ export default async function WorkSlugPage({ params }: Props) {
   const project = projects.find((p) => p.slug === slug)
   if (!project) {
     notFound()
+  }
+
+  if (slug === "corazon-napoletano") {
+    return <CorazonCaseStudy />
   }
 
   const t = await getTranslations("workSlug")

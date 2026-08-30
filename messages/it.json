@@ -20,7 +20,7 @@
   },
   "home": {
     "hero": {
-      "meta": "Strategia digitale — Gran Canaria",
+      "meta": "Strategia · Design · Tecnologia",
       "coords": "28.1° N — 15.4° W",
       "titleLine1": "Trasformiamo la strategia digitale",
       "titleLine2": "in crescita reale.",
@@ -99,8 +99,8 @@
       "index": "05",
       "coordsLine1": "28.1° N",
       "coordsLine2": "15.4° W",
-      "line1": "Con base a Gran Canaria.",
-      "line2": "Lavoriamo senza frontiere.",
+      "line1": "Base atlantica.",
+      "line2": "Prospettiva internazionale.",
       "fieldLabel": "Atlantico — luce e ombra"
     },
     "cta": {
@@ -135,16 +135,24 @@
       "year": "Anno · da confermare",
       "images": "Immagini del progetto in sospeso"
     },
-    "corazon": {
+"corazon": {
       "index": "06",
-      "caseStudyLabel": "Caso studio",
+      "caseStudyLabel": "Case study",
       "title": "Corazón Napoletano",
-      "intro": "Una strategia digitale costruita attorno al business.",
-      "support": "Web, contenuti, pubblicità e strategia come un unico sistema.",
+      "projectLabel": "Progetto",
+      "category": "Ristorazione",
+      "headline": "Un brand ripensato attorno all'esperienza del cliente.",
+      "support": "Abbiamo collegato identità, contenuti, menu, punti di contatto e presenza digitale in un unico sistema.",
+      "scope": "Brand identity · Contenuti · Menu + Upselling · QR · Sito web",
+      "url": "corazonnapoletano.com",
+      "visitLabel": "Visita il sito",
       "sector": "Ristorazione · Ristorante",
       "resultAmount": "+20%",
-      "resultLabel": "di fatturato",
+      "resultLabel": "Fatturato dal mese successivo",
       "resultNote": "Una strategia digitale integrata, dall'esperienza web all'acquisizione.",
+      "brandLabel": "Brand identity e applicazioni fisiche",
+      "contentLabel": "Contenuti reali",
+      "websiteLabel": "Sito web",
       "sections": {
         "context": {
           "heading": "Contesto",
@@ -178,6 +186,74 @@
         "result": {
           "heading": "Risultato",
           "body": "La strategia combinata ha contribuito a un aumento di circa il 20% del fatturato."
+        }
+      },
+      "caseStudy": {
+        "meta": {
+          "client": "Corazón Napoletano",
+          "category": "Case study — Food & hospitality"
+        },
+        "hero": {
+          "category": "Food & hospitality",
+          "titleA": "Un brand costruito",
+          "titleB": "per farsi scegliere.",
+          "support": "Identità, contenuti, menu, esperienza al tavolo e presenza digitale progettati come un unico sistema.",
+          "resultAmount": "+20%",
+          "resultLabel": "Fatturato dal mese successivo"
+        },
+        "system": {
+          "title": "Un unico sistema, dal brand al risultato.",
+          "steps": [
+            "Identità di brand",
+            "Contenuti",
+            "Menu + upselling",
+            "QR",
+            "Sito web"
+          ]
+        },
+        "identity": {
+          "heading": "Prima del digitale, abbiamo costruito il brand.",
+          "body": "Un'identità coerente, estesa a ogni punto di contatto — digitale e fisico.",
+          "logoLabel": "Logo",
+          "applicationsTitle": "Applicazioni fisiche",
+          "applications": ["T-shirt", "Tovagliette", "Biglietti da visita"]
+        },
+        "content": {
+          "heading": "Mostrare il prodotto reale.",
+          "body": "Contenuti social originali girati nel locale — cibo vero, persone vere.",
+          "frames": ["Cibo", "Preparazione", "Ambiente", "Persone"]
+        },
+        "menu": {
+          "heading": "Il menu come strumento di scelta e vendita.",
+          "body": "Re-ingegnerizzato, non solo ridisegnato — struttura più chiara, scelta guidata, upselling integrato.",
+          "mediaLabel": "Menu"
+        },
+        "qr": {
+          "heading": "Meno frizione tra tavolo e scelta.",
+          "body": "Accesso al menu via QR che rende più facile scegliere — meno frizione, direttamente al tavolo.",
+          "placematLabel": "QR sulla tovaglietta"
+        },
+        "website": {
+          "heading": "Un sito che continua l'esperienza.",
+          "body": "Il brand e il menu online — con prenotazione e navigazione multilingua.",
+          "url": "corazonnapoletano.com",
+          "captions": {
+            "hero": "Hero / brand",
+            "menu": "Menu",
+            "product": "Prodotto",
+            "booking": "Prenotazione",
+            "mobile": "Mobile"
+          }
+        },
+        "result": {
+          "amount": "+20%",
+          "label": "Incremento del fatturato",
+          "timing": "Dal mese successivo",
+          "body": "Dal mese successivo all'introduzione del nuovo sistema, Corazón Napoletano ha registrato un incremento del fatturato del 20%.",
+          "nexo": "Il risultato non nasce da un singolo canale. Identità, contenuti, menu, upselling, esperienza al tavolo e presenza digitale sono stati progettati per lavorare insieme."
+        },
+        "labels": {
+          "mediaNote": "Materiale in arrivo"
         }
       }
     },

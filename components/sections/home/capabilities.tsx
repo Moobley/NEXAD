@@ -15,7 +15,7 @@ export function Capabilities() {
   const current = list[active]
 
   return (
-    <section className="border-t border-obsidian/10">
+    <section>
       <div className="mx-auto w-full max-w-[1600px] px-6 py-24 md:px-10 md:py-32">
         <Reveal>
           <header>

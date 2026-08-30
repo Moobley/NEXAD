@@ -6,7 +6,7 @@ export async function Positioning() {
   const t = await getTranslations("home.statement")
 
   return (
-    <section className="surface-obsidian border-t border-border">
+    <section className="surface-obsidian">
       <div className="mx-auto w-full max-w-[1600px] px-6 py-28 md:px-10 md:py-44">
         <Reveal>
           <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">

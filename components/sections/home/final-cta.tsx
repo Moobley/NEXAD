@@ -8,7 +8,7 @@ export async function FinalCta() {
   const t = await getTranslations("home.cta")
 
   return (
-    <section className="surface-obsidian border-t border-ivory/10">
+    <section className="surface-obsidian">
       <div className="mx-auto w-full max-w-[1600px] px-6 py-32 text-center md:px-10 md:py-48">
         <Reveal>
           <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">

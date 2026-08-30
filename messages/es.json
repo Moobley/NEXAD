@@ -19,7 +19,7 @@
   },
   "home": {
     "hero": {
-      "meta": "Estrategia digital — Gran Canaria",
+      "meta": "Estrategia · Diseño · Tecnología",
       "coords": "28.1° N — 15.4° W",
       "titleLine1": "Convertimos estrategia digital",
       "titleLine2": "en crecimiento real.",
@@ -98,8 +98,8 @@
       "index": "05",
       "coordsLine1": "28.1° N",
       "coordsLine2": "15.4° W",
-      "line1": "Con base en Gran Canaria.",
-      "line2": "Trabajamos sin fronteras.",
+      "line1": "Base atlántica.",
+      "line2": "Perspectiva internacional.",
       "fieldLabel": "Atlántico — luz y sombra"
     },
     "cta": {
@@ -138,12 +138,20 @@
       "index": "06",
       "caseStudyLabel": "Caso de estudio",
       "title": "Corazón Napoletano",
-      "intro": "Una estrategia digital construida alrededor del negocio.",
-      "support": "Web, contenido, publicidad y estrategia trabajando como un único sistema.",
-      "sector": "Hostelería · Restaurante",
+      "projectLabel": "Proyecto",
+      "category": "Restauración",
+      "headline": "Una marca repensada alrededor de la experiencia del cliente.",
+      "support": "Conectamos identidad, contenido, carta, puntos de contacto y presencia digital en un único sistema.",
+      "scope": "Identidad de marca · Contenido · Carta + Upselling · QR · Web",
+      "url": "corazonnapoletano.com",
+      "visitLabel": "Visitar la web",
+      "sector": "Restauración",
       "resultAmount": "+20%",
-      "resultLabel": "de facturación",
+      "resultLabel": "Facturación desde el mes siguiente",
       "resultNote": "Una estrategia digital integrada, desde la experiencia web hasta la captación.",
+      "brandLabel": "Identidad de marca y aplicaciones físicas",
+      "contentLabel": "Contenido real",
+      "websiteLabel": "Web",
       "sections": {
         "context": {
           "heading": "Contexto",
@@ -177,6 +185,74 @@
         "result": {
           "heading": "Resultado",
           "body": "La estrategia combinada contribuyó a un aumento de aproximadamente el 20% en la facturación."
+        }
+      },
+      "caseStudy": {
+        "meta": {
+          "client": "Corazón Napoletano",
+          "category": "Caso de estudio — Restauración"
+        },
+        "hero": {
+          "category": "Restauración",
+          "titleA": "Una marca construida",
+          "titleB": "para hacerse elegir.",
+          "support": "Identidad, contenidos, carta, experiencia en el local y presencia digital diseñados como un único sistema.",
+          "resultAmount": "+20%",
+          "resultLabel": "Facturación desde el mes siguiente"
+        },
+        "system": {
+          "title": "Un único sistema, de la marca al resultado.",
+          "steps": [
+            "Identidad de marca",
+            "Contenido",
+            "Carta + upselling",
+            "QR",
+            "Web"
+          ]
+        },
+        "identity": {
+          "heading": "Antes de lo digital, construimos la marca.",
+          "body": "Una identidad coherente, extendida a cada punto de contacto — digital y físico.",
+          "logoLabel": "Logo",
+          "applicationsTitle": "Aplicaciones físicas",
+          "applications": ["Camisetas", "Mantelillos", "Tarjetas de visita"]
+        },
+        "content": {
+          "heading": "Mostrar el producto real.",
+          "body": "Contenido social original rodado en el local — comida real, personas reales.",
+          "frames": ["Comida", "Preparación", "Ambiente", "Personas"]
+        },
+        "menu": {
+          "heading": "La carta como herramienta de elección y venta.",
+          "body": "Reingenierizada, no solo rediseñada — estructura más clara, elección guiada, upselling integrado.",
+          "mediaLabel": "Carta"
+        },
+        "qr": {
+          "heading": "Menos fricción entre mesa y elección.",
+          "body": "Acceso a la carta por QR que facilita elegir — menos fricción, en la propia mesa.",
+          "placematLabel": "QR en el mantelillo"
+        },
+        "website": {
+          "heading": "Una web que continúa la experiencia.",
+          "body": "La marca y la carta online — con reserva y navegación multilingüe.",
+          "url": "corazonnapoletano.com",
+          "captions": {
+            "hero": "Hero / marca",
+            "menu": "Carta",
+            "product": "Producto",
+            "booking": "Reserva",
+            "mobile": "Móvil"
+          }
+        },
+        "result": {
+          "amount": "+20%",
+          "label": "Incremento de la facturación",
+          "timing": "Desde el mes siguiente",
+          "body": "Desde el mes siguiente a la introducción del nuevo sistema, Corazón Napoletano registró un incremento de la facturación del 20%.",
+          "nexo": "El resultado no nace de un único canal. Identidad, contenidos, carta, upselling, experiencia en el local y presencia digital se diseñaron para trabajar juntos."
+        },
+        "labels": {
+          "mediaNote": "Material en camino"
         }
       }
     },

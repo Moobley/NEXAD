@@ -1,17 +1,14 @@
 import { getTranslations } from "next-intl/server"
+import Image from "next/image"
+import { ArrowUpRight } from "lucide-react"
 
-import { Link } from "@/i18n/navigation"
 import { Reveal } from "@/components/ui/reveal"
-import { ProjectVisual } from "@/components/ui/project-visual"
-import { projects } from "@/content/projects"
+import { CaseMedia } from "@/components/ui/case-media"
 
 export async function Corazon() {
   const tc = await getTranslations("projects.corazon")
-  const ts = await getTranslations("home.shared")
-  const tsv = await getTranslations("services")
-
-  const project = projects.find((p) => p.kind === "integrated")!
-  const services = project.services.map((s) => tsv(s))
+  const tl = await getTranslations("projects.corazon.caseStudy.labels")
+  const note = tl("mediaNote")
 
   return (
     <div className="surface-obsidian">
@@ -20,86 +17,100 @@ export async function Corazon() {
       <div className="mx-auto w-full max-w-[1600px] px-6 pb-24 pt-14 md:px-10 md:pb-32 md:pt-20">
         <Reveal>
           <div className="flex items-center justify-between border-b border-border pb-6">
+            <span className="flex items-center gap-4">
+              <Image
+                src="/projects/corazon/logoCN.webp"
+                alt={tc("title")}
+                width={700}
+                height={201}
+                unoptimized
+                className="h-6 w-auto"
+              />
+            </span>
             <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
-              {tc("index")}
-            </p>
-            <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
-              {tc("caseStudyLabel")}
+              {tc("projectLabel")} / {tc("category")}
             </p>
           </div>
         </Reveal>
 
         <Reveal className="mt-14 md:mt-20">
-          <div className="grid gap-12 lg:grid-cols-12 lg:gap-8">
-            <div className="lg:col-span-7">
-              <h2 className="font-sans text-[clamp(2.5rem,6vw,5rem)] font-medium leading-[0.95] tracking-[-0.02em] text-foreground">
-                {project.client}
-              </h2>
-              <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
-                {tc("sector")}
-              </p>
-              <p className="mt-8 max-w-md text-lg leading-relaxed text-foreground">
-                {tc("intro")}
-              </p>
-              <p className="mt-4 max-w-md text-base leading-relaxed text-muted-foreground">
-                {tc("support")}
-              </p>
-            </div>
+          <h2 className="max-w-5xl font-sans text-[clamp(2.5rem,6vw,5rem)] font-medium leading-[0.98] tracking-[-0.02em] text-foreground">
+            {tc("headline")}
+          </h2>
+          <p className="mt-8 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
+            {tc("support")}
+          </p>
+          <p className="mt-6 font-mono text-[11px] uppercase leading-loose tracking-[0.22em] text-foreground/60">
+            {tc("scope")}
+          </p>
+        </Reveal>
 
-            <div className="lg:col-span-5 lg:pt-4">
-              <dl className="space-y-3 font-mono text-[11px] tracking-[0.15em]">
-                <div className="flex justify-between gap-8 border-t border-border pt-3">
-                  <dt className="text-muted-foreground">{ts("client")}</dt>
-                  <dd className="text-right text-foreground">{project.client}</dd>
-                </div>
-                <div className="flex justify-between gap-8 border-t border-border pt-3">
-                  <dt className="text-muted-foreground">{ts("sector")}</dt>
-                  <dd className="text-right text-foreground">{tc("sector")}</dd>
-                </div>
-                <div className="flex justify-between gap-8 border-t border-border pt-3">
-                  <dt className="text-muted-foreground">{ts("location")}</dt>
-                  <dd className="text-right text-foreground">{project.location}</dd>
-                </div>
-                <div className="flex justify-between gap-8 border-t border-border pt-3">
-                  <dt className="text-muted-foreground">{ts("services")}</dt>
-                  <dd className="text-right text-foreground">{services.join(" · ")}</dd>
-                </div>
-              </dl>
-            </div>
+        <div className="mt-16 grid gap-6 md:mt-20 lg:grid-cols-12 lg:gap-8">
+          <Reveal className="lg:col-span-7">
+            <CaseMedia
+              label={tc("brandLabel")}
+              tone="light"
+              className="aspect-[4/3]"
+            >
+              <div className="absolute inset-0 flex items-center justify-center bg-[radial-gradient(130%_130%_at_70%_15%,#e7e3d6_0%,#f2efe8_48%,#d8d2c3_100%)] p-10 md:p-16">
+                <Image
+                  src="/projects/corazon/logoCN.webp"
+                  alt={tc("title")}
+                  width={700}
+                  height={201}
+                  unoptimized
+                  className="h-auto w-full max-w-sm object-contain"
+                />
+              </div>
+            </CaseMedia>
+          </Reveal>
+
+          <div className="grid grid-cols-2 gap-6 lg:col-span-5 lg:grid-cols-1 lg:gap-8">
+            <Reveal delay={120} className="lg:mt-10">
+              <CaseMedia
+                label={tc("contentLabel")}
+                note={note}
+                tone="dark"
+                className="aspect-[4/3] lg:aspect-[16/10]"
+              />
+            </Reveal>
+            <Reveal delay={200}>
+              <CaseMedia
+                label={tc("websiteLabel")}
+                note={note}
+                tone="light"
+                className="aspect-[4/3] lg:aspect-[16/10]"
+              />
+            </Reveal>
           </div>
-        </Reveal>
-
-        <Reveal delay={140} className="mt-16 md:mt-20">
-          <Link href={`/work/${project.slug}`} className="group block">
-            <ProjectVisual
-              index={project.index}
-              label={project.client}
-              tone={project.cover.tone}
-              surface="dark"
-              className="aspect-[16/9] md:aspect-[21/9]"
-            />
-          </Link>
-        </Reveal>
+        </div>
 
         <div className="mt-20 grid gap-10 md:mt-28 lg:grid-cols-12 lg:items-end">
-          <Reveal variant="mask-up" className="lg:col-span-7">
-            <div>
-              <p className="font-sans text-[clamp(4.5rem,13vw,10.5rem)] font-medium leading-none tracking-[-0.03em] text-foreground">
-                {tc("resultAmount")}
-              </p>
-              <p className="mt-4 font-sans text-2xl font-medium tracking-tight text-foreground md:text-4xl">
-                {tc("resultLabel")}
-              </p>
-            </div>
+          <Reveal variant="mask-up" className="lg:col-span-8">
+            <p className="font-sans text-[clamp(4rem,12vw,10rem)] font-medium leading-none tracking-[-0.03em] text-foreground">
+              {tc("resultAmount")}
+            </p>
+            <p className="mt-4 font-sans text-2xl font-medium tracking-tight text-foreground md:text-3xl">
+              {tc("resultLabel")}
+            </p>
           </Reveal>
+
           <Reveal
             variant="fade-up"
             delay={180}
-            className="lg:col-span-5 lg:justify-self-end"
+            className="lg:col-span-4 lg:justify-self-end"
           >
-            <p className="max-w-sm text-base leading-relaxed text-muted-foreground md:text-right">
-              {tc("resultNote")}
-            </p>
+            <a
+              href={`https://${tc("url")}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cta-secondary inline-flex"
+            >
+              <span className="font-mono text-[11px] uppercase tracking-[0.16em]">
+                {tc("url")}
+              </span>
+              <ArrowUpRight className="size-4" strokeWidth={1.5} />
+            </a>
           </Reveal>
         </div>
       </div>

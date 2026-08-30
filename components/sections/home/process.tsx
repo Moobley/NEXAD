@@ -7,7 +7,7 @@ export async function Process() {
   const steps = t.raw("steps") as { title: string; description: string }[]
 
   return (
-    <section className="border-t border-obsidian/10">
+    <section>
       <div className="mx-auto w-full max-w-[1600px] px-6 py-24 md:px-10 md:py-32">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-5">
