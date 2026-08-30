@@ -304,15 +304,20 @@
         },
         "customer": {
           "eyebrow": "Reservar",
-          "heading": "Menos pasos entre intención y cita.",
-          "features": [
-            "Selección de servicio",
-            "Selección de profesional",
-            "Calendario y disponibilidad",
-            "Modificar o cancelar",
-            "Acceso con cuenta"
-          ]
-        },
+"heading": "Menos pasos entre intención y cita.",
+      "features": [
+        "Selección de servicio",
+        "Selección de profesional",
+        "Calendario y disponibilidad",
+        "Modificar o cancelar",
+        "Acceso con cuenta"
+      ],
+      "alts": {
+        "serviceSelection": "Selección de servicio en Barber Booking, app móvil",
+        "availability": "Calendario de disponibilidad para reservar una cita en Barber Booking",
+        "bookingSummary": "Resumen y confirmación de reserva en Barber Booking"
+      }
+    },
         "business": {
           "eyebrow": "Gestionar",
           "heading": "La reserva termina para el cliente. Para el negocio, ahí empieza la operación.",

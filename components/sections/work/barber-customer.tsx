@@ -1,14 +1,11 @@
 import { getTranslations } from "next-intl/server"
 
 import { Reveal } from "@/components/ui/reveal"
-import { CaseMedia } from "@/components/ui/case-media"
-import { BookingFlowUi } from "@/components/sections/work/ui-fragments"
+import { MobileFrame } from "@/components/ui/mobile-frame"
 
 export async function BarberCustomer() {
   const t = await getTranslations("projects.barber.lab.customer")
-  const ts = await getTranslations("projects.barber.lab.sides")
   const features = t.raw("features") as string[]
-  const customer = ts.raw("customer") as { flow: string[] }
 
   return (
     <section>
@@ -37,11 +34,29 @@ export async function BarberCustomer() {
           </div>
 
           <div className="lg:col-span-7">
-            <Reveal delay={120}>
-              <CaseMedia label={t("eyebrow")} tone="light" className="aspect-[4/3]">
-                <BookingFlowUi labels={customer.flow} />
-              </CaseMedia>
-            </Reveal>
+            <div className="flex items-start justify-center gap-4 md:gap-6">
+              <Reveal delay={100} className="w-[34%]">
+                <MobileFrame
+                  src="/projects/barber/customer/service-selection.webp"
+                  alt={t("alts.serviceSelection")}
+                  sizes="(min-width: 1024px) 20vw, 40vw"
+                />
+              </Reveal>
+              <Reveal delay={180} className="w-[40%]">
+                <MobileFrame
+                  src="/projects/barber/customer/availability.webp"
+                  alt={t("alts.availability")}
+                  sizes="(min-width: 1024px) 24vw, 46vw"
+                />
+              </Reveal>
+              <Reveal delay={260} className="w-[34%] lg:mt-12">
+                <MobileFrame
+                  src="/projects/barber/customer/booking-summary.webp"
+                  alt={t("alts.bookingSummary")}
+                  sizes="(min-width: 1024px) 20vw, 40vw"
+                />
+              </Reveal>
+            </div>
           </div>
         </div>
       </div>

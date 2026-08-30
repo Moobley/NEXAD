@@ -34,30 +34,6 @@ export function ScheduleUi() {
 }
 
 /** Booking flow rows abstraction (light). */
-export function BookingFlowUi({ labels }: { labels: string[] }) {
-  return (
-    <div
-      aria-hidden
-      className="absolute inset-0 bg-[radial-gradient(130%_130%_at_70%_15%,#e7e3d6_0%,#f2efe8_48%,#d8d2c3_100%)]"
-    >
-      <div className="absolute inset-x-6 bottom-12 top-6 flex flex-col gap-3">
-        {labels.map((label, i) => (
-          <div
-            key={label}
-            className="flex flex-1 items-center justify-between border border-obsidian/15 px-4"
-          >
-            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-obsidian/60">
-              {label}
-            </span>
-            <span className="font-mono text-[10px] tracking-[0.2em] text-obsidian/35">
-              0{i + 1}
-            </span>
-          </div>
-        ))}
-      </div>
-    </div>
-  )
-}
 
 /** Admin dashboard blocks abstraction (dark). */
 export function DashboardUi({ blocks }: { blocks: string[] }) {

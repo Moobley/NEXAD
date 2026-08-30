@@ -305,15 +305,20 @@
         },
         "customer": {
           "eyebrow": "Booking",
-          "heading": "Fewer steps between intent and appointment.",
-          "features": [
-            "Service selection",
-            "Professional selection",
-            "Calendar and availability",
-            "Modify or cancel",
-            "Account access"
-          ]
-        },
+"heading": "Fewer steps between intent and appointment.",
+      "features": [
+        "Service selection",
+        "Professional selection",
+        "Calendar and availability",
+        "Modify or cancel",
+        "Account access"
+      ],
+      "alts": {
+        "serviceSelection": "Service selection in Barber Booking, mobile app",
+        "availability": "Availability calendar for booking an appointment in Barber Booking",
+        "bookingSummary": "Booking summary and confirmation in Barber Booking"
+      }
+    },
         "business": {
           "eyebrow": "Managing",
           "heading": "The booking ends for the customer. For the business, that's where operations begin.",

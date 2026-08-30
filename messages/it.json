@@ -305,15 +305,20 @@
         },
         "customer": {
           "eyebrow": "Prenotare",
-          "heading": "Meno passaggi tra intenzione e appuntamento.",
-          "features": [
-            "Selezione del servizio",
-            "Selezione del professionista",
-            "Calendario e disponibilità",
-            "Modificare o cancellare",
-            "Accesso con account"
-          ]
-        },
+"heading": "Meno passaggi tra intenzione e appuntamento.",
+      "features": [
+        "Selezione del servizio",
+        "Selezione del professionista",
+        "Calendario e disponibilità",
+        "Modificare o cancellare",
+        "Accesso con account"
+      ],
+      "alts": {
+        "serviceSelection": "Selezione del servizio in Barber Booking, app mobile",
+        "availability": "Calendario di disponibilità per prenotare un appuntamento in Barber Booking",
+        "bookingSummary": "Riepilogo e conferma della prenotazione in Barber Booking"
+      }
+    },
         "business": {
           "eyebrow": "Gestire",
           "heading": "Per il cliente la prenotazione finisce lì. Per il business, è lì che inizia l'operatività.",
