@@ -35,5 +35,9 @@ pnpm-debug.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-docs
-AGENTS.md
+
+# local/non-canonical project documentation (canonical memory files are tracked)
+docs/*
+!docs/PROJECT_STATE.md
+!docs/DECISIONS.md
+!docs/TODO.md
