@@ -14,8 +14,9 @@ Next.js 16 + React 19 + TypeScript (strict) site for a digital strategy studio i
 - No test suite is configured.
 
 ## i18n (next-intl v4) — check before touching routes/navigation
-- Locales `es` (default), `en`, `it`; `localePrefix: "as-needed"` — see `i18n/routing.ts`.
-- Middleware lives in `proxy.ts` at the repo root, **not** `middleware.ts`.
+- Locales `es` (default), `en`, `it`; `localePrefix: "always"` — every URL is prefixed (`/es/`, `/en/`, `/it/`), see `i18n/routing.ts`. No `proxy.ts`/middleware (incompatible with static export).
+- Static export: `output: "export"` + `trailingSlash: true` in `next.config.ts`. The `basePath` comes from `NEXT_PUBLIC_BASE_PATH` (`/NEXO` only in the GitHub Pages build; empty locally). Never hardcode `/NEXO`.
+- Root `/` is a static `public/index.html` that redirects by `navigator.language` (fallback `es`).
 - Import `Link`, `useRouter`, `usePathname`, `redirect` from `@/i18n/navigation` — never from `next/link` / `next/navigation`.
 - Pages live under `app/[locale]/`. Every page/layout must call `setRequestLocale(locale)` and await `params` (it's a Promise). Use `generateStaticParams()` for locales.
 

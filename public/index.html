@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>NEXO — Estrategia digital y crecimiento</title>
+    <script>
+      ;(function () {
+        function match(lang) {
+          lang = (lang || "").toLowerCase()
+          if (lang.indexOf("es") === 0) return "es"
+          if (lang.indexOf("en") === 0) return "en"
+          if (lang.indexOf("it") === 0) return "it"
+          return null
+        }
+        var locale = null
+        if (navigator.languages && navigator.languages.length) {
+          for (var i = 0; i < navigator.languages.length; i++) {
+            locale = match(navigator.languages[i])
+            if (locale) break
+          }
+        }
+        if (!locale) locale = match(navigator.language)
+        if (!locale) locale = "es"
+        window.location.replace("./" + locale + "/")
+      })()
+    </script>
+    <noscript>
+      <meta http-equiv="refresh" content="0; url=./es/" />
+    </noscript>
+  </head>
+  <body>
+    <p><a href="./es/">NEXO — entrar</a></p>
+  </body>
+</html>
