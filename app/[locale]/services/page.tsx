@@ -1,6 +1,13 @@
-import { getTranslations, setRequestLocale } from "next-intl/server"
+import { setRequestLocale } from "next-intl/server"
 
-import { PagePlaceholder } from "@/components/layout/page-placeholder"
+import { SectionDivider } from "@/components/ui/section-divider"
+import { ServicesHero } from "@/components/sections/services/services-hero"
+import { ServicesPrinciple } from "@/components/sections/services/services-principle"
+import { ServicesCapabilities } from "@/components/sections/services/services-capabilities"
+import { ServicesSystem } from "@/components/sections/services/services-system"
+import { ServicesCollaboration } from "@/components/sections/services/services-collaboration"
+import { ServicesProcess } from "@/components/sections/services/services-process"
+import { ServicesCta } from "@/components/sections/services/services-cta"
 
 type Props = {
   params: Promise<{ locale: string }>
@@ -10,16 +17,21 @@ export default async function ServicesPage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
 
-  const t = await getTranslations("servicesPage")
-  const tp = await getTranslations("pages")
-  const tn = await getTranslations("nav")
-
   return (
-    <PagePlaceholder
-      eyebrow={tn("services")}
-      title={t("title")}
-      body={t("body")}
-      backLabel={tp("back")}
-    />
+    <>
+      <ServicesHero />
+      <SectionDivider />
+      <ServicesPrinciple />
+      <SectionDivider />
+      <ServicesCapabilities />
+      <SectionDivider />
+      <ServicesSystem />
+      <SectionDivider />
+      <ServicesCollaboration />
+      <SectionDivider />
+      <ServicesProcess />
+      <SectionDivider />
+      <ServicesCta />
+    </>
   )
 }
