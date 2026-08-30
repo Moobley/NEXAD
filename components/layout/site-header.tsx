@@ -6,6 +6,7 @@ import { Menu, X } from "lucide-react"
 
 import { Link, usePathname } from "@/i18n/navigation"
 import { LanguageSwitcher } from "@/components/layout/language-switcher"
+import { Logo } from "@/components/layout/logo"
 import { cn } from "@/lib/utils"
 
 const NAV_ITEMS = [
@@ -48,10 +49,10 @@ export function SiteHeader() {
         <div className="mx-auto flex h-16 max-w-[1600px] items-center justify-between px-6 md:h-20 md:px-10">
           <Link
             href="/"
-            className="font-sans text-[15px] font-semibold tracking-[0.28em] text-foreground"
+            className="inline-flex items-center text-foreground"
             onClick={close}
           >
-            NEXO
+            <Logo priority className="h-5" />
           </Link>
 
           <nav
@@ -97,8 +98,8 @@ export function SiteHeader() {
       {open && (
         <div className="surface-obsidian fixed inset-0 z-[60] flex flex-col">
           <div className="mx-auto flex h-16 w-full max-w-[1600px] items-center justify-between px-6">
-            <span className="font-sans text-[15px] font-semibold tracking-[0.28em] text-foreground">
-              NEXO
+            <span className="inline-flex items-center text-foreground">
+              <Logo variant="ivory" className="h-5" />
             </span>
             <button
               type="button"

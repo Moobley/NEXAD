@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server"
 
 import { Link } from "@/i18n/navigation"
+import { Logo } from "@/components/layout/logo"
 
 const NAV_ITEMS = [
   { href: "/work", key: "work" },
@@ -19,8 +20,8 @@ export async function SiteFooter() {
       <div className="mx-auto max-w-[1600px] px-6 py-16 md:px-10 md:py-24">
         <div className="grid gap-14 md:grid-cols-12">
           <div className="md:col-span-5">
-            <p className="font-sans text-2xl font-semibold tracking-[0.28em] text-foreground">
-              NEXO
+            <p className="text-foreground">
+              <Logo variant="ivory" className="h-7" />
             </p>
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-muted-foreground">
               {t("tagline")}

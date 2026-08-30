@@ -16,7 +16,7 @@ export async function Technology() {
   const services = project.services.map((s) => tsv(s))
 
   return (
-    <section className="border-t-0">
+    <section>
       <div className="mx-auto w-full max-w-[1600px] px-6 py-24 md:px-10 md:py-32">
         <Reveal>
           <header className="max-w-2xl">

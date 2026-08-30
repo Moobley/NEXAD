@@ -20,7 +20,7 @@
   },
   "home": {
     "hero": {
-      "meta": "Digital strategy — Gran Canaria",
+      "meta": "Strategy · Design · Technology",
       "coords": "28.1° N — 15.4° W",
       "titleLine1": "We turn digital strategy",
       "titleLine2": "into real growth.",
@@ -99,8 +99,8 @@
       "index": "05",
       "coordsLine1": "28.1° N",
       "coordsLine2": "15.4° W",
-      "line1": "Based in Gran Canaria.",
-      "line2": "Working without borders.",
+      "line1": "Atlantic base.",
+      "line2": "International perspective.",
       "fieldLabel": "Atlantic — light and shadow"
     },
     "cta": {
@@ -139,12 +139,20 @@
       "index": "06",
       "caseStudyLabel": "Case study",
       "title": "Corazón Napoletano",
-      "intro": "A digital strategy built around the business.",
-      "support": "Web, content, advertising and strategy working as one single system.",
+      "projectLabel": "Project",
+      "category": "Food & Hospitality",
+      "headline": "A brand rethought around the customer experience.",
+      "support": "We connected identity, content, menu, touchpoints and digital presence into one single system.",
+      "scope": "Brand identity · Content · Menu + Upselling · QR · Website",
+      "url": "corazonnapoletano.com",
+      "visitLabel": "Visit the website",
       "sector": "Hospitality · Restaurant",
       "resultAmount": "+20%",
-      "resultLabel": "in revenue",
+      "resultLabel": "Revenue from the following month",
       "resultNote": "An integrated digital strategy, from the web experience to acquisition.",
+      "brandLabel": "Brand identity & physical applications",
+      "contentLabel": "Real content",
+      "websiteLabel": "Website",
       "sections": {
         "context": {
           "heading": "Context",
@@ -178,6 +186,74 @@
         "result": {
           "heading": "Result",
           "body": "The combined strategy contributed to an increase of approximately 20% in revenue."
+        }
+      },
+      "caseStudy": {
+        "meta": {
+          "client": "Corazón Napoletano",
+          "category": "Case study — Food & hospitality"
+        },
+        "hero": {
+          "category": "Food & hospitality",
+          "titleA": "A brand built",
+          "titleB": "to be chosen.",
+          "support": "Identity, content, menu, table experience and digital presence designed as one single system.",
+          "resultAmount": "+20%",
+          "resultLabel": "Revenue from the following month"
+        },
+        "system": {
+          "title": "One system, from brand to result.",
+          "steps": [
+            "Brand identity",
+            "Content",
+            "Menu + upselling",
+            "QR",
+            "Website"
+          ]
+        },
+        "identity": {
+          "heading": "Before digital, we built the brand.",
+          "body": "A coherent identity, extended to every touchpoint — digital and physical.",
+          "logoLabel": "Logo",
+          "applicationsTitle": "Physical applications",
+          "applications": ["T-shirts", "Placemats", "Business cards"]
+        },
+        "content": {
+          "heading": "Show the real product.",
+          "body": "Original social content shot in the restaurant — real food, real people.",
+          "frames": ["Food", "Preparation", "Environment", "People"]
+        },
+        "menu": {
+          "heading": "The menu as a tool for choice and sales.",
+          "body": "Re-engineered, not just redesigned — clearer structure, guided choice, integrated upselling.",
+          "mediaLabel": "Menu"
+        },
+        "qr": {
+          "heading": "Less friction between table and choice.",
+          "body": "QR menu access that makes choosing easier — less friction, right at the table.",
+          "placematLabel": "QR on the placemat"
+        },
+        "website": {
+          "heading": "A website that continues the experience.",
+          "body": "The brand and the menu online — with booking and multilingual navigation.",
+          "url": "corazonnapoletano.com",
+          "captions": {
+            "hero": "Hero / brand",
+            "menu": "Menu",
+            "product": "Product",
+            "booking": "Booking",
+            "mobile": "Mobile"
+          }
+        },
+        "result": {
+          "amount": "+20%",
+          "label": "Revenue increase",
+          "timing": "From the following month",
+          "body": "From the month following the introduction of the new system, Corazón Napoletano recorded a 20% increase in revenue.",
+          "nexo": "The result does not come from a single channel. Identity, content, menu, upselling, table experience and digital presence were designed to work together."
+        },
+        "labels": {
+          "mediaNote": "Material on its way"
         }
       }
     },

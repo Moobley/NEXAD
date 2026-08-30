@@ -32,7 +32,13 @@ export function AuroraBackground({
         "aurora absolute inset-0 z-0 overflow-hidden pointer-events-none",
         className
       )}
-      style={{ backgroundColor: baseColor }}
+      style={{
+        backgroundColor: baseColor,
+        maskImage:
+          "linear-gradient(to bottom, black 0%, black 62%, transparent 100%)",
+        WebkitMaskImage:
+          "linear-gradient(to bottom, black 0%, black 62%, transparent 100%)",
+      }}
     >
       <div className="aurora-layer aurora-layer-a" />
       <div className="aurora-layer aurora-layer-b" />
