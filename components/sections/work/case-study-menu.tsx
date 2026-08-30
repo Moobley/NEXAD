@@ -5,7 +5,6 @@ import { CaseMedia } from "@/components/ui/case-media"
 
 export async function CaseStudyMenu() {
   const t = await getTranslations("projects.corazon.caseStudy.menu")
-  const tl = await getTranslations("projects.corazon.caseStudy.labels")
 
   return (
     <section>
@@ -19,6 +18,9 @@ export async function CaseStudyMenu() {
               <p className="mt-8 max-w-sm text-base leading-relaxed text-muted-foreground">
                 {t("body")}
               </p>
+              <p className="mt-8 max-w-sm font-serif text-xl italic leading-snug md:text-2xl">
+                {t("principle")}
+              </p>
             </Reveal>
           </div>
 
@@ -26,8 +28,8 @@ export async function CaseStudyMenu() {
             <Reveal delay={100}>
               <CaseMedia
                 label={t("mediaLabel")}
-                note={tl("mediaNote")}
                 tone="light"
+                watermark={t("watermark")}
                 className="aspect-[4/3]"
               />
             </Reveal>

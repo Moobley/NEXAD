@@ -9,9 +9,8 @@ export async function Technology() {
   const t = await getTranslations("home.technology")
   const ts = await getTranslations("home.shared")
   const tsv = await getTranslations("services")
-  const tp = await getTranslations("projects.placeholder")
 
-  const project = projects.find((p) => p.kind === "platform")!
+  const project = projects.find((p) => p.type === "lab")!
   const tb = await getTranslations(project.ns)
   const services = project.services.map((s) => tsv(s))
 
@@ -56,20 +55,28 @@ export async function Technology() {
                   {tb("title")}
                 </h3>
                 <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
-                  {tb("sector")}
+                  {tb("category")}
                 </p>
                 <p className="mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">
-                  {tb("intro")}
+                  {tb("support")}
                 </p>
               </div>
 
               <dl className="grid shrink-0 grid-cols-2 gap-x-12 gap-y-5 md:grid-cols-1 md:gap-y-2 md:text-right">
                 <div>
                   <dt className="font-mono text-[11px] tracking-[0.2em] text-muted-foreground">
-                    {ts("client")}
+                    {ts("project")}
                   </dt>
                   <dd className="mt-1 font-mono text-[11px] tracking-[0.15em] text-foreground">
-                    {tp("client")}
+                    {tb("clientLabel")}
+                  </dd>
+                </div>
+                <div>
+                  <dt className="font-mono text-[11px] tracking-[0.2em] text-muted-foreground">
+                    {ts("status")}
+                  </dt>
+                  <dd className="mt-1 font-mono text-[11px] tracking-[0.15em] text-foreground">
+                    {tb("lab.hero.status")}
                   </dd>
                 </div>
                 <div>
@@ -78,14 +85,6 @@ export async function Technology() {
                   </dt>
                   <dd className="mt-1 font-mono text-[11px] tracking-[0.15em] text-foreground">
                     {services.join(" · ")}
-                  </dd>
-                </div>
-                <div>
-                  <dt className="font-mono text-[11px] tracking-[0.2em] text-muted-foreground">
-                    {ts("year")}
-                  </dt>
-                  <dd className="mt-1 font-mono text-[11px] tracking-[0.15em] text-foreground">
-                    {tp("year")}
                   </dd>
                 </div>
               </dl>

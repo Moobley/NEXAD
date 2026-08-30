@@ -7,7 +7,7 @@ import { asset } from "@/lib/asset"
 
 export async function CaseStudyIdentity() {
   const t = await getTranslations("projects.corazon.caseStudy.identity")
-  const tl = await getTranslations("projects.corazon.caseStudy.labels")
+  const labels = t.raw("labels") as string[]
   const applications = t.raw("applications") as string[]
 
   return (
@@ -22,6 +22,16 @@ export async function CaseStudyIdentity() {
               <p className="mt-8 max-w-md text-base leading-relaxed text-muted-foreground">
                 {t("body")}
               </p>
+              <ul className="mt-8 flex flex-wrap gap-2 font-mono text-[10px] uppercase tracking-[0.18em] text-foreground/70">
+                {labels.map((label) => (
+                  <li
+                    key={label}
+                    className="border border-obsidian/10 px-3 py-1.5"
+                  >
+                    {label}
+                  </li>
+                ))}
+              </ul>
             </Reveal>
           </div>
 
@@ -49,14 +59,13 @@ export async function CaseStudyIdentity() {
               {t("applicationsTitle")}
             </p>
           </Reveal>
-
           <div className="mt-8 grid gap-8 md:grid-cols-3 md:gap-6">
             {applications.map((app, i) => (
               <Reveal key={app} delay={i * 80}>
                 <CaseMedia
                   label={app}
-                  note={tl("mediaNote")}
                   tone="light"
+                  watermark={app}
                   className="aspect-[4/5]"
                 />
               </Reveal>

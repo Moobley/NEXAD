@@ -1,6 +1,9 @@
-import { getTranslations, setRequestLocale } from "next-intl/server"
+import { setRequestLocale } from "next-intl/server"
 
-import { PagePlaceholder } from "@/components/layout/page-placeholder"
+import { SectionDivider } from "@/components/ui/section-divider"
+import { ContactHero } from "@/components/sections/contact/contact-hero"
+import { ContactFormSection } from "@/components/sections/contact/contact-form-section"
+import { ContactPhilosophy } from "@/components/sections/contact/contact-philosophy"
 
 type Props = {
   params: Promise<{ locale: string }>
@@ -10,16 +13,13 @@ export default async function ContactPage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
 
-  const t = await getTranslations("contactPage")
-  const tp = await getTranslations("pages")
-  const tn = await getTranslations("nav")
-
   return (
-    <PagePlaceholder
-      eyebrow={tn("contact")}
-      title={t("title")}
-      body={t("body")}
-      backLabel={tp("back")}
-    />
+    <>
+      <ContactHero />
+      <SectionDivider />
+      <ContactFormSection />
+      <SectionDivider />
+      <ContactPhilosophy />
+    </>
   )
 }

@@ -5,25 +5,27 @@ import { cn } from "@/lib/utils"
 type CaseMediaProps = {
   /** Editorial annotation shown under the plate. */
   label: string
-  /** Placeholder hint, only shown while no real media is mounted. */
-  note?: string
   tone?: "light" | "dark"
   className?: string
+  /** Big typographic word rendered inside the editorial surface. */
+  watermark?: string
+  /** Real media (e.g. an <Image>) replaces the decorative surface entirely. */
   children?: ReactNode
 }
 
 /**
- * Editorial media plate for the case study.
+ * Editorial media plate for projects.
  *
- * Renders a bordered, art-directed plate with a small annotation below.
- * Pass `children` (e.g. a real <Image>, the CN logo, or a website capture)
- * to replace the placeholder surface without touching layout.
+ * Renders a bordered, art-directed surface (gradient, grain, registration
+ * marks, optional typographic watermark) with an annotation below. Pass
+ * `children` — e.g. a real <Image> — to swap in real media without touching
+ * layout.
  */
 export function CaseMedia({
   label,
-  note,
   tone = "light",
   className,
+  watermark,
   children,
 }: CaseMediaProps) {
   const dark = tone === "dark"
@@ -58,23 +60,22 @@ export function CaseMedia({
             aria-hidden
             className="absolute bottom-6 left-6 h-px w-8 bg-current opacity-25"
           />
-          {note && (
+          {watermark && (
             <p
+              aria-hidden
               className={cn(
-                "absolute right-6 top-6 font-mono text-[9px] uppercase tracking-[0.28em]",
-                dark ? "text-ivory/40" : "text-obsidian/40"
+                "absolute inset-0 flex items-center justify-center p-6 text-center font-sans text-2xl font-medium tracking-tight md:text-4xl",
+                dark ? "text-ivory/50" : "text-obsidian/45"
               )}
             >
-              {note}
+              {watermark}
             </p>
           )}
         </>
       )}
 
       <figcaption
-        className={cn(
-          "absolute bottom-0 inset-x-0 flex items-end justify-between px-6 pb-5"
-        )}
+        className="absolute inset-x-0 bottom-0 flex items-end justify-between px-6 pb-5"
       >
         <p
           className={cn(

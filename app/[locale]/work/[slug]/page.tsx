@@ -1,9 +1,9 @@
 import { notFound } from "next/navigation"
-import { getTranslations, setRequestLocale } from "next-intl/server"
+import { setRequestLocale } from "next-intl/server"
 
 import { routing } from "@/i18n/routing"
-import { PagePlaceholder } from "@/components/layout/page-placeholder"
 import { CorazonCaseStudy } from "@/components/sections/work/corazon-case-study"
+import { BarberLab } from "@/components/sections/work/barber-lab"
 import { projects } from "@/content/projects"
 
 export function generateStaticParams() {
@@ -25,20 +25,9 @@ export default async function WorkSlugPage({ params }: Props) {
     notFound()
   }
 
-  if (slug === "corazon-napoletano") {
+  if (project.type === "client") {
     return <CorazonCaseStudy />
   }
 
-  const t = await getTranslations("workSlug")
-  const tn = await getTranslations(project.ns)
-  const tp = await getTranslations("pages")
-
-  return (
-    <PagePlaceholder
-      eyebrow={project.index}
-      title={tn("title")}
-      body={t("body")}
-      backLabel={tp("back")}
-    />
-  )
+  return <BarberLab />
 }

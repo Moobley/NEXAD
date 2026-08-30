@@ -110,11 +110,9 @@
       "action": "Cuéntanos tu objetivo"
     },
     "shared": {
-      "client": "Cliente",
-      "sector": "Sector",
-      "location": "Ubicación",
-      "services": "Servicios",
-      "year": "Año"
+      "project": "Proyecto",
+      "status": "Estado",
+      "services": "Servicios"
     }
   },
   "services": {
@@ -129,145 +127,255 @@
     "development": "Desarrollo"
   },
   "projects": {
-    "placeholder": {
-      "client": "Cliente · por confirmar",
-      "year": "Año · por confirmar",
-      "images": "Imágenes del proyecto pendientes"
-    },
     "corazon": {
-      "index": "06",
-      "caseStudyLabel": "Caso de estudio",
+      "index": "01",
+      "clientLabel": "Client Work",
       "title": "Corazón Napoletano",
-      "projectLabel": "Proyecto",
       "category": "Restauración",
-      "headline": "Una marca repensada alrededor de la experiencia del cliente.",
-      "support": "Conectamos identidad, contenido, carta, puntos de contacto y presencia digital en un único sistema.",
-      "scope": "Identidad de marca · Contenido · Carta + Upselling · QR · Web",
+      "location": "Las Palmas · Gran Canaria",
       "url": "corazonnapoletano.com",
-      "visitLabel": "Visitar la web",
-      "sector": "Restauración",
+      "headline": "Una nueva apertura construida como un único sistema.",
+      "support": "Identidad, contenido, carta, experiencia física, web y captación pensados juntos desde el primer día.",
+      "scope": "Identidad · Contenido · Carta + Upselling · QR · Web · Captación",
       "resultAmount": "+20%",
       "resultLabel": "Facturación desde el mes siguiente",
-      "resultNote": "Una estrategia digital integrada, desde la experiencia web hasta la captación.",
-      "brandLabel": "Identidad de marca y aplicaciones físicas",
-      "contentLabel": "Contenido real",
+      "cta": "Ver caso de estudio",
+      "brandLabel": "Identidad y aplicaciones",
+      "contentLabel": "Contenido",
       "websiteLabel": "Web",
-      "sections": {
-        "context": {
-          "heading": "Contexto",
-          "body": "Un restaurante necesita más que una web atractiva. Su presencia digital debe ayudar a descubrir la marca, entender la oferta, ver la carta, tomar una decisión, contactar o reservar, y recordar el restaurante."
-        },
-        "approach": {
-          "heading": "Enfoque",
-          "steps": [
-            {
-              "title": "Presencia digital",
-              "body": "Diseño y desarrollo de la web."
-            },
-            {
-              "title": "Carta digital",
-              "body": "Una experiencia de carta diseñada para hacer la oferta del restaurante inmediatamente accesible online."
-            },
-            {
-              "title": "Captación",
-              "body": "Campañas de publicidad de pago a través de plataformas publicitarias."
-            },
-            {
-              "title": "Contenido",
-              "body": "Creación y publicación de contenido digital."
-            },
-            {
-              "title": "Estrategia",
-              "body": "Recomendaciones y dirección estratégica continuas, según las necesidades del negocio y del sector."
-            }
-          ]
-        },
-        "result": {
-          "heading": "Resultado",
-          "body": "La estrategia combinada contribuyó a un aumento de aproximadamente el 20% en la facturación."
-        }
-      },
       "caseStudy": {
         "meta": {
           "client": "Corazón Napoletano",
-          "category": "Caso de estudio — Restauración"
+          "category": "Client Work · Restauración"
         },
         "hero": {
-          "category": "Restauración",
           "titleA": "Una marca construida",
           "titleB": "para hacerse elegir.",
-          "support": "Identidad, contenidos, carta, experiencia en el local y presencia digital diseñados como un único sistema.",
+          "support": "Una nueva apertura donde identidad, contenido, carta, experiencia en el local, web y captación se diseñaron como un único sistema.",
           "resultAmount": "+20%",
-          "resultLabel": "Facturación desde el mes siguiente"
+          "resultLabel": "Incremento de facturación",
+          "timing": "Desde el mes siguiente"
+        },
+        "context": {
+          "eyebrow": "El punto de partida",
+          "heading": "Una apertura nueva significa tomar muchas decisiones antes de tener datos.",
+          "body": "Corazón Napoletano partía desde cero. La oportunidad era construir marca, experiencia y presencia digital al mismo tiempo, evitando que cada punto de contacto creciera como una pieza independiente.",
+          "body2": "El reto no era simplemente estar online. Era conseguir que lo que alguien veía en una campaña, encontraba en la web, leía en la carta y vivía en el restaurante contara la misma historia."
         },
         "system": {
-          "title": "Un único sistema, de la marca al resultado.",
-          "steps": [
-            "Identidad de marca",
+          "title": "No diseñamos piezas. Diseñamos cómo se relacionan.",
+          "support": "Cada elemento tenía una función diferente, pero todos debían reforzar la misma percepción y facilitar la siguiente acción.",
+          "flow": [
+            "Identidad",
             "Contenido",
-            "Carta + upselling",
-            "QR",
-            "Web"
+            "Carta",
+            "Experiencia",
+            "Web",
+            "Captación",
+            "Datos",
+            "Optimización"
           ]
         },
         "identity": {
-          "heading": "Antes de lo digital, construimos la marca.",
-          "body": "Una identidad coherente, extendida a cada punto de contacto — digital y físico.",
+          "heading": "Antes de comunicar la marca, había que construirla.",
+          "body": "Definimos una identidad capaz de vivir tanto en pantalla como dentro del restaurante, buscando coherencia entre lo que la marca promete y lo que el cliente encuentra.",
+          "labels": [
+            "Identidad",
+            "Logo",
+            "Color",
+            "Tipografía",
+            "Aplicaciones"
+          ],
           "logoLabel": "Logo",
           "applicationsTitle": "Aplicaciones físicas",
-          "applications": ["Camisetas", "Mantelillos", "Tarjetas de visita"]
+          "applications": [
+            "Camisetas",
+            "Mantelillos",
+            "Tarjetas de visita"
+          ]
         },
         "content": {
-          "heading": "Mostrar el producto real.",
-          "body": "Contenido social original rodado en el local — comida real, personas reales.",
-          "frames": ["Comida", "Preparación", "Ambiente", "Personas"]
+          "heading": "Mostrar el producto real, no una versión genérica del restaurante.",
+          "body": "La dirección de contenido se construyó alrededor de producto, preparación, ambiente y personas. Contenido pensado para hacer reconocible la marca y alimentar tanto los canales orgánicos como la captación.",
+          "frames": [
+            "Producto",
+            "Preparación",
+            "Ambiente",
+            "Personas",
+            "Reels"
+          ]
         },
         "menu": {
-          "heading": "La carta como herramienta de elección y venta.",
-          "body": "Reingenierizada, no solo rediseñada — estructura más clara, elección guiada, upselling integrado.",
-          "mediaLabel": "Carta"
+          "heading": "La carta también forma parte de la estrategia.",
+          "body": "Reorganizamos información, jerarquías y recorridos de elección para hacer la oferta más fácil de entender y crear oportunidades de upselling sin convertir la experiencia en presión comercial.",
+          "principle": "Elegir mejor puede significar vender mejor.",
+          "watermark": "Carta",
+          "mediaLabel": "Carta · Arquitectura de información · Upselling"
         },
         "qr": {
-          "heading": "Menos fricción entre mesa y elección.",
-          "body": "Acceso a la carta por QR que facilita elegir — menos fricción, en la propia mesa.",
-          "placematLabel": "QR en el mantelillo"
+          "heading": "Lo digital también empieza en la mesa.",
+          "body": "Integramos el acceso QR dentro de la experiencia física para reducir pasos entre descubrir la oferta y elegir, manteniendo continuidad visual con el resto de la marca.",
+          "mediaLabel": "QR en mantelillo"
         },
         "website": {
-          "heading": "Una web que continúa la experiencia.",
-          "body": "La marca y la carta online — con reserva y navegación multilingüe.",
+          "heading": "La web continúa lo que empieza fuera de ella.",
+          "body": "Diseñamos y desarrollamos una experiencia capaz de presentar la marca, enseñar la carta y reducir la distancia entre interés y reserva, con navegación adaptada a diferentes idiomas.",
           "url": "corazonnapoletano.com",
-          "captions": {
-            "hero": "Hero / marca",
-            "menu": "Carta",
-            "product": "Producto",
-            "booking": "Reserva",
-            "mobile": "Móvil"
-          }
+          "cta": "Visitar la web",
+          "captions": [
+            "Hero",
+            "Carta",
+            "Producto",
+            "Reserva",
+            "Mobile"
+          ]
+        },
+        "acquisition": {
+          "eyebrow": "Captación",
+          "heading": "Construir el sistema era solo la mitad. Había que llevar personas hasta él.",
+          "body": "Activamos campañas de captación en Meta Ads y Google Ads, conectando creatividad, mensaje, intención de búsqueda y experiencia digital para generar demanda alrededor de la nueva apertura.",
+          "channels": [
+            "Meta Ads",
+            "Google Ads"
+          ],
+          "closing": "Campaña y destino se optimizan mejor cuando se diseñan como partes del mismo recorrido."
         },
         "result": {
+          "eyebrow": "Resultado",
           "amount": "+20%",
-          "label": "Incremento de la facturación",
+          "label": "Incremento de facturación",
           "timing": "Desde el mes siguiente",
-          "body": "Desde el mes siguiente a la introducción del nuevo sistema, Corazón Napoletano registró un incremento de la facturación del 20%.",
-          "nexo": "El resultado no nace de un único canal. Identidad, contenidos, carta, upselling, experiencia en el local y presencia digital se diseñaron para trabajar juntos."
+          "body": "Desde el mes siguiente a la puesta en marcha del nuevo sistema, Corazón Napoletano registró un incremento de facturación del 20%.",
+          "statement": "No atribuimos el resultado a una única pieza. Marca, contenido, carta, experiencia, web y captación fueron diseñados para reforzarse entre sí.",
+          "note": "Resultado correspondiente a este proyecto y contexto concreto."
         },
-        "labels": {
-          "mediaNote": "Material en camino"
+        "next": {
+          "label": "Siguiente · NEXO Lab",
+          "title": "Barber Booking",
+          "cta": "Explorar el producto"
         }
       }
     },
     "barber": {
-      "title": "Plataforma de reservas",
-      "intro": "Aplicación web de reservas para barbería: los clientes reservan cita online con autonomía. Diseño de producto, UX y desarrollo.",
-      "sector": "Producto digital"
+      "index": "02",
+      "clientLabel": "NEXO Lab",
+      "title": "Barber Booking",
+      "category": "Producto digital · Reservas",
+      "status": "Producto en desarrollo",
+      "headline": "Repensar la reserva desde ambos lados del mostrador.",
+      "support": "Una plataforma de reservas diseñada para barberías, explorando cómo simplificar la experiencia del cliente y dar al negocio más control sobre agenda, servicios, profesionales y datos.",
+      "scope": "Reservas · Agenda · Servicios · Profesionales · Datos",
+      "cta": "Explorar el producto",
+      "lab": {
+        "hero": {
+          "titleLine1": "Reservar debería ser fácil.",
+          "titleLine2": "Gestionar las reservas, también.",
+          "support": "Barber Booking explora una experiencia de reserva construida para barberías: sencilla para quien pide cita y útil para quien gestiona el negocio.",
+          "status": "En desarrollo"
+        },
+        "problem": {
+          "eyebrow": "El problema",
+          "heading": "Dos experiencias distintas comparten la misma agenda.",
+          "body": "Quien reserva quiere encontrar un hueco y terminar en pocos pasos. Quien gestiona necesita saber quién viene, qué servicio ha elegido, con qué profesional y cómo está funcionando el negocio.",
+          "closing": "El producto tiene que simplificar ambos lados."
+        },
+        "sides": {
+          "customer": {
+            "label": "Reservar",
+            "flow": [
+              "Servicio",
+              "Profesional",
+              "Disponibilidad",
+              "Confirmación"
+            ],
+            "body": "Reducir decisiones innecesarias y hacer que encontrar una cita disponible sea inmediato."
+          },
+          "business": {
+            "label": "Gestionar",
+            "flow": [
+              "Agenda",
+              "Servicios",
+              "Equipo",
+              "Clientes",
+              "Datos"
+            ],
+            "body": "Dar al negocio una vista operativa clara sin obligarlo a saltar entre herramientas diferentes."
+          }
+        },
+        "customer": {
+          "eyebrow": "Reservar",
+          "heading": "Menos pasos entre intención y cita.",
+          "features": [
+            "Selección de servicio",
+            "Selección de profesional",
+            "Calendario y disponibilidad",
+            "Modificar o cancelar",
+            "Acceso con cuenta"
+          ]
+        },
+        "business": {
+          "eyebrow": "Gestionar",
+          "heading": "La reserva termina para el cliente. Para el negocio, ahí empieza la operación.",
+          "features": [
+            "Dashboard de administración",
+            "Servicios y precios",
+            "Equipo y profesionales",
+            "Clientes",
+            "Agenda",
+            "Estadísticas"
+          ]
+        },
+        "principles": {
+          "eyebrow": "Principios",
+          "list": [
+            {
+              "title": "Pocos pasos",
+              "body": "La reserva debe sentirse inmediata."
+            },
+            {
+              "title": "Información clara",
+              "body": "Disponibilidad, servicios y profesionales sin ambigüedad."
+            },
+            {
+              "title": "Una sola operación",
+              "body": "Agenda, clientes y servicios conectados."
+            },
+            {
+              "title": "Datos utilizables",
+              "body": "Estadísticas pensadas para entender, no decorar una dashboard."
+            }
+          ]
+        },
+        "adaptability": {
+          "eyebrow": "Diseñado desde un caso concreto",
+          "headingPrefix": "Específico primero. ",
+          "headingAccent": "Adaptable después.",
+          "body": "Barber Booking parte de las necesidades de una barbería. Muchos de sus patrones — servicios, profesionales, disponibilidad, clientes y agenda — también existen en otros negocios basados en citas. La prioridad, sin embargo, es resolver bien un contexto antes de generalizarlo."
+        },
+        "status": {
+          "eyebrow": "Estado",
+          "heading": "En desarrollo.",
+          "body": "El producto sigue evolucionando mientras validamos flujos, interfaz y arquitectura. Lo mostramos como parte de NEXO Lab porque el proceso también representa cómo pensamos producto y tecnología."
+        },
+        "next": {
+          "label": "Client Work",
+          "title": "Corazón Napoletano",
+          "cta": "Ver caso de estudio"
+        }
+      }
     }
   },
   "workPage": {
-    "title": "Trabajos",
-    "body": "La selección completa de proyectos se publicará aquí. Por ahora, la cartera se muestra en la portada."
-  },
-  "workSlug": {
-    "body": "El caso de estudio completo se está construyendo. La información del cliente y del proyecto se incorporará próximamente."
+    "hero": {
+      "eyebrow": "Trabajo",
+      "coords": "28.1° N — 15.4° W",
+      "titleLine1": "El resultado importa.",
+      "titleLine2Prefix": "El camino hasta él, ",
+      "titleLine2Accent": "también.",
+      "support": "Una selección de proyectos donde estrategia, diseño, marketing y tecnología se conectan alrededor de un problema real.",
+      "statement": "Cliente o laboratorio. Siempre empezamos por entender qué merece la pena resolver."
+    },
+    "back": "Volver a trabajos"
   },
   "servicesPage": {
     "hero": {
@@ -278,7 +386,13 @@
       "titleLine2Accent": "juntos.",
       "support": "Conectamos estrategia, marketing, contenido y tecnología alrededor de un objetivo de negocio.",
       "cta": "Cuéntanos tu objetivo",
-      "systemLine": ["Estrategia", "Marketing", "Contenido", "Experiencia", "Tecnología"]
+      "systemLine": [
+        "Estrategia",
+        "Marketing",
+        "Contenido",
+        "Experiencia",
+        "Tecnología"
+      ]
     },
     "principle": {
       "index": "01",
@@ -469,7 +583,12 @@
       "title": "Los datos no sirven si nadie los convierte en decisiones.",
       "body": "Un cliente no debería recibir una campaña, una gráfica y una lista de métricas para después quedarse solo intentando entender qué hacer con ellas.",
       "body2": "Medimos para aprender. Interpretamos para decidir. Y decidimos para mejorar la siguiente acción.",
-      "flow": ["Datos", "Lectura", "Decisión", "Acción"],
+      "flow": [
+        "Datos",
+        "Lectura",
+        "Decisión",
+        "Acción"
+      ],
       "closing": "La métrica no es el resultado. Es información para llegar a él."
     },
     "approach": {
@@ -552,7 +671,12 @@
       "eyebrow": "El equipo adecuado",
       "title": "Un núcleo pequeño. Los especialistas que el proyecto necesita.",
       "body": "No creemos en inflar una estructura para poder decir que todo sucede dentro de casa. NEXO mantiene la dirección estratégica y la responsabilidad del proyecto, y suma perfiles especializados cuando el trabajo lo requiere.",
-      "examples": ["Fotografía", "Vídeo", "Producción", "Especialistas de proyecto"],
+      "examples": [
+        "Fotografía",
+        "Vídeo",
+        "Producción",
+        "Especialistas de proyecto"
+      ],
       "closing": "Una sola dirección. El equipo adecuado alrededor de ella."
     },
     "location": {
@@ -572,8 +696,69 @@
     }
   },
   "contactPage": {
-    "title": "Contacto",
-    "body": "El formulario de proyecto se añadirá aquí próximamente. Mientras tanto, escríbenos a hola@nexo.studio."
+    "hero": {
+      "eyebrow": "Contacto",
+      "coords": "28.1° N — 15.4° W",
+      "titleLine1": "Cuéntanos qué ",
+      "titleLine2Prefix": "tiene que ",
+      "titleLine2Accent": "cambiar.",
+      "support": "No necesitas saber qué servicio contratar. Cuéntanos dónde estás, qué quieres conseguir y qué no está funcionando como debería. Empezamos desde ahí.",
+      "microcopy": "Las Palmas · Trabajamos en todas las Islas Canarias"
+    },
+    "intro": {
+      "eyebrow": "Empecemos",
+      "heading": "No hace falta llegar con la solución.",
+      "body": "Danos contexto. Nosotros empezaremos por hacer las preguntas adecuadas."
+    },
+    "form": {
+      "nameLabel": "Nombre",
+      "namePlaceholder": "Tu nombre",
+      "emailLabel": "Email",
+      "emailPlaceholder": "tu@email.com",
+      "businessLabel": "Negocio o proyecto",
+      "businessPlaceholder": "¿Cómo se llama?",
+      "stageLabel": "¿En qué punto estás?",
+      "stageOptions": [
+        { "value": "new_business", "label": "Voy a lanzar un nuevo negocio" },
+        { "value": "existing_business", "label": "Tengo un negocio en marcha" },
+        { "value": "software_product", "label": "Necesito desarrollar un producto o software" },
+        { "value": "other", "label": "Tengo otro tipo de proyecto" }
+      ],
+      "servicesLabel": "¿Dónde crees que podemos ayudarte?",
+      "servicesSupport": "Puedes elegir más de una. Si no lo tienes claro, también está bien.",
+      "servicesOptions": [
+        { "value": "strategy", "label": "Estrategia digital" },
+        { "value": "paid_media", "label": "Paid Media" },
+        { "value": "social_content", "label": "Social y contenido" },
+        { "value": "web", "label": "Web y experiencias digitales" },
+        { "value": "software_automation", "label": "Software y automatización" },
+        { "value": "not_sure", "label": "No lo tengo claro todavía" }
+      ],
+      "messageLabel": "¿Qué quieres que cambie?",
+      "messageSupport": "Cuéntanos qué quieres conseguir, qué no está funcionando o qué oportunidad ves.",
+      "messagePlaceholder": "Por ejemplo: queremos aumentar las reservas directas, estamos preparando una nueva apertura, necesitamos ordenar nuestro sistema de citas...",
+      "submit": "Enviar proyecto",
+      "submitting": "Enviando…",
+      "errors": {
+        "name": "Cuéntanos tu nombre.",
+        "email": "Introduce un email válido.",
+        "business": "¿Cómo se llama tu negocio o proyecto?",
+        "stage": "Selecciona tu punto de partida.",
+        "message": "Cuéntanos qué quieres cambiar."
+      },
+      "submitError": "No hemos podido enviar el mensaje. Inténtalo de nuevo.",
+      "configError": "El formulario todavía no está disponible."
+    },
+    "success": {
+      "eyebrow": "Recibido",
+      "heading": "Ya tenemos el contexto.",
+      "body": "Gracias por contárnoslo. Revisaremos lo que nos has enviado y continuaremos la conversación contigo.",
+      "cta": "Volver al inicio"
+    },
+    "philosophy": {
+      "flow": ["Problema", "Contexto", "Preguntas", "Dirección"],
+      "support": "La primera conversación no empieza vendiendo una solución. Empieza entendiendo mejor el problema."
+    }
   },
   "notFound": {
     "title": "Página no encontrada",

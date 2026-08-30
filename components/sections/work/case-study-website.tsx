@@ -3,10 +3,11 @@ import { ArrowUpRight } from "lucide-react"
 
 import { Reveal } from "@/components/ui/reveal"
 import { CaseMedia } from "@/components/ui/case-media"
+import { cn } from "@/lib/utils"
 
 export async function CaseStudyWebsite() {
   const t = await getTranslations("projects.corazon.caseStudy.website")
-  const tl = await getTranslations("projects.corazon.caseStudy.labels")
+  const captions = t.raw("captions") as string[]
 
   return (
     <section>
@@ -21,7 +22,6 @@ export async function CaseStudyWebsite() {
                 {t("body")}
               </p>
             </Reveal>
-
             <Reveal delay={120}>
               <a
                 href={`https://${t("url")}`}
@@ -39,51 +39,53 @@ export async function CaseStudyWebsite() {
 
           <div className="lg:col-span-8">
             <Reveal delay={100}>
-              <CaseMedia
-                label={t("captions.hero")}
-                note={tl("mediaNote")}
-                tone="light"
-                className="aspect-[16/10]"
-              />
+              <CaseMedia label={captions[0]} tone="light" className="aspect-[16/10]">
+                <div
+                  aria-hidden
+                  className="absolute inset-0 bg-[radial-gradient(130%_130%_at_70%_15%,#e7e3d6_0%,#f2efe8_48%,#d8d2c3_100%)]"
+                >
+                  <div className="absolute inset-x-0 top-0 flex h-10 items-center gap-2 border-b border-obsidian/10 bg-ivory/70 px-4">
+                    <span className="h-2 w-2 rounded-full bg-obsidian/20" />
+                    <span className="h-2 w-2 rounded-full bg-obsidian/20" />
+                    <span className="h-2 w-2 rounded-full bg-obsidian/20" />
+                    <span className="ml-2 h-4 flex-1 border border-obsidian/10 px-3 py-1 font-mono text-[9px] tracking-[0.15em] text-obsidian/50">
+                      {t("url")}
+                    </span>
+                  </div>
+                  <div className="absolute inset-0 flex items-center justify-center pt-10">
+                    <p className="font-serif text-3xl italic text-obsidian/45 md:text-5xl">
+                      {captions[0]}
+                    </p>
+                  </div>
+                </div>
+              </CaseMedia>
             </Reveal>
-            <div className="mt-6 grid grid-cols-2 gap-6">
-              <Reveal delay={160}>
-                <CaseMedia
-                  label={t("captions.menu")}
-                  note={tl("mediaNote")}
-                  tone="light"
-                  className="aspect-[4/5]"
-                />
-              </Reveal>
-              <Reveal delay={220}>
-                <CaseMedia
-                  label={t("captions.product")}
-                  note={tl("mediaNote")}
-                  tone="light"
-                  className="aspect-[4/5] mt-10"
-                />
-              </Reveal>
+
+            <div className="mt-6 grid grid-cols-2 gap-6 md:gap-8">
+              {captions.slice(1, 3).map((caption, i) => (
+                <Reveal key={caption} delay={160 + i * 60}>
+                  <CaseMedia
+                    label={caption}
+                    tone="light"
+                    watermark={caption}
+                    className={cn("aspect-[4/5]", i === 1 && "mt-10")}
+                  />
+                </Reveal>
+              ))}
+            </div>
+            <div className="mt-6 grid grid-cols-2 gap-6 md:gap-8">
+              {captions.slice(3).map((caption, i) => (
+                <Reveal key={caption} delay={200 + i * 60}>
+                  <CaseMedia
+                    label={caption}
+                    tone={i === 0 ? "dark" : "light"}
+                    watermark={caption}
+                    className="aspect-[16/9]"
+                  />
+                </Reveal>
+              ))}
             </div>
           </div>
-        </div>
-
-        <div className="mt-16 grid gap-6 md:grid-cols-2 md:gap-8">
-          <Reveal delay={120}>
-            <CaseMedia
-              label={t("captions.booking")}
-              note={tl("mediaNote")}
-              tone="dark"
-              className="aspect-[16/9]"
-            />
-          </Reveal>
-          <Reveal delay={200}>
-            <CaseMedia
-              label={t("captions.mobile")}
-              note={tl("mediaNote")}
-              tone="light"
-              className="aspect-[16/9]"
-            />
-          </Reveal>
         </div>
       </div>
     </section>

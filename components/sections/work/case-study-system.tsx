@@ -1,10 +1,11 @@
 import { getTranslations } from "next-intl/server"
 
 import { Reveal } from "@/components/ui/reveal"
+import { Flow } from "@/components/ui/flow"
 
 export async function CaseStudySystem() {
   const t = await getTranslations("projects.corazon.caseStudy.system")
-  const steps = t.raw("steps") as string[]
+  const flow = t.raw("flow") as string[]
 
   return (
     <div className="surface-obsidian">
@@ -19,11 +20,13 @@ export async function CaseStudySystem() {
             {t("title")}
           </h2>
         </Reveal>
-
         <Reveal delay={120}>
-          <p className="mt-12 max-w-4xl font-mono text-[11px] uppercase leading-loose tracking-[0.22em] text-muted-foreground">
-            {steps.join(" · ")}
+          <p className="mt-8 max-w-2xl text-base leading-relaxed text-muted-foreground">
+            {t("support")}
           </p>
+        </Reveal>
+        <Reveal delay={200}>
+          <Flow steps={flow} surface="dark" className="mt-12 md:mt-16" />
         </Reveal>
       </div>
 

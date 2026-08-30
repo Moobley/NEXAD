@@ -15,7 +15,7 @@ export async function CaseStudyResult() {
       <div className="mx-auto w-full max-w-[1600px] px-6 py-24 md:px-10 md:py-40">
         <Reveal>
           <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
-            {t("timing")}
+            {t("eyebrow")}
           </p>
         </Reveal>
 
@@ -31,13 +31,19 @@ export async function CaseStudyResult() {
               <p className="font-sans text-3xl font-medium tracking-tight text-foreground md:text-4xl">
                 {t("label")}
               </p>
+              <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
+                {t("timing")}
+              </p>
             </div>
             <div className="lg:col-span-7">
               <p className="max-w-xl text-base leading-relaxed text-muted-foreground">
                 {t("body")}
               </p>
               <p className="mt-8 max-w-xl border-t border-border pt-6 font-serif text-xl italic leading-snug text-foreground md:text-2xl">
-                {t("nexo")}
+                {t("statement")}
+              </p>
+              <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+                {t("note")}
               </p>
             </div>
           </div>

@@ -57,6 +57,9 @@ export async function CaseStudyHero() {
               <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
                 {t("resultLabel")}
               </p>
+              <p className="mt-2 font-mono text-[11px] tracking-[0.25em] text-muted-foreground">
+                {t("timing")}
+              </p>
             </div>
           </Reveal>
         </div>

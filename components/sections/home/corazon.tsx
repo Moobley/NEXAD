@@ -8,8 +8,6 @@ import { asset } from "@/lib/asset"
 
 export async function Corazon() {
   const tc = await getTranslations("projects.corazon")
-  const tl = await getTranslations("projects.corazon.caseStudy.labels")
-  const note = tl("mediaNote")
 
   return (
     <div className="surface-obsidian">
@@ -29,7 +27,7 @@ export async function Corazon() {
               />
             </span>
             <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
-              {tc("projectLabel")} / {tc("category")}
+              {tc("clientLabel")} / {tc("category")}
             </p>
           </div>
         </Reveal>
@@ -70,16 +68,16 @@ export async function Corazon() {
             <Reveal delay={120} className="lg:mt-10">
               <CaseMedia
                 label={tc("contentLabel")}
-                note={note}
                 tone="dark"
+                watermark={tc("contentLabel")}
                 className="aspect-[4/3] lg:aspect-[16/10]"
               />
             </Reveal>
             <Reveal delay={200}>
               <CaseMedia
                 label={tc("websiteLabel")}
-                note={note}
                 tone="light"
+                watermark={tc("websiteLabel")}
                 className="aspect-[4/3] lg:aspect-[16/10]"
               />
             </Reveal>
