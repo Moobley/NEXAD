@@ -1,7 +1,39 @@
 {
-  "metadata": {
-    "title": "NEXO — Digital strategy & growth · Gran Canaria",
-    "description": "NEXO is a digital strategy and growth studio. Strategy, marketing, content and technology working as one single system to grow businesses. Gran Canaria, without borders."
+  "seo": {
+    "gateway": {
+      "title": "NEXO — Digital Studio",
+      "description": "Strategy, marketing, content and technology."
+    },
+    "home": {
+      "title": "NEXO — Strategy, marketing, content & technology",
+      "description": "Digital studio based in Las Palmas de Gran Canaria, combining strategy, marketing, content and technology for businesses and digital projects."
+    },
+    "services": {
+      "title": "Services — NEXO",
+      "description": "Digital strategy, paid media, social and content, web experiences, software and automation, aligned with each project's real objectives."
+    },
+    "studio": {
+      "title": "Studio — NEXO",
+      "description": "NEXO is a digital studio with a core team and a network of specialists connecting strategy, marketing, content and technology."
+    },
+    "work": {
+      "title": "Work — NEXO",
+      "description": "Client work and NEXO Lab projects: Corazón Napoletano and Barber Booking, a booking system for barber shops in development."
+    },
+    "contact": {
+      "title": "Contact — NEXO",
+      "description": "NEXO's contact page. The contact form will be available soon."
+    },
+    "projects": {
+      "corazon": {
+        "title": "Corazón Napoletano — Client Work | NEXO",
+        "description": "Project for Corazón Napoletano in Las Palmas: identity, web, content, production and paid media. Project-specific result: +20% revenue from the following month."
+      },
+      "barber": {
+        "title": "Barber Booking — NEXO Lab",
+        "description": "NEXO Lab project in development for barber shops: online booking, service and barber selection, availability, and management tools using demo data."
+      }
+    }
   },
   "_status": "TEMP — placeholder translations, pending final copy after Spanish approval",
   "nav": {

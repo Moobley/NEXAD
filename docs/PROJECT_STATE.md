@@ -58,20 +58,50 @@ The root `/` is an intentional Gateway, not a localized homepage.
 
 - Allows ES / EN / IT selection; browser language is only a suggestion.
 - No automatic language redirect; no `public/index.html`; no middleware.
-- Session UX via `sessionStorage` keys:
-  - `nexo_gateway_seen` — intro already seen;
-  - `nexo_gateway_entered` — a language was chosen this session;
-  - `nexo_gateway_return_path` — pending deep-link route (locale stripped).
-- Deep link behavior: a fresh-session localized deep link
-  (e.g. `/es/work/barber-booking/`) passes through the Gateway; after the
-  user picks a language the same conceptual route is restored in that language
-  (e.g. `/it/work/barber-booking/`). After a choice, internal navigation and
-  reloads do not return to the Gateway.
-- Guard: `components/gateway/gateway-guard.tsx`, an inline script at the start
-  of the `[locale]` body. Client-side, fail-open, static-export compatible.
-  `?direct=1` bypasses it for QA/technical access. With JS disabled the
-  localized page renders normally.
-- Gateway SEO is intentionally unresolved (deferred to Technical SEO).
+- **Root-only**: `/es/*`, `/en/*` and `/it/*` are directly accessible and are
+  never intercepted by the Gateway (no deep-link guard, no `?direct=1`).
+- `sessionStorage` used only for `nexo_gateway_seen` (intro already seen).
+- Language links are real links usable without JS: `/` → choose ES → `/es/`,
+  etc., basePath-aware.
+- Gateway SEO is implemented (canonical `/`, hreflang cluster, robots,
+  Open Graph, Twitter).
+
+## SEO
+
+Environment-driven foundation via `lib/seo.ts`:
+
+- `NEXT_PUBLIC_SITE_ORIGIN` — public origin (scheme + host, no basePath).
+  GitHub Pages: `https://moobley.github.io`; custom domain later (not decided).
+- `NEXT_PUBLIC_SITE_INDEXABLE` — `"true"` enables index/follow; anything else
+  (default) produces `noindex, follow`.
+- `NEXT_PUBLIC_BASE_PATH` — deployment prefix (GitHub Pages `/NEXO`).
+
+Implementation:
+
+- Page-specific `generateMetadata` for Gateway, Home, Services, Studio, Work,
+  Contact, Corazón, Barber; copy in the `seo` messages namespace (ES/EN/IT).
+- Absolute self-referencing canonicals; reciprocal hreflang `es` / `en` / `it`
+  + `x-default` (Gateway root for the home cluster; `es` fallback for internal
+  routes).
+- Open Graph + Twitter (`summary_large_image`) pointing to
+  `public/social/nexo-social.png` (1200×630, obsidian/ivory branded preview).
+- Minimal `WebSite` JSON-LD at the Gateway root (`name`, `url` from
+  `siteUrl("/")`, `inLanguage: ["es", "en", "it"]`). No other schema.
+- `app/sitemap.ts` (22 canonical URLs) and `app/robots.ts` (allow-all). No
+  `Disallow: /`. While noindex, `robots.txt` does NOT announce the sitemap.
+- Favicon via `app/icon.svg` (basePath handled by Next).
+
+Indexability is fail-closed: an indexable build requires an explicit, valid,
+https `NEXT_PUBLIC_SITE_ORIGIN` (no basePath/pathname/credentials/query/hash);
+the build fails otherwise. The `localhost` origin fallback is only allowed for
+non-indexable development builds.
+
+## Current deployment
+
+GitHub Pages is intentionally **noindex** until explicit production
+activation (`NEXT_PUBLIC_SITE_INDEXABLE=false` in the deploy workflow). The
+sitemap is generated (22 URLs) but not advertised while noindex and not
+submitted to Search Console.
 
 ## Current page architecture
 

@@ -1,4 +1,3 @@
-import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { hasLocale, NextIntlClientProvider } from "next-intl"
 import { getTranslations, setRequestLocale } from "next-intl/server"
@@ -7,7 +6,6 @@ import { Familjen_Grotesk, Geist_Mono, Instrument_Serif } from "next/font/google
 import { routing } from "@/i18n/routing"
 import { SiteHeader } from "@/components/layout/site-header"
 import { SiteFooter } from "@/components/layout/site-footer"
-import { GatewayGuardScript } from "@/components/gateway/gateway-guard"
 import { cn } from "@/lib/utils"
 
 import "../globals.css"
@@ -34,26 +32,6 @@ const geistMono = Geist_Mono({
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
-}
-
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string }>
-}): Promise<Metadata> {
-  const { locale } = await params
-  const t = await getTranslations({ locale, namespace: "metadata" })
-
-  return {
-    title: t("title"),
-    description: t("description"),
-    openGraph: {
-      title: t("title"),
-      description: t("description"),
-      locale,
-      siteName: "NEXO",
-    },
-  }
 }
 
 type Props = {
@@ -84,7 +62,6 @@ export default async function LocaleLayout({ children, params }: Props) {
       )}
     >
       <body className="min-h-svh bg-background text-foreground antialiased">
-        <GatewayGuardScript />
         <NextIntlClientProvider>
           <a
             href="#main"

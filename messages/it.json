@@ -1,7 +1,39 @@
 {
-  "metadata": {
-    "title": "NEXO — Strategia digitale e crescita · Gran Canaria",
-    "description": "NEXO è uno studio di strategia digitale e crescita. Strategia, marketing, contenuti e tecnologia come un unico sistema per far crescere i business. Gran Canaria, senza frontiere."
+  "seo": {
+    "gateway": {
+      "title": "NEXO — Digital Studio",
+      "description": "Strategy, marketing, content and technology."
+    },
+    "home": {
+      "title": "NEXO — Strategia, marketing, contenuti e tecnologia",
+      "description": "Studio digitale con base a Las Palmas de Gran Canaria che integra strategia, marketing, contenuti e tecnologia per attività e progetti digitali."
+    },
+    "services": {
+      "title": "Servizi — NEXO",
+      "description": "Strategia digitale, paid media, social e contenuti, esperienze web, software e automazione, attivati in base agli obiettivi reali del progetto."
+    },
+    "studio": {
+      "title": "Studio — NEXO",
+      "description": "NEXO è uno studio digitale con un team core e una rete di specialisti che connette strategia, marketing, contenuti e tecnologia."
+    },
+    "work": {
+      "title": "Progetti — NEXO",
+      "description": "Lavori per clienti e progetti NEXO Lab: Corazón Napoletano e Barber Booking, un sistema di prenotazione per barber shop in sviluppo."
+    },
+    "contact": {
+      "title": "Contatti — NEXO",
+      "description": "Pagina contatti di NEXO. Il modulo di contatto sarà disponibile a breve."
+    },
+    "projects": {
+      "corazon": {
+        "title": "Corazón Napoletano — Client Work | NEXO",
+        "description": "Progetto per Corazón Napoletano a Las Palmas: identità, web, contenuti, produzione e paid media. Risultato specifico del progetto: +20% di fatturato dal mese successivo."
+      },
+      "barber": {
+        "title": "Barber Booking — NEXO Lab",
+        "description": "Progetto NEXO Lab in sviluppo per barber shop: prenotazione online, scelta di servizio e professionista, disponibilità e strumenti di gestione con dati demo."
+      }
+    }
   },
   "_status": "TEMP — traduzioni segnaposto, in attesa della copia finale dopo l'approvazione dello spagnolo",
   "nav": {

@@ -12,7 +12,8 @@ Legend: ✅ Complete · 🔴 High priority · 🟠 Next · 🟡 Later · ⏸ Pau
 - Contact UI (Formspree integration, states, validation, i18n).
 - Editorial compression / mobile pass (copy reduction, geography dedup,
   compact internal heroes, reduced-motion preserved).
-- NEXO Gateway (root `/`, ES/EN/IT, session UX, deep-link guard, `?direct=1`).
+- NEXO Gateway (root `/`, ES/EN/IT language entry, browser-language
+  suggestion; localized routes directly accessible — no deep-link guard).
 - Barber customer real-asset pass (3 real WebP screenshots in the case study).
 - Repository / project memory (canonical: `AGENTS.md` + `docs/`
   PROJECT_STATE/DECISIONS/TODO are tracked in the repository).
@@ -94,25 +95,38 @@ Spam protection:
   privacy impact, cookie/storage behavior, accessibility, static-export
   compatibility and performance.
 
-### Technical SEO
+### Technical SEO (Punto 7)
 
-After Legal. Complete audit + implementation:
+✅ **Complete.** Implemented and reviewed:
 
-- per-page/per-locale metadata (title, description)
-- canonical, hreflang ES/EN/IT, x-default
-- Gateway SEO
-- sitemap, robots
-- Open Graph, Twitter cards, favicon/icons, social preview
-- case-study metadata; Services/Studio/Contact metadata
-- schema.org where correct (Organization / ProfessionalService only if
-  accurate; Breadcrumb where useful; local/location markup without
-  overclaiming)
-- static export validation; GitHub Pages basePath; future custom-domain
-  migration
+- page-specific metadata for Gateway / Home / Services / Studio / Work /
+  Contact / Corazón / Barber (`generateMetadata` + `seo` messages namespace)
+- absolute self-referencing canonicals; reciprocal hreflang es/en/it + x-default
+- robots meta driven by `NEXT_PUBLIC_SITE_INDEXABLE` (GitHub Pages stays
+  `noindex, follow`); fail-closed: indexable builds require an explicit valid
+  https `NEXT_PUBLIC_SITE_ORIGIN`
+- `app/sitemap.ts` (22 canonical URLs) and `app/robots.ts` (allow-all, no
+  `Disallow: /`); while noindex, `robots.txt` does not advertise the sitemap
+- Open Graph + Twitter cards with a static 1200×630 social preview
+  (`public/social/nexo-social.png`)
+- minimal `WebSite` JSON-LD at the Gateway root
+- origin/basePath-driven URL builder (`lib/seo.ts`); no `/NEXO` hardcoded
 
-Re-evaluate the "fresh deep link → Gateway" behavior from the perspective of
-JS-enabled crawlers. `?direct=1` is QA only, not a crawler solution. Do not
-alter the Gateway UX without an explicit decision.
+Production / activation TODOs (blocked until the custom domain and explicit
+approval — not blockers for the foundation):
+
+- Set `NEXT_PUBLIC_SITE_INDEXABLE=true` only after explicit production approval.
+- Switch `NEXT_PUBLIC_SITE_ORIGIN` to the final custom domain.
+- Verify canonical / hreflang / sitemap after the custom-domain cutover.
+- Set up Search Console and submit the sitemap after production domain
+  activation.
+- Re-evaluate Organization / ProfessionalService structured data after
+  Legal + Contact 6B.
+- Create project-specific social previews when sufficient real assets exist.
+
+🟡 Later — small consistency task: align the Gateway visible descriptor
+(`STRATEGY · DESIGN · TECHNOLOGY`) with the canonical positioning descriptor
+(`STRATEGY · MARKETING · CONTENT · TECHNOLOGY`).
 
 ## 🟠 Next
 

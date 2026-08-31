@@ -83,31 +83,15 @@ The gateway:
 - shows ES / EN / IT;
 - uses browser language only to suggest a locale;
 - never auto-enters a language;
-- uses `sessionStorage` for session UX;
-- preserves deep-link destinations.
+- uses `sessionStorage` only for `nexo_gateway_seen` (intro already seen).
 
-Important session keys:
+Stable routing rules:
 
-- `nexo_gateway_seen` — intro animation has been seen;
-- `nexo_gateway_entered` — user has selected a language;
-- `nexo_gateway_return_path` — pending deep-link route without locale.
-
-Fresh-session localized deep links are redirected client-side to `/`, then
-returned to the same conceptual route using the language chosen in the gateway.
-
-The guard is `components/gateway/gateway-guard.tsx`, an inline script inlined at
-the very start of the `[locale]` body (`app/[locale]/layout.tsx`) so it runs
-before hydration/paint (minimal flash).
-
-`?direct=1` bypasses the gateway guard for QA/technical access.
-
-The guard must remain:
-
-- static-export compatible;
-- client-side;
-- fail-open;
-- free of middleware/server redirects;
-- compatible with `NEXT_PUBLIC_BASE_PATH`.
+- `/` is the Gateway — it only appears when the user visits the root.
+- `/es/*`, `/en/*` and `/it/*` are directly accessible and are never
+  intercepted by the Gateway (no deep-link guard).
+- Browser language is a suggestion at `/` only — never an auto-redirect.
+- There is no `?direct=1` special query.
 
 Do not recreate `public/index.html`.
 
@@ -132,6 +116,31 @@ Never hardcode `/NEXO` in components or content.
 
 GitHub Pages is temporary. The architecture must remain easy to move to a custom
 domain with an empty basePath.
+
+## SEO configuration
+SEO is environment-driven via `lib/seo.ts`:
+
+- `NEXT_PUBLIC_SITE_ORIGIN` — public origin (scheme + host), without basePath
+  (GitHub Pages: `https://moobley.github.io`; custom domain later). The custom
+  domain is NOT decided — never assume `nexo.studio`.
+- `NEXT_PUBLIC_SITE_INDEXABLE` — `"true"` enables index/follow; anything else
+  (default) produces `noindex, follow`. The current GitHub Pages deployment
+  MUST stay `false`.
+- `NEXT_PUBLIC_BASE_PATH` — deployment prefix as above.
+
+Full URLs are built as `SITE_ORIGIN + BASE_PATH + localized pathname`
+(`siteUrl` / `localizedPathname` in `lib/seo.ts`); metadata is page-specific
+(`generateMetadata` + the `seo` messages namespace), with absolute canonicals,
+reciprocal hreflang (es/en/it + x-default), Open Graph, Twitter cards, a
+`WebSite` JSON-LD at the Gateway root, `sitemap.xml` and `robots.txt`.
+
+Indexability is fail-closed:
+
+- An indexable build (`NEXT_PUBLIC_SITE_INDEXABLE=true`) requires an explicit,
+  valid, https `NEXT_PUBLIC_SITE_ORIGIN` (no basePath/pathname/credentials/
+  query/hash); the build fails otherwise.
+- Pre-launch builds remain `noindex, follow` and do not advertise the sitemap
+  through `robots.txt` (the `Sitemap:` line is only emitted when indexable).
 
 Deployment is built from `master` through GitHub Actions.
 

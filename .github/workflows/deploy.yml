@@ -40,6 +40,10 @@ jobs:
         run: npm run build
         env:
           NEXT_PUBLIC_BASE_PATH: /NEXO
+          # GitHub Pages is temporary and PRE-LAUNCH: the site must stay
+          # noindex until explicit production activation.
+          NEXT_PUBLIC_SITE_ORIGIN: https://moobley.github.io
+          NEXT_PUBLIC_SITE_INDEXABLE: "false"
           # Public (non-secret) Formspree Form ID, provided as a GitHub
           # repository variable. Needed at build time because NEXT_PUBLIC_*
           # values are inlined into the client bundle.

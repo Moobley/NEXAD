@@ -56,6 +56,9 @@ Restore an automatic browser-language redirect at `/`.
 
 ## D-005 — Deep-link Gateway behavior is intentional
 
+> **SUPERSEDED by D-019** — localized deep links no longer pass through the
+> Gateway. Kept for historical context.
+
 **Decision**
 A fresh-session localized deep link (e.g. `/es/work/barber-booking/`) passes
 through the Gateway; after language selection the same conceptual route is
@@ -69,6 +72,9 @@ Preserves deep links while keeping the language choice with the user.
 Treat this as a bug; changing it requires an explicit UX decision.
 
 ## D-006 — Guard architecture
+
+> **SUPERSEDED by D-019** — the inline guard was removed. Kept for historical
+> context.
 
 **Decision**
 The deep-link guard is a client-side inline script at the start of the
@@ -85,6 +91,9 @@ Move the guard to middleware, add server redirects, recreate
 `public/index.html`, or add bot detection.
 
 ## D-007 — Gateway SEO is intentionally unresolved
+
+> **SUPERSEDED by D-019 and D-021** — the Gateway and full-site SEO foundation
+> are implemented. Kept for historical context.
 
 **Decision**
 The Gateway and the deep-link guard have no dedicated SEO handling yet. This
@@ -256,3 +265,71 @@ arrangement through messaging is the chosen flow.
 **Do not**
 Create TODOs to integrate Calendly/Cal.com, or expose a "book a call" CTA
 before a real public contact channel exists.
+
+## D-019 — Gateway is root-only; localized deep links bypass it
+
+**Decision**
+`/` is the Gateway. `/es/*`, `/en/*` and `/it/*` are directly accessible and
+are never intercepted by the Gateway. The deep-link inline guard, the
+`nexo_gateway_entered` / `nexo_gateway_return_path` session keys and the
+`?direct=1` bypass are removed. Language links on the Gateway are real links
+usable without JS.
+
+**Why**
+Shareability, direct navigation, international SEO, avoiding JavaScript
+redirect ambiguity for crawlers, while keeping an explicit language gateway at
+`/`.
+
+**Do not**
+Reintroduce a deep-link guard, a client-side redirect of localized routes to
+`/`, or `?direct=1` semantics.
+
+## D-020 — Temporary GitHub Pages deployment remains noindex
+
+**Decision**
+The current GitHub Pages deployment is intentionally `noindex, follow` until
+explicit production activation. Indexing is controlled by the
+`NEXT_PUBLIC_SITE_INDEXABLE` env flag (default false); noindex is emitted via
+the meta robots in the HTML, never via `robots.txt Disallow`.
+
+**Why**
+The Pages site is temporary and pre-launch; content must stay crawlable but
+not indexed, and must become indexable at cutover without code changes.
+
+**Do not**
+Set `NEXT_PUBLIC_SITE_INDEXABLE=true` in the deployment, or use
+`Disallow: /` to hide content.
+
+## D-021 — SEO origin and indexability are environment-driven
+
+**Decision**
+All canonical, hreflang, sitemap, robots and social URLs are built from
+`NEXT_PUBLIC_SITE_ORIGIN` + `NEXT_PUBLIC_BASE_PATH` via `lib/seo.ts`. No
+`/NEXO` or future-domain assumption is hardcoded in components or metadata
+builders.
+
+**Why**
+GitHub Pages (`https://moobley.github.io` + `/NEXO`) must switch to a custom
+domain (origin change, empty basePath, indexable) without rewriting pages.
+
+**Do not**
+Hardcode `/NEXO` or `nexo.studio` anywhere in source, metadata, sitemap or
+structured data.
+
+## D-022 — Indexability activation is fail-closed
+
+**Decision**
+An indexable build (`NEXT_PUBLIC_SITE_INDEXABLE=true`) requires an explicit,
+valid, https `NEXT_PUBLIC_SITE_ORIGIN` with no basePath/pathname, credentials,
+query or hash; the build fails otherwise. The `http://localhost:3000` origin
+fallback is only allowed for non-indexable development builds. While noindex,
+`robots.txt` does not announce the sitemap.
+
+**Why**
+Avoid accidental production indexing with a localhost/invalid canonical
+origin; keep pre-launch deployment quiet (no sitemap advertisement) while the
+meta robots tag remains the real indexing control.
+
+**Do not**
+Add a non-https or path-containing origin to an indexable build, or rely on
+the localhost fallback in production.
