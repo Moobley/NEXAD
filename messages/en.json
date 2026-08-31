@@ -646,14 +646,17 @@
         "stage": "Choose where you are right now.",
         "message": "Tell us what you want to change."
       },
-      "submitError": "We couldn't send your message. Please try again.",
-      "configError": "The form isn't available yet."
+      "submitError": "We couldn't send your message. Please try again."
     },
     "success": {
       "eyebrow": "Received",
       "heading": "We have the context.",
       "body": "Thanks for sharing it with us. We'll review what you've sent and continue the conversation with you.",
       "cta": "Back to home"
+    },
+    "disabled": {
+      "eyebrow": "Soon",
+      "body": "The contact form will be available soon."
     }
   },
   "notFound": {
@@ -666,14 +669,7 @@
   "footer": {
     "tagline": "Digital strategy and growth studio. Strategy, marketing, content and technology.",
     "location": "Las Palmas · Gran Canaria",
-    "email": "hola@nexo.studio",
     "nav": "Navigation",
-    "social": "Social",
-    "studio": "Studio",
-    "instagram": "Instagram",
-    "linkedin": "LinkedIn",
-    "privacy": "Privacy",
-    "cookies": "Cookies",
-    "legal": "Legal"
+    "studio": "Studio"
   }
 }

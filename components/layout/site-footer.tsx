@@ -26,12 +26,6 @@ export async function SiteFooter() {
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-muted-foreground">
               {t("tagline")}
             </p>
-            <a
-              href={`mailto:${t("email")}`}
-              className="mt-8 inline-block border-b border-current pb-1 text-sm text-foreground transition-opacity hover:opacity-70"
-            >
-              {t("email")}
-            </a>
           </div>
 
           <div className="md:col-span-3">
@@ -54,30 +48,6 @@ export async function SiteFooter() {
 
           <div className="md:col-span-2">
             <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-stone">
-              {t("social")}
-            </p>
-            <ul className="mt-6 space-y-3">
-              <li>
-                <a
-                  href="#"
-                  className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-                >
-                  {t("instagram")}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-                >
-                  {t("linkedin")}
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div className="md:col-span-2">
-            <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-stone">
               {t("studio")}
             </p>
             <ul className="mt-6 space-y-3">
@@ -92,23 +62,6 @@ export async function SiteFooter() {
           <p className="font-mono text-[11px] tracking-[0.15em] text-stone">
             © {year} NEXO
           </p>
-          <ul className="flex flex-wrap gap-x-8 gap-y-2 font-mono text-[11px] tracking-[0.15em] text-stone">
-            <li>
-              <a href="#" className="transition-colors hover:text-foreground">
-                {t("privacy")}
-              </a>
-            </li>
-            <li>
-              <a href="#" className="transition-colors hover:text-foreground">
-                {t("cookies")}
-              </a>
-            </li>
-            <li>
-              <a href="#" className="transition-colors hover:text-foreground">
-                {t("legal")}
-              </a>
-            </li>
-          </ul>
         </div>
       </div>
     </footer>

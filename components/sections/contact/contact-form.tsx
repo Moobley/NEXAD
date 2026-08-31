@@ -9,9 +9,15 @@ import { cn } from "@/lib/utils"
 
 const FORM_ID = process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID
 
+// The form is OFF by default (pre-launch). It only becomes submittable when
+// the feature flag is explicitly "true" AND a Formspree ID is present.
+// The flag alone is never enough; neither is the ID alone.
+const CONTACT_FORM_ENABLED =
+  process.env.NEXT_PUBLIC_CONTACT_FORM_ENABLED === "true" && Boolean(FORM_ID)
+
 type Option = { value: string; label: string }
 
-type FormStatus = "idle" | "submitting" | "success" | "error" | "unconfigured"
+type FormStatus = "idle" | "submitting" | "success" | "error"
 
 type FieldKey = "name" | "email" | "business" | "stage" | "message"
 
@@ -44,6 +50,21 @@ function SuccessPanel({ focusRef }: { focusRef: RefObject<HTMLDivElement | null>
         {t("cta")}
         <ArrowRight className="arrow size-4" strokeWidth={1.5} />
       </Link>
+    </div>
+  )
+}
+
+function DisabledFormNote() {
+  const t = useTranslations("contactPage.disabled")
+
+  return (
+    <div className="pb-8">
+      <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
+        {t("eyebrow")}
+      </p>
+      <p className="mt-3 max-w-md text-base leading-relaxed text-muted-foreground">
+        {t("body")}
+      </p>
     </div>
   )
 }
@@ -99,19 +120,14 @@ export function ContactForm() {
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
+    // Hard guard: never serialize or send form data while the form is
+    // disabled. No fetch, no Formspree request, no fallback submission.
+    if (!CONTACT_FORM_ENABLED) return
     if (status === "submitting" || status === "success") return
 
     const next = fieldErrors()
     setErrors(next)
     if (Object.keys(next).length > 0) return
-
-    if (!FORM_ID) {
-      console.warn(
-        "Formspree form ID is not configured. Set NEXT_PUBLIC_FORMSPREE_FORM_ID before deploy."
-      )
-      setStatus("unconfigured")
-      return
-    }
 
     setStatus("submitting")
     const formData = new FormData()
@@ -149,10 +165,16 @@ export function ContactForm() {
   }
 
   const submitting = status === "submitting"
+  const disabled = !CONTACT_FORM_ENABLED
 
   return (
     <form onSubmit={handleSubmit} noValidate aria-busy={submitting}>
-      <div className="grid gap-8 border-t border-obsidian/10 pt-8 md:grid-cols-2 md:gap-6">
+      {disabled && <DisabledFormNote />}
+      <fieldset
+        disabled={disabled}
+        className={cn("min-w-0 border-0 p-0 m-0", disabled && "opacity-60")}
+      >
+        <div className="grid gap-8 border-t border-obsidian/10 pt-8 md:grid-cols-2 md:gap-6">
         <div>
           <label
             htmlFor="contact-name"
@@ -375,29 +397,32 @@ export function ContactForm() {
             {errors.message}
           </p>
         )}
-      </div>
+        </div>
+      </fieldset>
 
-      <div className="mt-10 border-t border-obsidian/10 pt-8">
-        <button
-          type="submit"
-          disabled={submitting}
-          className={cn("cta-primary", submitting && "cursor-not-allowed opacity-60")}
-        >
-          {submitting ? t("submitting") : t("submit")}
-          <ArrowRight className="arrow size-4" strokeWidth={1.5} />
-        </button>
-
-        {(status === "error" || status === "unconfigured") && (
-          <p
-            ref={alertRef}
-            tabIndex={-1}
-            role="alert"
-            className="mt-6 max-w-md border-l-2 border-destructive pl-4 font-mono text-[11px] uppercase leading-relaxed tracking-[0.15em] text-destructive focus:outline-none"
+      {!disabled && (
+        <div className="mt-10 border-t border-obsidian/10 pt-8">
+          <button
+            type="submit"
+            disabled={submitting}
+            className={cn("cta-primary", submitting && "cursor-not-allowed opacity-60")}
           >
-            {status === "unconfigured" ? t("configError") : t("submitError")}
-          </p>
-        )}
-      </div>
+            {submitting ? t("submitting") : t("submit")}
+            <ArrowRight className="arrow size-4" strokeWidth={1.5} />
+          </button>
+
+          {status === "error" && (
+            <p
+              ref={alertRef}
+              tabIndex={-1}
+              role="alert"
+              className="mt-6 max-w-md border-l-2 border-destructive pl-4 font-mono text-[11px] uppercase leading-relaxed tracking-[0.15em] text-destructive focus:outline-none"
+            >
+              {t("submitError")}
+            </p>
+          )}
+        </div>
+      )}
     </form>
   )
 }

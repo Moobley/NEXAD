@@ -104,12 +104,38 @@ Pages were editorially compressed; do not re-expand without reason.
 
 - Client-side form submitting to Formspree via `fetch`
   (`NEXT_PUBLIC_FORMSPREE_FORM_ID`, public repo variable injected at build).
+- **Collection is disabled by default during pre-launch.** The form only
+  becomes submittable when `NEXT_PUBLIC_CONTACT_FORM_ENABLED=true` AND a
+  Formspree ID is set; production activation is blocked by Legal/Contact
+  prerequisites (TODO 6B).
 - Fields: name, email, business/project, business stage (new opening /
   existing / software product / other), optional multiple services, message.
   No budget, timing or phone.
-- States: loading, success, error (code also handles a "not configured" state).
-- Formspree production must not be considered active before the Privacy/Legal
-  pass. Public email, WhatsApp, call-booking CTA and CAPTCHA are still pending.
+- States: loading, success, error. No marketing/newsletter opt-ins are
+  collected.
+
+## Legal / privacy
+
+Pre-launch state — legal production setup is not complete.
+
+- No public Privacy Policy / Legal Notice exists (intentionally: no
+  placeholder or invented legal pages).
+- No public NEXO email or WhatsApp exists; no calendar-booking product (calls
+  are arranged manually through direct messaging).
+- Contact collection is disabled by default; production activation is blocked
+  until the legal/contact prerequisites are met (TODO 6B).
+- Missing real-world prerequisites: legal operator/controller identity,
+  publishable professional/service address, public NEXO contact email, and a
+  dedicated WhatsApp channel if desired.
+- No newsletter/marketing consent is currently collected.
+
+## Retention (future policy)
+
+Approved policy for when collection is activated: non-client contact enquiries
+are retained up to 12 months from the last meaningful interaction, then deleted
+unless a commercial relationship, legal obligation, or another applicable basis
+requires different retention. Not yet in effect — no lead data is currently
+collected.
 
 ## Assets
 

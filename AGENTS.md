@@ -246,16 +246,25 @@ sections that were deliberately removed during editorial compression.
 ## Contact
 Contact uses a client-side form with external Formspree submission.
 
+The form is OFF by default during pre-launch. It only becomes submittable when
+BOTH `NEXT_PUBLIC_CONTACT_FORM_ENABLED=true` AND `NEXT_PUBLIC_FORMSPREE_FORM_ID`
+are set; production activation remains blocked until the Legal/Contact
+production prerequisites (TODO 6B) are complete.
+
 Environment:
 
-`NEXT_PUBLIC_FORMSPREE_FORM_ID`
+- `NEXT_PUBLIC_CONTACT_FORM_ENABLED` (default OFF)
+- `NEXT_PUBLIC_FORMSPREE_FORM_ID`
 
 Do not hardcode a Formspree ID.
+
+There is no public NEXO email or WhatsApp yet — do not invent or suggest
+contact channels (the `nexo.studio` domain is not confirmed). Calls are
+arranged manually through direct messaging; no calendar-booking product.
 
 Current pending items:
 
 - public NEXO email;
-- call-booking URL;
 - WhatsApp number;
 - CAPTCHA/spam hardening;
 - final Privacy/Legal integration.

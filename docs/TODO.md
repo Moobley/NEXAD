@@ -16,6 +16,10 @@ Legend: ✅ Complete · 🔴 High priority · 🟠 Next · 🟡 Later · ⏸ Pau
 - Barber customer real-asset pass (3 real WebP screenshots in the case study).
 - Repository / project memory (canonical: `AGENTS.md` + `docs/`
   PROJECT_STATE/DECISIONS/TODO are tracked in the repository).
+- 6A — Pre-launch Legal + Contact hardening (contact form defaults OFF via
+  feature flag + Formspree-ID requirement, submit guard, disabled UX with
+  availability note; no marketing/consent opt-ins; no fake public email /
+  WhatsApp / calendar introduced).
 
 ## ⏸ Paused
 
@@ -37,25 +41,58 @@ into a gallery.
 
 ## 🔴 High priority
 
-### Legal + Contact Production
+### 6B — Legal + Contact production activation
 
-Next major task after Project Memory:
+🔴 Blocked / pending real business data. Next major task after 6A. Do not
+invent provider/company/tax data — NEXO is pre-launch and early-stage.
 
-1. Privacy Policy
-2. Legal Notice / Aviso Legal if required
-3. Cookie Policy
-4. cookie/consent handling if the chosen tools require it
-5. privacy consent near the form if needed
-6. footer legal links
-7. Formspree production setup
-8. public NEXO email
-9. WhatsApp
-10. calendar / call-booking CTA
-11. CAPTCHA / spam protection if appropriate
+Legal identity / provider data:
 
-Before writing legal texts, collect the real business data — never invent
-company/tax data. NEXO is early-stage; handle that correctly in the legal
-texts.
+- Define the real legal operator / service provider before publication
+  (company, autónomo, partnership or joint ownership — none is assumed).
+- Define a legally appropriate publishable domicile/address for the service
+  provider (Las Palmas de Gran Canaria alone is not a substitute for a
+  complete address when legally required).
+- Create and approve a public NEXO contact email.
+- Create a dedicated NEXO business messaging/WhatsApp channel before exposing
+  any WhatsApp CTA; later implement a direct-contact CTA and arrange calls
+  manually through messaging (no calendar booking).
+
+Privacy:
+
+- Draft/finalize localized Privacy Policy after controller details are known.
+- Implement first-layer privacy information at the contact form before
+  enabling collection.
+- Determine and document the correct legal basis for contact enquiries.
+- Document Formspree role, processing terms/subprocessors/transfers as
+  applicable.
+- Document data-subject rights and a contact channel once the public
+  email/controller are available.
+- Apply approved retention: 12 months from the last meaningful interaction for
+  non-client enquiries, unless another legitimate retention requirement
+  applies.
+
+Legal Notice / Aviso Legal + footer:
+
+- Draft/finalize localized Legal Notice / Aviso Legal once the real
+  service-provider details exist.
+- Add footer Legal/Privacy links only after the corresponding pages are
+  complete and approved.
+
+Formspree production activation:
+
+- Enable Formspree production submission only after the prerequisites above
+  are complete (real provider/controller, public address, public email,
+  approved Privacy Policy, first-layer form information, legal-basis review,
+  Formspree processing review, retention workflow, spam-protection decision).
+  Keep `NEXT_PUBLIC_CONTACT_FORM_ENABLED` OFF until then.
+
+Spam protection:
+
+- Evaluate spam protection when the form is activated; prefer minimal
+  solutions first. If a third-party CAPTCHA/anti-bot is needed, evaluate
+  privacy impact, cookie/storage behavior, accessibility, static-export
+  compatibility and performance.
 
 ### Technical SEO
 
@@ -84,8 +121,20 @@ alter the Gateway UX without an explicit decision.
 Choose the stack before implementing: GA4 vs a privacy-friendly alternative
 (Plausible / Umami or similar). Candidate events: Gateway language choice,
 Services/Studio CTAs, Work project click, contact form start/success/error,
-WhatsApp click, booking-call click, outbound project/client site click. Do not
-track useless events. Coordinate with Privacy/Legal.
+WhatsApp click, direct-messaging / call CTA, outbound project/client site
+click. Do not track useless events. Coordinate with Privacy/Legal.
+
+### Cookies / consent re-audit
+
+Conditional: re-audit cookie/consent requirements whenever analytics,
+advertising, third-party embeds, CAPTCHA or other non-essential
+tracking/storage is introduced.
+
+Current audit result (technical, not legal advice): no consent banner is
+currently required by the implemented app stack — no cookies, no non-essential
+storage, no third-party embeds or trackers were found; the Gateway uses
+`sessionStorage` for its own functionality and Formspree submission is
+disabled by default. Re-evaluate when the stack changes.
 
 ### Performance / Core Web Vitals
 
@@ -134,6 +183,15 @@ proof for now.
 Separate from technical completion: NEXO Instagram, Lorenzo as a brand face,
 educational content, project breakdowns, behind the scenes, marketing + tech
 connection, selective build in public.
+
+### Newsletter / promotional communications setup
+
+🟡 Later / blocked until legal/contact identity is ready. Choose a real
+provider; define purposes and workflow; separate marketing from the contact
+request; implement an appropriate, un-checked opt-in; provide a simple
+unsubscribe/revoke mechanism; update privacy/legal; verify
+processors/transfers; verify email tracking if used. Not to be implemented
+now.
 
 ## Housekeeping
 

@@ -646,14 +646,17 @@
         "stage": "Scegli il tuo punto di partenza.",
         "message": "Raccontaci cosa vuoi cambiare."
       },
-      "submitError": "Non siamo riusciti a inviare il messaggio. Riprova.",
-      "configError": "Il form non è ancora disponibile."
+      "submitError": "Non siamo riusciti a inviare il messaggio. Riprova."
     },
     "success": {
       "eyebrow": "Ricevuto",
       "heading": "Abbiamo il contesto.",
       "body": "Grazie per avercelo raccontato. Leggeremo ciò che ci hai inviato e continueremo la conversazione con te.",
       "cta": "Torna alla home"
+    },
+    "disabled": {
+      "eyebrow": "A breve",
+      "body": "Il modulo di contatto sarà disponibile a breve."
     }
   },
   "notFound": {
@@ -666,14 +669,7 @@
   "footer": {
     "tagline": "Studio di strategia digitale e crescita. Strategia, marketing, contenuti e tecnologia.",
     "location": "Las Palmas · Gran Canaria",
-    "email": "hola@nexo.studio",
     "nav": "Navigazione",
-    "social": "Social",
-    "studio": "Studio",
-    "instagram": "Instagram",
-    "linkedin": "LinkedIn",
-    "privacy": "Privacy",
-    "cookies": "Cookie",
-    "legal": "Legale"
+    "studio": "Studio"
   }
 }

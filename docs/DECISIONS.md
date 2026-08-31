@@ -193,3 +193,66 @@ repo variable is the correct choice.
 **Do not**
 Commit a real Formspree ID, or activate production before the Privacy/Legal
 pass.
+
+## D-015 — Contact form defaults OFF during pre-launch
+
+**Decision**
+The contact form is disabled by default. It only becomes submittable when
+`NEXT_PUBLIC_CONTACT_FORM_ENABLED=true` AND a `NEXT_PUBLIC_FORMSPREE_FORM_ID`
+is present; neither alone activates it. The disabled state shows a compact
+note and renders the fields non-interactive.
+
+**Why**
+Legal identity is incomplete, no public email exists, and privacy/legal
+information is not ready. No personal data should be collected prematurely.
+
+**Do not**
+Activate the form via a Formspree ID alone, collect personal data before the
+production legal requirements are completed, or leave editable fields that
+cannot be submitted.
+
+## D-016 — No marketing/newsletter consent during pre-launch
+
+**Decision**
+No newsletter, marketing checkbox or promotional opt-in is collected during
+pre-launch. Future newsletter/marketing functionality requires its own
+implementation and legal/privacy review, with separate, optional, un-checked
+consent.
+
+**Why**
+Marketing consent must be separated from a normal contact request and never be
+a condition for contacting NEXO; the tools, purposes and legal basis do not
+exist yet.
+
+**Do not**
+Add a fake consent/marketing checkbox "because it looks legal", or reuse
+contact requests as marketing opt-in.
+
+## D-017 — Future retention: 12 months for non-client enquiries
+
+**Decision**
+When contact collection is activated: non-client contact enquiries are
+retained for up to 12 months from the last meaningful interaction, then
+deleted — unless a commercial relationship, a legal obligation, or another
+applicable legal basis requires different retention.
+
+**Why**
+Approved NEXO policy that keeps enquiry handling proportional to its purpose.
+
+**Do not**
+Claim the current (disabled) form is already collecting/retaining leads, or
+apply this policy to data NEXO does not hold yet.
+
+## D-018 — Calls arranged manually, no calendar booking
+
+**Decision**
+NEXO does not use calendar-booking products (Calendly, Cal.com or similar).
+Calls are arranged manually through direct messaging with the interested lead.
+
+**Why**
+Product decision: a real contact channel does not exist yet, and manual
+arrangement through messaging is the chosen flow.
+
+**Do not**
+Create TODOs to integrate Calendly/Cal.com, or expose a "book a call" CTA
+before a real public contact channel exists.
