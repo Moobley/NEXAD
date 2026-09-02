@@ -1,8 +1,8 @@
 import { getTranslations } from "next-intl/server"
-import { ArrowRight } from "lucide-react"
 
 import { Link } from "@/i18n/navigation"
 import { Reveal } from "@/components/ui/reveal"
+import { ForwardMark } from "@/components/ui/forward-mark"
 
 export async function FinalCta() {
   const t = await getTranslations("home.cta")
@@ -25,7 +25,7 @@ export async function FinalCta() {
         <Reveal variant="fade-up" delay={240}>
           <Link href="/contact" className="cta-primary mt-14">
             {t("action")}
-            <ArrowRight className="arrow size-4" strokeWidth={1.5} />
+            <ForwardMark className="arrow size-4" />
           </Link>
         </Reveal>
       </div>

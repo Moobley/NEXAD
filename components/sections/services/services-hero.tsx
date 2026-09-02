@@ -1,9 +1,9 @@
 import { getTranslations } from "next-intl/server"
-import { ArrowRight } from "lucide-react"
 
 import { Link } from "@/i18n/navigation"
 import { Reveal } from "@/components/ui/reveal"
 import { AuroraBackground } from "@/components/ui/aurora-background"
+import { ForwardMark } from "@/components/ui/forward-mark"
 
 export async function ServicesHero() {
   const t = await getTranslations("servicesPage.hero")
@@ -47,7 +47,7 @@ export async function ServicesHero() {
             <Reveal trigger="load" variant="fade-up" delay={480}>
               <Link href="/contact" className="cta-primary mt-8">
                 {t("cta")}
-                <ArrowRight className="arrow size-4" strokeWidth={1.5} />
+                <ForwardMark className="arrow size-4" />
               </Link>
             </Reveal>
           </div>

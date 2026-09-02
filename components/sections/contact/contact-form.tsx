@@ -2,9 +2,9 @@
 
 import { type FormEvent, type RefObject, useEffect, useRef, useState } from "react"
 import { useLocale, useTranslations } from "next-intl"
-import { ArrowRight } from "lucide-react"
 
 import { Link } from "@/i18n/navigation"
+import { ForwardMark } from "@/components/ui/forward-mark"
 import { cn } from "@/lib/utils"
 
 const FORM_ID = process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID
@@ -26,7 +26,7 @@ type Errors = Partial<Record<FieldKey, string>>
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 const FIELD_BASE =
-  "w-full border border-obsidian/15 bg-transparent px-4 py-3.5 text-base text-foreground transition-colors placeholder:text-muted-foreground/60 focus:border-obsidian focus:outline-none focus:ring-2 focus:ring-iris/40"
+  "w-full border border-obsidian/15 bg-transparent px-4 py-3.5 text-base text-foreground transition-colors placeholder:text-muted-foreground/60 focus:border-obsidian focus:outline-none focus:ring-2 focus:ring-signal/40"
 
 function SuccessPanel({ focusRef }: { focusRef: RefObject<HTMLDivElement | null> }) {
   const t = useTranslations("contactPage.success")
@@ -48,7 +48,7 @@ function SuccessPanel({ focusRef }: { focusRef: RefObject<HTMLDivElement | null>
       </p>
       <Link href="/" className="cta-secondary mt-10 inline-flex">
         {t("cta")}
-        <ArrowRight className="arrow size-4" strokeWidth={1.5} />
+        <ForwardMark className="arrow size-4" />
       </Link>
     </div>
   )
@@ -298,7 +298,7 @@ export function ContactForm() {
                 <span
                   aria-hidden
                   className={cn(
-                    "flex h-5 w-5 shrink-0 items-center justify-center border transition-colors peer-focus-visible:ring-2 peer-focus-visible:ring-iris/60",
+                    "flex h-5 w-5 shrink-0 items-center justify-center border transition-colors peer-focus-visible:ring-2 peer-focus-visible:ring-signal/60",
                     checked ? "border-obsidian" : "border-obsidian/25"
                   )}
                 >
@@ -348,7 +348,7 @@ export function ContactForm() {
                 <span
                   aria-hidden
                   className={cn(
-                    "flex h-5 w-5 shrink-0 items-center justify-center border transition-colors peer-focus-visible:ring-2 peer-focus-visible:ring-iris/60",
+                    "flex h-5 w-5 shrink-0 items-center justify-center border transition-colors peer-focus-visible:ring-2 peer-focus-visible:ring-signal/60",
                     checked ? "border-obsidian" : "border-obsidian/25"
                   )}
                 >
@@ -408,7 +408,7 @@ export function ContactForm() {
             className={cn("cta-primary", submitting && "cursor-not-allowed opacity-60")}
           >
             {submitting ? t("submitting") : t("submit")}
-            <ArrowRight className="arrow size-4" strokeWidth={1.5} />
+            <ForwardMark className="arrow size-4" />
           </button>
 
           {status === "error" && (

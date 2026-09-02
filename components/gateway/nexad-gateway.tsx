@@ -1,12 +1,13 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, type MouseEvent } from "react"
 
 import { cn } from "@/lib/utils"
 import { GatewayLogo } from "@/components/gateway/gateway-logo"
 import { GatewayNetwork } from "@/components/gateway/gateway-network"
 
-const STORAGE_KEY = "nexo_gateway_seen"
+const STORAGE_KEY = "nexad_gateway_seen"
+const LEGACY_STORAGE_KEY = "nexo_gateway_seen"
 
 const LANGUAGES = [
   { code: "es", label: "Español" },
@@ -29,9 +30,17 @@ function detectLanguage(): string {
   return "es"
 }
 
+/**
+ * Session storage migration: read the new `nexad_gateway_seen` key; fall back
+ * to the legacy `nexo_gateway_seen` during the rebrand, and always write the
+ * new key so the legacy one can be dropped later.
+ */
 function getSeen(): boolean {
   try {
-    return window.sessionStorage.getItem(STORAGE_KEY) === "1"
+    return (
+      window.sessionStorage.getItem(STORAGE_KEY) === "1" ||
+      window.sessionStorage.getItem(LEGACY_STORAGE_KEY) === "1"
+    )
   } catch {
     return false
   }
@@ -45,9 +54,10 @@ function markSeen() {
   }
 }
 
-export function NexoGateway() {
+export function NexadGateway() {
   const [variant, setVariant] = useState<"full" | "short">("full")
   const [suggested, setSuggested] = useState<string>("es")
+  const [exiting, setExiting] = useState(false)
 
   useEffect(() => {
     const init = () => {
@@ -59,11 +69,27 @@ export function NexoGateway() {
     init()
   }, [])
 
+  const go = (href: string) => (event: MouseEvent<HTMLAnchorElement>) => {
+    if (
+      event.defaultPrevented ||
+      exiting ||
+      window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches
+    ) {
+      return
+    }
+    event.preventDefault()
+    setExiting(true)
+    window.setTimeout(() => {
+      window.location.href = href
+    }, 380)
+  }
+
   return (
     <main
       className={cn(
         "gateway",
-        variant === "full" ? "gateway-intro" : "gateway-short"
+        variant === "full" ? "gateway-intro" : "gateway-short",
+        exiting && "gateway-exit"
       )}
     >
       <div aria-hidden className="gateway-grid absolute inset-0" />
@@ -73,11 +99,11 @@ export function NexoGateway() {
       <div className="relative z-10 mx-auto flex min-h-svh w-full max-w-[1600px] flex-col items-center justify-center px-6 pb-[max(3rem,env(safe-area-inset-bottom))] pt-[max(2.5rem,env(safe-area-inset-top))] md:px-10">
         <div className="gateway-stage relative w-[82vw] lg:w-[54vw] xl:max-w-[52rem]">
           <GatewayNetwork className="gateway-network absolute inset-0 h-full w-full" />
-          <GatewayLogo className="gateway-logo-in relative w-full" />
+          <GatewayLogo className="relative w-full" />
         </div>
 
         <p className="gateway-descriptor mt-10 max-w-xl text-center font-mono text-[11px] leading-relaxed tracking-[0.28em] text-ivory/55 md:mt-14 md:text-xs">
-          STRATEGY · DESIGN · TECHNOLOGY
+          GROWTH, ENGINEERED.
         </p>
 
         <nav
@@ -91,8 +117,9 @@ export function NexoGateway() {
                 key={lang.code}
                 href={`./${lang.code}/`}
                 aria-label={lang.label}
+                onClick={go(`./${lang.code}/`)}
                 className={cn(
-                  "group relative px-1 py-3 font-sans text-3xl font-medium tracking-tight transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-iris md:text-4xl",
+                  "group relative px-1 py-3 font-sans text-3xl font-medium tracking-tight transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-signal md:text-4xl",
                   isSuggested
                     ? "text-ivory"
                     : "text-ivory/40 hover:text-ivory/80"
@@ -102,7 +129,7 @@ export function NexoGateway() {
                 <span
                   aria-hidden
                   className={cn(
-                    "absolute inset-x-1 -bottom-0.5 h-px bg-iris transition-opacity duration-300",
+                    "absolute inset-x-1 -bottom-0.5 h-px bg-signal transition-opacity duration-300",
                     isSuggested
                       ? "opacity-100"
                       : "opacity-0 group-hover:opacity-50"

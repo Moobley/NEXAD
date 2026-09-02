@@ -10,7 +10,7 @@ const RAW_ORIGIN = process.env.NEXT_PUBLIC_SITE_ORIGIN
  */
 export const SITE_INDEXABLE = process.env.NEXT_PUBLIC_SITE_INDEXABLE === "true"
 
-export const SITE_NAME = "NEXO"
+export const SITE_NAME = "NEXAD"
 
 const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
 
@@ -106,8 +106,8 @@ function ogLocale(locale: string): string {
   return map[locale] ?? locale
 }
 
-export const SOCIAL_IMAGE = "/social/nexo-social.png"
-export const SOCIAL_IMAGE_ALT = "NEXO — Digital Studio"
+export const SOCIAL_IMAGE = "/social/nexad-social.png"
+export const SOCIAL_IMAGE_ALT = "NEXAD — Growth, engineered."
 
 /** Minimal WebSite structured data, emitted once at the Gateway root. */
 export function websiteSchema() {

@@ -1,7 +1,6 @@
-import { ArrowRight } from "lucide-react"
-
 import { Link } from "@/i18n/navigation"
 import { Reveal } from "@/components/ui/reveal"
+import { ForwardMark } from "@/components/ui/forward-mark"
 
 type PagePlaceholderProps = {
   eyebrow: string
@@ -37,7 +36,7 @@ export function PagePlaceholder({
         <Reveal variant="fade-up" delay={260}>
           <Link href="/" className="cta-secondary mt-14">
             {backLabel}
-            <ArrowRight className="arrow size-4" strokeWidth={1.5} />
+            <ForwardMark className="arrow size-4" />
           </Link>
         </Reveal>
       </div>

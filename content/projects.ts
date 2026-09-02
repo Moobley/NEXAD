@@ -9,7 +9,7 @@ export type ProjectService =
   | "web-app"
   | "development"
 
-export type ProjectTone = "obsidian" | "lilac" | "iris"
+export type ProjectTone = "carbon" | "graphite"
 
 export type ProjectType = "client" | "lab"
 
@@ -54,7 +54,7 @@ export const projects: Project[] = [
       "strategy",
     ],
     cover: {
-      tone: "obsidian",
+      tone: "carbon",
     },
   },
   {
@@ -64,7 +64,7 @@ export const projects: Project[] = [
     ns: "projects.barber",
     services: ["ux", "product-design", "web-app", "development"],
     cover: {
-      tone: "iris",
+      tone: "graphite",
     },
   },
 ]

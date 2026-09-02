@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190 140" role="img" aria-label="NEXAD Forward D mark">
+  <g fill="#0B0C0D">
+    <path fill-rule="evenodd" d="
+      M20 22 H115
+      C149 22 170 41 170 70
+      C170 99 149 118 115 118
+      H20 Z
+
+      M39 39 H112
+      C136 39 151 50 151 70
+      C151 90 136 101 112 101
+      H39 Z
+
+      M29 58 L53 70 L29 82 Z
+    "/>
+  </g>
+</svg>

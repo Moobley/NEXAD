@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils"
 
 /**
  * Decorative UI-inspired compositions used as editorial media surfaces for
- * NEXO Lab projects. All content is `aria-hidden` and purely illustrative —
+ * NEXAD Lab projects. All content is `aria-hidden` and purely illustrative —
  * never real data, never performance metrics.
  */
 

@@ -4,22 +4,22 @@ import { cn } from "@/lib/utils"
 import { asset } from "@/lib/asset"
 
 type LogoProps = {
-  /** obsidian — for light backgrounds; ivory — for dark backgrounds. */
-  variant?: "obsidian" | "ivory"
+  /** carbon — for light backgrounds; ivory — for dark backgrounds. */
+  variant?: "carbon" | "ivory"
   className?: string
   priority?: boolean
 }
 
 export function Logo({
-  variant = "obsidian",
+  variant = "carbon",
   className,
   priority,
 }: LogoProps) {
   return (
     <Image
-      src={asset(`/logos/nexo-wordmark-${variant}.svg`)}
-      alt="NEXO"
-      width={720}
+      src={asset(`/logos/nexad-wordmark-${variant}.svg`)}
+      alt="NEXAD"
+      width={810}
       height={180}
       unoptimized
       priority={priority}

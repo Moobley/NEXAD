@@ -1,54 +1,72 @@
 import { cn } from "@/lib/utils"
 
 /**
- * NEXO wordmark as inline SVG, faithful to `public/logos/nexo-wordmark-*.svg`.
- * The O (the brand's horizontal "stadium") is isolated in its own group so the
- * gateway can rotate it exactly once into the official horizontal position.
- * At rest (rotate 0) the rendering is pixel-identical to the official logo.
+ * NEXAD wordmark as inline SVG, faithful to `public/logos/nexad-wordmark-*.svg`.
+ * The D ring and its internal Forward triangle (`▶`) are split into separate
+ * groups so the gateway can boot the D around the mark. The D uses a clip
+ * reveal and the triangle a scale/impulse entry; at rest (no animation) the
+ * render is pixel-identical to the official wordmark.
  */
 export function GatewayLogo({ className }: { className?: string }) {
   return (
     <svg
-      viewBox="0 0 720 180"
+      viewBox="0 0 810 180"
       className={cn("block h-auto", className)}
       role="img"
-      aria-label="NEXO"
+      aria-label="NEXAD"
     >
       <g fill="currentColor">
         {/* N */}
-        <path d="M55 42h18v96H55z" />
-        <path d="M121 42h18v96h-18z" />
-        <path d="M64 42h21l45 96h-21z" />
-        {/* E */}
-        <path d="M205 42h18v96h-18z" />
-        <path d="M205 42h64v16h-64z" />
-        <path d="M205 82h54v16h-54z" />
-        <path d="M205 122h64v16h-64z" />
-        {/* X */}
-        <path d="M334 42h21l62 96h-21z" />
-        <path d="M396 42h21l-62 96h-21z" />
-        {/* O — isolated for the signature rotation */}
-        <g className="gateway-o">
-          <path
-            fillRule="evenodd"
-            d="
-              M520 42 H560
-              C594 42 615 61 615 90
-              C615 119 594 138 560 138
-              H520
-              C486 138 465 119 465 90
-              C465 61 486 42 520 42 Z
-
-              M523 59 H557
-              C581 59 596 70 596 90
-              C596 110 581 121 557 121
-              H523
-              C499 121 484 110 484 90
-              C484 70 499 59 523 59 Z
-            "
-          />
+        <g className="gateway-letter gateway-letter-n">
+          <path d="M55 42h18v96H55z" />
+          <path d="M121 42h18v96h-18z" />
+          <path d="M64 42h21l45 96h-21z" />
         </g>
+        {/* E */}
+        <g className="gateway-letter gateway-letter-e">
+          <path d="M205 42h18v96h-18z" />
+          <path d="M205 42h64v16h-64z" />
+          <path d="M205 82h54v16h-54z" />
+          <path d="M205 122h64v16h-64z" />
+        </g>
+        {/* X */}
+        <g className="gateway-letter gateway-letter-x">
+          <path d="M334 42h21l62 96h-21z" />
+          <path d="M396 42h21l-62 96h-21z" />
+        </g>
+        {/* A */}
+        <g className="gateway-letter gateway-letter-a">
+          <path d="M465 138 L497 42 H517 L549 138 H529 L507 63 L485 138 Z" />
+          <path d="M482 101 H532 V117 H482 Z" />
+        </g>
+        {/* D ring — boots around the Forward triangle via clip reveal */}
+        <path
+          className="gateway-d"
+          fillRule="evenodd"
+          d="
+            M597 42 H692
+            C726 42 747 61 747 90
+            C747 119 726 138 692 138
+            H597 Z
+
+            M616 59 H689
+            C713 59 728 70 728 90
+            C728 110 713 121 689 121
+            H616 Z
+          "
+        />
+        {/* Forward mark — the ▶ cutout, seeded first */}
+        <path className="gateway-forward" d="M606 78 L630 90 L606 102 Z" />
       </g>
+      {/* Single signal launch pulse around the Forward mark */}
+      <circle
+        className="gateway-launch-ring"
+        cx="618"
+        cy="90"
+        r="11"
+        fill="none"
+        strokeWidth="1"
+      />
     </svg>
   )
 }

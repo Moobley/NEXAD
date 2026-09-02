@@ -3,10 +3,8 @@ import { cn } from "@/lib/utils"
 import type { ProjectTone } from "@/content/projects"
 
 const fields: Record<ProjectTone, string> = {
-  obsidian:
-    "radial-gradient(120% 120% at 18% 0%, #16161a 0%, #0b0b0d 55%)",
-  lilac: "radial-gradient(120% 120% at 82% 100%, #232030 0%, #0b0b0d 62%)",
-  iris: "radial-gradient(130% 130% at 70% 0%, #14122b 0%, #0b0b0d 60%)",
+  carbon: "radial-gradient(120% 120% at 18% 0%, #16171a 0%, #0b0c0d 55%)",
+  graphite: "radial-gradient(130% 130% at 70% 0%, #2e3033 0%, #0b0c0d 62%)",
 }
 
 type ProjectVisualProps = {
@@ -26,7 +24,7 @@ type ProjectVisualProps = {
 export function ProjectVisual({
   index,
   label,
-  tone = "obsidian",
+  tone = "carbon",
   surface = "dark",
   className,
 }: ProjectVisualProps) {

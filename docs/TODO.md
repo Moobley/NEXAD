@@ -1,4 +1,4 @@
-# NEXO — Roadmap
+# NEXAD — Roadmap
 
 Legend: ✅ Complete · 🔴 High priority · 🟠 Next · 🟡 Later · ⏸ Paused · ⚪ Optional
 
@@ -7,12 +7,12 @@ Legend: ✅ Complete · 🔴 High priority · 🟠 Next · 🟡 Later · ⏸ Pau
 - Routing / deploy (static export, trailingSlash, basePath env, GitHub Pages
   workflow on `master`, no middleware).
 - Services page (Hero → 5 Capabilities → System → Collaboration → CTA).
-- Studio page (Hero → Why NEXO → Team → Principles → Network → CTA).
-- Work index + Corazón case study + Barber NEXO Lab page.
+- Studio page (Hero → Why NEXAD → Team → Principles → Network → CTA).
+- Work index + Corazón case study + Barber NEXAD Lab page.
 - Contact UI (Formspree integration, states, validation, i18n).
 - Editorial compression / mobile pass (copy reduction, geography dedup,
   compact internal heroes, reduced-motion preserved).
-- NEXO Gateway (root `/`, ES/EN/IT language entry, browser-language
+- NEXAD Gateway (root `/`, ES/EN/IT language entry, browser-language
   suggestion; localized routes directly accessible — no deep-link guard).
 - Barber customer real-asset pass (3 real WebP screenshots in the case study).
 - Repository / project memory (canonical: `AGENTS.md` + `docs/`
@@ -21,6 +21,10 @@ Legend: ✅ Complete · 🔴 High priority · 🟠 Next · 🟡 Later · ⏸ Pau
   feature flag + Formspree-ID requirement, submit guard, disabled UX with
   availability note; no marketing/consent opt-ins; no fake public email /
   WhatsApp / calendar introduced).
+- NEXO → NEXAD brand migration (D-023): official logo assets, Carbon/Ivory/
+  Signal palette, Space Grotesk + IBM Plex Mono, Forward D system, Gateway
+  Boot → Forward animation, `nexad_gateway_seen` storage migration, NEXAD
+  copy/SEO, basePath `/NEXAD`, docs updated.
 
 ## ⏸ Paused
 
@@ -45,7 +49,7 @@ into a gallery.
 ### 6B — Legal + Contact production activation
 
 🔴 Blocked / pending real business data. Next major task after 6A. Do not
-invent provider/company/tax data — NEXO is pre-launch and early-stage.
+invent provider/company/tax data — NEXAD is pre-launch and early-stage.
 
 Legal identity / provider data:
 
@@ -54,8 +58,8 @@ Legal identity / provider data:
 - Define a legally appropriate publishable domicile/address for the service
   provider (Las Palmas de Gran Canaria alone is not a substitute for a
   complete address when legally required).
-- Create and approve a public NEXO contact email.
-- Create a dedicated NEXO business messaging/WhatsApp channel before exposing
+- Create and approve a public NEXAD contact email.
+- Create a dedicated NEXAD business messaging/WhatsApp channel before exposing
   any WhatsApp CTA; later implement a direct-contact CTA and arrange calls
   manually through messaging (no calendar booking).
 
@@ -108,9 +112,9 @@ Spam protection:
 - `app/sitemap.ts` (22 canonical URLs) and `app/robots.ts` (allow-all, no
   `Disallow: /`); while noindex, `robots.txt` does not advertise the sitemap
 - Open Graph + Twitter cards with a static 1200×630 social preview
-  (`public/social/nexo-social.png`)
+  (`public/social/nexad-social.png`)
 - minimal `WebSite` JSON-LD at the Gateway root
-- origin/basePath-driven URL builder (`lib/seo.ts`); no `/NEXO` hardcoded
+- origin/basePath-driven URL builder (`lib/seo.ts`); no `/NEXAD` hardcoded
 
 Production / activation TODOs (blocked until the custom domain and explicit
 approval — not blockers for the foundation):
@@ -166,8 +170,8 @@ semantics.
 
 ### Domain / production deployment
 
-GitHub Pages is temporary; a future domain (possibly `nexo.studio`) is NOT
-acquired or confirmed. When decided: DNS, custom domain, HTTPS, drop `/NEXO`
+GitHub Pages is temporary; a future custom domain is NOT
+acquired or confirmed. When decided: DNS, custom domain, HTTPS, drop `/NEXAD`
 from the production basePath, final canonicals, Search Console, final sitemap,
 redirects if needed, verify localized routes and the Gateway.
 
@@ -177,7 +181,7 @@ redirects if needed, verify localized routes and the Gateway.
 
 After the site is technically stable: ICP, offers, CTA, funnel, lead
 qualification, positioning, proof, objections, conversion copy. Do not
-restrict NEXO to restaurants.
+restrict NEXAD to restaurants.
 
 ### Service landing pages / SEO content
 
@@ -194,7 +198,7 @@ proof for now.
 
 ### Content / organic marketing
 
-Separate from technical completion: NEXO Instagram, Lorenzo as a brand face,
+Separate from technical completion: NEXAD Instagram, Lorenzo as a brand face,
 educational content, project breakdowns, behind the scenes, marketing + tech
 connection, selective build in public.
 

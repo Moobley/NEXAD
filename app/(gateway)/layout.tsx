@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { getTranslations } from "next-intl/server"
-import { Familjen_Grotesk, Geist_Mono, Instrument_Serif } from "next/font/google"
+import { Space_Grotesk, IBM_Plex_Mono, Instrument_Serif } from "next/font/google"
 
 import { cn } from "@/lib/utils"
 import { routing } from "@/i18n/routing"
@@ -16,9 +16,9 @@ import {
 
 import "../globals.css"
 
-const grotesk = Familjen_Grotesk({
+const grotesk = Space_Grotesk({
   subsets: ["latin", "latin-ext"],
-  variable: "--font-grotesk",
+  variable: "--font-space-grotesk",
   display: "swap",
 })
 
@@ -30,9 +30,10 @@ const instrument = Instrument_Serif({
   display: "swap",
 })
 
-const geistMono = Geist_Mono({
+const geistMono = IBM_Plex_Mono({
   subsets: ["latin"],
-  variable: "--font-geist-mono",
+  weight: ["400", "500"],
+  variable: "--font-plex-mono",
   display: "swap",
 })
 

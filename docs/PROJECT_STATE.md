@@ -1,24 +1,30 @@
-# NEXO Project State
+# NEXAD Project State
 
-Snapshot of how NEXO is built today. Stable rules live in `AGENTS.md`;
+Snapshot of how NEXAD is built today. Stable rules live in `AGENTS.md`;
 intentional decisions and reasons in `DECISIONS.md`; roadmap in `TODO.md`.
+Historical NEXO entries (D-001 … D-022) are kept for context; the current
+state is NEXAD (D-023).
 
 ## Product
 
-Public site for NEXO, a digital studio based in Las Palmas de Gran Canaria.
-The root `/` is the NEXO Gateway (language entry point); the localized site
-(ES / EN / IT) is the app. Institutional pages were deliberately compressed
-(see Current page architecture).
+Public site for NEXAD, a digital studio based in Las Palmas de Gran Canaria
+combining marketing, software, data and product as one growth system
+(**Growth, engineered.**). The root `/` is the NEXAD Gateway (language entry
+point); the localized site (ES / EN / IT) is the app. Institutional pages were
+deliberately compressed (see Current page architecture).
 
 ## Positioning
 
-Digital studio combining Strategy, Marketing, Content and Technology.
-Hospitality is the first proof/case study, not the market limit. Services:
-Digital Strategy; Paid Media/Growth (Meta Ads, Google Ads, other channels only
-when appropriate); Social/Content; Web/Digital Experiences;
-Software/Automation. Engagement: one-off projects and retainers.
+Studio where marketing, software, data and product are parts of the same
+growth system. Hospitality is the first proof/case study, not the market
+limit. Services: Digital Strategy; Paid Media/Growth (Meta Ads, Google Ads,
+other channels only when appropriate); Social/Content; Web/Digital
+Experiences; Software/Automation. Brand architecture vocabulary: NEXAD Growth
+(marketing/strategy/paid/content), NEXAD Build (web/products/interfaces/
+software), NEXAD Systems (automation/internal tools/booking/workflows) — used
+as vocabulary, not as extra pages. Engagement: one-off projects and retainers.
 
-NEXO is early-stage: core team (Alessandro — marketing/brand; Lorenzo —
+NEXAD is early-stage: core team (Alessandro — marketing/brand; Lorenzo —
 full-stack dev) plus external collaborators when needed. Never presented as a
 large structured company.
 
@@ -42,11 +48,11 @@ large structured company.
 
 - `next.config.ts`: `output: "export"`, `trailingSlash: true`,
   `images.unoptimized: true`, `basePath` from `NEXT_PUBLIC_BASE_PATH`.
-- Local/dev: empty basePath. GitHub Pages: `NEXT_PUBLIC_BASE_PATH=/NEXO`
-  injected at build. `/NEXO` is never hardcoded in components (use
+- Local/dev: empty basePath. GitHub Pages: `NEXT_PUBLIC_BASE_PATH=/NEXAD`
+  injected at build. `/NEXAD` is never hardcoded in components (use
   `asset()`/`@/i18n/navigation`).
 - Two root layouts: `app/(gateway)/` (the `/` Gateway, own `<html>/<body>`,
-  obsidian, no site header/footer) and `app/[locale]/` (localized site with
+  carbon, no site header/footer) and `app/[locale]/` (localized site with
   header/footer).
 - Deploy: GitHub Actions on `master` (`lint` → `typecheck` → build → publish
   `out/`). GitHub Pages is temporary; the architecture must move cleanly to a
@@ -56,15 +62,22 @@ large structured company.
 
 The root `/` is an intentional Gateway, not a localized homepage.
 
+- Shows the NEXAD wordmark with the **Boot → Forward** intro: the `▶` Forward
+  mark seeds, gets a forward impulse, the D boots around it, then N E X A
+  slides in, then the language selector settles (total ≈1.9s; a short variant
+  for returning sessions; reduced-motion shows the final wordmark statically).
 - Allows ES / EN / IT selection; browser language is only a suggestion.
 - No automatic language redirect; no `public/index.html`; no middleware.
 - **Root-only**: `/es/*`, `/en/*` and `/it/*` are directly accessible and are
   never intercepted by the Gateway (no deep-link guard, no `?direct=1`).
-- `sessionStorage` used only for `nexo_gateway_seen` (intro already seen).
+- `sessionStorage` used only for `nexad_gateway_seen`; the legacy
+  `nexo_gateway_seen` key is still recognized during the migration and the new
+  key is written.
 - Language links are real links usable without JS: `/` → choose ES → `/es/`,
-  etc., basePath-aware.
+  etc., basePath-aware. A click adds a forward exit cue before navigation
+  (progressive enhancement only).
 - Gateway SEO is implemented (canonical `/`, hreflang cluster, robots,
-  Open Graph, Twitter).
+  Open Graph, Twitter). Descriptor: `GROWTH, ENGINEERED.`
 
 ## SEO
 
@@ -74,7 +87,7 @@ Environment-driven foundation via `lib/seo.ts`:
   GitHub Pages: `https://moobley.github.io`; custom domain later (not decided).
 - `NEXT_PUBLIC_SITE_INDEXABLE` — `"true"` enables index/follow; anything else
   (default) produces `noindex, follow`.
-- `NEXT_PUBLIC_BASE_PATH` — deployment prefix (GitHub Pages `/NEXO`).
+- `NEXT_PUBLIC_BASE_PATH` — deployment prefix (GitHub Pages `/NEXAD`).
 
 Implementation:
 
@@ -84,12 +97,14 @@ Implementation:
   + `x-default` (Gateway root for the home cluster; `es` fallback for internal
   routes).
 - Open Graph + Twitter (`summary_large_image`) pointing to
-  `public/social/nexo-social.png` (1200×630, obsidian/ivory branded preview).
+  `public/social/nexad-social.png` (1200×630, carbon/ivory preview with the
+  Forward D and `GROWTH, ENGINEERED.`).
 - Minimal `WebSite` JSON-LD at the Gateway root (`name`, `url` from
   `siteUrl("/")`, `inLanguage: ["es", "en", "it"]`). No other schema.
 - `app/sitemap.ts` (22 canonical URLs) and `app/robots.ts` (allow-all). No
   `Disallow: /`. While noindex, `robots.txt` does NOT announce the sitemap.
-- Favicon via `app/icon.svg` (basePath handled by Next).
+- Favicon via `app/icon.svg` (Forward D mark on carbon; basePath handled by
+  Next).
 
 Indexability is fail-closed: an indexable build requires an explicit, valid,
 https `NEXT_PUBLIC_SITE_ORIGIN` (no basePath/pathname/credentials/query/hash);
@@ -108,7 +123,7 @@ submitted to Search Console.
 Pages were editorially compressed; do not re-expand without reason.
 
 - Services: Hero → 5 Capabilities → System → Collaboration → CTA.
-- Studio: Hero → Why NEXO → Team → 4 Principles → Network → CTA.
+- Studio: Hero → Why NEXAD → Team → 4 Principles → Network → CTA.
 - Work: short Hero → Corazón → Barber.
 - Contact: compact Hero → Form.
 
@@ -121,8 +136,9 @@ Pages were editorially compressed; do not re-expand without reason.
   content, reel, production, Meta Ads, Google Ads, strategy). Approved
   publishable result: +20% revenue from the following month — always framed as
   project-specific, never a general promise. Client site:
-  `corazonnapoletano.com`.
-- **Barber Booking** — NEXO Lab. Personal demo product for barber shops,
+  `corazonnapoletano.com`. `public/projects/corazon/logoCNxNexo.png` is a real
+  NEXO-era co-branded asset that still needs a real NEXAD update.
+- **Barber Booking** — NEXAD Lab. Personal demo product for barber shops,
   adaptable to other appointment businesses; in development; no clients, users
   or commercial results. Confirmed features: online booking, service
   selection, barber selection, availability calendar, admin dashboard,
@@ -150,12 +166,12 @@ Pre-launch state — legal production setup is not complete.
 
 - No public Privacy Policy / Legal Notice exists (intentionally: no
   placeholder or invented legal pages).
-- No public NEXO email or WhatsApp exists; no calendar-booking product (calls
+- No public NEXAD email or WhatsApp exists; no calendar-booking product (calls
   are arranged manually through direct messaging).
 - Contact collection is disabled by default; production activation is blocked
   until the legal/contact prerequisites are met (TODO 6B).
 - Missing real-world prerequisites: legal operator/controller identity,
-  publishable professional/service address, public NEXO contact email, and a
+  publishable professional/service address, public NEXAD contact email, and a
   dedicated WhatsApp channel if desired.
 - No newsletter/marketing consent is currently collected.
 
@@ -169,28 +185,38 @@ collected.
 
 ## Assets
 
-- `public/logos/` — NEXO wordmark SVGs (ivory / obsidian / ivory-on-obsidian).
+- `public/logos/` — official NEXAD wordmark SVGs (`nexad-wordmark-carbon`,
+  `nexad-wordmark-ivory`) and Forward D marks (`nexad-mark-{carbon,ivory,
+  signal}`), matching `NEXAD_Brand_Kit_v1.0`. Legacy NEXO assets removed.
 - `public/projects/barber/customer/` — 3 real mobile screenshots (Spanish,
   demo data, WebP): `service-selection`, `availability`, `booking-summary`.
 - `public/projects/corazon/` — real logo assets (`logoCN.webp`,
   `logoCNxNexo.png`); full photography not mounted yet.
+- `public/social/nexad-social.svg` (source) + `nexad-social.png` (rasterized
+  1200×630 via `scripts/generate-social.mjs`).
 - All public paths go through the `asset()` helper (`lib/asset.ts`); asset
   paths must remain basePath-safe.
 
 ## Design system
 
-- Tokens (in `app/globals.css`): `obsidian`, `ivory`, `lilac`, `iris`.
-- Fonts: Familjen Grotesk, Instrument Serif (italic accents), Geist Mono.
+- Tokens (in `app/globals.css`): `carbon` `#0B0C0D`, `ivory` `#F3EBDD`,
+  `graphite` `#73777C`, `soft-ivory` `#D8D1C6`, `signal` `#FF5A36`.
+  `obsidian`/`stone` remain as legacy aliases for existing utility usage.
+  Ratio ≈ 80% carbon/ivory, 15% neutrals, 5% signal.
+- Fonts: Space Grotesk (display/sans), IBM Plex Mono (technical), Instrument
+  Serif (editorial italic accent).
+- Signature device: the Forward D (`▶`); reusable `ForwardMark` component for
+  CTA arrows and action cues.
 - Direction: editorial, typographic, premium; hairlines, mono labels, serif
-  italic accents, controlled motion.
+  italic accents, restrained forward motion.
 - Avoid: generic SaaS cards, stock imagery, gratuitous gradients, cyberpunk /
-  hacker clichés, heavy animations, new dependencies.
+  hacker clichés, heavy animations, new dependencies, signal-as-background.
 
 ## Current constraints
 
 - Static export only — no middleware, no server-only routing, no `public/
   index.html`; localized pages must remain available without JS.
-- `/NEXO` must never be hardcoded; future custom domain must drop the basePath
+- `/NEXAD` must never be hardcoded; future custom domain must drop the basePath
   without code changes.
 - No invented clients, metrics, testimonials, results, features or company
   data. Copy ES/EN/IT is natural localization, not literal translation.
@@ -203,3 +229,6 @@ collected.
 - **Barber Business Real Assets** — paused/optional; blocked by the Barber
   backend admin login (`400 "No active transaction for update or delete
   query"`). Business side keeps the abstract `DashboardUi` for now.
+- **Corazón co-branded logo** (`logoCNxNexo.png`) — the NEXO-era asset is still
+  shown on the home Corazón section; needs a real NEXAD update before the
+  rebrand is visually complete.

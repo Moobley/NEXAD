@@ -1,5 +1,5 @@
-import { NexoGateway } from "@/components/gateway/nexo-gateway"
+import { NexadGateway } from "@/components/gateway/nexad-gateway"
 
 export default function GatewayPage() {
-  return <NexoGateway />
+  return <NexadGateway />
 }

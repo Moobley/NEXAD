@@ -333,3 +333,61 @@ meta robots tag remains the real indexing control.
 **Do not**
 Add a non-https or path-containing origin to an indexable build, or rely on
 the localhost fallback in production.
+## D-023 — NEXO ? NEXAD brand migration
+
+**Decision**
+The site rebrands from NEXO to NEXAD. Visual identity, palette and motion come
+from NEXAD_Brand_Kit_v1.0; the architecture, page structure, editorial
+character and interaction model of the existing site are preserved.
+
+**Why**
+NEXAD positions the studio as marketing + engineering ("Growth, engineered."),
+replacing the previous lilac/iris identity with the Carbon/Ivory/Signal system.
+
+**What changed**
+- Wordmark/logo: official NEXAD SVGs (
+exad-wordmark-{carbon,ivory}.svg,
+  
+exad-mark-{carbon,ivory,signal}.svg) replace the NEXO assets; logo.tsx
+  uses lt="NEXAD" and the real 810×180 ratio. Legacy NEXO logo/social files
+  removed.
+- Palette: carbon #0B0C0D, ivory #F3EBDD, graphite #73777C,
+  soft-ivory #D8D1C6, signal #FF5A36. obsidian/stone kept as aliases
+  for existing utility classes; lilac removed as brand accent; iris ?
+  signal. Signal is an accent (~5%), never a background.
+- Typography: Space Grotesk (sans/display), IBM Plex Mono (technical).
+  Instrument Serif retained as an intentional editorial italic accent.
+- Forward D: the ? cutout is the signature device; ForwardMark component
+  reuses the official geometry for CTA arrows and action cues. Recognition
+  through repetition, not saturation.
+- Gateway: 
+exo-gateway.tsx ? 
+exad-gateway.tsx (NexoGateway ?
+  NexadGateway); Boot ? Forward intro (triangle seed ? impulse ? D boots ?
+  N E X A slides in ? languages), ˜1.9s full / short for returning sessions /
+  static under reduced motion. Descriptor GROWTH, ENGINEERED.
+- Session storage: new key 
+exad_gateway_seen; legacy 
+exo_gateway_seen
+  still recognized during the migration and the new key is written. Drop the
+  legacy key later.
+- SEO/internal: SITE_NAME ? NEXAD, public/social/nexad-social.png
+  (generated from official geometry via scripts/generate-social.cjs),
+  favicon = Forward D mark, package name 
+exad-digital-studio, messages and
+  public copy NEXAD-native (Growth/Build/Systems vocabulary, tagline where it
+  has hierarchy).
+- Deployment: GitHub Pages basePath moved to /NEXAD in deploy.yml
+  (matches the renamed Moobley/NEXAD repository). Still env-driven
+  (NEXT_PUBLIC_BASE_PATH); a custom domain uses an empty basePath without
+  code changes.
+- Case facts preserved: Corazón +20% stays project-specific; Barber remains
+  NEXAD Lab (no clients/users/metrics).
+
+**Do not**
+- Redraw, rotate, stretch or recolor the NEXAD logo; only the official SVGs.
+- Use Signal as a large background, or spread triangles everywhere.
+- Treat the NEXO-era logoCNxNexo.png as the final brand asset — it needs a
+  real NEXAD update.
+- Reintroduce lilac/iris as accents or rename the whole codebase mechanically;
+  obsidian/stone aliases stay until a low-risk cleanup.

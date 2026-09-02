@@ -5,9 +5,10 @@ differ from your training data. Read the relevant guide in
 `node_modules/next/dist/docs/` before writing Next.js code. Heed deprecation notices.
 <!-- END:nextjs-agent-rules -->
 
-# NEXO — Digital Studio
-Next.js 16 + React 19 + TypeScript strict site for NEXO, a digital studio based
-in Las Palmas de Gran Canaria.
+# NEXAD — Digital Studio
+Next.js 16 + React 19 + TypeScript strict site for NEXAD, a digital studio based
+in Las Palmas de Gran Canaria. NEXAD combines marketing, software, data and
+product as one growth system. Position: **Growth, engineered.**
 
 This folder is the git repo. Run git and npm commands here, not from its parent.
 
@@ -21,7 +22,7 @@ This folder is the git repo. Run git and npm commands here, not from its parent.
 
 For routing, deployment or asset-path changes also verify:
 
-`NEXT_PUBLIC_BASE_PATH=/NEXO npm run build`
+`NEXT_PUBLIC_BASE_PATH=/NEXAD npm run build`
 
 Do not commit or push unless explicitly requested.
 
@@ -67,23 +68,26 @@ Do not add middleware/proxy for locale routing: the site uses static export.
 `/` is NOT a localized homepage and does NOT automatically redirect by browser
 language.
 
-It is the NEXO Gateway, implemented in its own route group with a second root
+It is the NEXAD Gateway, implemented in its own route group with a second root
 layout:
 
 - `app/(gateway)/page.tsx`
-- `app/(gateway)/layout.tsx` (renders its own `<html>/<body>`, obsidian, no
+- `app/(gateway)/layout.tsx` (renders its own `<html>/<body>`, carbon, no
   site header/footer)
 
 Components live in `components/gateway/`.
 
 The gateway:
 
-- has an obsidian visual treatment;
+- has a carbon visual treatment;
 - has no normal site header/footer;
 - shows ES / EN / IT;
 - uses browser language only to suggest a locale;
 - never auto-enters a language;
-- uses `sessionStorage` only for `nexo_gateway_seen` (intro already seen).
+- uses `sessionStorage` only for `nexad_gateway_seen` (intro already seen).
+  During the NEXO → NEXAD migration the legacy `nexo_gateway_seen` key is
+  still recognized and the new key is written, so legacy sessions skip the
+  full intro once.
 
 Stable routing rules:
 
@@ -110,9 +114,9 @@ Local development:
 
 GitHub Pages:
 
-`NEXT_PUBLIC_BASE_PATH="/NEXO"`
+`NEXT_PUBLIC_BASE_PATH="/NEXAD"`
 
-Never hardcode `/NEXO` in components or content.
+Never hardcode `/NEXAD` in components or content.
 
 GitHub Pages is temporary. The architecture must remain easy to move to a custom
 domain with an empty basePath.
@@ -122,7 +126,7 @@ SEO is environment-driven via `lib/seo.ts`:
 
 - `NEXT_PUBLIC_SITE_ORIGIN` — public origin (scheme + host), without basePath
   (GitHub Pages: `https://moobley.github.io`; custom domain later). The custom
-  domain is NOT decided — never assume `nexo.studio`.
+  domain is NOT decided — never assume one.
 - `NEXT_PUBLIC_SITE_INDEXABLE` — `"true"` enables index/follow; anything else
   (default) produces `noindex, follow`. The current GitHub Pages deployment
   MUST stay `false`.
@@ -169,7 +173,7 @@ Work has two explicit types:
 Current projects:
 
 - Corazón Napoletano — Client Work
-- Barber Booking — NEXO Lab, product in development
+- Barber Booking — NEXAD Lab, product in development
 
 Never present Barber Booking as a client project.
 
@@ -192,10 +196,12 @@ Corazón Napoletano is real Client Work (Las Palmas): logo, brand identity,
 colors/fonts, physical applications, menu, upselling, QR, site, booking,
 content, reel, production, Meta Ads, Google Ads, overall strategy. Always
 frame `+20%` revenue as the result of that specific project — never as a
-general NEXO promise. The Corazón real-asset pass is paused until enough real
-material exists.
+general NEXAD promise. The Corazón real-asset pass is paused until enough real
+material exists. Note: `public/projects/corazon/logoCNxNexo.png` is a real
+NEXO-era co-branded asset; it still needs a real NEXAD update before it can be
+shown as the current brand.
 
-Barber Booking is a NEXO Lab demo product designed for barber shops,
+Barber Booking is a NEXAD Lab demo product designed for barber shops,
 adaptable with limited re-engineering to other appointment businesses.
 Confirmed features: online booking, service selection, barber selection,
 availability calendar, admin dashboard, services/prices management, staff
@@ -206,25 +212,30 @@ admin side may stay abstract.
 
 ## Positioning and services
 
-NEXO is a digital studio, not a restaurant-only agency. Hospitality is the
-first proof/case study, not the market limit.
+NEXAD is a digital studio where marketing, software, data and product are
+parts of the same growth system. Hospitality is the first proof/case study,
+not the market limit.
 
 - Services: Digital Strategy; Paid Media/Growth (Meta Ads, Google Ads, other
   channels only when appropriate); Social/Content (editorial plan, copy,
   publishing, reels, production via collaborators); Web/Digital Experiences;
   Software/Automation (gestionali, booking platforms, web products,
   automations).
+- Brand architecture: **NEXAD Growth** (marketing, strategy, paid, content),
+  **NEXAD Build** (web, products, interfaces, software), **NEXAD Systems**
+  (automation, internal tools, booking, workflows). Used as vocabulary, not
+  as extra pages.
 - Engagement: one-off projects and retainers.
-- Do not shrink NEXO to restaurants in copy or positioning.
+- Do not shrink NEXAD to restaurants in copy or positioning.
 
 ## Team and company representation
 
-NEXO is early-stage — never present it as a large structured company.
+NEXAD is early-stage — never present it as a large structured company.
 
 - Core team: Alessandro (marketing specialist, brand identity,
   marketing/communication); Lorenzo (full-stack developer, strong security/
   cybersecurity interest).
-- Base: Las Palmas de Gran Canaria; NEXO works across the Canary Islands and
+- Base: Las Palmas de Gran Canaria; NEXAD works across the Canary Islands and
   must not be artificially geo-limited in communication.
 - Model: core team + external specialists/collaborators when needed.
 - Principles: tell the client when something is not needed; measure before
@@ -239,7 +250,7 @@ The current intentionally compressed structure is:
 Hero → Capabilities → System → Collaboration → CTA
 
 ### Studio
-Hero → Why NEXO → Team → Principles → Network → CTA
+Hero → Why NEXAD → Team → Principles → Network → CTA
 
 ### Work
 Short Hero → Corazón → Barber
@@ -267,13 +278,13 @@ Environment:
 
 Do not hardcode a Formspree ID.
 
-There is no public NEXO email or WhatsApp yet — do not invent or suggest
-contact channels (the `nexo.studio` domain is not confirmed). Calls are
+There is no public NEXAD email or WhatsApp yet — do not invent or suggest
+contact channels (the custom domain is not confirmed). Calls are
 arranged manually through direct messaging; no calendar-booking product.
 
 Current pending items:
 
-- public NEXO email;
+- public NEXAD email;
 - WhatsApp number;
 - CAPTCHA/spam hardening;
 - final Privacy/Legal integration.
@@ -281,17 +292,24 @@ Current pending items:
 Do not expose placeholder contact channels in the UI.
 
 ## Design language
-Primary tokens in `app/globals.css` include:
+NEXAD brand tokens in `app/globals.css`:
 
-- `obsidian`
-- `ivory`
-- `lilac`
-- `iris`
+- `carbon` `#0B0C0D` (primary ink / dark surface)
+- `ivory` `#F3EBDD` (light canvas / text on dark)
+- `graphite` `#73777C` (neutral)
+- `soft-ivory` `#D8D1C6` (neutral, muted on dark)
+- `signal` `#FF5A36` (accent — used as an event: CTA detail, hover, focus,
+  Forward D, tiny status markers; never a large background)
+
+`obsidian` and `stone` remain as legacy aliases of `carbon`/graphite-family for
+existing utility usage; new code should use the NEXAD token names.
+
+Target ratio ≈ 80% carbon/ivory, 15% graphite/soft-ivory, 5% signal.
 
 Fonts:
-- Familjen Grotesk
-- Instrument Serif
-- Geist Mono
+- Space Grotesk (display / sans)
+- IBM Plex Mono (technical / labels / metrics)
+- Instrument Serif (intentional editorial italic accent, used sparingly)
 
 Visual language:
 - typography-led;
@@ -300,7 +318,11 @@ Visual language:
 - serif accents;
 - hairlines;
 - generous but controlled whitespace;
-- restrained motion.
+- restrained motion, forward (left → right) by default.
+
+The **Forward D** (the `▶` cutout inside the D) is the signature device. Reuse
+the `ForwardMark` component (`components/ui/forward-mark.tsx`) for CTA arrows
+and action cues; never redraw the logo geometry or place triangles everywhere.
 
 Avoid:
 - generic SaaS cards;
@@ -321,12 +343,12 @@ stacked into one column.
 Public asset paths must remain basePath-safe.
 
 Use the existing `asset()` helper (`lib/asset.ts`) for public paths — never
-hardcode `/NEXO`.
+hardcode `/NEXAD`.
 
 Real project screenshots live under `public/projects/` (e.g.
 `public/projects/barber/customer/`). Current state:
 
-- Barber Booking (NEXO Lab): **customer-side real screenshots are integrated**
+- Barber Booking (NEXAD Lab): **customer-side real screenshots are integrated**
   in the case study (`service-selection`, `availability`, `booking-summary`
   WebP, shown via `components/ui/mobile-frame.tsx`). The business/admin side
   is still abstract and deferred: the Barber backend login was returning
@@ -344,7 +366,7 @@ Screenshot guidelines:
   text-heavy UI; use `object-contain`/natural aspect where appropriate);
 - keep intentional abstract surfaces (Flow, ScheduleUi, DashboardUi) where they
   explain a concept instead of faking a UI we cannot show yet;
-- do not add `/NEXO` manually.
+- do not add `/NEXAD` manually.
 
 ## Verification
 Before declaring implementation complete, normally run:
@@ -355,7 +377,7 @@ Before declaring implementation complete, normally run:
 
 For deployment/routing/path changes also run:
 
-- `NEXT_PUBLIC_BASE_PATH=/NEXO npm run build`
+- `NEXT_PUBLIC_BASE_PATH=/NEXAD npm run build`
 
 For visual tasks, perform responsive QA at relevant mobile and desktop widths.
 

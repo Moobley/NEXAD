@@ -39,7 +39,7 @@ jobs:
       - name: Build static export
         run: npm run build
         env:
-          NEXT_PUBLIC_BASE_PATH: /NEXO
+          NEXT_PUBLIC_BASE_PATH: /NEXAD
           # GitHub Pages is temporary and PRE-LAUNCH: the site must stay
           # noindex until explicit production activation.
           NEXT_PUBLIC_SITE_ORIGIN: https://moobley.github.io

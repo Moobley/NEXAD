@@ -1,9 +1,9 @@
 import { getTranslations } from "next-intl/server"
-import { ArrowRight } from "lucide-react"
 
 import { Link } from "@/i18n/navigation"
 import { Reveal } from "@/components/ui/reveal"
 import { CaseMedia } from "@/components/ui/case-media"
+import { ForwardMark } from "@/components/ui/forward-mark"
 import { ScheduleUi } from "@/components/sections/work/ui-fragments"
 
 export async function WorkLabProject() {
@@ -56,7 +56,7 @@ export async function WorkLabProject() {
             <Reveal delay={200}>
               <Link href="/work/barber-booking" className="cta-primary">
                 {t("cta")}
-                <ArrowRight className="arrow size-4" strokeWidth={1.5} />
+                <ForwardMark className="arrow size-4" />
               </Link>
             </Reveal>
           </div>

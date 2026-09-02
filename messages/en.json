@@ -1,37 +1,37 @@
 {
   "seo": {
     "gateway": {
-      "title": "NEXO — Digital Studio",
-      "description": "Strategy, marketing, content and technology."
+      "title": "NEXAD — Digital Studio",
+      "description": "Growth, engineered. A digital studio connecting strategy, marketing, content, product and software."
     },
     "home": {
-      "title": "NEXO — Strategy, marketing, content & technology",
-      "description": "Digital studio based in Las Palmas de Gran Canaria, combining strategy, marketing, content and technology for businesses and digital projects."
+      "title": "NEXAD — Strategy, marketing, content & technology",
+      "description": "Digital studio based in Las Palmas de Gran Canaria connecting marketing and software as one growth system: strategy, content, web experiences and automation."
     },
     "services": {
-      "title": "Services — NEXO",
+      "title": "Services — NEXAD",
       "description": "Digital strategy, paid media, social and content, web experiences, software and automation, aligned with each project's real objectives."
     },
     "studio": {
-      "title": "Studio — NEXO",
-      "description": "NEXO is a digital studio with a core team and a network of specialists connecting strategy, marketing, content and technology."
+      "title": "Studio — NEXAD",
+      "description": "NEXAD is a digital studio with a core team and a network of specialists connecting strategy, marketing, content, product and software."
     },
     "work": {
-      "title": "Work — NEXO",
-      "description": "Client work and NEXO Lab projects: Corazón Napoletano and Barber Booking, a booking system for barber shops in development."
+      "title": "Work — NEXAD",
+      "description": "Client work and NEXAD Lab projects: Corazón Napoletano and Barber Booking, a booking system for barber shops in development."
     },
     "contact": {
-      "title": "Contact — NEXO",
-      "description": "NEXO's contact page. The contact form will be available soon."
+      "title": "Contact — NEXAD",
+      "description": "NEXAD's contact page. The contact form will be available soon."
     },
     "projects": {
       "corazon": {
-        "title": "Corazón Napoletano — Client Work | NEXO",
+        "title": "Corazón Napoletano — Client Work | NEXAD",
         "description": "Project for Corazón Napoletano in Las Palmas: identity, web, content, production and paid media. Project-specific result: +20% revenue from the following month."
       },
       "barber": {
-        "title": "Barber Booking — NEXO Lab",
-        "description": "NEXO Lab project in development for barber shops: online booking, service and barber selection, availability, and management tools using demo data."
+        "title": "Barber Booking — NEXAD Lab",
+        "description": "NEXAD Lab project in development for barber shops: online booking, service and barber selection, availability, and management tools using demo data."
       }
     }
   },
@@ -52,11 +52,11 @@
   },
   "home": {
     "hero": {
-      "meta": "Strategy · Design · Technology",
+      "meta": "Strategy · Marketing · Technology",
       "coords": "28.1° N — 15.4° W",
-      "titleLine1": "We turn digital strategy",
-      "titleLine2": "into real growth.",
-      "support": "Strategy, marketing, content and technology working as one single system to grow businesses.",
+      "titleLine1": "Growth,",
+      "titleLine2": "engineered.",
+      "support": "A studio where marketing and software are part of the same growth system: strategy, product, content and technology connected from the objective.",
       "ctaPrimary": "Tell us your goal",
       "ctaSecondary": "See results"
     },
@@ -283,7 +283,7 @@
           "note": "Result specific to this project and context."
         },
         "next": {
-          "label": "Next · NEXO Lab",
+          "label": "Next · NEXAD Lab",
           "title": "Barber Booking",
           "cta": "Explore the product"
         }
@@ -291,7 +291,7 @@
     },
     "barber": {
       "index": "02",
-      "clientLabel": "NEXO Lab",
+      "clientLabel": "NEXAD Lab",
       "title": "Barber Booking",
       "category": "Digital product · Booking",
       "status": "Product in development",
@@ -393,7 +393,7 @@
         "status": {
           "eyebrow": "Status",
           "heading": "In development.",
-          "body": "The product keeps evolving as we validate flows, interface and architecture. We show it as part of NEXO Lab because the process also represents how we think about product and technology."
+          "body": "The product keeps evolving as we validate flows, interface and architecture. We show it as part of NEXAD Lab because the process also represents how we think about product and technology."
         },
         "next": {
           "label": "Client Work",
@@ -427,7 +427,7 @@
       "index": "01",
       "eyebrow": "Capabilities",
       "title": "Five capabilities. One system.",
-      "support": "We activate only what the objective needs.",
+      "support": "Growth · Build · Systems — we activate only what the objective needs.",
       "principleLabel": "Principle",
       "list": [
         {
@@ -514,17 +514,17 @@
       "eyebrow": "Studio",
       "titleLine1": "Digital, with someone",
       "titleLine2": "on the other side.",
-      "support": "NEXO connects marketing and technology so the client doesn't have to coordinate separate pieces, suppliers and decisions.",
+      "support": "NEXAD connects marketing and technology so the client doesn't have to coordinate separate pieces, suppliers and decisions.",
       "ctaPrimary": "How we think",
       "ctaSecondary": "Work with us",
       "location": "Las Palmas · Gran Canaria"
     },
     "why": {
       "index": "01",
-      "eyebrow": "Why NEXO",
+      "eyebrow": "Why NEXAD",
       "title": "Fewer disconnected pieces. More direction.",
       "body": "We saw businesses with real potential treating campaigns, content, web and technology as separate pieces — and too often leaving the client alone with the numbers.",
-      "body2": "NEXO exists to connect those decisions and stay involved after launch.",
+      "body2": "NEXAD exists to connect those decisions and stay involved after launch.",
       "flow": [
         "Measure",
         "Understand",
@@ -537,7 +537,7 @@
       "index": "02",
       "eyebrow": "The core",
       "title": "Two disciplines. One direction.",
-      "intro": "NEXO brings together two ways of looking at the same problem.",
+      "intro": "NEXAD brings together two ways of looking at the same problem.",
       "members": [
         {
           "marker": "01",
@@ -583,7 +583,7 @@
       "index": "04",
       "eyebrow": "The right team",
       "title": "A small core. Specialists when needed.",
-      "body": "NEXO keeps project direction and brings in specialist profiles when the work requires it.",
+      "body": "NEXAD keeps project direction and brings in specialist profiles when the work requires it.",
       "examples": [
         "Photography",
         "Video",
@@ -699,7 +699,7 @@
     "back": "Back to home"
   },
   "footer": {
-    "tagline": "Digital strategy and growth studio. Strategy, marketing, content and technology.",
+    "tagline": "Growth, engineered. Strategy, marketing, content, product and software as one system.",
     "location": "Las Palmas · Gran Canaria",
     "nav": "Navigation",
     "studio": "Studio"

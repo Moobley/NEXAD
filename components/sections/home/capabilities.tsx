@@ -73,7 +73,7 @@ export function Capabilities() {
           <div className="hidden lg:col-span-5 lg:block">
             <div className="sticky top-28">
               <div
-                className="border border-obsidian/15 border-t-2 border-t-iris"
+                className="border border-obsidian/15 border-t-2 border-t-signal"
                 aria-live="polite"
               >
                 <div className="flex h-10 items-center justify-between border-b border-obsidian/10 px-6">
