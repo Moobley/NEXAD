@@ -56,7 +56,7 @@ export async function WorkLabProject() {
             <Reveal delay={200}>
               <Link href="/work/barber-booking" className="cta-primary">
                 {t("cta")}
-                <ForwardMark className="arrow size-4" />
+                <ForwardMark className="cta-forward" />
               </Link>
             </Reveal>
           </div>

@@ -164,38 +164,44 @@
     background-size: 200px 200px;
   }
 
+  /* ============================================================
+     NEXAD interaction system.
+     Neutral at rest → Signal on intent → Forward on action.
+     Signal is an event color; the Forward mark reveals only when the
+     user indicates intent (hover / keyboard focus).
+     ============================================================ */
+
   .cta-primary {
     display: inline-flex;
     align-items: center;
-    gap: 0.875rem;
+    gap: 0;
     padding: 1.05rem 1.9rem;
-    background: var(--primary);
+    background-color: var(--primary);
     color: var(--primary-foreground);
     font-size: 0.8125rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     font-weight: 500;
-    transition: opacity 0.3s ease;
+    transition:
+      background-color 0.28s ease,
+      color 0.28s ease;
   }
 
-  .cta-primary:hover {
-    opacity: 0.82;
+  .cta-primary:hover,
+  .cta-primary:focus-visible {
+    background-color: var(--color-signal);
+    color: var(--color-ivory);
   }
 
-  .cta-primary .arrow,
-  .cta-secondary .arrow {
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .cta-primary:hover .arrow,
-  .cta-secondary:hover .arrow {
-    transform: translateX(4px);
+  .cta-primary:focus-visible {
+    outline: 2px solid var(--color-foreground);
+    outline-offset: 3px;
   }
 
   .cta-secondary {
     display: inline-flex;
     align-items: center;
-    gap: 0.875rem;
+    gap: 0;
     padding-bottom: 0.5rem;
     border-bottom: 1px solid currentColor;
     color: currentColor;
@@ -203,11 +209,197 @@
     letter-spacing: 0.14em;
     text-transform: uppercase;
     font-weight: 500;
-    transition: opacity 0.3s ease;
+    transition:
+      color 0.28s ease,
+      border-color 0.28s ease;
   }
 
-  .cta-secondary:hover {
-    opacity: 0.75;
+  .cta-secondary:hover,
+  .cta-secondary:focus-visible {
+    color: var(--color-signal);
+    border-color: var(--color-signal);
+  }
+
+  .cta-secondary:focus-visible {
+    outline: 2px solid var(--color-signal);
+    outline-offset: 3px;
+  }
+
+  /* Header contact button (light surface). Same interaction as cta-primary,
+     with the header's compact proportions. */
+  .header-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0;
+    padding: 0.625rem 1.25rem;
+    background-color: var(--color-carbon);
+    color: var(--color-ivory);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    transition:
+      background-color 0.25s ease,
+      color 0.25s ease;
+  }
+
+  .header-cta:hover,
+  .header-cta:focus-visible {
+    background-color: var(--color-signal);
+    color: var(--color-ivory);
+  }
+
+  .header-cta:focus-visible {
+    outline: 2px solid var(--color-foreground);
+    outline-offset: 3px;
+  }
+
+  /* Mobile menu contact button (carbon surface). */
+  .menu-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0;
+    padding: 1rem 1.5rem;
+    background-color: var(--color-ivory);
+    color: var(--color-carbon);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    transition:
+      background-color 0.25s ease,
+      color 0.25s ease;
+  }
+
+  .menu-cta:hover,
+  .menu-cta:focus-visible {
+    background-color: var(--color-signal);
+    color: var(--color-ivory);
+  }
+
+  .menu-cta:focus-visible {
+    outline: 2px solid var(--color-foreground);
+    outline-offset: 3px;
+  }
+
+  /* Navigation link (header desktop + mobile). Active state is applied in
+     the component via the `text-foreground` utility, which wins over this
+     base color because utilities come later in the cascade. */
+  .nav-link {
+    color: var(--muted-foreground);
+    transition: color 0.25s ease;
+  }
+
+  .nav-link:hover,
+  .nav-link:focus-visible {
+    color: var(--color-signal);
+  }
+
+  .nav-link:focus-visible {
+    outline: 2px solid var(--color-signal);
+    outline-offset: 3px;
+  }
+
+  /* Plain editorial / footer link — Signal on intent, no Forward mark. */
+  .interactive-link {
+    color: var(--muted-foreground);
+    transition: color 0.25s ease;
+  }
+
+  .interactive-link:hover,
+  .interactive-link:focus-visible {
+    color: var(--color-signal);
+  }
+
+  .interactive-link:focus-visible {
+    outline: 2px solid var(--color-signal);
+    outline-offset: 3px;
+  }
+
+  /* Language option. Active (current locale) = foreground + Signal
+     underline; intent = Signal. */
+  .lang-link {
+    color: var(--muted-foreground);
+    transition: color 0.25s ease;
+  }
+
+  .lang-link:hover,
+  .lang-link:focus-visible {
+    color: var(--color-signal);
+  }
+
+  .lang-link-active {
+    color: var(--foreground);
+    text-decoration: underline;
+    text-decoration-color: var(--color-signal);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+  }
+
+  .lang-link:focus-visible {
+    outline: 2px solid var(--color-signal);
+    outline-offset: 3px;
+  }
+
+  /* The Forward mark — hidden at rest (no reserved space), generated by
+     intent. Width/margin grow from zero so the label never moves; the mark
+     slides in from the left with a tiny forward settle. */
+  .cta-forward {
+    display: block;
+    flex: none;
+    width: 0;
+    height: 1rem;
+    margin-inline-start: 0;
+    opacity: 0;
+    transform: translateX(-5px) scale(0.85);
+    transition:
+      width 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+      margin-inline-start 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+      opacity 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Keyboard intent reveals the mark on every device. */
+  .cta-primary:focus-visible .cta-forward,
+  .cta-secondary:focus-visible .cta-forward,
+  .header-cta:focus-visible .cta-forward,
+  .menu-cta:focus-visible .cta-forward {
+    opacity: 1;
+    width: 1rem;
+    margin-inline-start: 0.75rem;
+    transform: translateX(0) scale(1);
+  }
+
+  /* Pointer intent. Scoped to hover-capable devices so touch taps never
+     leave a sticky revealed mark behind. */
+  @media (hover: hover) {
+    .cta-primary:hover .cta-forward,
+    .cta-secondary:hover .cta-forward,
+    .header-cta:hover .cta-forward,
+    .menu-cta:hover .cta-forward {
+      opacity: 1;
+      width: 1rem;
+      margin-inline-start: 0.75rem;
+      transform: translateX(0) scale(1);
+    }
+  }
+
+  /* Disabled CTA (e.g. submitting form): no Signal intent, mark stays
+     hidden. Declared last so it wins over the hover reveal. */
+  .cta-primary:disabled,
+  .cta-primary:disabled:hover,
+  .cta-primary:disabled:focus-visible {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    cursor: not-allowed;
+  }
+
+  .cta-primary:disabled .cta-forward,
+  .cta-primary:disabled:hover .cta-forward {
+    opacity: 0;
+    width: 0;
+    margin-inline-start: 0;
+    transform: translateX(-5px) scale(0.85);
   }
 
   /* Aurora background: two large gradient layers of soft pastel light.
@@ -348,6 +540,13 @@
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
+  }
+
+  /* CTA Forward mark: reveal instantly, no slide/settle. Color changes
+     (Signal) may remain. */
+  .cta-forward {
+    transition: none;
+    transform: none !important;
   }
 }
 

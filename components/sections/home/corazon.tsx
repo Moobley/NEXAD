@@ -1,9 +1,9 @@
 import { getTranslations } from "next-intl/server"
 import Image from "next/image"
-import { ArrowUpRight } from "lucide-react"
 
 import { Reveal } from "@/components/ui/reveal"
 import { CaseMedia } from "@/components/ui/case-media"
+import { ForwardMark } from "@/components/ui/forward-mark"
 import { asset } from "@/lib/asset"
 
 export async function Corazon() {
@@ -108,7 +108,7 @@ export async function Corazon() {
               <span className="font-mono text-[11px] uppercase tracking-[0.16em]">
                 {tc("url")}
               </span>
-              <ArrowUpRight className="size-4" strokeWidth={1.5} />
+              <ForwardMark className="cta-forward" />
             </a>
           </Reveal>
         </div>

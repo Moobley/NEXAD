@@ -43,7 +43,7 @@ export function Capabilities() {
                       "block w-full py-7 text-left transition-colors duration-300 md:py-8",
                       active === i
                         ? "text-foreground"
-                        : "text-muted-foreground hover:text-foreground"
+                        : "text-muted-foreground hover:text-signal"
                     )}
                   >
                     <span className="flex items-baseline gap-5">

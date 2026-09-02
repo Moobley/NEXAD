@@ -36,7 +36,7 @@ export function PagePlaceholder({
         <Reveal variant="fade-up" delay={260}>
           <Link href="/" className="cta-secondary mt-14">
             {backLabel}
-            <ForwardMark className="arrow size-4" />
+            <ForwardMark className="cta-forward" />
           </Link>
         </Reveal>
       </div>

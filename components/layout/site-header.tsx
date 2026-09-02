@@ -7,6 +7,7 @@ import { Menu, X } from "lucide-react"
 import { Link, usePathname } from "@/i18n/navigation"
 import { LanguageSwitcher } from "@/components/layout/language-switcher"
 import { Logo } from "@/components/layout/logo"
+import { ForwardMark } from "@/components/ui/forward-mark"
 import { cn } from "@/lib/utils"
 
 const NAV_ITEMS = [
@@ -64,10 +65,8 @@ export function SiteHeader() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "text-[13px] tracking-[0.08em] transition-colors duration-300",
-                  pathname === item.href
-                    ? "text-foreground"
-                    : "text-muted-foreground hover:text-foreground"
+                  "nav-link text-[13px] tracking-[0.08em]",
+                  pathname === item.href && "text-foreground"
                 )}
               >
                 {t(item.key)}
@@ -79,9 +78,10 @@ export function SiteHeader() {
             <LanguageSwitcher className="hidden md:flex" />
             <Link
               href="/contact"
-              className="hidden items-center gap-2 bg-obsidian px-5 py-2.5 text-[11px] font-medium uppercase tracking-[0.16em] text-ivory transition-opacity duration-300 hover:opacity-80 lg:inline-flex"
+              className="header-cta hidden lg:inline-flex"
             >
               {t("cta")}
+              <ForwardMark className="cta-forward" />
             </Link>
             <button
               type="button"
@@ -121,10 +121,8 @@ export function SiteHeader() {
                 href={item.href}
                 onClick={close}
                 className={cn(
-                  "border-b border-border py-5 font-sans text-4xl font-medium tracking-tight transition-opacity",
-                  pathname === item.href
-                    ? "text-foreground"
-                    : "text-muted-foreground hover:text-foreground"
+                  "nav-link border-b border-border py-5 font-sans text-4xl font-medium tracking-tight",
+                  pathname === item.href && "text-foreground"
                 )}
               >
                 {t(item.key)}
@@ -133,9 +131,10 @@ export function SiteHeader() {
             <Link
               href="/contact"
               onClick={close}
-              className="mt-10 inline-flex w-fit items-center bg-ivory px-6 py-4 text-[12px] font-medium uppercase tracking-[0.16em] text-obsidian"
+              className="menu-cta mt-10"
             >
               {t("cta")}
+              <ForwardMark className="cta-forward" />
             </Link>
           </nav>
 

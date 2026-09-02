@@ -44,11 +44,11 @@ export async function StudioHero() {
             <div className="flex flex-col gap-6 sm:flex-row sm:items-center">
               <Link href="/studio#principios" className="cta-primary">
                 {t("ctaPrimary")}
-                <ForwardMark className="arrow size-4" />
+                <ForwardMark className="cta-forward" />
               </Link>
               <Link href="/contact" className="cta-secondary">
                 {t("ctaSecondary")}
-                <ForwardMark className="arrow size-4" />
+                <ForwardMark className="cta-forward" />
               </Link>
             </div>
           </Reveal>

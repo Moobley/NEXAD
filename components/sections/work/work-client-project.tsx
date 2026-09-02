@@ -71,7 +71,7 @@ export async function WorkClientProject() {
               </div>
               <Link href="/work/corazon-napoletano" className="cta-primary mt-8">
                 {t("cta")}
-                <ForwardMark className="arrow size-4" />
+                <ForwardMark className="cta-forward" />
               </Link>
             </Reveal>
           </div>

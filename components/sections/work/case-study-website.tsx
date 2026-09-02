@@ -1,8 +1,8 @@
 import { getTranslations } from "next-intl/server"
-import { ArrowUpRight } from "lucide-react"
 
 import { Reveal } from "@/components/ui/reveal"
 import { CaseMedia } from "@/components/ui/case-media"
+import { ForwardMark } from "@/components/ui/forward-mark"
 import { cn } from "@/lib/utils"
 
 export async function CaseStudyWebsite() {
@@ -32,7 +32,7 @@ export async function CaseStudyWebsite() {
                 <span className="font-mono text-[11px] uppercase tracking-[0.16em]">
                   {t("url")}
                 </span>
-                <ArrowUpRight className="size-4" strokeWidth={1.5} />
+                <ForwardMark className="cta-forward" />
               </a>
             </Reveal>
           </div>

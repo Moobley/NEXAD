@@ -28,10 +28,8 @@ export function LanguageSwitcher({ className }: { className?: string }) {
           onClick={() => router.replace(pathname, { locale: loc })}
           aria-current={loc === locale ? "true" : undefined}
           className={cn(
-            "px-1.5 py-1 transition-colors duration-300",
-            loc === locale
-              ? "text-foreground underline underline-offset-4"
-              : "text-muted-foreground hover:text-foreground"
+            "lang-link px-1.5 py-1",
+            loc === locale && "lang-link-active"
           )}
         >
           {loc.toUpperCase()}

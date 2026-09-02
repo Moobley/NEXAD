@@ -306,6 +306,24 @@ existing utility usage; new code should use the NEXAD token names.
 
 Target ratio ≈ 80% carbon/ivory, 15% graphite/soft-ivory, 5% signal.
 
+### Interaction language
+Rule: **Neutral at rest → Signal on intent → Forward on action.**
+
+- Rest is Carbon/Ivory/Graphite; Signal appears on hover/focus/active/selected;
+  the `▶` Forward mark reveals only on high-intent CTAs (never on nav links,
+  language options, inline links, or decorative diagrams).
+- Reusable classes live in `app/globals.css` (`@layer components`):
+  `cta-primary`, `cta-secondary`, `header-cta`, `menu-cta`, `nav-link`,
+  `interactive-link`, `lang-link`, and `cta-forward` (the mark reveal —
+  hidden at rest with no reserved space, width/margin grow from zero on
+  hover/focus, `cubic-bezier(0.16, 1, 0.3, 1)`, no bounce/rotate/glow).
+- Pointer reveal is gated behind `@media (hover: hover)` so touch never
+  leaves a sticky mark; keyboard intent reveals via `:focus-visible`
+  (Signal outline) on every device; `prefers-reduced-motion` snaps the mark
+  without translation.
+- Do not fade CTAs with opacity on hover, do not hardcode mark colors inside
+  `ForwardMark` (it uses `currentColor`).
+
 Fonts:
 - Space Grotesk (display / sans)
 - IBM Plex Mono (technical / labels / metrics)

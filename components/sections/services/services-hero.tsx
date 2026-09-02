@@ -47,7 +47,7 @@ export async function ServicesHero() {
             <Reveal trigger="load" variant="fade-up" delay={480}>
               <Link href="/contact" className="cta-primary mt-8">
                 {t("cta")}
-                <ForwardMark className="arrow size-4" />
+                <ForwardMark className="cta-forward" />
               </Link>
             </Reveal>
           </div>

@@ -26,7 +26,7 @@ type Errors = Partial<Record<FieldKey, string>>
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 const FIELD_BASE =
-  "w-full border border-obsidian/15 bg-transparent px-4 py-3.5 text-base text-foreground transition-colors placeholder:text-muted-foreground/60 focus:border-obsidian focus:outline-none focus:ring-2 focus:ring-signal/40"
+  "w-full border border-obsidian/15 bg-transparent px-4 py-3.5 text-base text-foreground transition-colors placeholder:text-muted-foreground/60 hover:border-obsidian/40 focus:border-obsidian focus:outline-none focus:ring-2 focus:ring-signal/40"
 
 function SuccessPanel({ focusRef }: { focusRef: RefObject<HTMLDivElement | null> }) {
   const t = useTranslations("contactPage.success")
@@ -48,7 +48,7 @@ function SuccessPanel({ focusRef }: { focusRef: RefObject<HTMLDivElement | null>
       </p>
       <Link href="/" className="cta-secondary mt-10 inline-flex">
         {t("cta")}
-        <ForwardMark className="arrow size-4" />
+        <ForwardMark className="cta-forward" />
       </Link>
     </div>
   )
@@ -299,10 +299,10 @@ export function ContactForm() {
                   aria-hidden
                   className={cn(
                     "flex h-5 w-5 shrink-0 items-center justify-center border transition-colors peer-focus-visible:ring-2 peer-focus-visible:ring-signal/60",
-                    checked ? "border-obsidian" : "border-obsidian/25"
+                    checked ? "border-signal" : "border-obsidian/25"
                   )}
                 >
-                  <span className={cn("h-2 w-2 bg-obsidian", checked ? "block" : "hidden")} />
+                  <span className={cn("h-2 w-2 bg-signal", checked ? "block" : "hidden")} />
                 </span>
                 <span className="text-sm text-foreground md:text-base">{opt.label}</span>
                 <span aria-hidden className="ml-auto font-mono text-[10px] tracking-[0.2em] text-muted-foreground">
@@ -349,10 +349,10 @@ export function ContactForm() {
                   aria-hidden
                   className={cn(
                     "flex h-5 w-5 shrink-0 items-center justify-center border transition-colors peer-focus-visible:ring-2 peer-focus-visible:ring-signal/60",
-                    checked ? "border-obsidian" : "border-obsidian/25"
+                    checked ? "border-signal" : "border-obsidian/25"
                   )}
                 >
-                  <span className={cn("h-2 w-2 bg-obsidian", checked ? "block" : "hidden")} />
+                  <span className={cn("h-2 w-2 bg-signal", checked ? "block" : "hidden")} />
                 </span>
                 <span className="text-sm text-foreground md:text-base">{opt.label}</span>
               </label>
@@ -408,7 +408,7 @@ export function ContactForm() {
             className={cn("cta-primary", submitting && "cursor-not-allowed opacity-60")}
           >
             {submitting ? t("submitting") : t("submit")}
-            <ForwardMark className="arrow size-4" />
+            <ForwardMark className="cta-forward" />
           </button>
 
           {status === "error" && (

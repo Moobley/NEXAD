@@ -37,7 +37,7 @@ export async function SiteFooter() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                    className="interactive-link text-sm"
                   >
                     {tn(item.key)}
                   </Link>

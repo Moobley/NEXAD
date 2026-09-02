@@ -44,11 +44,11 @@ export async function Hero() {
             <div className="flex flex-col gap-6 sm:flex-row sm:items-center">
               <Link href="/contact" className="cta-primary">
                 {t("ctaPrimary")}
-                <ForwardMark className="arrow size-4" />
+                <ForwardMark className="cta-forward" />
               </Link>
               <Link href="/work" className="cta-secondary">
                 {t("ctaSecondary")}
-                <ForwardMark className="arrow size-4" />
+                <ForwardMark className="cta-forward" />
               </Link>
             </div>
           </Reveal>

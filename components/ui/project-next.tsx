@@ -33,13 +33,13 @@ export function ProjectNext({
           </h2>
           <Link href={href} className="cta-primary mt-12">
             {cta}
-            <ForwardMark className="arrow size-4" />
+            <ForwardMark className="cta-forward" />
           </Link>
         </Reveal>
         <Reveal delay={120}>
           <Link href="/work" className="cta-secondary mt-16">
             {backLabel}
-            <ForwardMark className="arrow size-4" />
+            <ForwardMark className="cta-forward" />
           </Link>
         </Reveal>
       </div>

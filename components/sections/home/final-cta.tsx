@@ -25,7 +25,7 @@ export async function FinalCta() {
         <Reveal variant="fade-up" delay={240}>
           <Link href="/contact" className="cta-primary mt-14">
             {t("action")}
-            <ForwardMark className="arrow size-4" />
+            <ForwardMark className="cta-forward" />
           </Link>
         </Reveal>
       </div>
