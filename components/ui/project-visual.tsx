@@ -8,7 +8,6 @@ const fields: Record<ProjectTone, string> = {
 }
 
 type ProjectVisualProps = {
-  index: string
   label: string
   tone?: ProjectTone
   /** Surface the visual sits on, to pick a legible border. */
@@ -22,7 +21,6 @@ type ProjectVisualProps = {
  * (e.g. <Image>) without touching section layouts.
  */
 export function ProjectVisual({
-  index,
   label,
   tone = "carbon",
   surface = "dark",
@@ -43,9 +41,6 @@ export function ProjectVisual({
       <div className="absolute left-6 top-6 h-8 w-px bg-ivory/25" />
       <div className="absolute bottom-6 left-6 h-px w-8 bg-ivory/25" />
 
-      <span className="absolute right-6 top-6 font-mono text-xs tracking-[0.3em] text-ivory/45 transition-transform duration-500 group-hover:-translate-y-1">
-        {index}
-      </span>
       <span className="absolute bottom-6 left-6 font-sans text-xl font-medium tracking-tight text-ivory/85 md:text-2xl">
         {label}
       </span>

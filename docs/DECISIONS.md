@@ -333,11 +333,11 @@ meta robots tag remains the real indexing control.
 **Do not**
 Add a non-https or path-containing origin to an indexable build, or rely on
 the localhost fallback in production.
-## D-023 � NEXO ? NEXAD brand migration
+## D-023 — NEXO → NEXAD brand migration
 
 **Decision**
 The site rebrands from NEXO to NEXAD. Visual identity, palette and motion come
-from NEXAD_Brand_Kit_v1.0; the architecture, page structure, editorial
+from `NEXAD_Brand_Kit_v1.0`; the architecture, page structure, editorial
 character and interaction model of the existing site are preserved.
 
 **Why**
@@ -345,49 +345,82 @@ NEXAD positions the studio as marketing + engineering ("Growth, engineered."),
 replacing the previous lilac/iris identity with the Carbon/Ivory/Signal system.
 
 **What changed**
-- Wordmark/logo: official NEXAD SVGs (
-exad-wordmark-{carbon,ivory}.svg,
-  
-exad-mark-{carbon,ivory,signal}.svg) replace the NEXO assets; logo.tsx
-  uses lt="NEXAD" and the real 810�180 ratio. Legacy NEXO logo/social files
-  removed.
-- Palette: carbon #0B0C0D, ivory #F3EBDD, graphite #73777C,
-  soft-ivory #D8D1C6, signal #FF5A36. obsidian/stone kept as aliases
-  for existing utility classes; lilac removed as brand accent; iris ?
-  signal. Signal is an accent (~5%), never a background.
+- Wordmark/logo: official NEXAD SVGs (`nexad-wordmark-{carbon,ivory}.svg`,
+  `nexad-mark-{carbon,ivory,signal}.svg`) replace the NEXO assets;
+  `logo.tsx` uses `alt="NEXAD"` and the real 810×180 ratio. Legacy NEXO
+  logo/social files removed.
+- Palette: `carbon #0B0C0D`, `ivory #F3EBDD`, `graphite #73777C`,
+  `soft-ivory #D8D1C6`, `signal #FF5A36`. `obsidian`/`stone` kept as
+  aliases for existing utility classes; `lilac` removed as brand accent;
+  `iris` → `signal`. Signal is an accent (~5%), never a background.
 - Typography: Space Grotesk (sans/display), IBM Plex Mono (technical).
   Instrument Serif retained as an intentional editorial italic accent.
-- Forward D: the ? cutout is the signature device; ForwardMark component
+- Forward D: the ▶ cutout is the signature device; `ForwardMark` component
   reuses the official geometry for CTA arrows and action cues. Recognition
   through repetition, not saturation.
-- Gateway: 
-exo-gateway.tsx ? 
-exad-gateway.tsx (NexoGateway ?
-  NexadGateway); Boot ? Forward intro (triangle seed ? impulse ? D boots ?
-  N E X A slides in ? languages), �1.9s full / short for returning sessions /
-  static under reduced motion. Descriptor GROWTH, ENGINEERED.
-- Session storage: new key 
-exad_gateway_seen; legacy 
-exo_gateway_seen
-  still recognized during the migration and the new key is written. Drop the
-  legacy key later.
-- SEO/internal: SITE_NAME ? NEXAD, public/social/nexad-social.png
-  (generated from official geometry via scripts/generate-social.cjs),
-  favicon = Forward D mark, package name 
-exad-digital-studio, messages and
-  public copy NEXAD-native (Growth/Build/Systems vocabulary, tagline where it
-  has hierarchy).
-- Deployment: GitHub Pages basePath moved to /NEXAD in deploy.yml
-  (matches the renamed Moobley/NEXAD repository). Still env-driven
-  (NEXT_PUBLIC_BASE_PATH); a custom domain uses an empty basePath without
+- Gateway: `nexo-gateway.tsx` → `nexad-gateway.tsx` (`NexoGateway` →
+  `NexadGateway`); Signal → Forward intro (Signal D opens centered, travels
+  right into the wordmark, N E X A reveals as one group), ≈3.7s full / short
+  for returning sessions / static under reduced motion; idle pulse + ambient
+  drift after the intro. Descriptor `GROWTH, ENGINEERED.`
+- Session storage: new key `nexad_gateway_seen`; legacy
+  `nexo_gateway_seen` still recognized during the migration and the new key
+  is written. Drop the legacy key later.
+- SEO/internal: `SITE_NAME` → NEXAD, `public/social/nexad-social.png`
+  (generated from official geometry via `scripts/generate-social.mjs`),
+  favicon = Forward D mark, package name `nexad-digital-studio`, messages
+  and public copy NEXAD-native (Growth/Build/Systems vocabulary, tagline where
+  it has hierarchy).
+- Deployment: GitHub Pages basePath moved to `/NEXAD` in `deploy.yml`
+  (matches the renamed `Moobley/NEXAD` repository). Still env-driven
+  (`NEXT_PUBLIC_BASE_PATH`); a custom domain uses an empty basePath without
   code changes.
-- Case facts preserved: Coraz�n +20% stays project-specific; Barber remains
+- Case facts preserved: Corazón `+20%` stays project-specific; Barber remains
   NEXAD Lab (no clients/users/metrics).
 
 **Do not**
 - Redraw, rotate, stretch or recolor the NEXAD logo; only the official SVGs.
 - Use Signal as a large background, or spread triangles everywhere.
-- Treat the NEXO-era logoCNxNexo.png as the final brand asset � it needs a
+- Treat the NEXO-era `logoCNxNexo.png` as the final brand asset — it needs a
   real NEXAD update.
 - Reintroduce lilac/iris as accents or rename the whole codebase mechanically;
-  obsidian/stone aliases stay until a low-risk cleanup.
+  `obsidian`/`stone` aliases stay until a low-risk cleanup.
+
+## D-024 — Visual refinement v3: Signal dots, numbering, Gateway motion
+
+**Decision**
+Refine the approved NEXAD site without redesign: enlarge the header wordmark,
+introduce a restrained static Signal dot as editorial brand punctuation,
+remove decorative section numbering, and replace the Gateway intro with a
+slower "Signal → Forward" sequence plus a persistent idle state.
+
+**Why**
+The logo was too discreet; section numbers added noise; and the previous
+gateway animation felt too fast and ended frozen. The D is NEXAD's source
+object, so the intro now starts from the D.
+
+**What changed**
+- Header logo: `h-7 md:h-8` (mobile/desktop), same 810×180 SVG, no header
+  height change; mobile menu logo matches.
+- `SignalDot` component (`components/ui/signal-dot.tsx`): small static
+  Signal circle (`sm` 6px / `md` 8px), `aria-hidden`, used as brand
+  punctuation (hero eyebrows, capabilities, studio why, work categories,
+  contact) — 2–4 per page, never as bullets, never pulsing.
+- Removed decorative section indexing (`01`…`05`) and list-item numbers
+  (`0{i+1}`) across all sections; removed project `index` fields. Content
+  numbers (+20%, coordinates, metrics) preserved.
+- Gateway motion renamed **Signal → Forward**: complete Signal D opens
+  centered (translateX −267 → 0 in the 810×180 viewBox), holds, travels right
+  into the wordmark while its ring hands Signal → Ivory (Forward mark stays
+  Signal); N E X A reveals as one group (clip right→left); ≈3.7s full, ~0.9s
+  short, reduced-motion shows the static final wordmark.
+- Idle state: grid drifts (30s), glow drifts (18s), network nodes/connectors
+  breathe asynchronously, Forward ▶ pulses (3.4s breath + pause) with an
+  occasional faint Signal ring; language hover nudges the mark forward.
+- CSS/SVG only (no new dependencies); old Boot→Forward keyframes removed.
+
+**Do not**
+- Pulse static Signal dots on content pages; pulse is reserved for the Gateway
+  Forward mark.
+- Reintroduce decorative numbering or a dot on every section.
+- Exceed ~4.2s before the language links are visible on first load.

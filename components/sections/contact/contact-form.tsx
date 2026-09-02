@@ -276,7 +276,7 @@ export function ContactForm() {
           {t("stageLabel")} <span aria-hidden className="text-foreground/60">*</span>
         </legend>
         <div className="mt-4" aria-describedby={errors.stage ? "contact-stage-error" : undefined}>
-          {stageOptions.map((opt, i) => {
+          {stageOptions.map((opt) => {
             const checked = stage === opt.value
             return (
               <label
@@ -305,9 +305,6 @@ export function ContactForm() {
                   <span className={cn("h-2 w-2 bg-signal", checked ? "block" : "hidden")} />
                 </span>
                 <span className="text-sm text-foreground md:text-base">{opt.label}</span>
-                <span aria-hidden className="ml-auto font-mono text-[10px] tracking-[0.2em] text-muted-foreground">
-                  0{i + 1}
-                </span>
               </label>
             )
           })}

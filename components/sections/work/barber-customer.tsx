@@ -20,12 +20,11 @@ export async function BarberCustomer() {
                 {t("heading")}
               </h2>
               <ol className="mt-8 space-y-3">
-                {features.map((feature, i) => (
+                {features.map((feature) => (
                   <li
                     key={feature}
-                    className="flex gap-4 font-mono text-xs tracking-[0.04em] text-foreground/80"
+                    className="font-mono text-xs tracking-[0.04em] text-foreground/80"
                   >
-                    <span className="text-muted-foreground">0{i + 1}</span>
                     {feature}
                   </li>
                 ))}

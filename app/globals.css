@@ -552,9 +552,10 @@
 
 /* ============================================================
    Gateway root (/) — NEXAD brand gateway, carbon surface.
-   Boot → Forward sequence:
-     ▶ triangle seed → forward impulse → D constructed around it →
-     N E X A slides in → hold NEXAD → languages.
+   Signal → Forward sequence:
+     Signal D opens centered → D travels right into NEXAD →
+     NEXA reveals → languages settle. Idle: grid/glow/network
+     drift and the Forward mark pulses while the user waits.
    ============================================================ */
 
 .gateway {
@@ -569,6 +570,9 @@
     linear-gradient(to right, rgb(243 235 221 / 0.045) 1px, transparent 1px),
     linear-gradient(to bottom, rgb(243 235 221 / 0.045) 1px, transparent 1px);
   background-size: 72px 72px;
+  /* Idle: the grid drifts diagonally by one cell — seamless, almost
+     imperceptible, and alive from the very first frame. */
+  animation: gateway-grid-drift 30s linear infinite;
 }
 
 /* Neutral warm glow — never a large signal/orange wash. */
@@ -578,31 +582,41 @@
     rgb(216 209 196 / 0.1) 0%,
     transparent 72%
   );
+  animation: gateway-glow-drift 18s ease-in-out infinite;
 }
 
-/* Technical network — quiet, precise, never competing with the wordmark. */
+/* Technical network — quiet, precise, never competing with the wordmark.
+   Nodes and connectors keep breathing asynchronously. */
 .gateway-network {
   color: rgb(243 235 221 / 0.2);
 }
 
-.gateway-connector {
-  opacity: 0.45;
+.gateway-node {
+  animation: gateway-node-breathe 5s ease-in-out infinite;
 }
 
-/* The Forward triangle (subpath of the official D) and the D ring are split
-   into separate groups so the gateway can boot the D around the mark. At
-   rest (0 transform, no clip) the render is pixel-identical to the official
-   NEXAD wordmark. */
+.gateway-connector {
+  animation: gateway-connector-breathe 7s ease-in-out infinite;
+}
+
+/* The complete D — ring + Forward mark move and color as one object.
+   Rest position is the official right-hand wordmark slot. */
+.gateway-d-group {
+  transform-box: view-box;
+  transform-origin: 672px 90px;
+}
+
+.gateway-d-ring {
+  fill: currentColor;
+}
+
 .gateway-forward {
+  fill: var(--color-signal);
   transform-box: view-box;
   transform-origin: 618px 90px;
 }
 
-.gateway-d {
-  clip-path: none;
-}
-
-/* Single signal pulse around the Forward mark during launch. */
+/* Occasional faint Signal ring expanding around the Forward mark in idle. */
 .gateway-launch-ring {
   opacity: 0;
   transform-box: view-box;
@@ -610,66 +624,79 @@
   stroke: var(--color-signal);
 }
 
-.gateway-letter {
-  transform-box: view-box;
+/* ============ Full intro (~4s): Signal → Position → Wordmark ============ */
+
+/* D opens centered in Signal (translated to the optical center), holds,
+   then travels right into its wordmark slot. */
+.gateway-intro .gateway-d-group {
+  animation: gateway-d-journey 3.7s ease 0.35s both;
 }
 
-/* Full intro timeline (~1.9s total) */
-.gateway-intro .gateway-network {
-  animation: gateway-network-in 0.8s ease 0.05s both;
+/* Ring hands Signal → Ivory as the D travels into the wordmark. */
+.gateway-intro .gateway-d-ring {
+  fill: var(--color-signal);
+  animation: gateway-d-fill 1.1s ease 1.45s forwards;
 }
 
-.gateway-intro .gateway-forward {
-  animation: gateway-forward-in 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+/* NEXA emerges as one word group as the D opens space (right → left). */
+.gateway-intro .gateway-nexa {
+  animation: gateway-nexa-in 0.9s cubic-bezier(0.16, 1, 0.3, 1) 1.9s both;
 }
 
-.gateway-intro .gateway-launch-ring {
-  animation: gateway-launch-ring 0.5s ease-out 0.32s 1 forwards;
-}
-
-.gateway-intro .gateway-d {
-  animation: gateway-d-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.55s both;
-}
-
-.gateway-intro .gateway-letter-n {
-  animation: gateway-letter-in 0.42s cubic-bezier(0.16, 1, 0.3, 1) 0.9s both;
-}
-
-.gateway-intro .gateway-letter-e {
-  animation: gateway-letter-in 0.42s cubic-bezier(0.16, 1, 0.3, 1) 1s both;
-}
-
-.gateway-intro .gateway-letter-x {
-  animation: gateway-letter-in 0.42s cubic-bezier(0.16, 1, 0.3, 1) 1.1s both;
-}
-
-.gateway-intro .gateway-letter-a {
-  animation: gateway-letter-in 0.42s cubic-bezier(0.16, 1, 0.3, 1) 1.2s both;
+/* Wordmark settles. */
+.gateway-intro .gateway-wordmark {
+  animation: gateway-wordmark-settle 0.45s ease 2.7s both;
 }
 
 .gateway-intro .gateway-descriptor {
-  animation: gateway-settle-in 0.5s ease 1.5s both;
+  animation: gateway-settle-in 0.5s ease 3.05s both;
 }
 
 .gateway-intro .gateway-langs {
-  animation: gateway-settle-in 0.5s ease 1.6s both;
+  animation: gateway-settle-in 0.5s ease 3.2s both;
 }
 
-/* Short variant — session revisit: wordmark already final, quick settle. */
+/* Idle pulse — begins once the wordmark has fully formed. */
+.gateway-intro .gateway-forward {
+  animation: gateway-forward-pulse 3.4s ease-in-out 4.1s infinite;
+}
+
+.gateway-intro .gateway-launch-ring {
+  animation: gateway-idle-ring 13.6s ease-in-out 4.1s infinite;
+}
+
+/* Short variant — session revisit: completed wordmark, quick settle, idle
+   pulse begins almost immediately. */
 .gateway-short .gateway-descriptor,
 .gateway-short .gateway-langs {
   animation: gateway-settle-in 0.45s ease 0.05s both;
 }
 
-.gateway-short .gateway-network {
-  opacity: 1;
+.gateway-short .gateway-forward {
+  animation: gateway-forward-pulse 3.4s ease-in-out 0.9s infinite;
 }
 
 .gateway-short .gateway-launch-ring {
-  opacity: 0;
+  animation: gateway-idle-ring 13.6s ease-in-out 1s infinite;
 }
 
-/* Exit cue — language click accelerates the composition forward. */
+/* Language intent nudges the Forward mark forward and speeds its breath. */
+@media (hover: hover) {
+  .gateway:has(.gateway-langs a:hover) .gateway-forward {
+    animation: gateway-forward-alert 2.2s ease-in-out 0s infinite;
+  }
+}
+
+.gateway:has(.gateway-langs a:focus-visible) .gateway-forward {
+  animation: gateway-forward-alert 2.2s ease-in-out 0s infinite;
+}
+
+/* Exit cue — language click: the D impulses forward, then the composition
+   moves right and fades. */
+.gateway-exit .gateway-d-group {
+  animation: gateway-d-impulse 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
 .gateway-exit .gateway-stage {
   animation: gateway-exit-stage 0.42s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
@@ -679,60 +706,97 @@
   animation: gateway-exit-fade 0.3s ease forwards;
 }
 
-@keyframes gateway-network-in {
+@keyframes gateway-grid-drift {
   from {
-    opacity: 0;
+    background-position: 0 0;
   }
   to {
+    background-position: 72px 72px;
+  }
+}
+
+@keyframes gateway-glow-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-1.5%, 1.5%, 0) scale(1.04);
+  }
+}
+
+@keyframes gateway-node-breathe {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
     opacity: 1;
   }
 }
 
-@keyframes gateway-forward-in {
-  0% {
-    opacity: 0;
-    transform: scale(2.4);
+@keyframes gateway-connector-breathe {
+  0%,
+  100% {
+    opacity: 0.25;
   }
-  55% {
+  50% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes gateway-d-journey {
+  0% {
+    transform: translateX(-267px) scale(0.94);
+    opacity: 0;
+    animation-timing-function: ease;
+  }
+  13.5% {
+    transform: translateX(-267px) scale(1);
     opacity: 1;
-    transform: scale(1) translateX(10px);
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  29.7% {
+    transform: translateX(-267px) scale(1);
+    opacity: 1;
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  59.5% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+    animation-timing-function: ease;
   }
   100% {
+    transform: translateX(0) scale(1);
     opacity: 1;
-    transform: scale(1) translateX(0);
   }
 }
 
-@keyframes gateway-launch-ring {
-  0% {
-    transform: scale(0.5);
-    opacity: 0.9;
-  }
-  100% {
-    transform: scale(2.6);
-    opacity: 0;
-  }
-}
-
-/* The D boots outward from the triangle's exact band (x 606–630, y 78–102
-   in wordmark space) until the full ring is visible. */
-@keyframes gateway-d-in {
-  from {
-    clip-path: inset(37.5% 78% 37.5% 6%);
-  }
+@keyframes gateway-d-fill {
   to {
+    fill: currentColor;
+  }
+}
+
+@keyframes gateway-nexa-in {
+  0% {
+    clip-path: inset(0 0 0 65%);
+    opacity: 0;
+    transform: translateX(14px);
+  }
+  100% {
     clip-path: inset(0 0 0 0);
-  }
-}
-
-@keyframes gateway-letter-in {
-  from {
-    opacity: 0;
-    transform: translateX(22px);
-  }
-  to {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+@keyframes gateway-wordmark-settle {
+  from {
+    transform: translateY(3px);
+  }
+  to {
+    transform: translateY(0);
   }
 }
 
@@ -744,6 +808,74 @@
   to {
     opacity: 1;
     transform: none;
+  }
+}
+
+/* Idle Forward pulse — one soft breath, then a pause. */
+@keyframes gateway-forward-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  10% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+  18% {
+    transform: scale(1.04);
+    opacity: 0.95;
+  }
+  28% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+}
+
+/* Language-hover breathing — slightly faster, nudged forward. */
+@keyframes gateway-forward-alert {
+  0%,
+  100% {
+    transform: translateX(3px) scale(1);
+    opacity: 0.85;
+  }
+  15% {
+    transform: translateX(3px) scale(1.08);
+    opacity: 1;
+  }
+  30% {
+    transform: translateX(3px) scale(1);
+    opacity: 0.85;
+  }
+}
+
+/* Occasional faint expanding ring around the Forward mark. */
+@keyframes gateway-idle-ring {
+  0%,
+  74% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  76% {
+    transform: scale(0.6);
+    opacity: 0.4;
+  }
+  86% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+@keyframes gateway-d-impulse {
+  to {
+    transform: translateX(6px);
   }
 }
 
@@ -760,29 +892,40 @@
   }
 }
 
-/* Reduced motion: gateway static — final wordmark, no construction or
-   impulses, languages ready. */
+/* Reduced motion: gateway static — completed wordmark, languages ready.
+   No travel, no drift, no pulse. Signal details (Forward mark) remain. */
 @media (prefers-reduced-motion: reduce) {
-  .gateway-intro .gateway-network,
-  .gateway-intro .gateway-forward,
-  .gateway-intro .gateway-launch-ring,
-  .gateway-intro .gateway-d,
-  .gateway-intro .gateway-letter-n,
-  .gateway-intro .gateway-letter-e,
-  .gateway-intro .gateway-letter-x,
-  .gateway-intro .gateway-letter-a,
+  .gateway-grid,
+  .gateway-glow,
+  .gateway-node,
+  .gateway-connector,
+  .gateway-intro .gateway-d-group,
+  .gateway-intro .gateway-d-ring,
+  .gateway-intro .gateway-nexa,
+  .gateway-intro .gateway-wordmark,
   .gateway-intro .gateway-descriptor,
   .gateway-intro .gateway-langs,
+  .gateway-intro .gateway-forward,
+  .gateway-intro .gateway-launch-ring,
   .gateway-short .gateway-descriptor,
   .gateway-short .gateway-langs,
+  .gateway-short .gateway-forward,
+  .gateway-short .gateway-launch-ring,
+  .gateway:has(.gateway-langs a:hover) .gateway-forward,
+  .gateway:has(.gateway-langs a:focus-visible) .gateway-forward,
+  .gateway-exit .gateway-d-group,
   .gateway-exit .gateway-stage,
   .gateway-exit .gateway-descriptor,
   .gateway-exit .gateway-langs {
     animation: none !important;
   }
 
-  .gateway-d {
-    clip-path: none !important;
+  .gateway-d-group {
+    transform: none !important;
+  }
+
+  .gateway-d-ring {
+    fill: currentColor !important;
   }
 
   .gateway-launch-ring {

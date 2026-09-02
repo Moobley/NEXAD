@@ -15,7 +15,6 @@ export type ProjectType = "client" | "lab"
 
 export type Project = {
   slug: string
-  index: string
   /**
    * `client` — work delivered for a real business (Corazón Napoletano).
    * `lab` — internal product/concept exploration (Barber Booking). Lab
@@ -40,7 +39,6 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: "corazon-napoletano",
-    index: "01",
     type: "client",
     ns: "projects.corazon",
     client: "Corazón Napoletano",
@@ -59,7 +57,6 @@ export const projects: Project[] = [
   },
   {
     slug: "barber-booking",
-    index: "02",
     type: "lab",
     ns: "projects.barber",
     services: ["ux", "product-design", "web-app", "development"],

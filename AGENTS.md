@@ -306,6 +306,21 @@ existing utility usage; new code should use the NEXAD token names.
 
 Target ratio ≈ 80% carbon/ivory, 15% graphite/soft-ivory, 5% signal.
 
+### Editorial motif
+The **SignalDot** (`components/ui/signal-dot.tsx`) is a small static Signal
+circle used as brand punctuation (important / active / point of focus).
+Use 2–4 per page maximum, paired with mono eyebrows or beside key titles —
+never as a bullet-list style, never pulsing. The pulse is reserved for the
+Gateway Forward mark.
+
+### Gateway motion
+The Gateway intro is **Signal → Forward**: the complete D opens centered in
+Signal, holds, then travels right into the wordmark (ring hands Signal →
+Ivory; the Forward ▶ stays Signal); N E X A reveals as one group. Full intro
+≈3.7s, short ~0.9s for returning sessions, static final wordmark under
+reduced motion. After the intro the gateway stays alive: grid drift, glow
+drift, breathing network nodes, and the Forward ▶ pulsing (idle).
+
 ### Interaction language
 Rule: **Neutral at rest → Signal on intent → Forward on action.**
 

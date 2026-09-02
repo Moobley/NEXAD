@@ -5,6 +5,7 @@ import { Link } from "@/i18n/navigation"
 import { Reveal } from "@/components/ui/reveal"
 import { CaseMedia } from "@/components/ui/case-media"
 import { ForwardMark } from "@/components/ui/forward-mark"
+import { SignalDot } from "@/components/ui/signal-dot"
 import { asset } from "@/lib/asset"
 
 export async function WorkClientProject() {
@@ -17,7 +18,8 @@ export async function WorkClientProject() {
           <div className="lg:order-2 lg:col-span-5 lg:col-start-8">
             <div className="lg:sticky lg:top-28">
               <Reveal>
-                <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
+                <p className="flex items-center gap-2.5 font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
+                  <SignalDot size="sm" />
                   {t("clientLabel")}
                 </p>
                 <h2 className="mt-4 font-sans text-4xl font-medium tracking-tight md:text-5xl">

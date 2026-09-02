@@ -19,14 +19,8 @@ export async function GranCanaria() {
       <div className="relative z-10 mx-auto w-full max-w-[1600px] px-6 pb-28 pt-14 md:px-10 md:pb-40 md:pt-24">
         <div className="grid gap-16 lg:grid-cols-12 lg:items-start">
           <div className="lg:col-span-7">
-            <Reveal>
-              <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
-                {t("index")}
-              </p>
-            </Reveal>
-
             <Reveal variant="mask-up" delay={100}>
-              <p className="mt-16 font-mono text-[clamp(2rem,6vw,5rem)] tracking-[0.04em] text-foreground lg:mt-[clamp(16rem,32vh,22rem)]">
+              <p className="font-mono text-[clamp(2rem,6vw,5rem)] tracking-[0.04em] text-foreground lg:mt-[clamp(16rem,32vh,22rem)]">
                 {t("coordsLine1")}
                 <br />
                 {t("coordsLine2")}

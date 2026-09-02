@@ -2,46 +2,45 @@ import { cn } from "@/lib/utils"
 
 /**
  * NEXAD wordmark as inline SVG, faithful to `public/logos/nexad-wordmark-*.svg`.
- * The D ring and its internal Forward triangle (`▶`) are split into separate
- * groups so the gateway can boot the D around the mark. The D uses a clip
- * reveal and the triangle a scale/impulse entry; at rest (no animation) the
- * render is pixel-identical to the official wordmark.
+ *
+ * Motion structure (Signal → Forward):
+ * - `gateway-nexa`   — N E X A, revealed as one group after the D travels.
+ * - `gateway-d-group`— the complete D (ring + Forward mark) as one object so
+ *   it can open centered in Signal, then move to its final right-hand slot.
+ * - `gateway-forward`— the `▶` cutout; keeps its Signal fill and receives the
+ *   idle pulse after the intro.
+ *
+ * At rest (no animation) the geometry is pixel-identical to the official
+ * wordmark, except the Forward cutout is intentionally Signal (the brand's
+ * approved interactive detail).
  */
 export function GatewayLogo({ className }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 810 180"
-      className={cn("block h-auto", className)}
+      className={cn("gateway-wordmark block h-auto", className)}
       role="img"
       aria-label="NEXAD"
     >
-      <g fill="currentColor">
-        {/* N */}
-        <g className="gateway-letter gateway-letter-n">
-          <path d="M55 42h18v96H55z" />
-          <path d="M121 42h18v96h-18z" />
-          <path d="M64 42h21l45 96h-21z" />
-        </g>
-        {/* E */}
-        <g className="gateway-letter gateway-letter-e">
-          <path d="M205 42h18v96h-18z" />
-          <path d="M205 42h64v16h-64z" />
-          <path d="M205 82h54v16h-54z" />
-          <path d="M205 122h64v16h-64z" />
-        </g>
-        {/* X */}
-        <g className="gateway-letter gateway-letter-x">
-          <path d="M334 42h21l62 96h-21z" />
-          <path d="M396 42h21l-62 96h-21z" />
-        </g>
-        {/* A */}
-        <g className="gateway-letter gateway-letter-a">
-          <path d="M465 138 L497 42 H517 L549 138 H529 L507 63 L485 138 Z" />
-          <path d="M482 101 H532 V117 H482 Z" />
-        </g>
-        {/* D ring — boots around the Forward triangle via clip reveal */}
+      {/* N E X A — revealed as one word group */}
+      <g className="gateway-nexa" fill="currentColor">
+        <path d="M55 42h18v96H55z" />
+        <path d="M121 42h18v96h-18z" />
+        <path d="M64 42h21l45 96h-21z" />
+        <path d="M205 42h18v96h-18z" />
+        <path d="M205 42h64v16h-64z" />
+        <path d="M205 82h54v16h-54z" />
+        <path d="M205 122h64v16h-64z" />
+        <path d="M334 42h21l62 96h-21z" />
+        <path d="M396 42h21l-62 96h-21z" />
+        <path d="M465 138 L497 42 H517 L549 138 H529 L507 63 L485 138 Z" />
+        <path d="M482 101 H532 V117 H482 Z" />
+      </g>
+
+      {/* The complete D — ring + Forward mark move and color together */}
+      <g className="gateway-d-group">
         <path
-          className="gateway-d"
+          className="gateway-d-ring"
           fillRule="evenodd"
           d="
             M597 42 H692
@@ -55,10 +54,10 @@ export function GatewayLogo({ className }: { className?: string }) {
             H616 Z
           "
         />
-        {/* Forward mark — the ▶ cutout, seeded first */}
         <path className="gateway-forward" d="M606 78 L630 90 L606 102 Z" />
       </g>
-      {/* Single signal launch pulse around the Forward mark */}
+
+      {/* Occasional faint Signal ring expanding around the Forward mark */}
       <circle
         className="gateway-launch-ring"
         cx="618"

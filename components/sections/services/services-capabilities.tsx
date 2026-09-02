@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server"
 
 import { Reveal } from "@/components/ui/reveal"
+import { SignalDot } from "@/components/ui/signal-dot"
 
 type Capability = {
   title: string
@@ -19,8 +20,9 @@ export async function ServicesCapabilities() {
       <div className="mx-auto w-full max-w-[1600px] px-6 py-24 md:px-10 md:py-32">
         <Reveal>
           <header className="max-w-2xl">
-            <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
-              {t("index")} — {t("eyebrow")}
+            <p className="flex items-center gap-2.5 font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
+              <SignalDot size="sm" />
+              {t("eyebrow")}
             </p>
             <h2 className="mt-3 font-sans text-4xl font-medium tracking-tight md:text-6xl">
               {t("title")}
@@ -32,19 +34,14 @@ export async function ServicesCapabilities() {
         </Reveal>
 
         <ol className="mt-12 border-t border-obsidian/10 md:mt-16">
-          {list.map((cap, i) => (
+          {list.map((cap) => (
             <li key={cap.title} className="border-b border-obsidian/10 py-8 last:border-b-0 md:py-10">
               <Reveal variant="fade-up">
                 <div className="grid gap-5 lg:grid-cols-12 lg:gap-8">
                   <div className="lg:col-span-4">
-                    <div className="flex items-baseline gap-5">
-                      <span className="font-mono text-xs tracking-[0.2em] text-muted-foreground">
-                        0{i + 1}
-                      </span>
-                      <h3 className="font-sans text-2xl font-medium tracking-tight md:text-[1.75rem]">
-                        {cap.title}
-                      </h3>
-                    </div>
+                    <h3 className="font-sans text-2xl font-medium tracking-tight md:text-[1.75rem]">
+                      {cap.title}
+                    </h3>
                   </div>
 
                   <div className="lg:col-span-5">

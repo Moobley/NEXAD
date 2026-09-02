@@ -8,13 +8,7 @@ export async function Positioning() {
   return (
     <section className="surface-obsidian">
       <div className="mx-auto w-full max-w-[1600px] px-6 py-28 md:px-10 md:py-44">
-        <Reveal>
-          <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
-            {t("index")}
-          </p>
-        </Reveal>
-
-        <div className="mt-10 max-w-5xl font-sans text-[clamp(2rem,5.5vw,5rem)] font-medium leading-[1.02] tracking-[-0.02em]">
+        <div className="max-w-5xl font-sans text-[clamp(2rem,5.5vw,5rem)] font-medium leading-[1.02] tracking-[-0.02em]">
           <Reveal variant="mask-up">
             <span className="block">{t("line1")}</span>
           </Reveal>

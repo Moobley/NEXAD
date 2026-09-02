@@ -19,7 +19,7 @@ export async function ServicesSystem() {
         <Reveal>
           <header className="max-w-2xl">
             <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
-              {t("index")} — {t("eyebrow")}
+              {t("eyebrow")}
             </p>
             <h2 className="mt-3 font-sans text-4xl font-medium tracking-tight md:text-6xl">
               {t("title")}

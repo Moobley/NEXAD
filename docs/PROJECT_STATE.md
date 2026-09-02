@@ -62,10 +62,13 @@ large structured company.
 
 The root `/` is an intentional Gateway, not a localized homepage.
 
-- Shows the NEXAD wordmark with the **Boot → Forward** intro: the `▶` Forward
-  mark seeds, gets a forward impulse, the D boots around it, then N E X A
-  slides in, then the language selector settles (total ≈1.9s; a short variant
-  for returning sessions; reduced-motion shows the final wordmark statically).
+- Shows the NEXAD wordmark with the **Signal → Forward** intro: the complete
+  D opens centered in Signal, holds, then travels right into its wordmark
+  slot while handing Signal to Ivory; N E X A reveals as one group; the
+  language selector settles (total ≈3.7s; a short variant for returning
+  sessions; reduced-motion shows the final wordmark statically). After the
+  intro the gateway stays alive: grid drift, glow drift, breathing network
+  nodes, and the Signal Forward mark pulsing.
 - Allows ES / EN / IT selection; browser language is only a suggestion.
 - No automatic language redirect; no `public/index.html`; no middleware.
 - **Root-only**: `/es/*`, `/en/*` and `/it/*` are directly accessible and are
@@ -207,6 +210,12 @@ collected.
   Serif (editorial italic accent).
 - Signature device: the Forward D (`▶`); reusable `ForwardMark` component for
   CTA arrows and action cues.
+- Editorial motif: `SignalDot` (`components/ui/signal-dot.tsx`) — a small
+  static Signal circle used sparingly (2–4 per page) as brand punctuation;
+  never a bullet style, never pulsing.
+- No decorative section numbering: section indices and list-item numbers were
+  removed; content numbers (coordinates, +20%, metrics) are preserved.
+- Header logo renders at `h-7 md:h-8` (mobile/desktop), same 810×180 SVG.
 - Direction: editorial, typographic, premium; hairlines, mono labels, serif
   italic accents, restrained forward motion.
 - Avoid: generic SaaS cards, stock imagery, gratuitous gradients, cyberpunk /

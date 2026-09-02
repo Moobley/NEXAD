@@ -19,10 +19,7 @@ export async function Technology() {
       <div className="mx-auto w-full max-w-[1600px] px-6 py-24 md:px-10 md:py-32">
         <Reveal>
           <header className="max-w-2xl">
-            <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
-              {t("index")}
-            </p>
-            <h2 className="mt-3 font-sans text-4xl font-medium tracking-tight md:text-6xl">
+            <h2 className="font-sans text-4xl font-medium tracking-tight md:text-6xl">
               {t("title")}
             </h2>
             <p className="mt-8 font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
@@ -38,7 +35,6 @@ export async function Technology() {
           <article>
             <Link href={`/work/${project.slug}`} className="group block">
               <ProjectVisual
-                index={project.index}
                 label={tb("title")}
                 tone={project.cover.tone}
                 surface="light"
@@ -48,9 +44,6 @@ export async function Technology() {
 
             <div className="mt-8 flex flex-col gap-6 md:mt-10 md:flex-row md:items-end md:justify-between">
               <div>
-                <p className="font-mono text-xs tracking-[0.3em] text-muted-foreground">
-                  {project.index}
-                </p>
                 <h3 className="mt-4 font-sans text-3xl font-medium tracking-tight md:text-5xl">
                   {tb("title")}
                 </h3>

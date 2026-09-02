@@ -53,7 +53,7 @@ export function SiteHeader() {
             className="inline-flex items-center text-foreground"
             onClick={close}
           >
-            <Logo priority className="h-5" />
+            <Logo priority className="h-7 md:h-8" />
           </Link>
 
           <nav
@@ -99,7 +99,7 @@ export function SiteHeader() {
         <div className="surface-obsidian fixed inset-0 z-[60] flex flex-col">
           <div className="mx-auto flex h-16 w-full max-w-[1600px] items-center justify-between px-6">
             <span className="inline-flex items-center text-foreground">
-              <Logo variant="ivory" className="h-5" />
+              <Logo variant="ivory" className="h-7 md:h-8" />
             </span>
             <button
               type="button"

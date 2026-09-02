@@ -23,8 +23,11 @@ Legend: ✅ Complete · 🔴 High priority · 🟠 Next · 🟡 Later · ⏸ Pau
   WhatsApp / calendar introduced).
 - NEXO → NEXAD brand migration (D-023): official logo assets, Carbon/Ivory/
   Signal palette, Space Grotesk + IBM Plex Mono, Forward D system, Gateway
-  Boot → Forward animation, `nexad_gateway_seen` storage migration, NEXAD
+  Signal → Forward animation, `nexad_gateway_seen` storage migration, NEXAD
   copy/SEO, basePath `/NEXAD`, docs updated.
+- Visual refinement v3 (D-024): larger header logo, `SignalDot` editorial
+  motif, decorative section numbering removed, Gateway "Signal → Forward"
+  intro with persistent idle pulse/ambient motion.
 
 ## ⏸ Paused
 

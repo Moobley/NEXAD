@@ -4,6 +4,7 @@ import { useState } from "react"
 import { useTranslations } from "next-intl"
 
 import { Reveal } from "@/components/ui/reveal"
+import { SignalDot } from "@/components/ui/signal-dot"
 import { cn } from "@/lib/utils"
 
 const CORE = new Set([0, 1, 2])
@@ -19,12 +20,12 @@ export function Capabilities() {
       <div className="mx-auto w-full max-w-[1600px] px-6 py-24 md:px-10 md:py-32">
         <Reveal>
           <header>
-            <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
-              {t("index")}
-            </p>
-            <h2 className="mt-3 font-sans text-4xl font-medium tracking-tight md:text-6xl">
-              {t("title")}
-            </h2>
+            <div className="flex items-center gap-3">
+              <SignalDot size="md" />
+              <h2 className="font-sans text-4xl font-medium tracking-tight md:text-6xl">
+                {t("title")}
+              </h2>
+            </div>
           </header>
         </Reveal>
 
@@ -46,22 +47,17 @@ export function Capabilities() {
                         : "text-muted-foreground hover:text-signal"
                     )}
                   >
-                    <span className="flex items-baseline gap-5">
-                      <span className="font-mono text-xs tracking-[0.2em] text-muted-foreground">
-                        0{i + 1}
-                      </span>
-                      <span
-                        className={cn(
-                          "font-sans tracking-tight transition-all duration-300",
-                          CORE.has(i)
-                            ? "text-2xl font-medium md:text-[1.75rem]"
-                            : "text-xl md:text-2xl"
-                        )}
-                      >
-                        {item.title}
-                      </span>
+                    <span
+                      className={cn(
+                        "block font-sans tracking-tight transition-all duration-300",
+                        CORE.has(i)
+                          ? "text-2xl font-medium md:text-[1.75rem]"
+                          : "text-xl md:text-2xl"
+                      )}
+                    >
+                      {item.title}
                     </span>
-                    <span className="mt-3 block pl-[2.4rem] text-sm leading-relaxed text-muted-foreground lg:hidden">
+                    <span className="mt-3 block text-sm leading-relaxed text-muted-foreground lg:hidden">
                       {item.description}
                     </span>
                   </button>

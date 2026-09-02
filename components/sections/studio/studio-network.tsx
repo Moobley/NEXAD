@@ -14,7 +14,7 @@ export async function StudioNetwork() {
             <div className="lg:sticky lg:top-28">
               <Reveal>
                 <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
-                  {t("index")} — {t("eyebrow")}
+                  {t("eyebrow")}
                 </p>
                 <h2 className="mt-3 font-sans text-4xl font-medium tracking-tight md:text-5xl">
                   {t("title")}

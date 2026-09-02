@@ -2,6 +2,7 @@ import { getTranslations } from "next-intl/server"
 
 import { Reveal } from "@/components/ui/reveal"
 import { Flow } from "@/components/ui/flow"
+import { SignalDot } from "@/components/ui/signal-dot"
 
 export async function StudioWhy() {
   const t = await getTranslations("studioPage.why")
@@ -11,8 +12,9 @@ export async function StudioWhy() {
     <section className="surface-obsidian">
       <div className="mx-auto w-full max-w-[1600px] px-6 py-24 md:px-10 md:py-36">
         <Reveal>
-          <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
-            {t("index")} — {t("eyebrow")}
+          <p className="flex items-center gap-2.5 font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
+            <SignalDot size="sm" />
+            {t("eyebrow")}
           </p>
         </Reveal>
 

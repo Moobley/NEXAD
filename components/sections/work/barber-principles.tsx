@@ -27,21 +27,16 @@ export async function BarberPrinciples() {
 
           <div className="lg:col-span-7">
             <ol className="border-t border-border">
-              {list.map((principle, i) => (
+              {list.map((principle) => (
                 <li key={principle.title} className="border-b border-border py-10 md:py-12">
                   <Reveal variant="fade-up">
-                    <div className="flex gap-7">
-                      <span className="font-mono text-xs tracking-[0.2em] text-muted-foreground">
-                        0{i + 1}
-                      </span>
-                      <div>
-                        <h3 className="font-sans text-2xl font-medium tracking-tight md:text-3xl">
-                          {principle.title}
-                        </h3>
-                        <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">
-                          {principle.body}
-                        </p>
-                      </div>
+                    <div>
+                      <h3 className="font-sans text-2xl font-medium tracking-tight md:text-3xl">
+                        {principle.title}
+                      </h3>
+                      <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">
+                        {principle.body}
+                      </p>
                     </div>
                   </Reveal>
                 </li>

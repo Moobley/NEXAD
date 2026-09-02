@@ -19,7 +19,7 @@ export async function StudioPrinciples() {
             <div className="lg:sticky lg:top-28">
               <Reveal>
                 <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
-                  {t("index")} — {t("eyebrow")}
+                  {t("eyebrow")}
                 </p>
               </Reveal>
             </div>
@@ -27,21 +27,16 @@ export async function StudioPrinciples() {
 
           <div className="lg:col-span-7">
             <ol className="border-t border-border">
-              {list.map((principle, i) => (
+              {list.map((principle) => (
                 <li key={principle.title} className="border-b border-border py-8 last:border-b-0 md:py-10">
                   <Reveal variant="fade-up">
-                    <div className="flex gap-7">
-                      <span className="font-mono text-xs tracking-[0.2em] text-muted-foreground">
-                        0{i + 1}
-                      </span>
-                      <div>
-                        <h3 className="font-sans text-2xl font-medium tracking-tight md:text-3xl">
-                          {principle.title}
-                        </h3>
-                        <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">
-                          {principle.body}
-                        </p>
-                      </div>
+                    <div>
+                      <h3 className="font-sans text-2xl font-medium tracking-tight md:text-3xl">
+                        {principle.title}
+                      </h3>
+                      <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">
+                        {principle.body}
+                      </p>
                     </div>
                   </Reveal>
                 </li>
