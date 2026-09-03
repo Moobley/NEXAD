@@ -2,7 +2,7 @@ import { getTranslations } from "next-intl/server"
 
 import { Link } from "@/i18n/navigation"
 import { Reveal } from "@/components/ui/reveal"
-import { AuroraBackground } from "@/components/ui/aurora-background"
+import { GrowthSystemVisual } from "@/components/sections/home/growth-system-visual"
 import { ForwardMark } from "@/components/ui/forward-mark"
 import { SignalDot } from "@/components/ui/signal-dot"
 
@@ -11,7 +11,15 @@ export async function Hero() {
 
   return (
     <section className="relative flex min-h-svh flex-col overflow-hidden pt-24 md:pt-28">
-      <AuroraBackground />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute right-[max(2.5rem,calc((100vw-1600px)/2+2.5rem))] top-[10rem] hidden w-[400px] md:block lg:w-[520px]"
+      >
+        <Reveal variant="fade" trigger="load" delay={360}>
+          <GrowthSystemVisual />
+        </Reveal>
+      </div>
+
       <div className="relative z-10 mx-auto w-full max-w-[1600px] px-6 md:px-10">
         <Reveal trigger="load" variant="fade" delay={0}>
           <div className="flex items-center justify-between border-b border-obsidian/10 pb-6">
