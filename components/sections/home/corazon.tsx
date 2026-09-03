@@ -10,9 +10,7 @@ export async function Corazon() {
   const tc = await getTranslations("projects.corazon")
 
   return (
-    <div className="surface-obsidian">
-      <div aria-hidden className="h-14 w-full bg-gradient-to-b from-ivory to-transparent md:h-24" />
-
+    <div>
       <div className="mx-auto w-full max-w-[1600px] px-6 pb-24 pt-14 md:px-10 md:pb-32 md:pt-20">
         <Reveal>
           <div className="flex items-center justify-between border-b border-border pb-6">
@@ -113,8 +111,6 @@ export async function Corazon() {
           </Reveal>
         </div>
       </div>
-
-      <div aria-hidden className="h-14 w-full bg-gradient-to-b from-transparent to-ivory md:h-24" />
     </div>
   )
 }

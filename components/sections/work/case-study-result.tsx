@@ -49,11 +49,6 @@ export async function CaseStudyResult() {
           </div>
         </Reveal>
       </div>
-
-      <div
-        aria-hidden
-        className="h-14 w-full bg-gradient-to-b from-transparent to-ivory md:h-24"
-      />
     </div>
   )
 }
