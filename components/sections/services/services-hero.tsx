@@ -14,13 +14,10 @@ export async function ServicesHero() {
       <AuroraBackground intensity="soft" />
       <div className="relative z-10 mx-auto w-full max-w-[1600px] px-6 md:px-10">
         <Reveal trigger="load" variant="fade" delay={0}>
-          <div className="flex items-center justify-between border-b border-obsidian/10 pb-6">
+          <div className="flex items-center border-b border-obsidian/10 pb-6">
             <p className="flex items-center gap-2.5 font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
               <SignalDot size="sm" />
               {t("eyebrow")}
-            </p>
-            <p className="hidden font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground sm:block">
-              {t("statement")}
             </p>
           </div>
         </Reveal>

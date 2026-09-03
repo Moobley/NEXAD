@@ -24,18 +24,11 @@ export async function StudioWhy() {
           </h2>
         </Reveal>
 
-        <div className="mt-10 grid gap-8 md:grid-cols-2">
-          <Reveal variant="fade-up" delay={160}>
-            <p className="max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
-              {t("body")}
-            </p>
-          </Reveal>
-          <Reveal variant="fade-up" delay={220}>
-            <p className="max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
-              {t("body2")}
-            </p>
-          </Reveal>
-        </div>
+        <Reveal variant="fade-up" delay={160}>
+          <p className="mt-10 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
+            {t("body")}
+          </p>
+        </Reveal>
 
         <Reveal delay={260}>
           <Flow steps={flow} surface="dark" className="mt-12 md:mt-16" />

@@ -125,6 +125,7 @@ submitted to Search Console.
 
 Pages were editorially compressed; do not re-expand without reason.
 
+- Home: Hero → Capabilities → Positioning → Corazón → CTA.
 - Services: Hero → 5 Capabilities → System → Collaboration → CTA.
 - Studio: Hero → Why NEXAD → Team → 4 Principles → Network → CTA.
 - Work: short Hero → Corazón → Barber.

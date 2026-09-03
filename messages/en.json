@@ -56,12 +56,11 @@
       "coords": "28.1° N — 15.4° W",
       "titleLine1": "Growth,",
       "titleLine2": "engineered.",
-      "support": "A studio where marketing and software are part of the same growth system: strategy, product, content and technology connected from the objective.",
-      "ctaPrimary": "Tell us your goal",
+      "support": "A studio where marketing and software are designed together: strategy, product, content and technology aligned from the first move.",
+      "ctaPrimary": "Start a project",
       "ctaSecondary": "See results"
     },
     "capabilities": {
-      "index": "02",
       "title": "Capabilities",
       "panel": "Capabilities",
       "list": [
@@ -88,87 +87,27 @@
       ]
     },
     "statement": {
-      "index": "03",
       "line1": "We do not sell channels.",
       "line2Prefix": "We solve ",
       "line2Accent": "digital problems",
-      "body": "Strategy, marketing, content and technology work as one system. Sometimes the answer is a campaign; sometimes a website; sometimes custom software. Almost always, a combination."
-    },
-    "technology": {
-      "index": "07",
-      "title": "Own technology",
-      "principle": "Strategy first. Technology when it creates value.",
-      "principleLabel": "Principle",
-      "support": "When the strategy requires a custom tool, we do not rely on generic solutions: we design and build it."
-    },
-    "process": {
-      "index": "04",
-      "title": "How we move",
-      "steps": [
-        {
-          "title": "Understand",
-          "description": "We listen and understand the business, the market and the real objective."
-        },
-        {
-          "title": "Strategy",
-          "description": "We define the plan: channels, messages, priorities and success metrics."
-        },
-        {
-          "title": "Create",
-          "description": "We produce content, campaigns, design and digital experiences."
-        },
-        {
-          "title": "Launch",
-          "description": "We execute and publish: campaigns, content and digital products."
-        },
-        {
-          "title": "Optimize",
-          "description": "We measure, learn and adjust continuously to improve results."
-        }
-      ]
-    },
-    "granCanaria": {
-      "index": "05",
-      "coordsLine1": "28.1° N",
-      "coordsLine2": "15.4° W",
-      "line1": "Atlantic base.",
-      "line2": "International perspective.",
-      "fieldLabel": "Atlantic — light and shadow"
+      "body": "We activate what's needed, without imposing a default channel."
     },
     "cta": {
-      "index": "08",
       "titlePrefix": "What is your ",
       "titleAccent": "goal",
       "titleSuffix": "?",
-      "action": "Tell us your goal"
-    },
-    "shared": {
-      "project": "Project",
-      "status": "Status",
-      "services": "Services"
+      "action": "Start a project"
     }
-  },
-  "services": {
-    "web-development": "Web design & development",
-    "digital-menu": "Digital menu",
-    "paid-media": "Paid media",
-    "content": "Content",
-    "strategy": "Strategy",
-    "ux": "UX",
-    "product-design": "Product design",
-    "web-app": "Web application",
-    "development": "Development"
   },
   "projects": {
     "corazon": {
-      "index": "01",
       "clientLabel": "Client Work",
       "title": "Corazón Napoletano",
       "category": "Hospitality / Restaurant",
       "location": "Las Palmas · Gran Canaria",
       "url": "corazonnapoletano.com",
-      "headline": "A new opening built as one connected system.",
-      "support": "Identity, content, menu, physical experience, website and acquisition designed together from day one.",
+      "headline": "A new opening built all at once.",
+      "support": "Identity, content, menu, venue, website and acquisition planned at the same time.",
       "scope": "Identity · Content · Menu + Upselling · QR · Website · Acquisition",
       "resultAmount": "+20%",
       "resultLabel": "Revenue from the following month",
@@ -184,7 +123,7 @@
         "hero": {
           "titleA": "A brand built",
           "titleB": "to be chosen.",
-          "support": "A new opening where identity, content, menu, in-venue experience, website and acquisition were designed as one connected system.",
+          "support": "A new opening where identity, content, menu, in-venue experience, website and acquisition were designed all at once.",
           "resultAmount": "+20%",
           "resultLabel": "Revenue increase",
           "timing": "From the following month"
@@ -290,7 +229,6 @@
       }
     },
     "barber": {
-      "index": "02",
       "clientLabel": "NEXAD Lab",
       "title": "Barber Booking",
       "category": "Digital product · Booking",
@@ -419,14 +357,12 @@
       "titleLine1": "You don't need more channels.",
       "titleLine2Prefix": "You need them working ",
       "titleLine2Accent": "together.",
-      "support": "We start with the problem and activate only what it needs: strategy, marketing, content, web or software.",
-      "cta": "Tell us your goal",
-      "statement": "Problem first. Service second."
+      "support": "We activate only what the objective needs: strategy, marketing, content, web or software.",
+      "cta": "Start a project"
     },
     "capabilities": {
-      "index": "01",
       "eyebrow": "Capabilities",
-      "title": "Five capabilities. One system.",
+      "title": "Five capabilities. One approach.",
       "support": "Growth · Build · Systems — we activate only what the objective needs.",
       "principleLabel": "Principle",
       "list": [
@@ -460,9 +396,8 @@
       ]
     },
     "system": {
-      "index": "02",
       "eyebrow": "The system",
-      "title": "One objective. The right combination.",
+      "title": "One challenge, the right combination.",
       "support": "Not every project needs everything.",
       "examples": [
         {
@@ -489,7 +424,6 @@
       ]
     },
     "collaboration": {
-      "index": "03",
       "eyebrow": "Collaboration",
       "title": "Two ways to work.",
       "project": {
@@ -502,11 +436,10 @@
       }
     },
     "cta": {
-      "index": "04",
       "titleLine1": "What needs to change ",
       "titleAccent": "for your business to grow?",
-      "support": "Tell us the objective. We'll help define what is worth creating, launching or improving.",
-      "action": "Tell us your goal"
+      "support": "Tell us what's going on. We'll help you decide what to create, launch or improve.",
+      "action": "Start a project"
     }
   },
   "studioPage": {
@@ -514,17 +447,15 @@
       "eyebrow": "Studio",
       "titleLine1": "Digital, with someone",
       "titleLine2": "on the other side.",
-      "support": "NEXAD connects marketing and technology so the client doesn't have to coordinate separate pieces, suppliers and decisions.",
+      "support": "NEXAD connects marketing and technology so you don't have to coordinate separate pieces, suppliers and decisions.",
       "ctaPrimary": "How we think",
-      "ctaSecondary": "Work with us",
+      "ctaSecondary": "Start a project",
       "location": "Las Palmas · Gran Canaria"
     },
     "why": {
-      "index": "01",
       "eyebrow": "Why NEXAD",
       "title": "Fewer disconnected pieces. More direction.",
-      "body": "We saw businesses with real potential treating campaigns, content, web and technology as separate pieces — and too often leaving the client alone with the numbers.",
-      "body2": "NEXAD exists to connect those decisions and stay involved after launch.",
+      "body": "We saw businesses with real potential managing campaigns, content, web and technology separately. NEXAD brings those decisions together and stays with the journey after launch.",
       "flow": [
         "Measure",
         "Understand",
@@ -534,7 +465,6 @@
       "closing": "Metrics inform. Decisions move the business."
     },
     "team": {
-      "index": "02",
       "eyebrow": "The core",
       "title": "Two disciplines. One direction.",
       "intro": "NEXAD brings together two ways of looking at the same problem.",
@@ -558,7 +488,6 @@
       ]
     },
     "principles": {
-      "index": "03",
       "eyebrow": "Principles",
       "list": [
         {
@@ -580,7 +509,6 @@
       ]
     },
     "network": {
-      "index": "04",
       "eyebrow": "The right team",
       "title": "A small core. Specialists when needed.",
       "body": "NEXAD keeps project direction and brings in specialist profiles when the work requires it.",
@@ -592,11 +520,10 @@
       ]
     },
     "cta": {
-      "index": "05",
       "titleLine1": "If something in your business should be working better, ",
       "titleAccent": "let's start by understanding it.",
       "support": "You don't need to arrive with the solution. Tell us what you want to change.",
-      "action": "Tell us your goal"
+      "action": "Start a project"
     }
   },
   "contactPage": {
@@ -605,12 +532,7 @@
       "titleLine1": "Tell us what ",
       "titleLine2Prefix": "needs to ",
       "titleLine2Accent": "change.",
-      "support": "You don't need to know which service to hire. Tell us what you want to achieve and we'll start from there."
-    },
-    "intro": {
-      "eyebrow": "Let's start",
-      "heading": "You don't need to arrive with the solution.",
-      "body": "Give us the context. We'll start by asking the right questions."
+      "support": "You don't need to know what to hire. Tell us what you want to achieve and we'll start from there."
     },
     "form": {
       "nameLabel": "Name",
@@ -699,7 +621,7 @@
     "back": "Back to home"
   },
   "footer": {
-    "tagline": "Growth, engineered. Strategy, marketing, content, product and software as one system.",
+    "tagline": "Growth, engineered. Strategy, marketing, content, product and software working in the same direction.",
     "location": "Las Palmas · Gran Canaria",
     "nav": "Navigation",
     "studio": "Studio"
