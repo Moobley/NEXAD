@@ -1,9 +1,13 @@
 import { getTranslations } from "next-intl/server"
 
 import { Reveal } from "@/components/ui/reveal"
+import { corazonMetrics } from "@/content/projects"
 
 export async function CaseStudyResult() {
   const t = await getTranslations("projects.corazon.caseStudy.result")
+  const tm = await getTranslations("projects.corazon.caseStudy.metrics")
+
+  const published = corazonMetrics.filter((metric) => metric.value != null)
 
   return (
     <div className="surface-obsidian">
@@ -19,23 +23,31 @@ export async function CaseStudyResult() {
           </p>
         </Reveal>
 
-        <Reveal variant="mask-up" delay={100}>
-          <p className="mt-6 font-sans text-[clamp(5rem,16vw,14rem)] font-medium leading-[0.9] tracking-[-0.03em] text-foreground">
-            {t("amount")}
-          </p>
-        </Reveal>
-
-        <Reveal variant="fade-up" delay={200}>
-          <div className="mt-10 grid gap-10 lg:grid-cols-12 lg:items-end">
-            <div className="lg:col-span-5">
-              <p className="font-sans text-3xl font-medium tracking-tight text-foreground md:text-4xl">
-                {t("label")}
-              </p>
-              <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
-                {t("timing")}
-              </p>
+        <div className="mt-12 grid gap-12 lg:grid-cols-12 lg:gap-10">
+          <div className="lg:col-span-5">
+            <div className="grid gap-x-10 gap-y-12 sm:grid-cols-2">
+              {published.map((metric, i) => (
+                <Reveal key={metric.key} delay={i * 100}>
+                  <div className="border-t border-border pt-6">
+                    <p className="font-sans text-[clamp(3rem,8vw,6rem)] font-medium leading-none tracking-[-0.03em] text-foreground">
+                      {metric.value}
+                    </p>
+                    <p className="mt-4 font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
+                      {tm(`${metric.key}.label`)}
+                    </p>
+                    {tm.has(`${metric.key}.description`) ? (
+                      <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted-foreground">
+                        {tm(`${metric.key}.description`)}
+                      </p>
+                    ) : null}
+                  </div>
+                </Reveal>
+              ))}
             </div>
-            <div className="lg:col-span-7">
+          </div>
+
+          <div className="lg:col-span-7">
+            <Reveal variant="fade-up" delay={100}>
               <p className="max-w-xl text-base leading-relaxed text-muted-foreground">
                 {t("body")}
               </p>
@@ -45,9 +57,9 @@ export async function CaseStudyResult() {
               <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
                 {t("note")}
               </p>
-            </div>
+            </Reveal>
           </div>
-        </Reveal>
+        </div>
       </div>
     </div>
   )

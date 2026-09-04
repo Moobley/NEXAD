@@ -118,31 +118,47 @@ GitHub Pages:
 
 Never hardcode `/NEXAD` in components or content.
 
-GitHub Pages is temporary. The architecture must remain easy to move to a custom
-domain with an empty basePath.
+## Environments
+
+Two environments exist. The architecture moves between them with env vars
+only (no code changes):
+
+- **PREVIEW (current, GitHub Pages):** `https://moobley.github.io/NEXAD/`.
+  Origin `https://moobley.github.io`, basePath `/NEXAD`, always noindex
+  (`NEXT_PUBLIC_SITE_INDEXABLE=false`). Pre-launch site.
+- **PRODUCTION FUTURA (not live):** `https://www.nexadlab.com/`.
+  Origin `https://www.nexadlab.com` (canonical), empty basePath. Becomes
+  indexable only at explicit go-live. Do NOT connect the custom domain, create
+  a `CNAME`, change DNS or enable indexing yet.
 
 ## SEO configuration
 SEO is environment-driven via `lib/seo.ts`:
 
 - `NEXT_PUBLIC_SITE_ORIGIN` — public origin (scheme + host), without basePath
-  (GitHub Pages: `https://moobley.github.io`; custom domain later). The custom
-  domain is NOT decided — never assume one.
+  (preview: `https://moobley.github.io`; production:
+  `https://www.nexadlab.com`).
 - `NEXT_PUBLIC_SITE_INDEXABLE` — `"true"` enables index/follow; anything else
   (default) produces `noindex, follow`. The current GitHub Pages deployment
   MUST stay `false`.
-- `NEXT_PUBLIC_BASE_PATH` — deployment prefix as above.
+- `NEXT_PUBLIC_BASE_PATH` — deployment prefix as above (GitHub Pages `/NEXAD`;
+  production empty).
 
 Full URLs are built as `SITE_ORIGIN + BASE_PATH + localized pathname`
 (`siteUrl` / `localizedPathname` in `lib/seo.ts`); metadata is page-specific
 (`generateMetadata` + the `seo` messages namespace), with absolute canonicals,
-reciprocal hreflang (es/en/it + x-default), Open Graph, Twitter cards, a
-`WebSite` JSON-LD at the Gateway root, `sitemap.xml` and `robots.txt`.
+reciprocal hreflang (es/en/it + x-default), Open Graph, Twitter cards,
+`WebSite` + `Organization` + `ProfessionalService` JSON-LD forming one entity
+graph via stable `@id` nodes (`lib/seo.ts`, `entityId`), `sitemap.xml` and
+`robots.txt`.
 
-Indexability is fail-closed:
+Indexability is fail-closed and pinned to production:
 
-- An indexable build (`NEXT_PUBLIC_SITE_INDEXABLE=true`) requires an explicit,
-  valid, https `NEXT_PUBLIC_SITE_ORIGIN` (no basePath/pathname/credentials/
-  query/hash); the build fails otherwise.
+- An indexable build (`NEXT_PUBLIC_SITE_INDEXABLE=true`) requires
+  `NEXT_PUBLIC_SITE_ORIGIN` to be exactly `https://www.nexadlab.com` (after
+  trailing-slash normalization), an empty `NEXT_PUBLIC_BASE_PATH`, and a valid
+  https origin; the build fails otherwise. An indexable build on the GitHub
+  Pages preview origin or under `/NEXAD` is therefore impossible
+  (`PRODUCTION_ORIGIN` guardrail in `lib/seo.ts`).
 - Pre-launch builds remain `noindex, follow` and do not advertise the sitemap
   through `robots.txt` (the `Sitemap:` line is only emitted when indexable).
 
@@ -279,7 +295,7 @@ Environment:
 Do not hardcode a Formspree ID.
 
 There is no public NEXAD email or WhatsApp yet — do not invent or suggest
-contact channels (the custom domain is not confirmed). Calls are
+contact channels. Calls are
 arranged manually through direct messaging; no calendar-booking product.
 
 Current pending items:
@@ -411,6 +427,12 @@ Before declaring implementation complete, normally run:
 For deployment/routing/path changes also run:
 
 - `NEXT_PUBLIC_BASE_PATH=/NEXAD npm run build`
+
+For SEO/deployment changes, after building also run the static SEO verifier
+against the generated `out/` with the same env used for the build, e.g.:
+
+- `NEXT_PUBLIC_SITE_ORIGIN=https://moobley.github.io NEXT_PUBLIC_BASE_PATH=/NEXAD NEXT_PUBLIC_SITE_INDEXABLE=false npm run verify:seo`
+- `NEXT_PUBLIC_SITE_ORIGIN=https://www.nexadlab.com NEXT_PUBLIC_BASE_PATH= NEXT_PUBLIC_SITE_INDEXABLE=true npm run verify:seo`
 
 For visual tasks, perform responsive QA at relevant mobile and desktop widths.
 

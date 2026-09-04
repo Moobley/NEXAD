@@ -36,6 +36,23 @@ export type Project = {
   }
 }
 
+export type CaseStudyMetricKey =
+  | "revenue"
+  | "averageTicket"
+  | "customersServed"
+  | "instagramFollowers"
+  | "instagramProfileVisits"
+
+export type CaseStudyMetric = {
+  /** Semantic key; label/description resolve from `caseStudy.metrics.<key>`. */
+  key: CaseStudyMetricKey
+  /**
+   * Approved, publishable value (e.g. "+20%"). When omitted the metric has no
+   * approved value yet and must not be rendered.
+   */
+  value?: string
+}
+
 export const projects: Project[] = [
   {
     slug: "corazon-napoletano",
@@ -64,4 +81,27 @@ export const projects: Project[] = [
       tone: "graphite",
     },
   },
+]
+
+/*
+ * Corazón Napoletano — approved case-study results.
+ *
+ * Only metrics with an approved `value` are rendered. The rest stay here,
+ * keyed and ready, until real data is provided.
+ *
+ * TODO(data): still required before these can be published — each needs an
+ * approved percentage AND its comparison period + measurement source:
+ *   - averageTicket          (% change in average ticket)
+ *   - customersServed        (% change in customers served / affluence)
+ *   - instagramFollowers     (% growth in Instagram followers)
+ *   - instagramProfileVisits (% change in Instagram profile visits)
+ * The only currently approved value is revenue: +20% from the following
+ * month, specific to this project and context.
+ */
+export const corazonMetrics: CaseStudyMetric[] = [
+  { key: "revenue", value: "+20%" },
+  { key: "averageTicket", value: "+15%" },
+  { key: "customersServed", value: "+25%" },
+  { key: "instagramFollowers", value: "+30%" },
+  { key: "instagramProfileVisits", value: "+20%" },
 ]

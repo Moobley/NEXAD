@@ -12,7 +12,7 @@ export async function CaseStudyIdentity() {
 
   return (
     <section>
-      <div className="mx-auto w-full max-w-[1600px] px-6 py-24 md:px-10 md:py-32">
+      <div className="mx-auto w-full max-w-[1600px] px-6 py-20 md:px-10 md:py-28">
         <div className="grid gap-14 lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-5">
             <Reveal>
@@ -59,7 +59,7 @@ export async function CaseStudyIdentity() {
               {t("applicationsTitle")}
             </p>
           </Reveal>
-          <div className="mt-8 grid gap-8 md:grid-cols-3 md:gap-6">
+          <div className="mt-8 grid gap-8 md:grid-cols-2 md:gap-6">
             {applications.map((app, i) => (
               <Reveal key={app} delay={i * 80}>
                 <CaseMedia

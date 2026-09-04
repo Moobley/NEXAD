@@ -3,7 +3,7 @@
 Snapshot of how NEXAD is built today. Stable rules live in `AGENTS.md`;
 intentional decisions and reasons in `DECISIONS.md`; roadmap in `TODO.md`.
 Historical NEXO entries (D-001 … D-022) are kept for context; the current
-state is NEXAD (D-023).
+NEXAD state spans D-023 … D-028.
 
 ## Product
 
@@ -55,8 +55,11 @@ large structured company.
   carbon, no site header/footer) and `app/[locale]/` (localized site with
   header/footer).
 - Deploy: GitHub Actions on `master` (`lint` → `typecheck` → build → publish
-  `out/`). GitHub Pages is temporary; the architecture must move cleanly to a
-  custom domain with empty basePath.
+  `out/`). Two environments, switched by env vars only:
+  - **Preview (current):** GitHub Pages `https://moobley.github.io/NEXAD/`
+    (origin `https://moobley.github.io`, basePath `/NEXAD`, noindex).
+  - **Production (not live):** `https://www.nexadlab.com/` (canonical origin,
+    empty basePath).
 
 ## Gateway
 
@@ -87,10 +90,12 @@ The root `/` is an intentional Gateway, not a localized homepage.
 Environment-driven foundation via `lib/seo.ts`:
 
 - `NEXT_PUBLIC_SITE_ORIGIN` — public origin (scheme + host, no basePath).
-  GitHub Pages: `https://moobley.github.io`; custom domain later (not decided).
+  Preview: `https://moobley.github.io`; canonical production origin:
+  `https://www.nexadlab.com`.
 - `NEXT_PUBLIC_SITE_INDEXABLE` — `"true"` enables index/follow; anything else
   (default) produces `noindex, follow`.
-- `NEXT_PUBLIC_BASE_PATH` — deployment prefix (GitHub Pages `/NEXAD`).
+- `NEXT_PUBLIC_BASE_PATH` — deployment prefix (GitHub Pages `/NEXAD`; production
+  empty).
 
 Implementation:
 
@@ -102,24 +107,32 @@ Implementation:
 - Open Graph + Twitter (`summary_large_image`) pointing to
   `public/social/nexad-social.png` (1200×630, carbon/ivory preview with the
   Forward D and `GROWTH, ENGINEERED.`).
-- Minimal `WebSite` JSON-LD at the Gateway root (`name`, `url` from
-  `siteUrl("/")`, `inLanguage: ["es", "en", "it"]`). No other schema.
+- JSON-LD entity graph via stable `@id` nodes (`entityId` in `lib/seo.ts`):
+  `WebSite` at the Gateway root (publisher → Organization), `Organization` on
+  every localized page, `ProfessionalService` with the five-capability
+  `OfferCatalog` on Services (locale-aware URL, provider → Organization,
+  `inLanguage`). No `areaServed`; no invented business data.
 - `app/sitemap.ts` (22 canonical URLs) and `app/robots.ts` (allow-all). No
   `Disallow: /`. While noindex, `robots.txt` does NOT announce the sitemap.
 - Favicon via `app/icon.svg` (Forward D mark on carbon; basePath handled by
   Next).
 
-Indexability is fail-closed: an indexable build requires an explicit, valid,
-https `NEXT_PUBLIC_SITE_ORIGIN` (no basePath/pathname/credentials/query/hash);
-the build fails otherwise. The `localhost` origin fallback is only allowed for
+Indexability is fail-closed and pinned to production: an indexable build
+requires `NEXT_PUBLIC_SITE_ORIGIN` to be exactly `https://www.nexadlab.com`
+(after trailing-slash normalization) with an empty `NEXT_PUBLIC_BASE_PATH` and
+a valid https origin; the build fails otherwise (`PRODUCTION_ORIGIN` guardrail
+in `lib/seo.ts`). The `localhost` origin fallback is only allowed for
 non-indexable development builds.
 
 ## Current deployment
 
-GitHub Pages is intentionally **noindex** until explicit production
-activation (`NEXT_PUBLIC_SITE_INDEXABLE=false` in the deploy workflow). The
-sitemap is generated (22 URLs) but not advertised while noindex and not
-submitted to Search Console.
+- **Preview (live, GitHub Pages):** `https://moobley.github.io/NEXAD/`
+  intentionally **noindex** (`NEXT_PUBLIC_SITE_INDEXABLE=false` in the deploy
+  workflow). The sitemap is generated (22 URLs) but not advertised while
+  noindex and not submitted to Search Console.
+- **Production (not live):** `https://www.nexadlab.com/` — canonical origin
+  decided; DNS/custom domain not connected yet; not indexable until explicit
+  go-live.
 
 ## Current page architecture
 
@@ -226,8 +239,8 @@ collected.
 
 - Static export only — no middleware, no server-only routing, no `public/
   index.html`; localized pages must remain available without JS.
-- `/NEXAD` must never be hardcoded; future custom domain must drop the basePath
-  without code changes.
+- `/NEXAD` must never be hardcoded; the future production cutover
+  (`https://www.nexadlab.com`, empty basePath) must not need code changes.
 - No invented clients, metrics, testimonials, results, features or company
   data. Copy ES/EN/IT is natural localization, not literal translation.
 - Institutional pages stay compressed.

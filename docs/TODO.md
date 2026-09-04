@@ -119,12 +119,14 @@ Spam protection:
 - minimal `WebSite` JSON-LD at the Gateway root
 - origin/basePath-driven URL builder (`lib/seo.ts`); no `/NEXAD` hardcoded
 
-Production / activation TODOs (blocked until the custom domain and explicit
-approval — not blockers for the foundation):
+Production / activation TODOs (blocked until explicit production approval —
+the domain `https://www.nexadlab.com` is decided but NOT live):
 
-- Set `NEXT_PUBLIC_SITE_INDEXABLE=true` only after explicit production approval.
-- Switch `NEXT_PUBLIC_SITE_ORIGIN` to the final custom domain.
-- Verify canonical / hreflang / sitemap after the custom-domain cutover.
+- At go-live set `NEXT_PUBLIC_SITE_ORIGIN=https://www.nexadlab.com`,
+  `NEXT_PUBLIC_BASE_PATH=` (empty) and `NEXT_PUBLIC_SITE_INDEXABLE=true`; the
+  guardrail in `lib/seo.ts` enforces exactly this combination.
+- Connect the custom domain / DNS only at go-live; no `CNAME` before.
+- Verify canonical / hreflang / sitemap after the production cutover.
 - Set up Search Console and submit the sitemap after production domain
   activation.
 - Re-evaluate Organization / ProfessionalService structured data after
@@ -173,10 +175,13 @@ semantics.
 
 ### Domain / production deployment
 
-GitHub Pages is temporary; a future custom domain is NOT
-acquired or confirmed. When decided: DNS, custom domain, HTTPS, drop `/NEXAD`
-from the production basePath, final canonicals, Search Console, final sitemap,
-redirects if needed, verify localized routes and the Gateway.
+The production domain is decided: `https://www.nexadlab.com` (canonical,
+empty basePath). Not live. GitHub Pages (`https://moobley.github.io/NEXAD/`)
+remains the pre-launch preview and is noindex. Go-live checklist (only after
+explicit approval): connect DNS/custom domain + HTTPS, drop `/NEXAD` from the
+production basePath, enable `NEXT_PUBLIC_SITE_INDEXABLE=true`, verify final
+canonicals, Search Console, sitemap, redirects if needed, localized routes and
+the Gateway.
 
 ## 🟡 Later
 

@@ -12,6 +12,13 @@ export const SITE_INDEXABLE = process.env.NEXT_PUBLIC_SITE_INDEXABLE === "true"
 
 export const SITE_NAME = "NEXAD"
 
+/**
+ * Canonical production origin. The site is only ever indexed on this exact
+ * origin (after trailing-slash normalization) with an empty basePath; any
+ * other environment (e.g. the GitHub Pages preview) must stay noindex.
+ */
+export const PRODUCTION_ORIGIN = "https://www.nexadlab.com"
+
 const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
 
 function validateOrigin(origin: string): string {
@@ -69,6 +76,23 @@ export const SITE_ORIGIN: string = (() => {
   return validateOrigin(RAW_ORIGIN)
 })()
 
+// Fail-closed guardrail against accidental production indexing: an indexable
+// build may only be emitted for the canonical production origin with an empty
+// basePath. This makes an indexable build on the GitHub Pages preview origin
+// or under `/NEXAD` impossible by construction.
+if (SITE_INDEXABLE) {
+  if (SITE_ORIGIN !== PRODUCTION_ORIGIN) {
+    throw new Error(
+      `NEXT_PUBLIC_SITE_INDEXABLE=true requires NEXT_PUBLIC_SITE_ORIGIN to be the canonical production origin "${PRODUCTION_ORIGIN}" (got "${SITE_ORIGIN}"). Indexing is only allowed on https://www.nexadlab.com.`
+    )
+  }
+  if (BASE_PATH.trim() !== "") {
+    throw new Error(
+      `NEXT_PUBLIC_SITE_INDEXABLE=true requires an empty NEXT_PUBLIC_BASE_PATH (got "${BASE_PATH}"). An indexable build must not be served from the /NEXAD preview path.`
+    )
+  }
+}
+
 /** Robots policy: pre-launch noindex, follow; production index, follow. */
 export const robotsPolicy = SITE_INDEXABLE
   ? ({ index: true, follow: true } satisfies Metadata["robots"])
@@ -101,6 +125,15 @@ export function localizedPathname(locale: string, path = "/"): string {
   return `/${locale}${clean}${clean.endsWith("/") ? "" : "/"}`
 }
 
+/**
+ * Stable JSON-LD entity @id for a named node at the build root. Anchored to
+ * the build URL (siteUrl("/")) so every environment resolves to its own root
+ * while the graph nodes stay identifiable and mergeable.
+ */
+function entityId(fragment: string): string {
+  return `${siteUrl("/")}#${fragment}`
+}
+
 function ogLocale(locale: string): string {
   const map: Record<string, string> = { es: "es_ES", en: "en_US", it: "it_IT" }
   return map[locale] ?? locale
@@ -109,26 +142,34 @@ function ogLocale(locale: string): string {
 export const SOCIAL_IMAGE = "/social/nexad-social.png"
 export const SOCIAL_IMAGE_ALT = "NEXAD — Growth, engineered."
 
-/** Minimal WebSite structured data, emitted once at the Gateway root. */
+/**
+ * Minimal WebSite structured data, emitted once at the Gateway root. The
+ * publisher references the Organization node by @id (emitted on localized
+ * pages) so the whole site forms one coherent entity graph.
+ */
 export function websiteSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": entityId("website"),
     name: SITE_NAME,
     url: siteUrl("/"),
     inLanguage: routing.locales,
+    publisher: { "@id": entityId("organization") },
   }
 }
 
 /**
  * Organization structured data, emitted on localized pages (site-wide).
  * Facts only: studio name, origin, logo, base address and the two core team
- * members already public on the Studio page.
+ * members already public on the Studio page. The @id is stable and reused as
+ * the WebSite publisher and ProfessionalService provider target.
  */
 export function organizationSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": entityId("organization"),
     name: SITE_NAME,
     url: siteUrl("/"),
     logo: assetUrl("/logos/nexad-wordmark-carbon.svg"),
@@ -154,20 +195,22 @@ export function organizationSchema() {
 /**
  * Services structured data, emitted on the Services page. Describes the
  * studio as a ProfessionalService with the five capabilities as an offer
- * catalog, sourced from the same messages the page renders.
+ * catalog, sourced from the same messages the page renders. The URL is
+ * locale-aware (localePrefix "always"), the provider references the
+ * Organization node by @id, and no market area is invented.
  */
 export function servicesSchema(
+  locale: string,
   services: Array<{ name: string; description: string }>
 ) {
   return {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
+    "@id": entityId("professional-service"),
     name: SITE_NAME,
-    url: siteUrl("/services/"),
-    areaServed: {
-      "@type": "Place",
-      name: "Las Palmas de Gran Canaria, Spain",
-    },
+    url: siteUrl(localizedPathname(locale, "/services")),
+    inLanguage: locale,
+    provider: { "@id": entityId("organization") },
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "NEXAD services",

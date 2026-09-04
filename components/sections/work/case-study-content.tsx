@@ -2,7 +2,6 @@ import { getTranslations } from "next-intl/server"
 
 import { Reveal } from "@/components/ui/reveal"
 import { CaseMedia } from "@/components/ui/case-media"
-import { cn } from "@/lib/utils"
 
 export async function CaseStudyContent() {
   const t = await getTranslations("projects.corazon.caseStudy.content")
@@ -10,7 +9,7 @@ export async function CaseStudyContent() {
 
   return (
     <section>
-      <div className="mx-auto w-full max-w-[1600px] px-6 py-24 md:px-10 md:py-32">
+      <div className="mx-auto w-full max-w-[1600px] px-6 py-20 md:px-10 md:py-28">
         <div className="grid gap-14 lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-4">
             <Reveal>
@@ -24,26 +23,36 @@ export async function CaseStudyContent() {
           </div>
 
           <div className="lg:col-span-8">
-            <div className="grid grid-cols-2 gap-6 md:gap-8">
-              {frames.slice(0, 4).map((frame, i) => (
-                <Reveal key={frame} delay={i * 80}>
+            <div className="grid gap-6 md:grid-cols-12 md:gap-8">
+              <div className="md:col-span-7">
+                <Reveal delay={100}>
                   <CaseMedia
-                    label={frame}
+                    label={frames[0]}
                     tone="light"
-                    watermark={frame}
-                    className={cn("aspect-[3/4]", i % 2 === 1 && "mt-10 md:mt-16")}
+                    watermark={frames[0]}
+                    className="aspect-[16/11]"
                   />
                 </Reveal>
-              ))}
+              </div>
+              <div className="flex flex-col gap-6 md:col-span-5 md:gap-8">
+                <Reveal delay={160}>
+                  <CaseMedia
+                    label={frames[1]}
+                    tone="light"
+                    watermark={frames[1]}
+                    className="aspect-[4/5]"
+                  />
+                </Reveal>
+                <Reveal delay={220}>
+                  <CaseMedia
+                    label={frames[2]}
+                    tone="light"
+                    watermark={frames[2]}
+                    className="aspect-[4/5]"
+                  />
+                </Reveal>
+              </div>
             </div>
-            <Reveal delay={320}>
-              <CaseMedia
-                label={frames[4]}
-                tone="light"
-                watermark={frames[4]}
-                className="mt-8 aspect-[16/9]"
-              />
-            </Reveal>
           </div>
         </div>
       </div>

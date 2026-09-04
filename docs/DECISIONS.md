@@ -450,3 +450,64 @@ object, so the intro now starts from the D.
 **Do not**
 - Revert the Gateway to locale-mixed metadata, drop the branded 404, or
   hardcode `/NEXAD` in the 404 links.
+
+## D-026 — Production domain decided; two environments
+
+**Decision**
+The canonical production origin of NEXAD is `https://www.nexadlab.com`
+(`www.nexadlab.com` is the canonical version). It is NOT live yet. The GitHub
+Pages deployment `https://moobley.github.io/NEXAD/` stays active as a
+temporary PRE-LAUNCH preview, built with `NEXT_PUBLIC_SITE_ORIGIN=https://moobley.github.io`,
+`NEXT_PUBLIC_BASE_PATH=/NEXAD`, `NEXT_PUBLIC_SITE_INDEXABLE=false`.
+
+**Why**
+Fix a single canonical origin for production (empty basePath, indexable only
+at go-live) while the GitHub Pages preview keeps serving the pre-launch site
+as noindex. The two environments are switched by env vars only.
+
+**Do not**
+Connect the custom domain, create a `CNAME`, change DNS, or enable indexing
+before the explicit go-live step.
+
+## D-027 — Indexable builds are pinned to the production origin
+
+**Decision**
+An indexable build (`NEXT_PUBLIC_SITE_INDEXABLE=true`) is only allowed with
+`NEXT_PUBLIC_SITE_ORIGIN` exactly `https://www.nexadlab.com` (after
+trailing-slash normalization) AND an empty `NEXT_PUBLIC_BASE_PATH`. The build
+fails otherwise. Non-indexable environments (GitHub Pages preview, localhost)
+keep the existing permissive behaviour.
+
+**Why**
+Supersedes the generic fail-closed rule in D-022 with a hard pin: it makes an
+indexable build on the GitHub Pages origin or under `/NEXAD` impossible by
+construction, preventing accidental production indexing of the preview.
+
+**Do not**
+Relax the guardrail, hardcode `/NEXAD`, or reintroduce a non-nexadlab.com
+origin as indexable.
+
+## D-028 — JSON-LD entity graph with stable @id and locale-aware Services
+
+**Decision**
+Structured data forms one coherent entity graph anchored at the build root
+(`entityId()` in `lib/seo.ts`):
+
+- `Organization` gets `@id` `<site-root>#organization` (real facts only).
+- `WebSite` (Gateway root) gets `@id` `<site-root>#website` and links
+  `publisher` to the Organization `@id`.
+- `ProfessionalService` (Services page) gets `@id`
+  `<site-root>#professional-service`, a locale-aware `url`
+  (`localizedPathname(locale, "/services")` ? `/es|en|it/services/`),
+  `inLanguage`, and `provider` linked to the Organization `@id`.
+- `areaServed` is removed: Las Palmas is the base, not a market restriction,
+  and no precise public coverage data exists to describe it correctly.
+
+**Why**
+A single graph lets engines merge the Organization, WebSite and service nodes
+across pages; the Services URL previously dropped the locale despite
+`localePrefix: "always"`.
+
+**Do not**
+Reintroduce `areaServed`, invent business/geo data, or emit a locale-less
+`/services/` canonical/schema URL.

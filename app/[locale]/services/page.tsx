@@ -32,6 +32,7 @@ export default async function ServicesPage({ params }: Props) {
   const t = await getTranslations("servicesPage.capabilities")
   const capabilities = t.raw("list") as Array<{ title: string; body: string }>
   const schema = servicesSchema(
+    locale,
     capabilities.map((capability) => ({
       name: capability.title,
       description: capability.body,

@@ -122,10 +122,7 @@
         "hero": {
           "titleA": "Una marca construida",
           "titleB": "para hacerse elegir.",
-          "support": "Una nueva apertura donde identidad, contenido, carta, experiencia en el local, web y captación se diseñaron de una sola vez.",
-          "resultAmount": "+20%",
-          "resultLabel": "Incremento de facturación",
-          "timing": "Desde el mes siguiente"
+          "support": "Una nueva apertura donde identidad, contenido, carta, experiencia en el local, web y captación se diseñaron de una sola vez."
         },
         "context": {
           "eyebrow": "El punto de partida",
@@ -160,9 +157,8 @@
           "logoLabel": "Logo",
           "applicationsTitle": "Aplicaciones físicas",
           "applications": [
-            "Camisetas",
             "Mantelillos",
-            "Tarjetas de visita"
+            "Camisetas"
           ]
         },
         "content": {
@@ -170,9 +166,7 @@
           "body": "La dirección de contenido se construyó alrededor de producto, preparación, ambiente y personas. Contenido pensado para hacer reconocible la marca y alimentar tanto los canales orgánicos como la captación.",
           "frames": [
             "Producto",
-            "Preparación",
             "Ambiente",
-            "Personas",
             "Reels"
           ]
         },
@@ -184,20 +178,14 @@
           "mediaLabel": "Carta · Arquitectura de información · Upselling"
         },
         "qr": {
-          "heading": "Lo digital también empieza en la mesa.",
-          "body": "Integramos el acceso QR dentro de la experiencia física para reducir pasos entre descubrir la oferta y elegir, manteniendo continuidad visual con el resto de la marca.",
-          "mediaLabel": "QR en mantelillo"
+          "body": "Integramos el acceso QR dentro de la experiencia física para reducir pasos entre descubrir la oferta y elegir, manteniendo continuidad visual con el resto de la marca."
         },
         "website": {
           "heading": "La web continúa lo que empieza fuera de ella.",
           "body": "Diseñamos y desarrollamos una experiencia capaz de presentar la marca, enseñar la carta y reducir la distancia entre interés y reserva, con navegación adaptada a diferentes idiomas.",
           "url": "corazonnapoletano.com",
-          "cta": "Visitar la web",
           "captions": [
             "Hero",
-            "Carta",
-            "Producto",
-            "Reserva",
             "Mobile"
           ]
         },
@@ -213,12 +201,34 @@
         },
         "result": {
           "eyebrow": "Resultado",
-          "amount": "+20%",
-          "label": "Incremento de facturación",
-          "timing": "Desde el mes siguiente",
           "body": "Desde el mes siguiente a la puesta en marcha del nuevo sistema, Corazón Napoletano registró un incremento de facturación del 20%.",
           "statement": "No atribuimos el resultado a una única pieza. Marca, contenido, carta, experiencia, web y captación fueron diseñados para reforzarse entre sí.",
           "note": "Resultado correspondiente a este proyecto y contexto concreto."
+        },
+        "metrics": {
+          "revenue": {
+            "label": "Facturación",
+            "description": "Desde el mes siguiente"
+          },
+          "averageTicket": {
+            "label": "Ticket medio"
+          },
+          "customersServed": {
+            "label": "Clientes atendidos"
+          },
+          "instagramFollowers": {
+            "label": "Seguidores en Instagram"
+          },
+          "instagramProfileVisits": {
+            "label": "Visitas al perfil"
+          }
+        },
+        "facts": {
+          "client": "Cliente",
+          "type": "Tipo",
+          "location": "Ubicación",
+          "scope": "Alcance",
+          "result": "Resultado"
         },
         "next": {
           "label": "Siguiente · NEXAD Lab",

@@ -123,10 +123,7 @@
         "hero": {
           "titleA": "A brand built",
           "titleB": "to be chosen.",
-          "support": "A new opening where identity, content, menu, in-venue experience, website and acquisition were designed all at once.",
-          "resultAmount": "+20%",
-          "resultLabel": "Revenue increase",
-          "timing": "From the following month"
+          "support": "A new opening where identity, content, menu, in-venue experience, website and acquisition were designed all at once."
         },
         "context": {
           "eyebrow": "The starting point",
@@ -161,9 +158,8 @@
           "logoLabel": "Logo",
           "applicationsTitle": "Physical applications",
           "applications": [
-            "T-shirts",
             "Placemats",
-            "Business cards"
+            "T-shirts"
           ]
         },
         "content": {
@@ -171,9 +167,7 @@
           "body": "Content direction was built around product, preparation, atmosphere and people. Content designed to make the brand recognisable and to feed both organic channels and acquisition.",
           "frames": [
             "Product",
-            "Preparation",
             "Atmosphere",
-            "People",
             "Reels"
           ]
         },
@@ -185,20 +179,14 @@
           "mediaLabel": "Menu · Information architecture · Upselling"
         },
         "qr": {
-          "heading": "Digital can start at the table too.",
-          "body": "We integrated QR access into the physical experience to reduce the steps between discovering the offer and choosing, keeping visual continuity with the rest of the brand.",
-          "mediaLabel": "QR on the placemat"
+          "body": "We integrated QR access into the physical experience to reduce the steps between discovering the offer and choosing, keeping visual continuity with the rest of the brand."
         },
         "website": {
           "heading": "The website continues what starts outside it.",
           "body": "We designed and built an experience able to present the brand, show the menu and shorten the distance between interest and booking, with navigation adapted to different languages.",
           "url": "corazonnapoletano.com",
-          "cta": "Visit the website",
           "captions": [
             "Hero",
-            "Menu",
-            "Product",
-            "Booking",
             "Mobile"
           ]
         },
@@ -214,12 +202,34 @@
         },
         "result": {
           "eyebrow": "Result",
-          "amount": "+20%",
-          "label": "Revenue increase",
-          "timing": "From the following month",
           "body": "From the month following the launch of the new system, Corazón Napoletano recorded a 20% increase in revenue.",
           "statement": "We don't attribute the result to one individual piece. Brand, content, menu, experience, website and acquisition were designed to reinforce one another.",
           "note": "Result specific to this project and context."
+        },
+        "metrics": {
+          "revenue": {
+            "label": "Revenue",
+            "description": "From the following month"
+          },
+          "averageTicket": {
+            "label": "Average ticket"
+          },
+          "customersServed": {
+            "label": "Customers served"
+          },
+          "instagramFollowers": {
+            "label": "Instagram followers"
+          },
+          "instagramProfileVisits": {
+            "label": "Profile visits"
+          }
+        },
+        "facts": {
+          "client": "Client",
+          "type": "Type",
+          "location": "Location",
+          "scope": "Scope",
+          "result": "Result"
         },
         "next": {
           "label": "Next · NEXAD Lab",

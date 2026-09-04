@@ -123,10 +123,7 @@
         "hero": {
           "titleA": "Un brand costruito",
           "titleB": "per farsi scegliere.",
-          "support": "Una nuova apertura in cui identità, contenuti, menu, esperienza nel locale, sito e acquisizione sono stati progettati in una sola volta.",
-          "resultAmount": "+20%",
-          "resultLabel": "Incremento del fatturato",
-          "timing": "Dal mese successivo"
+          "support": "Una nuova apertura in cui identità, contenuti, menu, esperienza nel locale, sito e acquisizione sono stati progettati in una sola volta."
         },
         "context": {
           "eyebrow": "Il punto di partenza",
@@ -161,9 +158,8 @@
           "logoLabel": "Logo",
           "applicationsTitle": "Applicazioni fisiche",
           "applications": [
-            "T-shirt",
             "Tovagliette",
-            "Biglietti da visita"
+            "T-shirt"
           ]
         },
         "content": {
@@ -171,9 +167,7 @@
           "body": "La direzione dei contenuti è stata costruita attorno a prodotto, preparazione, ambiente e persone. Contenuti pensati per rendere riconoscibile il brand e alimentare sia i canali organici sia l'acquisizione.",
           "frames": [
             "Prodotto",
-            "Preparazione",
             "Ambiente",
-            "Persone",
             "Reel"
           ]
         },
@@ -185,20 +179,14 @@
           "mediaLabel": "Menu · Architettura dell'informazione · Upselling"
         },
         "qr": {
-          "heading": "Il digitale può iniziare anche dal tavolo.",
-          "body": "Abbiamo integrato l'accesso QR nell'esperienza fisica per ridurre i passaggi tra la scoperta dell'offerta e la scelta, mantenendo continuità visiva con il resto del brand.",
-          "mediaLabel": "QR sulla tovaglietta"
+          "body": "Abbiamo integrato l'accesso QR nell'esperienza fisica per ridurre i passaggi tra la scoperta dell'offerta e la scelta, mantenendo continuità visiva con il resto del brand."
         },
         "website": {
           "heading": "Il sito continua ciò che inizia fuori dallo schermo.",
           "body": "Abbiamo progettato e sviluppato un'esperienza capace di presentare il brand, mostrare il menu e ridurre la distanza tra interesse e prenotazione, con navigazione adattata a più lingue.",
           "url": "corazonnapoletano.com",
-          "cta": "Visita il sito",
           "captions": [
             "Hero",
-            "Menu",
-            "Prodotto",
-            "Prenotazione",
             "Mobile"
           ]
         },
@@ -214,12 +202,34 @@
         },
         "result": {
           "eyebrow": "Risultato",
-          "amount": "+20%",
-          "label": "Incremento del fatturato",
-          "timing": "Dal mese successivo",
           "body": "Dal mese successivo all'attivazione del nuovo sistema, Corazón Napoletano ha registrato un incremento del fatturato del 20%.",
           "statement": "Non attribuiamo il risultato a un singolo elemento. Brand, contenuti, menu, esperienza, sito e acquisizione sono stati progettati per rafforzarsi a vicenda.",
           "note": "Risultato relativo a questo specifico progetto e contesto."
+        },
+        "metrics": {
+          "revenue": {
+            "label": "Fatturato",
+            "description": "Dal mese successivo"
+          },
+          "averageTicket": {
+            "label": "Scontrino medio"
+          },
+          "customersServed": {
+            "label": "Clienti serviti"
+          },
+          "instagramFollowers": {
+            "label": "Follower Instagram"
+          },
+          "instagramProfileVisits": {
+            "label": "Visite al profilo"
+          }
+        },
+        "facts": {
+          "client": "Cliente",
+          "type": "Tipo",
+          "location": "Sede",
+          "scope": "Ambito",
+          "result": "Risultato"
         },
         "next": {
           "label": "Successivo · NEXAD Lab",
