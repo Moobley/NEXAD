@@ -39,7 +39,7 @@ const geistMono = IBM_Plex_Mono({
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations({
-    locale: routing.defaultLocale,
+    locale: "en",
     namespace: "seo.gateway",
   })
 

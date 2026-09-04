@@ -4,6 +4,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server"
 import { Space_Grotesk, IBM_Plex_Mono, Instrument_Serif } from "next/font/google"
 
 import { routing } from "@/i18n/routing"
+import { organizationSchema } from "@/lib/seo"
 import { SiteHeader } from "@/components/layout/site-header"
 import { SiteFooter } from "@/components/layout/site-footer"
 import { cn } from "@/lib/utils"
@@ -63,6 +64,12 @@ export default async function LocaleLayout({ children, params }: Props) {
       )}
     >
       <body className="min-h-svh bg-background text-foreground antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema()).replace(/</g, "\\u003c"),
+          }}
+        />
         <NextIntlClientProvider>
           <a
             href="#main"

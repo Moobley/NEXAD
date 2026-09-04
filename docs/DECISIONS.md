@@ -424,3 +424,29 @@ object, so the intro now starts from the D.
   Forward mark.
 - Reintroduce decorative numbering or a dot on every section.
 - Exceed ~4.2s before the language links are visible on first load.
+
+## D-025 — SEO readiness: gateway language, branded 404, Organization schema
+
+**Decision**
+- Gateway metadata resolves the English `seo.gateway` copy
+  (`app/(gateway)/layout.tsx`), matching its existing `lang="en"` +
+  `og:locale en_US` + English tagline. Previously the description came from
+  `defaultLocale` (es), giving the x-default root conflicting language signals.
+- Unknown URLs serve a branded 404 via `app/global-not-found.tsx` with
+  `experimental.globalNotFound` — the documented mechanism for apps with
+  multiple root layouts and a top-level dynamic-segment root layout. It is a
+  full `<html>/<body>` document mirroring the Gateway, `noindex`, with
+  basePath-prefixed absolute links built from `NEXT_PUBLIC_BASE_PATH`.
+- Localized pages emit an `Organization` JSON-LD (name, url, logo, Las Palmas
+  address, founders) via `organizationSchema()` in `lib/seo.ts`.
+- SEO titles for home/services/contact add geo/use-case modifiers
+  (es/en/it). Work/studio titles unchanged.
+
+**Why**
+- Consistent language signals at `/` before indexable activation; on-brand
+  fallback for any wrong URL; local/E-E-A-T relevance via Organization schema;
+  geo keywords for the primary market.
+
+**Do not**
+- Revert the Gateway to locale-mixed metadata, drop the branded 404, or
+  hardcode `/NEXAD` in the 404 links.

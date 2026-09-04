@@ -121,6 +121,70 @@ export function websiteSchema() {
 }
 
 /**
+ * Organization structured data, emitted on localized pages (site-wide).
+ * Facts only: studio name, origin, logo, base address and the two core team
+ * members already public on the Studio page.
+ */
+export function organizationSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: SITE_NAME,
+    url: siteUrl("/"),
+    logo: assetUrl("/logos/nexad-wordmark-carbon.svg"),
+    description:
+      "Growth, engineered. A digital studio connecting strategy, marketing, content, product and software.",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Las Palmas de Gran Canaria",
+      addressRegion: "Canarias",
+      addressCountry: "ES",
+    },
+    founder: [
+      { "@type": "Person", name: "Alessandro", jobTitle: "Marketing & Brand" },
+      {
+        "@type": "Person",
+        name: "Lorenzo",
+        jobTitle: "Technology & Product",
+      },
+    ],
+  }
+}
+
+/**
+ * Services structured data, emitted on the Services page. Describes the
+ * studio as a ProfessionalService with the five capabilities as an offer
+ * catalog, sourced from the same messages the page renders.
+ */
+export function servicesSchema(
+  services: Array<{ name: string; description: string }>
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: SITE_NAME,
+    url: siteUrl("/services/"),
+    areaServed: {
+      "@type": "Place",
+      name: "Las Palmas de Gran Canaria, Spain",
+    },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "NEXAD services",
+      itemListElement: services.map((service, index) => ({
+        "@type": "Offer",
+        position: index + 1,
+        itemOffered: {
+          "@type": "Service",
+          name: service.name,
+          description: service.description,
+        },
+      })),
+    },
+  }
+}
+
+/**
  * Assembles page metadata: robots policy, absolute canonical, reciprocal
  * hreflang (es / en / it + x-default), Open Graph and Twitter cards.
  *

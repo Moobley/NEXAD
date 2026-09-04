@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { getTranslations, setRequestLocale } from "next-intl/server"
 
-import { pageMetadata } from "@/lib/seo"
+import { pageMetadata, servicesSchema } from "@/lib/seo"
 import { SectionDivider } from "@/components/ui/section-divider"
 import { ServicesHero } from "@/components/sections/services/services-hero"
 import { ServicesCapabilities } from "@/components/sections/services/services-capabilities"
@@ -29,8 +29,23 @@ export default async function ServicesPage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
 
+  const t = await getTranslations("servicesPage.capabilities")
+  const capabilities = t.raw("list") as Array<{ title: string; body: string }>
+  const schema = servicesSchema(
+    capabilities.map((capability) => ({
+      name: capability.title,
+      description: capability.body,
+    }))
+  )
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schema).replace(/</g, "\\u003c"),
+        }}
+      />
       <ServicesHero />
       <SectionDivider />
       <ServicesCapabilities />
