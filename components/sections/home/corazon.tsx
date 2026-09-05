@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server"
 import Image from "next/image"
 
+import { Link } from "@/i18n/navigation"
 import { Reveal } from "@/components/ui/reveal"
 import { CaseMedia } from "@/components/ui/case-media"
 import { ForwardMark } from "@/components/ui/forward-mark"
@@ -97,17 +98,23 @@ export async function Corazon() {
             delay={180}
             className="lg:col-span-4 lg:justify-self-end"
           >
-            <a
-              href={`https://${tc("url")}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="cta-secondary inline-flex"
-            >
-              <span className="font-mono text-[11px] uppercase tracking-[0.16em]">
-                {tc("url")}
-              </span>
-              <ForwardMark className="cta-forward" />
-            </a>
+            <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center">
+              <Link href="/work/corazon-napoletano" className="cta-primary">
+                {tc("cta")}
+                <ForwardMark className="cta-forward" />
+              </Link>
+              <a
+                href={`https://${tc("url")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cta-secondary inline-flex"
+              >
+                <span className="font-mono text-[11px] uppercase tracking-[0.16em]">
+                  {tc("url")}
+                </span>
+                <ForwardMark className="cta-forward" />
+              </a>
+            </div>
           </Reveal>
         </div>
       </div>

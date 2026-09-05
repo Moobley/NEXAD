@@ -554,8 +554,10 @@
    Gateway root (/) — NEXAD brand gateway, carbon surface.
    Signal → Forward sequence:
      Signal D opens centered → D travels right into NEXAD →
-     NEXA reveals → languages settle. Idle: grid/glow/network
-     drift and the Forward mark pulses while the user waits.
+     NEXA reveals → languages settle. Behind it all, the NEXAD
+     Path: a sparse angular network whose centerline carries the
+     D's motion, with an occasional signal impulse; the Forward
+     mark pulses while the user waits.
    ============================================================ */
 
 .gateway {
@@ -565,38 +567,30 @@
   color: var(--color-ivory);
 }
 
-.gateway-grid {
-  background-image:
-    linear-gradient(to right, rgb(243 235 221 / 0.045) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(243 235 221 / 0.045) 1px, transparent 1px);
-  background-size: 72px 72px;
-  /* Idle: the grid drifts diagonally by one cell — seamless, almost
-     imperceptible, and alive from the very first frame. */
-  animation: gateway-grid-drift 30s linear infinite;
+/* NEXAD Path — near-black canvas with a sparse geometric network inspired
+   by the logo's angles, and a single occasional signal impulse running the
+   D's trajectory line. Fully decorative and clipped; never bright, never
+   continuous. */
+.gateway-path-layer {
+  color: var(--color-ivory);
 }
 
-/* Neutral warm glow — never a large signal/orange wash. */
-.gateway-glow {
-  background: radial-gradient(
-    55% 45% at 50% 42%,
-    rgb(216 209 196 / 0.1) 0%,
-    transparent 72%
-  );
-  animation: gateway-glow-drift 18s ease-in-out infinite;
+/* The signal impulse: hidden at rest, occasionally traverses the line. */
+.gateway-pulse {
+  opacity: 0;
+  stroke: var(--color-signal);
+  stroke-dasharray: 22 78;
+  stroke-dashoffset: 0;
+  filter: drop-shadow(0 0 5px rgb(255 90 54 / 0.55));
+  animation: gateway-path-pulse 12s linear infinite;
 }
 
-/* Technical network — quiet, precise, never competing with the wordmark.
-   Nodes and connectors keep breathing asynchronously. */
-.gateway-network {
-  color: rgb(243 235 221 / 0.2);
-}
-
-.gateway-node {
-  animation: gateway-node-breathe 5s ease-in-out infinite;
-}
-
-.gateway-connector {
-  animation: gateway-connector-breathe 7s ease-in-out infinite;
+/* Language hover: a brief signal pulse blooms across the selector. */
+@media (hover: hover) {
+  .gateway-langs a:hover .gateway-lang-pulse,
+  .gateway-langs a:focus-visible .gateway-lang-pulse {
+    animation: gateway-lang-pulse 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
 }
 
 /* The complete D — ring + Forward mark move and color as one object.
@@ -706,42 +700,39 @@
   animation: gateway-exit-fade 0.3s ease forwards;
 }
 
-@keyframes gateway-grid-drift {
-  from {
-    background-position: 0 0;
+/* A single signal comet runs the trajectory line left → right, then waits.
+   The long tail keeps it occasional rather than continuous. */
+@keyframes gateway-path-pulse {
+  0% {
+    stroke-dashoffset: 0;
+    opacity: 0;
   }
-  to {
-    background-position: 72px 72px;
+  6% {
+    opacity: 0.9;
+  }
+  16% {
+    stroke-dashoffset: -100;
+    opacity: 0;
+  }
+  100% {
+    stroke-dashoffset: -100;
+    opacity: 0;
   }
 }
 
-@keyframes gateway-glow-drift {
-  0%,
-  100% {
-    transform: translate3d(0, 0, 0) scale(1);
+/* Language-hover pulse — blooms once across the selector, then fades. */
+@keyframes gateway-lang-pulse {
+  0% {
+    transform: scaleX(0);
+    opacity: 0;
   }
-  50% {
-    transform: translate3d(-1.5%, 1.5%, 0) scale(1.04);
-  }
-}
-
-@keyframes gateway-node-breathe {
-  0%,
-  100% {
-    opacity: 0.35;
-  }
-  50% {
+  45% {
+    transform: scaleX(1);
     opacity: 1;
   }
-}
-
-@keyframes gateway-connector-breathe {
-  0%,
   100% {
-    opacity: 0.25;
-  }
-  50% {
-    opacity: 0.6;
+    transform: scaleX(1);
+    opacity: 0;
   }
 }
 
@@ -895,10 +886,8 @@
 /* Reduced motion: gateway static — completed wordmark, languages ready.
    No travel, no drift, no pulse. Signal details (Forward mark) remain. */
 @media (prefers-reduced-motion: reduce) {
-  .gateway-grid,
-  .gateway-glow,
-  .gateway-node,
-  .gateway-connector,
+  .gateway-pulse,
+  .gateway-lang-pulse,
   .gateway-intro .gateway-d-group,
   .gateway-intro .gateway-d-ring,
   .gateway-intro .gateway-nexa,

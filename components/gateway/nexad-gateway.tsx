@@ -4,7 +4,7 @@ import { useEffect, useState, type MouseEvent } from "react"
 
 import { cn } from "@/lib/utils"
 import { GatewayLogo } from "@/components/gateway/gateway-logo"
-import { GatewayNetwork } from "@/components/gateway/gateway-network"
+import { GatewayPath } from "@/components/gateway/gateway-path"
 
 const STORAGE_KEY = "nexad_gateway_seen"
 const LEGACY_STORAGE_KEY = "nexo_gateway_seen"
@@ -92,13 +92,16 @@ export function NexadGateway() {
         exiting && "gateway-exit"
       )}
     >
-      <div aria-hidden className="gateway-grid absolute inset-0" />
-      <div aria-hidden className="gateway-glow absolute inset-0" />
+      <div
+        aria-hidden
+        className="gateway-path-layer pointer-events-none absolute inset-0 overflow-hidden"
+      >
+        <GatewayPath className="absolute inset-0 h-full w-full" />
+      </div>
       <div aria-hidden className="noise absolute inset-0 opacity-[0.04]" />
 
       <div className="relative z-10 mx-auto flex min-h-svh w-full max-w-[1600px] flex-col items-center justify-center px-6 pb-[max(3rem,env(safe-area-inset-bottom))] pt-[max(2.5rem,env(safe-area-inset-top))] md:px-10">
         <div className="gateway-stage relative w-[82vw] lg:w-[54vw] xl:max-w-[52rem]">
-          <GatewayNetwork className="gateway-network absolute inset-0 h-full w-full" />
           <GatewayLogo className="relative w-full" />
         </div>
 
@@ -134,6 +137,10 @@ export function NexadGateway() {
                       ? "opacity-100"
                       : "opacity-0 group-hover:opacity-50"
                   )}
+                />
+                <span
+                  aria-hidden
+                  className="gateway-lang-pulse pointer-events-none absolute inset-x-1 -bottom-1 h-px origin-center scale-x-0 bg-signal opacity-0"
                 />
               </a>
             )
