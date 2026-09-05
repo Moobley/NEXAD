@@ -151,8 +151,14 @@ Pages were editorially compressed; do not re-expand without reason.
 - **Corazón Napoletano** — Client Work. Real project in Las Palmas (logo,
   brand identity, physical applications, menu, upselling, QR, site, booking,
   content, reel, production, Meta Ads, Google Ads, strategy). Approved
-  publishable result: +20% revenue from the following month — always framed as
-  project-specific, never a general promise. Client site:
+  publishable results (client-provided, in `corazonMetricGroups`): business
+  (+49.1% avg weekly revenue, +54.8% takeaway pizza, +28.7% pizzas/week,
+  +27.3% dine-in pizza, +39.0% weekly pizza revenue, +15.8% revenue per
+  pizza); Google Business Profile Aug 2026 (1,500 local actions = 998
+  directions + 329 website clicks + 173 calls); Google Ads Aug 2026 (153,751
+  impressions, 5,035 clicks) — always framed as project-specific, never a
+  general promise. Excluded by the client: average CTR and tracked
+  conversions. Client site:
   `corazonnapoletano.com`. `public/projects/corazon/logoCNxNexo.png` is a real
   NEXO-era co-branded asset that still needs a real NEXAD update.
 - **Barber Booking** — NEXAD Lab. Personal demo product for barber shops,
@@ -251,7 +257,9 @@ collected.
   is available. Not a blocker.
 - **Barber Business Real Assets** — paused/optional; blocked by the Barber
   backend admin login (`400 "No active transaction for update or delete
-  query"`). Business side keeps the abstract `DashboardUi` for now.
+  query"`). The business side is now folded into the "Cosa abbiamo costruito"
+  section with an abstract `Flow` diagram; the standalone `DashboardUi` visual
+  was removed.
 - **Corazón co-branded logo** (`logoCNxNexo.png`) — the NEXO-era asset is still
   shown on the home Corazón section; needs a real NEXAD update before the
   rebrand is visually complete.

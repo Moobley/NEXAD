@@ -5,6 +5,7 @@ import { Flow } from "@/components/ui/flow"
 
 type Side = {
   label: string
+  status: string
   flow: string[]
   body: string
 }
@@ -17,12 +18,23 @@ export async function BarberSides() {
   return (
     <section>
       <div className="mx-auto w-full max-w-[1600px] px-6 py-24 md:px-10 md:py-32">
-        <div className="grid gap-12 md:grid-cols-2 md:gap-0">
+        <Reveal>
+          <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
+            {t("eyebrow")}
+          </p>
+        </Reveal>
+
+        <div className="mt-10 grid gap-12 md:grid-cols-2 md:gap-0">
           <Reveal>
             <article className="border-t border-obsidian/10 pt-8 md:border-r md:pr-12 lg:pr-16">
-              <p className="font-mono text-xs tracking-[0.2em] text-muted-foreground">
-                01 · {customer.label}
-              </p>
+              <div className="flex items-center justify-between gap-4">
+                <p className="font-mono text-xs tracking-[0.2em] text-muted-foreground">
+                  01 · {customer.label}
+                </p>
+                <span className="font-mono text-[10px] uppercase tracking-[0.15em] text-muted-foreground">
+                  {customer.status}
+                </span>
+              </div>
               <h2 className="mt-4 font-sans text-3xl font-medium tracking-tight md:text-4xl">
                 {customer.label}
               </h2>
@@ -35,9 +47,14 @@ export async function BarberSides() {
 
           <Reveal delay={120}>
             <article className="border-t border-obsidian/10 pt-8 md:pl-12 lg:pl-16">
-              <p className="font-mono text-xs tracking-[0.2em] text-muted-foreground">
-                02 · {business.label}
-              </p>
+              <div className="flex items-center justify-between gap-4">
+                <p className="font-mono text-xs tracking-[0.2em] text-muted-foreground">
+                  02 · {business.label}
+                </p>
+                <span className="font-mono text-[10px] uppercase tracking-[0.15em] text-muted-foreground">
+                  {business.status}
+                </span>
+              </div>
               <h2 className="mt-4 font-sans text-3xl font-medium tracking-tight md:text-4xl">
                 {business.label}
               </h2>

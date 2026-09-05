@@ -44,8 +44,8 @@ content/reel, website desktop/mobile, Meta/Google creatives.
 Not a blocker. Depends on fixing the Barber backend admin login
 (`400 "No active transaction for update or delete query"`). Possible future
 assets: dashboard, agenda, services, staff/customers, statistics — with demo
-data, replacing part of the abstract `DashboardUi` without turning the page
-into a gallery.
+data, adding a real management-side visual to the "Cosa abbiamo costruito"
+section without turning the page into a gallery.
 
 ## 🔴 High priority
 

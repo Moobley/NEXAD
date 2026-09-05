@@ -36,21 +36,36 @@ export type Project = {
   }
 }
 
-export type CaseStudyMetricKey =
-  | "revenue"
-  | "averageTicket"
-  | "customersServed"
-  | "instagramFollowers"
-  | "instagramProfileVisits"
+export type CorazonMetricKey =
+  | "weeklyRevenue"
+  | "takeawayPizza"
+  | "pizzasPerWeek"
+  | "dineInPizza"
+  | "weeklyPizzaRevenue"
+  | "revenuePerPizza"
+  | "gbpActions"
+  | "gbpDirections"
+  | "gbpWebsiteClicks"
+  | "gbpCalls"
+  | "adsImpressions"
+  | "adsClicks"
 
-export type CaseStudyMetric = {
-  /** Semantic key; label/description resolve from `caseStudy.metrics.<key>`. */
-  key: CaseStudyMetricKey
+export type CorazonMetricGroupId =
+  | "business"
+  | "googleBusinessProfile"
+  | "googleAds"
+
+export type CorazonMetricGroup = {
+  id: CorazonMetricGroupId
+  /** Metric keys rendered at the larger, primary size. */
+  featured: CorazonMetricKey[]
+  /** Metric keys rendered at the secondary size, in order. */
+  metrics: CorazonMetricKey[]
   /**
-   * Approved, publishable value (e.g. "+20%"). When omitted the metric has no
-   * approved value yet and must not be rendered.
+   * For Google Business Profile only: the components that sum to the featured
+   * "local actions" total, rendered as a breakdown below the featured metric.
    */
-  value?: string
+  breakdown?: CorazonMetricKey[]
 }
 
 export const projects: Project[] = [
@@ -84,24 +99,42 @@ export const projects: Project[] = [
 ]
 
 /*
- * Corazón Napoletano — approved case-study results.
+ * Corazón Napoletano — approved case-study results (client-provided).
  *
- * Only metrics with an approved `value` are rendered. The rest stay here,
- * keyed and ready, until real data is provided.
+ * Metrics are grouped into three distinct sets that must stay separate in the
+ * UI and in any copy: business performance, Google Business Profile, and
+ * Google Ads. Labels, descriptions and locale-formatted values live in the
+ * `projects.corazon.caseStudy.metrics` message namespace.
  *
- * TODO(data): still required before these can be published — each needs an
- * approved percentage AND its comparison period + measurement source:
- *   - averageTicket          (% change in average ticket)
- *   - customersServed        (% change in customers served / affluence)
- *   - instagramFollowers     (% growth in Instagram followers)
- *   - instagramProfileVisits (% change in Instagram profile visits)
- * The only currently approved value is revenue: +20% from the following
- * month, specific to this project and context.
+ * Excluded from the UI and from any derived figure (client instruction):
+ *   - average CTR (3,27% / 3.27%)
+ *   - tracked conversions (467)
+ * These values must never be rendered, referenced or used to compute anything.
+ *
+ * The previous "+20% revenue from the following month" figure has been
+ * superseded by the more precise business metrics below (e.g. +49,1% average
+ * weekly revenue following the menu reengineering).
  */
-export const corazonMetrics: CaseStudyMetric[] = [
-  { key: "revenue", value: "+20%" },
-  { key: "averageTicket", value: "+15%" },
-  { key: "customersServed", value: "+25%" },
-  { key: "instagramFollowers", value: "+30%" },
-  { key: "instagramProfileVisits", value: "+20%" },
+export const corazonMetricGroups: CorazonMetricGroup[] = [
+  {
+    id: "business",
+    featured: ["weeklyRevenue", "takeawayPizza"],
+    metrics: [
+      "pizzasPerWeek",
+      "dineInPizza",
+      "weeklyPizzaRevenue",
+      "revenuePerPizza",
+    ],
+  },
+  {
+    id: "googleBusinessProfile",
+    featured: ["gbpActions"],
+    metrics: [],
+    breakdown: ["gbpDirections", "gbpWebsiteClicks", "gbpCalls"],
+  },
+  {
+    id: "googleAds",
+    featured: [],
+    metrics: ["adsImpressions", "adsClicks"],
+  },
 ]

@@ -6,9 +6,6 @@ import { BarberHero } from "@/components/sections/work/barber-hero"
 import { BarberProblem } from "@/components/sections/work/barber-problem"
 import { BarberSides } from "@/components/sections/work/barber-sides"
 import { BarberCustomer } from "@/components/sections/work/barber-customer"
-import { BarberBusiness } from "@/components/sections/work/barber-business"
-import { BarberPrinciples } from "@/components/sections/work/barber-principles"
-import { BarberAdaptability } from "@/components/sections/work/barber-adaptability"
 import { BarberStatus } from "@/components/sections/work/barber-status"
 
 export async function BarberLab() {
@@ -24,12 +21,6 @@ export async function BarberLab() {
       <BarberSides />
       <SectionDivider />
       <BarberCustomer />
-      <SectionDivider />
-      <BarberBusiness />
-      <SectionDivider />
-      <BarberPrinciples />
-      <SectionDivider />
-      <BarberAdaptability />
       <SectionDivider />
       <BarberStatus />
       <ProjectNext

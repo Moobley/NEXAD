@@ -203,19 +203,33 @@ Never invent:
 - product users;
 - results.
 
-Corazón's approved public result is `+20%` revenue from the following month,
-specific to that project/context.
+Corazón's approved public results are client-provided, real metrics (business
+performance, Google Business Profile, Google Ads), specific to that project and
+context. They are grouped in `content/projects.ts` (`corazonMetricGroups`) and
+localized in `projects.corazon.caseStudy.metrics`.
 
 ### Case-study integrity
 
 Corazón Napoletano is real Client Work (Las Palmas): logo, brand identity,
 colors/fonts, physical applications, menu, upselling, QR, site, booking,
 content, reel, production, Meta Ads, Google Ads, overall strategy. Always
-frame `+20%` revenue as the result of that specific project — never as a
-general NEXAD promise. The Corazón real-asset pass is paused until enough real
-material exists. Note: `public/projects/corazon/logoCNxNexo.png` is a real
-NEXO-era co-branded asset; it still needs a real NEXAD update before it can be
-shown as the current brand.
+frame results as specific to that project — never as a general NEXAD promise.
+
+Approved metrics: business (+49.1% average weekly revenue, +54.8% takeaway
+pizza, +28.7% pizzas/week, +27.3% dine-in pizza, +39.0% weekly pizza revenue,
++15.8% revenue per pizza); Google Business Profile, August 2026 (1,500 local
+actions = 998 directions + 329 website clicks + 173 calls); Google Ads, August
+2026 (153,751 impressions, 5,035 clicks).
+
+Excluded by the client — never render, reference or derive anything from them:
+average CTR (3.27%) and tracked conversions (467). Do not invent time periods
+for the business metrics.
+
+The earlier `+20%` revenue figure is superseded by the richer metrics above.
+
+The Corazón real-asset pass is paused until enough real material exists. Note:
+`public/projects/corazon/logoCNxNexo.png` is a real NEXO-era co-branded asset;
+it still needs a real NEXAD update before it can be shown as the current brand.
 
 Barber Booking is a NEXAD Lab demo product designed for barber shops,
 adaptable with limited re-engineering to other appointment businesses.

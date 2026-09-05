@@ -27,7 +27,7 @@
     "projects": {
       "corazon": {
         "title": "Corazón Napoletano — Client Work | NEXAD",
-        "description": "Proyecto para Corazón Napoletano en Las Palmas: identidad, web, contenido, producción y paid media. Resultado específico del proyecto: +20% de facturación desde el mes siguiente."
+        "description": "Proyecto para Corazón Napoletano en Las Palmas: identidad, web, contenido, producción y paid media. Resultado específico del proyecto: +49,1% de facturación semanal media."
       },
       "barber": {
         "title": "Barber Booking — NEXAD Lab",
@@ -108,8 +108,8 @@
       "headline": "Una nueva apertura construida de una sola vez.",
       "support": "Identidad, contenido, carta, local, web y captación pensados al mismo tiempo.",
       "scope": "Identidad · Contenido · Carta + Upselling · QR · Web · Captación",
-      "resultAmount": "+20%",
-      "resultLabel": "Facturación desde el mes siguiente",
+      "resultAmount": "+49,1%",
+      "resultLabel": "Facturación semanal media",
       "cta": "Ver caso de estudio",
       "brandLabel": "Identidad y aplicaciones",
       "contentLabel": "Contenido",
@@ -120,115 +120,132 @@
           "category": "Client Work · Restauración"
         },
         "hero": {
-          "titleA": "Una marca construida",
-          "titleB": "para hacerse elegir.",
-          "support": "Una nueva apertura donde identidad, contenido, carta, experiencia en el local, web y captación se diseñaron de una sola vez."
-        },
-        "context": {
-          "eyebrow": "El punto de partida",
-          "heading": "Una apertura nueva significa tomar muchas decisiones antes de tener datos.",
-          "body": "Corazón Napoletano partía desde cero. La oportunidad era construir marca, experiencia y presencia digital al mismo tiempo, evitando que cada punto de contacto creciera como una pieza independiente.",
-          "body2": "El reto no era simplemente estar online. Era conseguir que lo que alguien veía en una campaña, encontraba en la web, leía en la carta y vivía en el restaurante contara la misma historia."
-        },
-        "system": {
-          "title": "No diseñamos piezas. Diseñamos cómo se relacionan.",
-          "support": "Cada elemento tenía una función diferente, pero todos debían reforzar la misma percepción y facilitar la siguiente acción.",
-          "flow": [
-            "Identidad",
+          "definition": "Construimos y consolidamos la presencia digital de una nueva apertura: marca, carta, contenidos, web y captación como un único sistema.",
+          "tags": [
+            "Branding",
+            "Digital",
             "Contenido",
-            "Carta",
-            "Experiencia",
-            "Web",
-            "Captación",
-            "Datos",
-            "Optimización"
+            "Paid Media"
           ]
         },
-        "identity": {
-          "heading": "Antes de comunicar la marca, había que construirla.",
-          "body": "Definimos una identidad capaz de vivir tanto en pantalla como dentro del restaurante, buscando coherencia entre lo que la marca promete y lo que el cliente encuentra.",
-          "labels": [
-            "Identidad",
-            "Logo",
-            "Color",
-            "Tipografía",
-            "Aplicaciones"
-          ],
-          "logoLabel": "Logo",
-          "applicationsTitle": "Aplicaciones físicas",
-          "applications": [
-            "Mantelillos",
-            "Camisetas"
+        "what": {
+          "eyebrow": "Qué hicimos",
+          "list": [
+            {
+              "title": "Branding e identidad",
+              "body": "Logo, colores, tipografía y aplicaciones físicas y digitales para una marca coherente dentro y fuera del local."
+            },
+            {
+              "title": "Carta y upselling",
+              "body": "Rediseñamos la carta y la presentación de la oferta para aumentar la venta de pizza y productos complementarios."
+            },
+            {
+              "title": "Web y Google Business Profile",
+              "body": "Conectamos web, QR y perfil de Google para convertir la búsqueda local en indicaciones, llamadas y clics al sitio."
+            },
+            {
+              "title": "Paid Media",
+              "body": "Campañas de Meta Ads y Google Ads conectadas a la web y a la oferta para generar visibilidad y demanda alrededor de la apertura."
+            }
           ]
         },
-        "content": {
-          "heading": "Mostrar el producto real, no una versión genérica del restaurante.",
-          "body": "La dirección de contenido se construyó alrededor de producto, preparación, ambiente y personas. Contenido pensado para hacer reconocible la marca y alimentar tanto los canales orgánicos como la captación.",
-          "frames": [
-            "Producto",
-            "Ambiente",
-            "Reels"
+        "method": {
+          "eyebrow": "Cómo actuamos",
+          "steps": [
+            {
+              "title": "Análisis",
+              "body": "Analizamos oferta, carta, recorrido del cliente y datos de Google para entender dónde intervenir."
+            },
+            {
+              "title": "Intervención",
+              "body": "Rediseñamos carta, upselling, web y perfil de Google como un único sistema."
+            },
+            {
+              "title": "Medición",
+              "body": "Seguimos ventas, acciones locales y campañas para leer los resultados reales."
+            },
+            {
+              "title": "Optimización",
+              "body": "Usamos los datos recogidos para reforzar lo que funciona."
+            }
           ]
-        },
-        "menu": {
-          "heading": "La carta también forma parte de la estrategia.",
-          "body": "Reorganizamos información, jerarquías y recorridos de elección para hacer la oferta más fácil de entender y crear oportunidades de upselling sin convertir la experiencia en presión comercial.",
-          "principle": "Elegir mejor puede significar vender mejor.",
-          "watermark": "Carta",
-          "mediaLabel": "Carta · Arquitectura de información · Upselling"
-        },
-        "qr": {
-          "body": "Integramos el acceso QR dentro de la experiencia física para reducir pasos entre descubrir la oferta y elegir, manteniendo continuidad visual con el resto de la marca."
-        },
-        "website": {
-          "heading": "La web continúa lo que empieza fuera de ella.",
-          "body": "Diseñamos y desarrollamos una experiencia capaz de presentar la marca, enseñar la carta y reducir la distancia entre interés y reserva, con navegación adaptada a diferentes idiomas.",
-          "url": "corazonnapoletano.com",
-          "captions": [
-            "Hero",
-            "Mobile"
-          ]
-        },
-        "acquisition": {
-          "eyebrow": "Captación",
-          "heading": "Construir el sistema era solo la mitad. Había que llevar personas hasta él.",
-          "body": "Activamos campañas de captación en Meta Ads y Google Ads, conectando creatividad, mensaje, intención de búsqueda y experiencia digital para generar demanda alrededor de la nueva apertura.",
-          "channels": [
-            "Meta Ads",
-            "Google Ads"
-          ],
-          "closing": "Campaña y destino se optimizan mejor cuando se diseñan como partes del mismo recorrido."
         },
         "result": {
-          "eyebrow": "Resultado",
-          "body": "Desde el mes siguiente a la puesta en marcha del nuevo sistema, Corazón Napoletano registró un incremento de facturación del 20%.",
-          "statement": "No atribuimos el resultado a una única pieza. Marca, contenido, carta, experiencia, web y captación fueron diseñados para reforzarse entre sí.",
-          "note": "Resultado correspondiente a este proyecto y contexto concreto."
+          "eyebrow": "Resultados",
+          "groups": {
+            "business": {
+              "title": "Rendimiento comercial"
+            },
+            "googleBusinessProfile": {
+              "title": "Google Business Profile",
+              "description": "Datos de Google Business Profile correspondientes a agosto de 2026.",
+              "breakdownLabel": "De los cuales"
+            },
+            "googleAds": {
+              "title": "Google Ads",
+              "description": "Rendimiento de las campañas de Google Ads en agosto de 2026."
+            }
+          },
+          "body": "Tras la reingeniería del menú, la facturación y las ventas de pizza crecieron. Google Business Profile generó acciones locales, indicaciones, llamadas y clics al sitio; las campañas aportaron visibilidad y clics.",
+          "statement": "Comercial, Google Business Profile y publicidad son tres resultados distintos: los presentamos por separado, sin atribuir uno al otro.",
+          "note": "Datos reales y aprobados por el cliente, relativos a este proyecto."
         },
         "metrics": {
-          "revenue": {
-            "label": "Facturación",
-            "description": "Desde el mes siguiente"
+          "weeklyRevenue": {
+            "value": "+49,1%",
+            "label": "Facturación semanal media",
+            "description": "Aumento medio de la facturación semanal tras la reingeniería del menú."
           },
-          "averageTicket": {
-            "label": "Ticket medio"
+          "takeawayPizza": {
+            "value": "+54,8%",
+            "label": "Pizza para llevar",
+            "description": "Crecimiento de las ventas de pizza para llevar."
           },
-          "customersServed": {
-            "label": "Clientes atendidos"
+          "pizzasPerWeek": {
+            "value": "+28,7%",
+            "label": "Pizzas por semana",
+            "description": "Crecimiento medio de pizzas vendidas cada semana."
           },
-          "instagramFollowers": {
-            "label": "Seguidores en Instagram"
+          "dineInPizza": {
+            "value": "+27,3%",
+            "label": "Pizza en mesa",
+            "description": "Aumento de las ventas de pizza en el local."
           },
-          "instagramProfileVisits": {
-            "label": "Visitas al perfil"
+          "weeklyPizzaRevenue": {
+            "value": "+39,0%",
+            "label": "Ingresos pizza semanales",
+            "description": "Facturación por pizza, sumando mesa y para llevar."
+          },
+          "revenuePerPizza": {
+            "value": "+15,8%",
+            "label": "Ingreso por pizza",
+            "description": "Valor medio por pizza vendida, incluyendo complementos."
+          },
+          "gbpActions": {
+            "value": "1.500",
+            "label": "Acciones locales",
+            "description": "Suma de indicaciones, clics al sitio y llamadas."
+          },
+          "gbpDirections": {
+            "value": "998",
+            "label": "Indicaciones"
+          },
+          "gbpWebsiteClicks": {
+            "value": "329",
+            "label": "Clics al sitio"
+          },
+          "gbpCalls": {
+            "value": "173",
+            "label": "Llamadas"
+          },
+          "adsImpressions": {
+            "value": "153.751",
+            "label": "Impresiones"
+          },
+          "adsClicks": {
+            "value": "5.035",
+            "label": "Clics generados"
           }
-        },
-        "facts": {
-          "client": "Cliente",
-          "type": "Tipo",
-          "location": "Ubicación",
-          "scope": "Alcance",
-          "result": "Resultado"
         },
         "next": {
           "label": "Siguiente · NEXAD Lab",
@@ -259,10 +276,12 @@
           "body": "Quien reserva quiere encontrar un hueco y terminar en pocos pasos. Quien gestiona necesita saber quién viene, qué servicio ha elegido, con qué profesional y cómo está funcionando el negocio.",
           "closing": "El producto tiene que simplificar ambos lados."
         },
-        "sides": {
-          "customer": {
-            "label": "Reservar",
-            "flow": [
+          "sides": {
+            "eyebrow": "Qué hemos construido",
+            "customer": {
+              "label": "Reservar",
+              "status": "Desarrollado",
+              "flow": [
               "Servicio",
               "Profesional",
               "Disponibilidad",
@@ -270,9 +289,10 @@
             ],
             "body": "Reducir decisiones innecesarias y hacer que encontrar una cita disponible sea inmediato."
           },
-          "business": {
-            "label": "Gestionar",
-            "flow": [
+            "business": {
+              "label": "Gestionar",
+              "status": "Diseñado",
+              "flow": [
               "Agenda",
               "Servicios",
               "Equipo",
@@ -283,8 +303,13 @@
           }
         },
         "customer": {
-          "eyebrow": "Reservar",
+          "eyebrow": "Cómo funciona",
 "heading": "Menos pasos entre intención y cita.",
+      "steps": [
+        "Servicio",
+        "Disponibilidad",
+        "Confirmación"
+      ],
       "features": [
         "Selección de servicio",
         "Selección de profesional",
@@ -298,49 +323,10 @@
         "bookingSummary": "Resumen y confirmación de reserva en Barber Booking"
       }
     },
-        "business": {
-          "eyebrow": "Gestionar",
-          "heading": "La reserva termina para el cliente. Para el negocio, ahí empieza la operación.",
-          "features": [
-            "Dashboard de administración",
-            "Servicios y precios",
-            "Equipo y profesionales",
-            "Clientes",
-            "Agenda",
-            "Estadísticas"
-          ]
-        },
-        "principles": {
-          "eyebrow": "Principios",
-          "list": [
-            {
-              "title": "Pocos pasos",
-              "body": "La reserva debe sentirse inmediata."
-            },
-            {
-              "title": "Información clara",
-              "body": "Disponibilidad, servicios y profesionales sin ambigüedad."
-            },
-            {
-              "title": "Una sola operación",
-              "body": "Agenda, clientes y servicios conectados."
-            },
-            {
-              "title": "Datos utilizables",
-              "body": "Estadísticas pensadas para entender, no decorar una dashboard."
-            }
-          ]
-        },
-        "adaptability": {
-          "eyebrow": "Diseñado desde un caso concreto",
-          "headingPrefix": "Específico primero. ",
-          "headingAccent": "Adaptable después.",
-          "body": "Barber Booking parte de las necesidades de una barbería. Muchos de sus patrones — servicios, profesionales, disponibilidad, clientes y agenda — también existen en otros negocios basados en citas. La prioridad, sin embargo, es resolver bien un contexto antes de generalizarlo."
-        },
         "status": {
-          "eyebrow": "Estado",
+          "eyebrow": "Estado del producto",
           "heading": "En desarrollo.",
-          "body": "El producto sigue evolucionando mientras validamos flujos, interfaz y arquitectura. Lo mostramos como parte de NEXAD Lab porque el proceso también representa cómo pensamos producto y tecnología."
+          "body": "Barber Booking está actualmente en desarrollo. Hemos desarrollado el flujo de reserva del cliente — selección del servicio, disponibilidad y confirmación — y diseñado la arquitectura que conecta servicios, profesionales, disponibilidad y citas en un único sistema. El lado de gestión está diseñado y será la siguiente parte que completar."
         },
         "next": {
           "label": "Client Work",

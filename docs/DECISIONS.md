@@ -138,15 +138,16 @@ Shrink NEXO to a restaurant-only agency in copy or positioning.
 ## D-010 — Corazón classification and result framing
 
 **Decision**
-Corazón Napoletano is Client Work with a real, authorized result: +20% revenue
-from the following month. It must always be framed as a specific project
-result.
+Corazón Napoletano is Client Work with real, authorized results: business
+performance, Google Business Profile and Google Ads metrics, always framed as
+specific project results (see `content/projects.ts` `corazonMetricGroups`).
 
 **Why**
 Credibility comes from real, contextualized proof — not general promises.
 
 **Do not**
-Turn the +20% into a general NEXO guarantee, or invent additional metrics.
+Turn results into a general NEXO guarantee, or invent additional metrics.
+Excluded by the client: average CTR and tracked conversions — never show them.
 
 ## D-011 — Barber is NEXO Lab, not Client Work
 

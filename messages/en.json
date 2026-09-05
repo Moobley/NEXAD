@@ -27,7 +27,7 @@
     "projects": {
       "corazon": {
         "title": "Corazón Napoletano — Client Work | NEXAD",
-        "description": "Project for Corazón Napoletano in Las Palmas: identity, web, content, production and paid media. Project-specific result: +20% revenue from the following month."
+        "description": "Project for Corazón Napoletano in Las Palmas: identity, web, content, production and paid media. Project-specific result: +49.1% average weekly revenue."
       },
       "barber": {
         "title": "Barber Booking — NEXAD Lab",
@@ -109,8 +109,8 @@
       "headline": "A new opening built all at once.",
       "support": "Identity, content, menu, venue, website and acquisition planned at the same time.",
       "scope": "Identity · Content · Menu + Upselling · QR · Website · Acquisition",
-      "resultAmount": "+20%",
-      "resultLabel": "Revenue from the following month",
+      "resultAmount": "+49.1%",
+      "resultLabel": "Average weekly revenue",
       "cta": "View case study",
       "brandLabel": "Identity & applications",
       "contentLabel": "Content",
@@ -121,115 +121,132 @@
           "category": "Client Work · Restaurant"
         },
         "hero": {
-          "titleA": "A brand built",
-          "titleB": "to be chosen.",
-          "support": "A new opening where identity, content, menu, in-venue experience, website and acquisition were designed all at once."
-        },
-        "context": {
-          "eyebrow": "The starting point",
-          "heading": "A new opening means making many decisions before having real data.",
-          "body": "Corazón Napoletano started from zero. The opportunity was to build brand, experience and digital presence at the same time, preventing each touchpoint from growing as an isolated piece.",
-          "body2": "The challenge wasn't simply being online. It was making sure what someone saw in an ad, found on the website, read on the menu and experienced in the restaurant told the same story."
-        },
-        "system": {
-          "title": "We didn't design pieces. We designed how they connect.",
-          "support": "Each element had a different function, but all of them had to reinforce the same perception and make the next action easier.",
-          "flow": [
-            "Identity",
+          "definition": "We built and consolidated the digital presence of a new opening: brand, menu, content, website and acquisition as one system.",
+          "tags": [
+            "Branding",
+            "Digital",
             "Content",
-            "Menu",
-            "Experience",
-            "Website",
-            "Acquisition",
-            "Data",
-            "Optimisation"
+            "Paid Media"
           ]
         },
-        "identity": {
-          "heading": "Before communicating the brand, we had to build it.",
-          "body": "We defined an identity able to live both on screen and inside the restaurant, seeking coherence between what the brand promises and what the customer finds.",
-          "labels": [
-            "Identity",
-            "Logo",
-            "Colour",
-            "Typography",
-            "Applications"
-          ],
-          "logoLabel": "Logo",
-          "applicationsTitle": "Physical applications",
-          "applications": [
-            "Placemats",
-            "T-shirts"
+        "what": {
+          "eyebrow": "What we did",
+          "list": [
+            {
+              "title": "Branding and identity",
+              "body": "Logo, colours, typography and physical and digital applications for a coherent brand in and out of the venue."
+            },
+            {
+              "title": "Menu and upselling",
+              "body": "We redesigned the menu and how the offer is presented to increase pizza and complementary-item sales."
+            },
+            {
+              "title": "Website and Google Business Profile",
+              "body": "We connected the website, QR and Google profile to turn local search into directions, calls and website clicks."
+            },
+            {
+              "title": "Paid Media",
+              "body": "Meta Ads and Google Ads campaigns connected to the website and the offer to generate visibility and demand around the opening."
+            }
           ]
         },
-        "content": {
-          "heading": "Show the real product, not a generic version of the restaurant.",
-          "body": "Content direction was built around product, preparation, atmosphere and people. Content designed to make the brand recognisable and to feed both organic channels and acquisition.",
-          "frames": [
-            "Product",
-            "Atmosphere",
-            "Reels"
+        "method": {
+          "eyebrow": "How we worked",
+          "steps": [
+            {
+              "title": "Analysis",
+              "body": "We analysed the offer, menu, customer journey and Google data to understand where to act."
+            },
+            {
+              "title": "Intervention",
+              "body": "We redesigned the menu, upselling, website and Google profile as one system."
+            },
+            {
+              "title": "Measurement",
+              "body": "We tracked sales, local actions and campaigns to read the real results."
+            },
+            {
+              "title": "Optimisation",
+              "body": "We used the data collected to reinforce what works."
+            }
           ]
-        },
-        "menu": {
-          "heading": "The menu is part of the strategy too.",
-          "body": "We reorganised information, hierarchies and choice paths to make the offer easier to understand and create upselling opportunities without turning the experience into commercial pressure.",
-          "principle": "Helping people choose better can help the business sell better.",
-          "watermark": "Menu",
-          "mediaLabel": "Menu · Information architecture · Upselling"
-        },
-        "qr": {
-          "body": "We integrated QR access into the physical experience to reduce the steps between discovering the offer and choosing, keeping visual continuity with the rest of the brand."
-        },
-        "website": {
-          "heading": "The website continues what starts outside it.",
-          "body": "We designed and built an experience able to present the brand, show the menu and shorten the distance between interest and booking, with navigation adapted to different languages.",
-          "url": "corazonnapoletano.com",
-          "captions": [
-            "Hero",
-            "Mobile"
-          ]
-        },
-        "acquisition": {
-          "eyebrow": "Acquisition",
-          "heading": "Building the system was only half the job. People still had to reach it.",
-          "body": "We activated acquisition campaigns on Meta Ads and Google Ads, connecting creative, message, search intent and digital experience to generate demand around the new opening.",
-          "channels": [
-            "Meta Ads",
-            "Google Ads"
-          ],
-          "closing": "Campaign and destination are optimised better when designed as parts of the same journey."
         },
         "result": {
-          "eyebrow": "Result",
-          "body": "From the month following the launch of the new system, Corazón Napoletano recorded a 20% increase in revenue.",
-          "statement": "We don't attribute the result to one individual piece. Brand, content, menu, experience, website and acquisition were designed to reinforce one another.",
-          "note": "Result specific to this project and context."
+          "eyebrow": "Results",
+          "groups": {
+            "business": {
+              "title": "Business performance"
+            },
+            "googleBusinessProfile": {
+              "title": "Google Business Profile",
+              "description": "Google Business Profile data for August 2026.",
+              "breakdownLabel": "Made up of"
+            },
+            "googleAds": {
+              "title": "Google Ads",
+              "description": "Google Ads campaign performance in August 2026."
+            }
+          },
+          "body": "Following the menu reengineering, revenue and pizza sales grew. Google Business Profile generated local actions, directions, calls and website clicks, while the campaigns delivered visibility and clicks.",
+          "statement": "Commercial, Google Business Profile and advertising are three distinct results: we report them separately, without attributing one to the other.",
+          "note": "Real data, approved by the client and specific to this project."
         },
         "metrics": {
-          "revenue": {
-            "label": "Revenue",
-            "description": "From the following month"
+          "weeklyRevenue": {
+            "value": "+49.1%",
+            "label": "Average weekly revenue",
+            "description": "Average weekly revenue growth following the menu reengineering."
           },
-          "averageTicket": {
-            "label": "Average ticket"
+          "takeawayPizza": {
+            "value": "+54.8%",
+            "label": "Takeaway pizza",
+            "description": "Growth in takeaway pizza sales."
           },
-          "customersServed": {
-            "label": "Customers served"
+          "pizzasPerWeek": {
+            "value": "+28.7%",
+            "label": "Pizzas per week",
+            "description": "Average growth in pizzas sold per week."
           },
-          "instagramFollowers": {
-            "label": "Instagram followers"
+          "dineInPizza": {
+            "value": "+27.3%",
+            "label": "Dine-in pizza",
+            "description": "Growth in pizza sold in the restaurant."
           },
-          "instagramProfileVisits": {
-            "label": "Profile visits"
+          "weeklyPizzaRevenue": {
+            "value": "+39.0%",
+            "label": "Weekly pizza revenue",
+            "description": "Revenue from pizza, combining dine-in and takeaway."
+          },
+          "revenuePerPizza": {
+            "value": "+15.8%",
+            "label": "Revenue per pizza",
+            "description": "Average value per pizza sold, including complementary items."
+          },
+          "gbpActions": {
+            "value": "1,500",
+            "label": "Local actions",
+            "description": "Total of directions, website clicks and calls."
+          },
+          "gbpDirections": {
+            "value": "998",
+            "label": "Directions"
+          },
+          "gbpWebsiteClicks": {
+            "value": "329",
+            "label": "Website clicks"
+          },
+          "gbpCalls": {
+            "value": "173",
+            "label": "Calls"
+          },
+          "adsImpressions": {
+            "value": "153,751",
+            "label": "Impressions"
+          },
+          "adsClicks": {
+            "value": "5,035",
+            "label": "Clicks"
           }
-        },
-        "facts": {
-          "client": "Client",
-          "type": "Type",
-          "location": "Location",
-          "scope": "Scope",
-          "result": "Result"
         },
         "next": {
           "label": "Next · NEXAD Lab",
@@ -260,10 +277,12 @@
           "body": "The person booking wants to find a slot and finish in a few steps. The person managing needs to know who's coming, which service they chose, with which professional and how the business is doing.",
           "closing": "The product has to simplify both sides."
         },
-        "sides": {
-          "customer": {
-            "label": "Booking",
-            "flow": [
+          "sides": {
+            "eyebrow": "What we built",
+            "customer": {
+              "label": "Booking",
+              "status": "Developed",
+              "flow": [
               "Service",
               "Professional",
               "Availability",
@@ -271,9 +290,10 @@
             ],
             "body": "Reduce unnecessary decisions and make finding an available slot immediate."
           },
-          "business": {
-            "label": "Managing",
-            "flow": [
+            "business": {
+              "label": "Managing",
+              "status": "Designed",
+              "flow": [
               "Schedule",
               "Services",
               "Team",
@@ -284,8 +304,13 @@
           }
         },
         "customer": {
-          "eyebrow": "Booking",
+          "eyebrow": "How it works",
 "heading": "Fewer steps between intent and appointment.",
+      "steps": [
+        "Service",
+        "Availability",
+        "Confirmation"
+      ],
       "features": [
         "Service selection",
         "Professional selection",
@@ -299,49 +324,10 @@
         "bookingSummary": "Booking summary and confirmation in Barber Booking"
       }
     },
-        "business": {
-          "eyebrow": "Managing",
-          "heading": "The booking ends for the customer. For the business, that's where operations begin.",
-          "features": [
-            "Admin dashboard",
-            "Services and prices",
-            "Team and professionals",
-            "Customers",
-            "Schedule",
-            "Statistics"
-          ]
-        },
-        "principles": {
-          "eyebrow": "Principles",
-          "list": [
-            {
-              "title": "Fewer steps",
-              "body": "Booking should feel immediate."
-            },
-            {
-              "title": "Clear information",
-              "body": "Availability, services and professionals without ambiguity."
-            },
-            {
-              "title": "One operation",
-              "body": "Calendar, customers and services connected."
-            },
-            {
-              "title": "Useful data",
-              "body": "Statistics designed to help understand, not decorate a dashboard."
-            }
-          ]
-        },
-        "adaptability": {
-          "eyebrow": "Designed from a concrete case",
-          "headingPrefix": "Specific first. ",
-          "headingAccent": "Adaptable later.",
-          "body": "Barber Booking starts from the needs of a barbershop. Many of its patterns — services, professionals, availability, customers and schedule — also exist in other appointment-based businesses. The priority, however, is to solve one context well before generalising it."
-        },
         "status": {
-          "eyebrow": "Status",
+          "eyebrow": "Product status",
           "heading": "In development.",
-          "body": "The product keeps evolving as we validate flows, interface and architecture. We show it as part of NEXAD Lab because the process also represents how we think about product and technology."
+          "body": "Barber Booking is currently in development. We've built the customer-side booking flow — service selection, availability and confirmation — and designed the architecture that connects services, professionals, availability and appointments in a single system. The management side is designed and will be the next part of the flow to complete."
         },
         "next": {
           "label": "Client Work",
