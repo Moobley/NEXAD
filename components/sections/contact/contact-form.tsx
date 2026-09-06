@@ -5,6 +5,7 @@ import { useLocale, useTranslations } from "next-intl"
 
 import { Link } from "@/i18n/navigation"
 import { ForwardMark } from "@/components/ui/forward-mark"
+import { asset } from "@/lib/asset"
 import { cn } from "@/lib/utils"
 
 const FORM_ID = process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID
@@ -19,7 +20,7 @@ type Option = { value: string; label: string }
 
 type FormStatus = "idle" | "submitting" | "success" | "error"
 
-type FieldKey = "name" | "email" | "business" | "stage" | "message"
+type FieldKey = "name" | "email" | "business" | "stage" | "message" | "privacy"
 
 type Errors = Partial<Record<FieldKey, string>>
 
@@ -71,6 +72,7 @@ function DisabledFormNote() {
 
 export function ContactForm() {
   const t = useTranslations("contactPage.form")
+  const tPrivacy = useTranslations("contactPage.privacy")
   const locale = useLocale()
   const stageOptions = t.raw("stageOptions") as Option[]
   const serviceOptions = t.raw("servicesOptions") as Option[]
@@ -82,10 +84,12 @@ export function ContactForm() {
   const [stage, setStage] = useState("")
   const [services, setServices] = useState<string[]>([])
   const [message, setMessage] = useState("")
+  const [privacyAccepted, setPrivacyAccepted] = useState(false)
   const [errors, setErrors] = useState<Errors>({})
 
   const successRef = useRef<HTMLDivElement>(null)
   const alertRef = useRef<HTMLParagraphElement>(null)
+  const gotchaRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
     if (status === "success") successRef.current?.focus()
@@ -100,6 +104,7 @@ export function ContactForm() {
     if (!business.trim()) next.business = t("errors.business")
     if (!stage) next.stage = t("errors.stage")
     if (!message.trim()) next.message = t("errors.message")
+    if (!privacyAccepted) next.privacy = t("errors.privacyConsent")
     return next
   }
 
@@ -131,6 +136,10 @@ export function ContactForm() {
 
     setStatus("submitting")
     const formData = new FormData()
+    // Honeypot spam trap: bots fill the hidden field; humans never see it.
+    // The value is read from the (invisible) input and must be present in the
+    // submitted FormData so Formspree can discard non-empty submissions.
+    formData.append("_gotcha", gotchaRef.current?.value ?? "")
     formData.append("name", name.trim())
     formData.append("email", email.trim())
     formData.append("business", business.trim())
@@ -154,6 +163,7 @@ export function ContactForm() {
       setStage("")
       setServices([])
       setMessage("")
+      setPrivacyAccepted(false)
       setErrors({})
     } catch {
       setStatus("error")
@@ -169,6 +179,18 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} noValidate aria-busy={submitting}>
+      {/* Formspree honeypot — invisible, out of the tab order, autocomplete
+          off. Bots fill it; its value is submitted and Formspree discards
+          spam. */}
+      <div aria-hidden="true" className="absolute -left-[9999px] -top-[9999px] h-px w-px">
+        <input
+          ref={gotchaRef}
+          type="text"
+          name="_gotcha"
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
       {disabled && <DisabledFormNote />}
       <fieldset
         disabled={disabled}
@@ -395,7 +417,71 @@ export function ContactForm() {
           </p>
         )}
         </div>
+
+        <div className="mt-8 border-t border-obsidian/10 pt-8">
+          <div aria-describedby={errors.privacy ? "contact-privacy-error" : undefined}>
+            <label className="flex cursor-pointer items-start gap-4">
+              <input
+                id="contact-privacy"
+                type="checkbox"
+                name="privacy_accepted"
+                checked={privacyAccepted}
+                onChange={(e) => {
+                  setPrivacyAccepted(e.target.checked)
+                  clearError("privacy")
+                }}
+                onBlur={() => handleBlur("privacy")}
+                required
+                aria-required="true"
+                aria-invalid={errors.privacy ? true : undefined}
+                className="peer sr-only"
+              />
+              <span
+                aria-hidden
+                className={cn(
+                  "mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center border transition-colors peer-focus-visible:ring-2 peer-focus-visible:ring-signal/60",
+                  privacyAccepted ? "border-signal" : "border-obsidian/25"
+                )}
+              >
+                <span className={cn("h-2 w-2 bg-signal", privacyAccepted ? "block" : "hidden")} />
+              </span>
+              <span className="text-sm leading-relaxed text-muted-foreground">
+                {t.rich("privacyConsent", {
+                  policy: (chunks) => (
+                    <a
+                      href={asset(`/legal/${locale}/privacy-policy.pdf`)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="interactive-link underline underline-offset-4"
+                    >
+                      {chunks}
+                    </a>
+                  ),
+                })}
+              </span>
+            </label>
+            {errors.privacy && (
+              <p
+                id="contact-privacy-error"
+                role="alert"
+                className="mt-3 font-mono text-[11px] uppercase tracking-[0.15em] text-destructive"
+              >
+                {errors.privacy}
+              </p>
+            )}
+          </div>
+        </div>
       </fieldset>
+
+      {/* First-layer privacy notice — how data is used, before any consent. */}
+      <div className="mt-8">
+        <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
+          {tPrivacy("eyebrow")}
+        </p>
+        <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground">
+          {tPrivacy("body")}
+        </p>
+      </div>
 
       {!disabled && (
         <div className="mt-10 border-t border-obsidian/10 pt-8">

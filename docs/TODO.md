@@ -54,6 +54,23 @@ section without turning the page into a gallery.
 🔴 Blocked / pending real business data. Next major task after 6A. Do not
 invent provider/company/tax data — NEXAD is pre-launch and early-stage.
 
+✅ Implemented (form integration + links — done ahead of production activation):
+
+- Contact form: mandatory "I have read the Privacy Policy" acknowledgement
+  checkbox (NOT marketing consent), localized via `messages/*.json`, with
+  localized Privacy Policy PDF link (opens in a new tab via `asset()`).
+- First-layer privacy notice under the form (localized, short: purpose,
+  Formspree processor, 12-month retention, data-subject rights).
+- Formspree `_gotcha` honeypot (invisible, out of tab order, `autocomplete=off`)
+  whose value is actually appended to the submitted `FormData`.
+- Footer: localized Privacy Policy + Legal Notice/Aviso Legal links using the
+  locale-correct PDF under `public/legal/{locale}/`.
+
+⚠️ Still required before enabling production submission (unchanged): real
+service-provider identity, publishable address, public email, final approved
+Privacy Policy PDF content, legal-basis review, Formspree processing review,
+and the spam-protection decision. `NEXT_PUBLIC_CONTACT_FORM_ENABLED` stays OFF.
+
 Legal identity / provider data:
 
 - Define the real legal operator / service provider before publication

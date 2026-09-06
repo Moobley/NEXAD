@@ -586,6 +586,8 @@
       "messageLabel": "¿Qué quieres que cambie?",
       "messageSupport": "Cuéntanos qué quieres conseguir, qué no está funcionando o qué oportunidad ves.",
       "messagePlaceholder": "Por ejemplo: queremos aumentar las reservas directas, estamos preparando una nueva apertura, necesitamos ordenar nuestro sistema de citas...",
+      "privacyConsent": "He leído la <policy>Política de Privacidad</policy>.",
+      "privacyPolicyLabel": "Política de Privacidad",
       "submit": "Enviar proyecto",
       "submitting": "Enviando…",
       "errors": {
@@ -593,9 +595,14 @@
         "email": "Introduce un email válido.",
         "business": "¿Cómo se llama tu negocio o proyecto?",
         "stage": "Selecciona tu punto de partida.",
-        "message": "Cuéntanos qué quieres cambiar."
+        "message": "Cuéntanos qué quieres cambiar.",
+        "privacyConsent": "Debes marcar la casilla para confirmar que has leído la Política de Privacidad."
       },
       "submitError": "No hemos podido enviar el mensaje. Inténtalo de nuevo."
+    },
+    "privacy": {
+      "eyebrow": "Privacidad",
+      "body": "Tus datos se usan solo para responder a tu consulta, se gestionan a través de nuestro proveedor Formspree y se conservan hasta 12 meses desde el último contacto. Puedes solicitar el acceso, la rectificación o la supresión de tus datos. Más información en la Política de Privacidad."
     },
     "success": {
       "eyebrow": "Recibido",
@@ -619,6 +626,8 @@
     "tagline": "Crecimiento, con ingeniería. Estrategia, marketing, contenido, producto y software trabajando en la misma dirección.",
     "location": "Las Palmas · Gran Canaria",
     "nav": "Navegación",
-    "studio": "Estudio"
+    "studio": "Estudio",
+    "privacy": "Política de Privacidad",
+    "legal": "Aviso Legal"
   }
 }
