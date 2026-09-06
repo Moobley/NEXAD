@@ -36,6 +36,12 @@
     }
   },
   "_status": "TEMP — traduzioni segnaposto, in attesa della copia finale dopo l'approvazione dello spagnolo",
+  "common": {
+    "lightbox": {
+      "enlarge": "Ingrandisci immagine",
+      "close": "Chiudi immagine"
+    }
+  },
   "nav": {
     "work": "Lavori",
     "services": "Servizi",
@@ -130,23 +136,30 @@
           ]
         },
         "result": {
-          "eyebrow": "Risultati",
+          "eyebrow": "Risultato complessivo",
+          "areasTitle": "Come ci siamo arrivati",
+          "planLine": "Risultato ottenuto con il piano {plan} scelto da Corazón Napoletano.",
           "groups": {
-            "business": {
-              "title": "Performance commerciale"
+            "menu": {
+              "title": "Menu & redditività",
+              "description": "Revisione di menu, pricing e struttura dell'offerta per aumentare il valore medio di ogni ordine."
             },
-            "googleBusinessProfile": {
-              "title": "Google Business Profile",
-              "description": "Dati di Google Business Profile relativi ad agosto 2026.",
+            "ads": {
+              "title": "Pubblicità & acquisizione",
+              "description": "Strategia e ottimizzazione delle campagne per intercettare nuova domanda. Dati di agosto 2026."
+            },
+            "digital": {
+              "title": "Presenza digitale",
+              "description": "Una presenza digitale progettata per trasformare le ricerche locali in azioni concrete. Dati di agosto 2026.",
               "breakdownLabel": "Di cui"
             },
-            "googleAds": {
-              "title": "Google Ads",
-              "description": "Performance delle campagne Google Ads ad agosto 2026."
+            "reservations": {
+              "title": "Prenotazioni & fidelizzazione",
+              "description": "Scelta dei canali e delle strategie di acquisizione sulla base di costi, dati e comportamento dei clienti, con l'obiettivo di aumentare il rapporto diretto e favorire il ritorno."
             }
           },
-          "body": "Dopo la reingegnerizzazione del menu, fatturato e vendite di pizza sono cresciuti. Google Business Profile ha generato azioni locali, indicazioni, chiamate e clic sul sito; le campagne hanno prodotto visibilità e clic.",
-          "statement": "Commerciale, Google Business Profile e advertising sono tre risultati distinti: li riportiamo separatamente, senza attribuirne uno all'altro.",
+          "body": "Il risultato complessivo è il frutto di quattro leve di intervento coordinate: menu e redditività, pubblicità e acquisizione, presenza digitale, prenotazioni e fidelizzazione.",
+          "statement": "Le quattro leve descrivono dove interveniamo; i numeri, i risultati misurabili disponibili. Non associamo un KPI a ogni servizio.",
           "note": "Dati reali e approvati dal cliente, relativi a questo progetto."
         },
         "what": {
@@ -194,57 +207,30 @@
         "metrics": {
           "weeklyRevenue": {
             "value": "+49,1%",
-            "label": "Fatturato settimanale medio",
-            "description": "Aumento medio del fatturato settimanale dopo la reingegnerizzazione del menu."
+            "label": "Fatturato settimanale medio"
           },
-          "takeawayPizza": {
-            "value": "+54,8%",
-            "label": "Pizza da asporto",
-            "description": "Crescita delle vendite di pizza da asporto."
-          },
-          "pizzasPerWeek": {
-            "value": "+28,7%",
-            "label": "Pizze a settimana",
-            "description": "Crescita media delle pizze vendute ogni settimana."
-          },
-          "dineInPizza": {
-            "value": "+27,3%",
-            "label": "Pizza al tavolo",
-            "description": "Aumento delle vendite di pizza nel locale."
-          },
-          "weeklyPizzaRevenue": {
-            "value": "+39,0%",
-            "label": "Ricavi pizza settimanali",
-            "description": "Fatturato dalle pizze, sommando tavolo e asporto."
-          },
-          "revenuePerPizza": {
-            "value": "+15,8%",
-            "label": "Ricavo per pizza",
-            "description": "Valore medio per pizza venduta, includendo i complementari."
+          "avgTicket": {
+            "value": "+16%",
+            "label": "Ticket medio"
           },
           "gbpActions": {
-            "value": "1.500",
-            "label": "Azioni locali",
-            "description": "Somma di indicazioni, clic sul sito e chiamate."
+            "value": "1.500+",
+            "label": "Azioni generate su Google"
           },
           "gbpDirections": {
-            "value": "998",
-            "label": "Indicazioni stradali"
+            "value": "~1.000",
+            "label": "Indicazioni"
           },
           "gbpWebsiteClicks": {
-            "value": "329",
-            "label": "Clic sul sito"
+            "value": "320+",
+            "label": "Visite al sito"
           },
           "gbpCalls": {
-            "value": "173",
+            "value": "170+",
             "label": "Chiamate"
           },
-          "adsImpressions": {
-            "value": "153.751",
-            "label": "Impression"
-          },
           "adsClicks": {
-            "value": "5.035",
+            "value": "5.000+",
             "label": "Clic generati"
           }
         },

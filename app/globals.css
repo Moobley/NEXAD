@@ -902,3 +902,39 @@
     opacity: 0 !important;
   }
 }
+
+/* Lightbox (case-study screenshots) — subtle entrance only. */
+.lightbox-backdrop {
+  animation: lightbox-fade 0.2s ease both;
+}
+
+.lightbox-popup {
+  animation: lightbox-pop 0.25s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes lightbox-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes lightbox-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lightbox-backdrop,
+  .lightbox-popup {
+    animation: none;
+  }
+}

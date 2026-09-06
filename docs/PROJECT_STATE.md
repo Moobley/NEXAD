@@ -148,13 +148,16 @@ Pages were editorially compressed; do not re-expand without reason.
 
 - **Corazón Napoletano** — Client Work. Real project in Las Palmas (logo,
   brand identity, physical applications, menu, upselling, QR, site, booking,
-  content, reel, production, Meta Ads, Google Ads, strategy). Approved
-  publishable results (client-provided, in `corazonMetricGroups`): business
-  (+49.1% avg weekly revenue, +54.8% takeaway pizza, +28.7% pizzas/week,
-  +27.3% dine-in pizza, +39.0% weekly pizza revenue, +15.8% revenue per
-  pizza); Google Business Profile Aug 2026 (1,500 local actions = 998
-  directions + 329 website clicks + 173 calls); Google Ads Aug 2026 (153,751
-  impressions, 5,035 clicks) — always framed as project-specific, never a
+  content, reel, production, Meta Ads, Google Ads, strategy). The case study
+  shows one overall result (+49.1% avg weekly revenue) plus four levers —
+  menu (+16% avg ticket), advertising (5,000+ clicks; exact 5,035), digital
+  presence (1,500+ actions on Google; exact 1,500 = 998 directions + 329
+  website visits + 173 calls, shown as ~1,000 + 320+ + 170+), and reservations
+  & retention (no KPI). Approved figures (client-provided, in
+  `corazonMetricGroups`); additional approved numbers are intentionally not
+  shown (takeaway +54.8%, pizzas/week +28.7%, dine-in +27.3%, weekly pizza
+  revenue +39.0%, Google Ads 153,751 impressions; +15.8% revenue per pizza
+  superseded by +16% avg ticket). Always framed as project-specific, never a
   general promise. Excluded by the client: average CTR and tracked
   conversions. Client site:
   `corazonnapoletano.com`. `public/projects/corazon/logoCNxNexo.png` is a real

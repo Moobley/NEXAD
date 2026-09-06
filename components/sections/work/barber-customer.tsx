@@ -40,6 +40,7 @@ export async function BarberCustomer() {
                   src="/projects/barber/customer/service-selection.webp"
                   alt={t("alts.serviceSelection")}
                   sizes="(min-width: 1024px) 20vw, 40vw"
+                  lightbox
                 />
                 <p className="mt-3 text-center font-mono text-[10px] uppercase tracking-[0.15em] text-muted-foreground">
                   01 · {steps[0]}
@@ -50,6 +51,7 @@ export async function BarberCustomer() {
                   src="/projects/barber/customer/availability.webp"
                   alt={t("alts.availability")}
                   sizes="(min-width: 1024px) 24vw, 46vw"
+                  lightbox
                 />
                 <p className="mt-3 text-center font-mono text-[10px] uppercase tracking-[0.15em] text-muted-foreground">
                   02 · {steps[1]}
@@ -60,6 +62,7 @@ export async function BarberCustomer() {
                   src="/projects/barber/customer/booking-summary.webp"
                   alt={t("alts.bookingSummary")}
                   sizes="(min-width: 1024px) 20vw, 40vw"
+                  lightbox
                 />
                 <p className="mt-3 text-center font-mono text-[10px] uppercase tracking-[0.15em] text-muted-foreground">
                   03 · {steps[2]}

@@ -201,10 +201,12 @@ Never invent:
 - product users;
 - results.
 
-Corazón's approved public results are client-provided, real metrics (business
-performance, Google Business Profile, Google Ads), specific to that project and
-context. They are grouped in `content/projects.ts` (`corazonMetricGroups`) and
-localized in `projects.corazon.caseStudy.metrics`.
+Corazón's approved public results are client-provided, real metrics, specific
+to that project and context. They are modelled in `content/projects.ts`
+(`corazonMetricGroups`) and localized in `projects.corazon.caseStudy.metrics`.
+The case study shows one overall result (+49.1% average weekly revenue) and
+four levers (menu, advertising, digital presence, reservations & retention);
+the reservations lever intentionally carries no KPI.
 
 ### Case-study integrity
 
@@ -213,11 +215,14 @@ colors/fonts, physical applications, menu, upselling, QR, site, booking,
 content, reel, production, Meta Ads, Google Ads, overall strategy. Always
 frame results as specific to that project — never as a general NEXAD promise.
 
-Approved metrics: business (+49.1% average weekly revenue, +54.8% takeaway
-pizza, +28.7% pizzas/week, +27.3% dine-in pizza, +39.0% weekly pizza revenue,
-+15.8% revenue per pizza); Google Business Profile, August 2026 (1,500 local
-actions = 998 directions + 329 website clicks + 173 calls); Google Ads, August
-2026 (153,751 impressions, 5,035 clicks).
+Approved metrics shown in the case study (rounded for the UI): overall +49.1%
+average weekly revenue; menu +16% average ticket; advertising 5,000+ clicks
+(exact: 5,035); digital presence 1,500+ actions on Google (exact: 1,500 =
+998 directions + 329 website visits + 173 calls, shown as ~1,000 + 320+ + 170+).
+Other client-approved figures are intentionally not shown in the UI (takeaway
++54.8%, pizzas/week +28.7%, dine-in +27.3%, weekly pizza revenue +39.0%,
+Google Ads 153,751 impressions); the earlier +15.8% "revenue per pizza" is
+superseded by the +16% average ticket.
 
 Excluded by the client — never render, reference or derive anything from them:
 average CTR (3.27%) and tracked conversions (467). Do not invent time periods

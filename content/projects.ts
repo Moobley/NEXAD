@@ -38,32 +38,29 @@ export type Project = {
 
 export type CorazonMetricKey =
   | "weeklyRevenue"
-  | "takeawayPizza"
-  | "pizzasPerWeek"
-  | "dineInPizza"
-  | "weeklyPizzaRevenue"
-  | "revenuePerPizza"
+  | "avgTicket"
   | "gbpActions"
   | "gbpDirections"
   | "gbpWebsiteClicks"
   | "gbpCalls"
-  | "adsImpressions"
   | "adsClicks"
 
 export type CorazonMetricGroupId =
-  | "business"
-  | "googleBusinessProfile"
-  | "googleAds"
+  | "menu"
+  | "ads"
+  | "digital"
+  | "reservations"
 
 export type CorazonMetricGroup = {
   id: CorazonMetricGroupId
-  /** Metric keys rendered at the larger, primary size. */
-  featured: CorazonMetricKey[]
-  /** Metric keys rendered at the secondary size, in order. */
-  metrics: CorazonMetricKey[]
   /**
-   * For Google Business Profile only: the components that sum to the featured
-   * "local actions" total, rendered as a breakdown below the featured metric.
+   * The single primary KPI for this lever. Optional: a lever may carry no
+   * measured figure (e.g. the consulting lever "reservations & retention").
+   */
+  metric?: CorazonMetricKey
+  /**
+   * For the digital lever only: the components that sum to the featured
+   * "actions on Google" total, rendered discreetly below the primary KPI.
    */
   breakdown?: CorazonMetricKey[]
 }
@@ -101,10 +98,12 @@ export const projects: Project[] = [
 /*
  * Corazón Napoletano — approved case-study results (client-provided).
  *
- * Metrics are grouped into three distinct sets that must stay separate in the
- * UI and in any copy: business performance, Google Business Profile, and
- * Google Ads. Labels, descriptions and locale-formatted values live in the
- * `projects.corazon.caseStudy.metrics` message namespace.
+ * The overall result is the average weekly revenue (+49,1%), rendered at the
+ * top of the case study. The four levers below describe the areas of
+ * intervention; each carries the single available measured figure (menu,
+ * advertising, digital presence) or none at all (reservations & retention —
+ * a consulting lever, so no invented KPI). Labels and locale-formatted values
+ * live in the `projects.corazon.caseStudy.metrics` message namespace.
  *
  * Excluded from the UI and from any derived figure (client instruction):
  *   - average CTR (3,27% / 3.27%)
@@ -112,29 +111,25 @@ export const projects: Project[] = [
  * These values must never be rendered, referenced or used to compute anything.
  *
  * The previous "+20% revenue from the following month" figure has been
- * superseded by the more precise business metrics below (e.g. +49,1% average
- * weekly revenue following the menu reengineering).
+ * superseded by the approved figures below (e.g. +49,1% average weekly
+ * revenue following the menu reengineering).
  */
 export const corazonMetricGroups: CorazonMetricGroup[] = [
+  { id: "menu", metric: "avgTicket" },
+  { id: "ads", metric: "adsClicks" },
   {
-    id: "business",
-    featured: ["weeklyRevenue", "takeawayPizza"],
-    metrics: [
-      "pizzasPerWeek",
-      "dineInPizza",
-      "weeklyPizzaRevenue",
-      "revenuePerPizza",
-    ],
-  },
-  {
-    id: "googleBusinessProfile",
-    featured: ["gbpActions"],
-    metrics: [],
+    id: "digital",
+    metric: "gbpActions",
     breakdown: ["gbpDirections", "gbpWebsiteClicks", "gbpCalls"],
   },
-  {
-    id: "googleAds",
-    featured: [],
-    metrics: ["adsImpressions", "adsClicks"],
-  },
+  { id: "reservations" },
 ]
+
+/**
+ * TODO: replace with final restaurant plan name
+ *
+ * The name of the restaurant plan chosen by Corazón Napoletano is not decided
+ * yet. It is injected into the case-study result line; update this constant
+ * once the name is final (do not invent a commercial name).
+ */
+export const CORAZON_PLAN_NAME = "TODO: replace with final restaurant plan name"

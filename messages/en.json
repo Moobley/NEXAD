@@ -36,6 +36,12 @@
     }
   },
   "_status": "TEMP — placeholder translations, pending final copy after Spanish approval",
+  "common": {
+    "lightbox": {
+      "enlarge": "Enlarge image",
+      "close": "Close image"
+    }
+  },
   "nav": {
     "work": "Work",
     "services": "Services",
@@ -172,80 +178,60 @@
           ]
         },
         "result": {
-          "eyebrow": "Results",
+          "eyebrow": "Overall result",
+          "areasTitle": "How we got there",
+          "planLine": "Result achieved with the plan {plan} chosen by Corazón Napoletano.",
           "groups": {
-            "business": {
-              "title": "Business performance"
+            "menu": {
+              "title": "Menu & profitability",
+              "description": "Menu, pricing and offer structure review to raise the average value of every order."
             },
-            "googleBusinessProfile": {
-              "title": "Google Business Profile",
-              "description": "Google Business Profile data for August 2026.",
+            "ads": {
+              "title": "Advertising & acquisition",
+              "description": "Campaign strategy and optimisation to capture new demand. Data for August 2026."
+            },
+            "digital": {
+              "title": "Digital presence",
+              "description": "A digital presence designed to turn local searches into concrete actions. Data for August 2026.",
               "breakdownLabel": "Made up of"
             },
-            "googleAds": {
-              "title": "Google Ads",
-              "description": "Google Ads campaign performance in August 2026."
+            "reservations": {
+              "title": "Reservations & retention",
+              "description": "Choosing channels and acquisition strategies based on costs, data and customer behaviour, to strengthen the direct relationship and encourage return."
             }
           },
-          "body": "Following the menu reengineering, revenue and pizza sales grew. Google Business Profile generated local actions, directions, calls and website clicks, while the campaigns delivered visibility and clicks.",
-          "statement": "Commercial, Google Business Profile and advertising are three distinct results: we report them separately, without attributing one to the other.",
+          "body": "The overall result comes from four coordinated levers: menu and profitability, advertising and acquisition, digital presence, reservations and retention.",
+          "statement": "The four levers describe where we intervene; the numbers, the measurable results available. We don't attach a KPI to every service.",
           "note": "Real data, approved by the client and specific to this project."
         },
         "metrics": {
           "weeklyRevenue": {
             "value": "+49.1%",
-            "label": "Average weekly revenue",
-            "description": "Average weekly revenue growth following the menu reengineering."
+            "label": "Average weekly revenue"
           },
-          "takeawayPizza": {
-            "value": "+54.8%",
-            "label": "Takeaway pizza",
-            "description": "Growth in takeaway pizza sales."
-          },
-          "pizzasPerWeek": {
-            "value": "+28.7%",
-            "label": "Pizzas per week",
-            "description": "Average growth in pizzas sold per week."
-          },
-          "dineInPizza": {
-            "value": "+27.3%",
-            "label": "Dine-in pizza",
-            "description": "Growth in pizza sold in the restaurant."
-          },
-          "weeklyPizzaRevenue": {
-            "value": "+39.0%",
-            "label": "Weekly pizza revenue",
-            "description": "Revenue from pizza, combining dine-in and takeaway."
-          },
-          "revenuePerPizza": {
-            "value": "+15.8%",
-            "label": "Revenue per pizza",
-            "description": "Average value per pizza sold, including complementary items."
+          "avgTicket": {
+            "value": "+16%",
+            "label": "Average ticket"
           },
           "gbpActions": {
-            "value": "1,500",
-            "label": "Local actions",
-            "description": "Total of directions, website clicks and calls."
+            "value": "1,500+",
+            "label": "Actions generated on Google"
           },
           "gbpDirections": {
-            "value": "998",
+            "value": "~1,000",
             "label": "Directions"
           },
           "gbpWebsiteClicks": {
-            "value": "329",
-            "label": "Website clicks"
+            "value": "320+",
+            "label": "Website visits"
           },
           "gbpCalls": {
-            "value": "173",
+            "value": "170+",
             "label": "Calls"
           },
-          "adsImpressions": {
-            "value": "153,751",
-            "label": "Impressions"
-          },
           "adsClicks": {
-            "value": "5,035",
-            "label": "Clicks"
+            "value": "5,000+",
+            "label": "Clicks generated"
           }
         },
         "next": {
