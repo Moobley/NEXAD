@@ -659,21 +659,6 @@
   animation: gateway-idle-ring 13.6s ease-in-out 4.1s infinite;
 }
 
-/* Short variant — session revisit: completed wordmark, quick settle, idle
-   pulse begins almost immediately. */
-.gateway-short .gateway-descriptor,
-.gateway-short .gateway-langs {
-  animation: gateway-settle-in 0.45s ease 0.05s both;
-}
-
-.gateway-short .gateway-forward {
-  animation: gateway-forward-pulse 3.4s ease-in-out 0.9s infinite;
-}
-
-.gateway-short .gateway-launch-ring {
-  animation: gateway-idle-ring 13.6s ease-in-out 1s infinite;
-}
-
 /* Language intent nudges the Forward mark forward and speeds its breath. */
 @media (hover: hover) {
   .gateway:has(.gateway-langs a:hover) .gateway-forward {
@@ -896,10 +881,6 @@
   .gateway-intro .gateway-langs,
   .gateway-intro .gateway-forward,
   .gateway-intro .gateway-launch-ring,
-  .gateway-short .gateway-descriptor,
-  .gateway-short .gateway-langs,
-  .gateway-short .gateway-forward,
-  .gateway-short .gateway-launch-ring,
   .gateway:has(.gateway-langs a:hover) .gateway-forward,
   .gateway:has(.gateway-langs a:focus-visible) .gateway-forward,
   .gateway-exit .gateway-d-group,

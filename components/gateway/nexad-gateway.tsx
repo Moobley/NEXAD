@@ -6,9 +6,6 @@ import { cn } from "@/lib/utils"
 import { GatewayLogo } from "@/components/gateway/gateway-logo"
 import { GatewayPath } from "@/components/gateway/gateway-path"
 
-const STORAGE_KEY = "nexad_gateway_seen"
-const LEGACY_STORAGE_KEY = "nexo_gateway_seen"
-
 const LANGUAGES = [
   { code: "es", label: "Español" },
   { code: "en", label: "English" },
@@ -30,43 +27,13 @@ function detectLanguage(): string {
   return "es"
 }
 
-/**
- * Session storage migration: read the new `nexad_gateway_seen` key; fall back
- * to the legacy `nexo_gateway_seen` during the rebrand, and always write the
- * new key so the legacy one can be dropped later.
- */
-function getSeen(): boolean {
-  try {
-    return (
-      window.sessionStorage.getItem(STORAGE_KEY) === "1" ||
-      window.sessionStorage.getItem(LEGACY_STORAGE_KEY) === "1"
-    )
-  } catch {
-    return false
-  }
-}
-
-function markSeen() {
-  try {
-    window.sessionStorage.setItem(STORAGE_KEY, "1")
-  } catch {
-    // storage unavailable — the gateway still works with the full intro
-  }
-}
-
 export function NexadGateway() {
-  const [variant, setVariant] = useState<"full" | "short">("full")
   const [suggested, setSuggested] = useState<string>("es")
   const [exiting, setExiting] = useState(false)
 
   useEffect(() => {
-    const init = () => {
-      const seen = getSeen()
-      setVariant(seen ? "short" : "full")
-      setSuggested(detectLanguage())
-      if (!seen) markSeen()
-    }
-    init()
+    const detect = () => setSuggested(detectLanguage())
+    detect()
   }, [])
 
   const go = (href: string) => (event: MouseEvent<HTMLAnchorElement>) => {
@@ -85,13 +52,7 @@ export function NexadGateway() {
   }
 
   return (
-    <main
-      className={cn(
-        "gateway",
-        variant === "full" ? "gateway-intro" : "gateway-short",
-        exiting && "gateway-exit"
-      )}
-    >
+    <main className={cn("gateway gateway-intro", exiting && "gateway-exit")}>
       <div
         aria-hidden
         className="gateway-path-layer pointer-events-none absolute inset-0 overflow-hidden"

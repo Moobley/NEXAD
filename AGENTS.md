@@ -84,10 +84,8 @@ The gateway:
 - shows ES / EN / IT;
 - uses browser language only to suggest a locale;
 - never auto-enters a language;
-- uses `sessionStorage` only for `nexad_gateway_seen` (intro already seen).
-  During the NEXO → NEXAD migration the legacy `nexo_gateway_seen` key is
-  still recognized and the new key is written, so legacy sessions skip the
-  full intro once.
+- always plays the full intro animation on every visit to `/`; no storage is
+  read or written.
 
 Stable routing rules:
 
@@ -347,9 +345,9 @@ Gateway Forward mark.
 The Gateway intro is **Signal → Forward**: the complete D opens centered in
 Signal, holds, then travels right into the wordmark (ring hands Signal →
 Ivory; the Forward ▶ stays Signal); N E X A reveals as one group. Full intro
-≈3.7s, short ~0.9s for returning sessions, static final wordmark under
-reduced motion. After the intro the gateway stays alive: grid drift, glow
-drift, breathing network nodes, and the Forward ▶ pulsing (idle).
+≈3.7s, replayed on every visit to `/`, static final wordmark under reduced
+motion. After the intro the gateway stays alive: grid drift, glow drift,
+breathing network nodes, and the Forward ▶ pulsing (idle).
 
 ### Interaction language
 Rule: **Neutral at rest → Signal on intent → Forward on action.**

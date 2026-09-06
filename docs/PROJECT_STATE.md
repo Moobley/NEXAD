@@ -68,17 +68,15 @@ The root `/` is an intentional Gateway, not a localized homepage.
 - Shows the NEXAD wordmark with the **Signal → Forward** intro: the complete
   D opens centered in Signal, holds, then travels right into its wordmark
   slot while handing Signal to Ivory; N E X A reveals as one group; the
-  language selector settles (total ≈3.7s; a short variant for returning
-  sessions; reduced-motion shows the final wordmark statically). After the
+  language selector settles (total ≈3.7s, replayed on every visit;
+  reduced-motion shows the final wordmark statically). After the
   intro the gateway stays alive: grid drift, glow drift, breathing network
   nodes, and the Signal Forward mark pulsing.
 - Allows ES / EN / IT selection; browser language is only a suggestion.
 - No automatic language redirect; no `public/index.html`; no middleware.
 - **Root-only**: `/es/*`, `/en/*` and `/it/*` are directly accessible and are
   never intercepted by the Gateway (no deep-link guard, no `?direct=1`).
-- `sessionStorage` used only for `nexad_gateway_seen`; the legacy
-  `nexo_gateway_seen` key is still recognized during the migration and the new
-  key is written.
+- No storage is used for the gateway: the full intro replays on every visit.
 - Language links are real links usable without JS: `/` → choose ES → `/es/`,
   etc., basePath-aware. A click adds a forward exit cue before navigation
   (progressive enhancement only).
