@@ -7,6 +7,11 @@ import { routing } from "@/i18n/routing"
 import { organizationSchema } from "@/lib/seo"
 import { SiteHeader } from "@/components/layout/site-header"
 import { SiteFooter } from "@/components/layout/site-footer"
+import { CookieConsentProvider } from "@/components/consent/consent-provider"
+import { CookieBanner } from "@/components/consent/cookie-banner"
+import { CookiePreferencesModal } from "@/components/consent/cookie-preferences-modal"
+import { GoogleConsentManager } from "@/components/tracking/google-consent"
+import { MetaPixel } from "@/components/tracking/meta-pixel"
 import { cn } from "@/lib/utils"
 
 import "../globals.css"
@@ -71,15 +76,21 @@ export default async function LocaleLayout({ children, params }: Props) {
           }}
         />
         <NextIntlClientProvider>
-          <a
-            href="#main"
-            className="sr-only z-[100] rounded-none bg-obsidian px-5 py-3 text-sm font-medium text-ivory focus:not-sr-only focus:fixed focus:left-6 focus:top-6"
-          >
-            {t("skip")}
-          </a>
-          <SiteHeader />
-          <main id="main">{children}</main>
-          <SiteFooter />
+          <CookieConsentProvider>
+            <a
+              href="#main"
+              className="sr-only z-[100] rounded-none bg-obsidian px-5 py-3 text-sm font-medium text-ivory focus:not-sr-only focus:fixed focus:left-6 focus:top-6"
+            >
+              {t("skip")}
+            </a>
+            <SiteHeader />
+            <main id="main">{children}</main>
+            <SiteFooter />
+            <GoogleConsentManager />
+            <MetaPixel />
+            <CookieBanner />
+            <CookiePreferencesModal />
+          </CookieConsentProvider>
         </NextIntlClientProvider>
       </body>
     </html>

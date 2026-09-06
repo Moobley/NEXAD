@@ -512,3 +512,43 @@ across pages; the Services URL previously dropped the locale despite
 **Do not**
 Reintroduce `areaServed`, invent business/geo data, or emit a locale-less
 `/services/` canonical/schema URL.
+
+## D-029 — Privacy-by-default consent + tracking readiness
+
+**Decision**
+The localized app gets a privacy-by-default consent system and consent-gated
+tracking, without inventing legal content:
+
+- Consent: banner + preferences modal + `localStorage` persistence under
+  `nexad_cookie_consent` (versioned payload, no consent cookie).
+  `necessary` is always on and locked; `analytics` / `advertising` default to
+  `false` and require an explicit choice. Centralized `useCookieConsent()`
+  hook (accept/reject/save/open/close), no scattered `localStorage` calls.
+- Legal documents are Spanish PDFs served at locale-independent paths:
+  `/legal/aviso-legal.pdf`, `/legal/privacy-policy.pdf`,
+  `/legal/cookie-policy.pdf` (via `asset()`, so basePath-safe), opened in a
+  new tab. The footer links to all three and reopens the preferences panel
+  via "Cookie settings". No legal text is written in the repo.
+- Google Ads / Consent Mode (`NEXT_PUBLIC_GOOGLE_ADS_ID`): default state all
+  `denied` pushed before any tag; `gtag.js` only injected after advertising
+  consent; `analytics_storage` granted only with analytics consent.
+- Meta Pixel (`NEXT_PUBLIC_META_PIXEL_ID`): loaded/initialized only after
+  advertising consent; `trackConversion()` (contact_form_submit,
+  newsletter_opt_in, cta_click) is a no-op without IDs or consent; on
+  revocation the pixel is told to `revoke` (events already sent cannot be
+  recalled client-side).
+- Contact form: Privacy Policy link is locale-independent; separate, optional,
+  un-checked newsletter consent (independent from cookie advertising consent)
+  submitted to Formspree as explicit strings `newsletter_consent=yes|no`,
+  `newsletter_consent_version=1`, `newsletter_source=contact_form`.
+
+**Why**
+Prepare the site to be GDPR + LSSI-compliant structurally while the real legal
+PDFs and tag IDs are still pending; tracking must never start before an
+explicit choice, and the site must keep working with no tag IDs configured.
+
+**Do not**
+Write legal documents, invent IDs/addresses/tax data, hardcode `{locale}` in
+legal PDF paths, add a paid CMP (Cookiebot/OneTrust…), load advertising
+scripts before consent, or tie the newsletter opt-in to cookie advertising
+consent.

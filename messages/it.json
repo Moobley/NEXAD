@@ -589,6 +589,7 @@
       "messagePlaceholder": "Per esempio: vogliamo aumentare le prenotazioni dirette, stiamo preparando una nuova apertura, abbiamo bisogno di organizzare meglio gli appuntamenti...",
       "privacyConsent": "Ho letto l'<policy>Informativa sulla privacy</policy>.",
       "privacyPolicyLabel": "Informativa sulla privacy",
+      "newsletterConsent": "Desidero ricevere via email novità, offerte e comunicazioni promozionali di NEXAD.",
       "submit": "Invia il progetto",
       "submitting": "Invio in corso…",
       "errors": {
@@ -620,6 +621,31 @@
     "title": "Pagina non trovata",
     "body": "Il link non è valido o la pagina è stata spostata."
   },
+  "cookies": {
+    "banner": {
+      "ariaLabel": "Preferenze cookie",
+      "eyebrow": "Privacy e cookie",
+      "title": "Questo sito utilizza cookie",
+      "body": "Utilizziamo cookie necessari per il funzionamento del sito e, solo se accetti, cookie analitici e pubblicitari. Puoi accettarli, rifiutarli o configurarli in qualsiasi momento dal footer.",
+      "acceptAll": "Accetta tutti",
+      "rejectAll": "Rifiuta tutti",
+      "configure": "Configura"
+    },
+    "modal": {
+      "title": "Preferenze cookie",
+      "description": "Gestisci quali cookie sono consentiti su questo sito.",
+      "necessaryTitle": "Necessari",
+      "necessaryBody": "Indispensabili per il funzionamento del sito. Sempre attivi, non disattivabili.",
+      "analyticsTitle": "Analitici",
+      "analyticsBody": "Ci aiutano a capire come viene utilizzato il sito (futuri strumenti di analisi come GA4).",
+      "advertisingTitle": "Pubblicitari",
+      "advertisingBody": "Utilizzati da Google Ads, Meta Pixel e remarketing per mostrare pubblicità pertinente.",
+      "save": "Salva preferenze",
+      "acceptAll": "Accetta tutti",
+      "rejectAll": "Rifiuta tutti",
+      "close": "Chiudi"
+    }
+  },
   "pages": {
     "back": "Torna alla home"
   },
@@ -629,6 +655,8 @@
     "nav": "Navigazione",
     "studio": "Studio",
     "privacy": "Informativa sulla privacy",
-    "legal": "Note legali"
+    "legal": "Note legali",
+    "cookiePolicy": "Informativa Cookie",
+    "cookieSettings": "Impostazioni cookie"
   }
 }

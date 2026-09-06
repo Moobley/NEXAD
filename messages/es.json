@@ -588,6 +588,7 @@
       "messagePlaceholder": "Por ejemplo: queremos aumentar las reservas directas, estamos preparando una nueva apertura, necesitamos ordenar nuestro sistema de citas...",
       "privacyConsent": "He leído la <policy>Política de Privacidad</policy>.",
       "privacyPolicyLabel": "Política de Privacidad",
+      "newsletterConsent": "Quiero recibir por correo electrónico novedades, ofertas y comunicaciones comerciales de NEXAD.",
       "submit": "Enviar proyecto",
       "submitting": "Enviando…",
       "errors": {
@@ -619,6 +620,31 @@
     "title": "Página no encontrada",
     "body": "El enlace no es válido o la página se ha movido."
   },
+  "cookies": {
+    "banner": {
+      "ariaLabel": "Preferencias de cookies",
+      "eyebrow": "Privacidad y cookies",
+      "title": "Este sitio utiliza cookies",
+      "body": "Usamos cookies necesarias para el funcionamiento del sitio y, solo si lo aceptas, cookies analíticas y publicitarias. Puedes aceptarlas, rechazarlas o configurarlas en cualquier momento desde el pie de página.",
+      "acceptAll": "Aceptar todas",
+      "rejectAll": "Rechazar todas",
+      "configure": "Configurar"
+    },
+    "modal": {
+      "title": "Preferencias de cookies",
+      "description": "Gestiona qué cookies se permiten en este sitio.",
+      "necessaryTitle": "Necesarias",
+      "necessaryBody": "Imprescindibles para el funcionamiento del sitio. Siempre activas, no se pueden desactivar.",
+      "analyticsTitle": "Analíticas",
+      "analyticsBody": "Ayudan a entender cómo se utiliza el sitio (futuras herramientas de analítica como GA4).",
+      "advertisingTitle": "Publicitarias",
+      "advertisingBody": "Usadas por Google Ads, Meta Pixel y remarketing para mostrar publicidad relevante.",
+      "save": "Guardar preferencias",
+      "acceptAll": "Aceptar todas",
+      "rejectAll": "Rechazar todas",
+      "close": "Cerrar"
+    }
+  },
   "pages": {
     "back": "Volver al inicio"
   },
@@ -628,6 +654,8 @@
     "nav": "Navegación",
     "studio": "Estudio",
     "privacy": "Política de Privacidad",
-    "legal": "Aviso Legal"
+    "legal": "Aviso Legal",
+    "cookiePolicy": "Política de Cookies",
+    "cookieSettings": "Configurar cookies"
   }
 }

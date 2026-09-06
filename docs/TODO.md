@@ -57,14 +57,30 @@ invent provider/company/tax data — NEXAD is pre-launch and early-stage.
 ✅ Implemented (form integration + links — done ahead of production activation):
 
 - Contact form: mandatory "I have read the Privacy Policy" acknowledgement
-  checkbox (NOT marketing consent), localized via `messages/*.json`, with
-  localized Privacy Policy PDF link (opens in a new tab via `asset()`).
+  checkbox (NOT marketing consent), localized via `messages/*.json`, with a
+  locale-independent Privacy Policy PDF link (opens in a new tab via
+  `asset()`).
 - First-layer privacy notice under the form (localized, short: purpose,
   Formspree processor, 12-month retention, data-subject rights).
 - Formspree `_gotcha` honeypot (invisible, out of tab order, `autocomplete=off`)
   whose value is actually appended to the submitted `FormData`.
-- Footer: localized Privacy Policy + Legal Notice/Aviso Legal links using the
-  locale-correct PDF under `public/legal/{locale}/`.
+- Footer: localized Privacy Policy, Legal Notice/Aviso Legal and Cookie Policy
+  links to the Spanish PDFs under `public/legal/` (locale-independent paths,
+  opened in a new tab) + a "Cookie settings" trigger that reopens the
+  preferences panel.
+- Cookie consent system (privacy-by-default): consent banner, preferences
+  modal, `localStorage` persistence under `nexad_cookie_consent`, centralized
+  `useCookieConsent()` API; `necessary` always on, `analytics` /
+  `advertising` off until explicitly granted.
+- Tracking readiness, gated on consent and tag IDs: Google Consent Mode
+  (`ad_storage` / `analytics_storage` / `ad_user_data` /
+  `ad_personalization` denied by default), Meta Pixel loaded only after
+  advertising consent, centralized `trackConversion()` (no-op without IDs or
+  consent).
+- Contact form marketing opt-in: separate, optional, un-checked newsletter
+  checkbox (independent from cookie advertising consent) submitted to
+  Formspree as `newsletter_consent=yes|no`,
+  `newsletter_consent_version=1`, `newsletter_source=contact_form`.
 
 ⚠️ Still required before enabling production submission (unchanged): real
 service-provider identity, publishable address, public email, final approved
@@ -170,11 +186,13 @@ Conditional: re-audit cookie/consent requirements whenever analytics,
 advertising, third-party embeds, CAPTCHA or other non-essential
 tracking/storage is introduced.
 
-Current audit result (technical, not legal advice): no consent banner is
-currently required by the implemented app stack — no cookies, no non-essential
-storage, no third-party embeds or trackers were found; the Gateway uses
-`sessionStorage` for its own functionality and Formspree submission is
-disabled by default. Re-evaluate when the stack changes.
+Current state: a privacy-by-default consent system is implemented — consent
+banner + preferences modal, `localStorage`-persisted (`nexad_cookie_consent`,
+no consent cookie), Google Consent Mode and Meta Pixel gated on consent, and
+the contact form's separate newsletter opt-in. Nothing non-essential loads
+before a stored choice, and both tag integrations tolerate missing IDs. The
+final Spanish legal PDFs (`public/legal/*.pdf`) are still pending. Re-audit
+when the legal PDFs, GA4 or any additional third-party embed is added.
 
 ### Performance / Core Web Vitals
 
@@ -229,12 +247,12 @@ connection, selective build in public.
 
 ### Newsletter / promotional communications setup
 
-🟡 Later / blocked until legal/contact identity is ready. Choose a real
-provider; define purposes and workflow; separate marketing from the contact
-request; implement an appropriate, un-checked opt-in; provide a simple
-unsubscribe/revoke mechanism; update privacy/legal; verify
-processors/transfers; verify email tracking if used. Not to be implemented
-now.
+🟡 Later / blocked until legal/contact identity is ready. The contact form now
+collects an optional, un-checked newsletter consent (submitted to Formspree as
+`newsletter_consent`). Still pending: choose a real provider, define purposes
+and workflow, implement an unsubscribe/revoke mechanism, update privacy/legal,
+verify processors/transfers, verify email tracking if used. Not to be
+implemented now.
 
 ## Housekeeping
 

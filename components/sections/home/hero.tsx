@@ -34,8 +34,12 @@ export async function Hero() {
         </Reveal>
       </div>
 
-      <div className="relative z-10 mx-auto flex w-full max-w-[1600px] flex-1 flex-col justify-center px-6 pb-10 md:px-10 md:pb-14 md:justify-end">
-        <h1 className="max-w-6xl font-sans text-[clamp(2.5rem,6.8vw,5.75rem)] font-medium leading-[1.02] tracking-[-0.03em]">
+      <div className="relative z-10 mx-auto flex w-full max-w-[1600px] flex-1 flex-col justify-center px-6 pb-10 md:px-10 md:pb-14 md:justify-start">
+        {/* Controlled vertical offset instead of bottom-anchoring: the claim's first
+            line lands around 50% of the viewport on desktop (negative space
+            above and below), while the second constraint keeps it clear of
+            the cookie banner on shorter screens. */}
+        <h1 className="max-w-6xl font-sans text-[clamp(2.5rem,6.8vw,5.75rem)] font-medium leading-[0.95] tracking-[-0.03em] md:mt-[clamp(6rem,min(calc(50vh_-_11rem),calc(100vh_-_33rem)),32rem)]">
           <Reveal trigger="load" variant="mask-up" delay={120} as="span" className="block">
             {t("titleLine1")}
           </Reveal>

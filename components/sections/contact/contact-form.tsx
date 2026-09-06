@@ -7,6 +7,7 @@ import { Link } from "@/i18n/navigation"
 import { ForwardMark } from "@/components/ui/forward-mark"
 import { asset } from "@/lib/asset"
 import { cn } from "@/lib/utils"
+import { trackConversion } from "@/lib/tracking/conversion"
 
 const FORM_ID = process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID
 
@@ -85,6 +86,7 @@ export function ContactForm() {
   const [services, setServices] = useState<string[]>([])
   const [message, setMessage] = useState("")
   const [privacyAccepted, setPrivacyAccepted] = useState(false)
+  const [newsletterConsent, setNewsletterConsent] = useState(false)
   const [errors, setErrors] = useState<Errors>({})
 
   const successRef = useRef<HTMLDivElement>(null)
@@ -147,6 +149,11 @@ export function ContactForm() {
     if (services.length > 0) formData.append("services", services.join(", "))
     formData.append("message", message.trim())
     formData.append("locale", locale)
+    // Marketing consent is separate from cookie advertising consent and never
+    // blocks submission: explicit "yes"/"no" string for Formspree.
+    formData.append("newsletter_consent", newsletterConsent ? "yes" : "no")
+    formData.append("newsletter_consent_version", "1")
+    formData.append("newsletter_source", "contact_form")
 
     try {
       const res = await fetch(`https://formspree.io/f/${FORM_ID}`, {
@@ -157,6 +164,11 @@ export function ContactForm() {
       if (!res.ok) throw new Error(`Formspree request failed (${res.status})`)
       await res.json().catch(() => null)
       setStatus("success")
+      // Only report conversions after a successful submission. Newsletter
+      // opt-in is only tracked when the separate marketing consent is "yes";
+      // both still respect the cookie advertising consent internally.
+      trackConversion("contact_form_submit")
+      if (newsletterConsent) trackConversion("newsletter_opt_in")
       setName("")
       setEmail("")
       setBusiness("")
@@ -164,6 +176,7 @@ export function ContactForm() {
       setServices([])
       setMessage("")
       setPrivacyAccepted(false)
+      setNewsletterConsent(false)
       setErrors({})
     } catch {
       setStatus("error")
@@ -449,7 +462,7 @@ export function ContactForm() {
                 {t.rich("privacyConsent", {
                   policy: (chunks) => (
                     <a
-                      href={asset(`/legal/${locale}/privacy-policy.pdf`)}
+                      href={asset("/legal/privacy-policy.pdf")}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="interactive-link underline underline-offset-4"
@@ -470,6 +483,35 @@ export function ContactForm() {
               </p>
             )}
           </div>
+        </div>
+
+        {/* Separate, optional marketing consent — unchecked by default, never
+            required, never tied to the cookie advertising consent. */}
+        <div className="mt-8 border-t border-obsidian/10 pt-8">
+          <label className="flex cursor-pointer items-start gap-4">
+            <input
+              id="contact-newsletter"
+              type="checkbox"
+              name="newsletter_consent"
+              checked={newsletterConsent}
+              onChange={(e) => setNewsletterConsent(e.target.checked)}
+              className="peer sr-only"
+            />
+            <span
+              aria-hidden
+              className={cn(
+                "mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center border transition-colors peer-focus-visible:ring-2 peer-focus-visible:ring-signal/60",
+                newsletterConsent ? "border-signal" : "border-obsidian/25"
+              )}
+            >
+              <span
+                className={cn("h-2 w-2 bg-signal", newsletterConsent ? "block" : "hidden")}
+              />
+            </span>
+            <span className="text-sm leading-relaxed text-muted-foreground">
+              {t("newsletterConsent")}
+            </span>
+          </label>
         </div>
       </fieldset>
 

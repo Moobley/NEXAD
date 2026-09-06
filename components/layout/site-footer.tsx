@@ -1,7 +1,8 @@
-import { getLocale, getTranslations } from "next-intl/server"
+import { getTranslations } from "next-intl/server"
 
 import { Link } from "@/i18n/navigation"
 import { Logo } from "@/components/layout/logo"
+import { CookieSettingsButton } from "@/components/consent/cookie-settings-button"
 import { asset } from "@/lib/asset"
 
 const NAV_ITEMS = [
@@ -12,7 +13,6 @@ const NAV_ITEMS = [
 ] as const
 
 export async function SiteFooter() {
-  const locale = await getLocale()
   const t = await getTranslations("footer")
   const tn = await getTranslations("nav")
   const year = new Date().getFullYear()
@@ -66,7 +66,15 @@ export async function SiteFooter() {
           </p>
           <div className="flex flex-wrap items-center gap-x-8 gap-y-3">
             <a
-              href={asset(`/legal/${locale}/privacy-policy.pdf`)}
+              href={asset("/legal/aviso-legal.pdf")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="interactive-link font-mono text-[11px] tracking-[0.15em]"
+            >
+              {t("legal")}
+            </a>
+            <a
+              href={asset("/legal/privacy-policy.pdf")}
               target="_blank"
               rel="noopener noreferrer"
               className="interactive-link font-mono text-[11px] tracking-[0.15em]"
@@ -74,13 +82,14 @@ export async function SiteFooter() {
               {t("privacy")}
             </a>
             <a
-              href={asset(`/legal/${locale}/aviso-legal.pdf`)}
+              href={asset("/legal/cookie-policy.pdf")}
               target="_blank"
               rel="noopener noreferrer"
               className="interactive-link font-mono text-[11px] tracking-[0.15em]"
             >
-              {t("legal")}
+              {t("cookiePolicy")}
             </a>
+            <CookieSettingsButton />
           </div>
         </div>
       </div>

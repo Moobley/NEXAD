@@ -589,6 +589,7 @@
       "messagePlaceholder": "For example: we want more direct bookings, we're preparing a new opening, we need a better appointment system...",
       "privacyConsent": "I have read the <policy>Privacy Policy</policy>.",
       "privacyPolicyLabel": "Privacy Policy",
+      "newsletterConsent": "I would like to receive news, offers and marketing communications from NEXAD by email.",
       "submit": "Send your project",
       "submitting": "Sending…",
       "errors": {
@@ -620,6 +621,31 @@
     "title": "Page not found",
     "body": "The link is not valid or the page has moved."
   },
+  "cookies": {
+    "banner": {
+      "ariaLabel": "Cookie preferences",
+      "eyebrow": "Privacy & cookies",
+      "title": "This site uses cookies",
+      "body": "We use necessary cookies for the site to work and, only if you accept them, analytics and advertising cookies. You can accept, reject or configure them at any time from the footer.",
+      "acceptAll": "Accept all",
+      "rejectAll": "Reject all",
+      "configure": "Settings"
+    },
+    "modal": {
+      "title": "Cookie preferences",
+      "description": "Manage which cookies are allowed on this site.",
+      "necessaryTitle": "Necessary",
+      "necessaryBody": "Essential for the site to work. Always active and cannot be disabled.",
+      "analyticsTitle": "Analytics",
+      "analyticsBody": "Help us understand how the site is used (future analytics tools such as GA4).",
+      "advertisingTitle": "Advertising",
+      "advertisingBody": "Used by Google Ads, Meta Pixel and remarketing to show relevant advertising.",
+      "save": "Save preferences",
+      "acceptAll": "Accept all",
+      "rejectAll": "Reject all",
+      "close": "Close"
+    }
+  },
   "pages": {
     "back": "Back to home"
   },
@@ -629,6 +655,8 @@
     "nav": "Navigation",
     "studio": "Studio",
     "privacy": "Privacy Policy",
-    "legal": "Legal Notice"
+    "legal": "Legal Notice",
+    "cookiePolicy": "Cookie Policy",
+    "cookieSettings": "Cookie settings"
   }
 }
