@@ -552,3 +552,88 @@ Write legal documents, invent IDs/addresses/tax data, hardcode `{locale}` in
 legal PDF paths, add a paid CMP (Cookiebot/OneTrust…), load advertising
 scripts before consent, or tie the newsletter opt-in to cookie advertising
 consent.
+
+## D-030 — Production hosting: Aruba static hosting via FTPS, separate workflow
+
+**Decision**
+Production is hosted as a static export on Aruba (not GitHub Pages). A
+separate manual workflow `deploy-aruba.yml` (`workflow_dispatch` only — never
+on push) builds the site with `NEXT_PUBLIC_SITE_ORIGIN=https://www.nexadlab.com`
+and an empty `NEXT_PUBLIC_BASE_PATH`, verifies `out/`, runs the static SEO
+verifier, and uploads only the contents of `out/` via FTPS. Credentials are
+GitHub Actions Secrets (`ARUBA_FTP_USERNAME`, `ARUBA_FTP_PASSWORD`); server,
+port, protocol and remote directory are GitHub Actions Variables
+(`ARUBA_FTP_SERVER`, `ARUBA_FTP_PORT`, `ARUBA_FTP_PROTOCOL`,
+`ARUBA_FTP_SERVER_DIR`). FTPS is preferred over unencrypted FTP. The upload
+action is SHA-pinned to a stable release and never uses
+`dangerous-clean-slate`, so nothing already on the hosting space is deleted.
+The GitHub Pages workflow (`deploy.yml`) is unchanged and remains the
+temporary preview.
+
+**Why**
+Two separate deployments keep the preview independent from production; a
+manual trigger means no production publish until the go-live is explicitly
+approved; configurable protocol/port/server-dir match the hosting plan;
+fail-closed validation prevents accidental uploads to the wrong directory.
+
+**Do not**
+Replace the GitHub Pages workflow, trigger Aruba deploys on push, hardcode
+FTP credentials or the FTP host in the repository, enable
+`dangerous-clean-slate`/equivalent cleanups, or upload anything outside `out/`.
+
+## D-031 — Public NEXAD email decided: nexadlab@gmail.com
+
+**Decision**
+The public NEXAD email is `nexadlab@gmail.com`. It is the real recipient for
+contact enquiries and is configured as the Formspree recipient inside the
+Formspree dashboard — it is never hardcoded in the frontend or in the
+repository. Legal documents and the legal identity/domicile remain TODO.
+
+**Why**
+A real contact destination is required before the contact form can be
+activated; the Formspree dashboard is the correct place for the recipient
+(public form IDs ship in the bundle, the inbox does not).
+
+**Do not**
+Hardcode `nexadlab@gmail.com` in components/messages, invent additional
+contact channels (WhatsApp is still pending), or mark the Legal/Identity
+TODOs as done because an email now exists.
+
+## D-032 — Anti-spam for v1: Formspree `_gotcha` honeypot, no CAPTCHA
+
+**Decision**
+For the first release the only anti-spam protection is the Formspree
+`_gotcha` honeypot already implemented in the contact form. No CAPTCHA or
+other anti-bot is added. CAPTCHA or additional measures may be re-evaluated
+only if real spam actually requires them.
+
+**Why**
+The honeypot is already shipped, has no UX or privacy cost, and matches the
+current collection volume (form is off during pre-launch). CAPTCHAs add
+privacy/cookie/accessibility weight without evidence they are needed yet.
+
+**Do not**
+Add a CAPTCHA (or any third-party anti-bot) now, or "future-proof" with an
+unused anti-spam integration.
+
+## D-033 — First Aruba release stays noindex and form-off; activation is go-live
+
+**Decision**
+The first Aruba production deployment uses
+`NEXT_PUBLIC_SITE_INDEXABLE=false` and `NEXT_PUBLIC_CONTACT_FORM_ENABLED=false`
+as the recommended repository-variable values (missing/empty values also stay
+fail-closed: `=== "true"` gating plus the `lib/seo.ts` `PRODUCTION_ORIGIN`
+guardrail). Enabling indexing (`NEXT_PUBLIC_SITE_INDEXABLE=true`) and the
+contact form (`NEXT_PUBLIC_CONTACT_FORM_ENABLED=true` + Formspree ID) remain
+explicit manual steps in the go-live checklist, blocked by the pending
+Legal/Contact TODOs.
+
+**Why**
+The production domain is decided but the legal identity, Privacy/Aviso
+Legal/Cookie policies, Formspree processing review and final smoke test are
+not complete — nothing may be indexed or collect data before those blockers
+are actually resolved.
+
+**Do not**
+Flip the indexable/form variables as part of this task, auto-activate either
+on deploy, or declare the site production-ready while the blockers are open.

@@ -54,12 +54,16 @@ large structured company.
 - Two root layouts: `app/(gateway)/` (the `/` Gateway, own `<html>/<body>`,
   carbon, no site header/footer) and `app/[locale]/` (localized site with
   header/footer).
-- Deploy: GitHub Actions on `master` (`lint` → `typecheck` → build → publish
-  `out/`). Two environments, switched by env vars only:
-  - **Preview (current):** GitHub Pages `https://moobley.github.io/NEXAD/`
-    (origin `https://moobley.github.io`, basePath `/NEXAD`, noindex).
-  - **Production (not live):** `https://www.nexadlab.com/` (canonical origin,
-    empty basePath).
+- Deploy: two separate GitHub Actions workflows, environments switched by env
+  vars only:
+  - **Preview (current, automatic):** GitHub Pages
+    `https://moobley.github.io/NEXAD/` (origin `https://moobley.github.io`,
+    basePath `/NEXAD`, noindex) via `deploy.yml` on push to `master`.
+  - **Production (Aruba static hosting via FTPS, manual):**
+    `https://www.nexadlab.com/` (canonical origin, empty basePath). The static
+    export `out/` is uploaded to Aruba via `deploy-aruba.yml`
+    (`workflow_dispatch` only). The first deployment is noindex with the
+    contact form off; indexing/form activation are explicit go-live steps.
 
 ## Gateway
 
@@ -126,11 +130,13 @@ non-indexable development builds.
 
 - **Preview (live, GitHub Pages):** `https://moobley.github.io/NEXAD/`
   intentionally **noindex** (`NEXT_PUBLIC_SITE_INDEXABLE=false` in the deploy
-  workflow). The sitemap is generated (22 URLs) but not advertised while
-  noindex and not submitted to Search Console.
-- **Production (not live):** `https://www.nexadlab.com/` — canonical origin
-  decided; DNS/custom domain not connected yet; not indexable until explicit
-  go-live.
+  workflow) and the contact form is off. The sitemap is generated (22 URLs)
+  but not advertised while noindex and not submitted to Search Console.
+- **Production (Aruba, not live):** `https://www.nexadlab.com/` — canonical
+  origin decided; hosted as a static export on Aruba via FTPS
+  (`deploy-aruba.yml`, manual `workflow_dispatch` only). DNS/custom domain
+  not connected yet; the first deployment is **noindex** with the contact
+  form **disabled**; indexing and form activation are explicit go-live steps.
 
 ## Current page architecture
 
@@ -174,15 +180,20 @@ Pages were editorially compressed; do not re-expand without reason.
 
 - Client-side form submitting to Formspree via `fetch`
   (`NEXT_PUBLIC_FORMSPREE_FORM_ID`, public repo variable injected at build).
+  The real recipient inbox is `nexadlab@gmail.com`, configured inside the
+  Formspree dashboard (never in the frontend).
 - **Collection is disabled by default during pre-launch.** The form only
   becomes submittable when `NEXT_PUBLIC_CONTACT_FORM_ENABLED=true` AND a
   Formspree ID is set; production activation is blocked by Legal/Contact
   prerequisites (TODO 6B).
+- Anti-spam for the first release is the Formspree `_gotcha` honeypot already
+  implemented in the form; no CAPTCHA is added. Re-evaluate anti-spam only if
+  real spam requires it.
 - Fields: name, email, business/project, business stage (new opening /
   existing / software product / other), optional multiple services, message.
   No budget, timing or phone.
-- States: loading, success, error. No marketing/newsletter opt-ins are
-  collected.
+- States: loading, success, error. The form collects an optional, un-checked
+  newsletter consent (separate from cookie advertising consent), per D-029.
 
 ## Legal / privacy
 
@@ -190,13 +201,15 @@ Pre-launch state — legal production setup is not complete.
 
 - No public Privacy Policy / Legal Notice exists (intentionally: no
   placeholder or invented legal pages).
-- No public NEXAD email or WhatsApp exists; no calendar-booking product (calls
-  are arranged manually through direct messaging).
+- The public NEXAD email is decided: `nexadlab@gmail.com` (the Formspree
+  recipient, configured in the Formspree dashboard). No public WhatsApp
+  exists; no calendar-booking product (calls are arranged manually through
+  direct messaging).
 - Contact collection is disabled by default; production activation is blocked
   until the legal/contact prerequisites are met (TODO 6B).
 - Missing real-world prerequisites: legal operator/controller identity,
-  publishable professional/service address, public NEXAD contact email, and a
-  dedicated WhatsApp channel if desired.
+  publishable professional/service address, and a dedicated WhatsApp channel
+  if desired.
 - No newsletter/marketing consent is currently collected.
 
 ## Retention (future policy)

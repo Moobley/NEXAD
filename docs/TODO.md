@@ -2,6 +2,10 @@
 
 Legend: ✅ Complete · 🔴 High priority · 🟠 Next · 🟡 Later · ⏸ Paused · ⚪ Optional
 
+> **Production status:** NOT production-ready. The Aruba deployment
+> architecture is in place, but the site stays noindex with the contact form
+> off until the Legal/Contact blockers below are actually resolved.
+
 ## ✅ Complete
 
 - Routing / deploy (static export, trailingSlash, basePath env, GitHub Pages
@@ -28,6 +32,14 @@ Legend: ✅ Complete · 🔴 High priority · 🟠 Next · 🟡 Later · ⏸ Pau
 - Visual refinement v3 (D-024): larger header logo, `SignalDot` editorial
   motif, decorative section numbering removed, Gateway "Signal → Forward"
   intro with persistent idle pulse/ambient motion.
+- Public NEXAD email decided: `nexadlab@gmail.com` (Formspree recipient,
+  configured in the Formspree dashboard, never hardcoded in the frontend).
+- Spam-protection decision for v1 (D-032): Formspree `_gotcha` honeypot;
+  no CAPTCHA added. Re-evaluate only if real spam requires it.
+- Production hosting architecture (D-030): Aruba static hosting via FTPS with
+  the manual `deploy-aruba.yml` workflow (static export `out/`, SHA-pinned
+  stable FTP action, no `dangerous-clean-slate`); GitHub Pages stays the
+  temporary preview.
 
 ## ⏸ Paused
 
@@ -82,10 +94,11 @@ invent provider/company/tax data — NEXAD is pre-launch and early-stage.
   Formspree as `newsletter_consent=yes|no`,
   `newsletter_consent_version=1`, `newsletter_source=contact_form`.
 
-⚠️ Still required before enabling production submission (unchanged): real
-service-provider identity, publishable address, public email, final approved
-Privacy Policy PDF content, legal-basis review, Formspree processing review,
-and the spam-protection decision. `NEXT_PUBLIC_CONTACT_FORM_ENABLED` stays OFF.
+⚠️ Still required before enabling production submission: real
+service-provider identity, publishable address, final approved Privacy
+Policy PDF content, legal-basis review, and the Formspree processing/privacy
+review. Public email and spam protection are decided (see below).
+`NEXT_PUBLIC_CONTACT_FORM_ENABLED` stays OFF.
 
 Legal identity / provider data:
 
@@ -94,7 +107,8 @@ Legal identity / provider data:
 - Define a legally appropriate publishable domicile/address for the service
   provider (Las Palmas de Gran Canaria alone is not a substitute for a
   complete address when legally required).
-- Create and approve a public NEXAD contact email.
+- ✅ Public NEXAD contact email decided: `nexadlab@gmail.com` (Formspree
+  recipient, configured in the Formspree dashboard, never in the frontend).
 - Create a dedicated NEXAD business messaging/WhatsApp channel before exposing
   any WhatsApp CTA; later implement a direct-contact CTA and arrange calls
   manually through messaging (no calendar booking).
@@ -130,10 +144,11 @@ Formspree production activation:
 
 Spam protection:
 
-- Evaluate spam protection when the form is activated; prefer minimal
-  solutions first. If a third-party CAPTCHA/anti-bot is needed, evaluate
-  privacy impact, cookie/storage behavior, accessibility, static-export
-  compatibility and performance.
+- ✅ Decided for v1 (D-032): the Formspree `_gotcha` honeypot already
+  implemented in the form. No CAPTCHA is added. Re-evaluate CAPTCHA/other
+  anti-bot measures only if real spam requires it, and then evaluate privacy
+  impact, cookie/storage behavior, accessibility, static-export compatibility
+  and performance.
 
 ### Technical SEO (Punto 7)
 
@@ -210,13 +225,26 @@ semantics.
 
 ### Domain / production deployment
 
-The production domain is decided: `https://www.nexadlab.com` (canonical,
-empty basePath). Not live. GitHub Pages (`https://moobley.github.io/NEXAD/`)
-remains the pre-launch preview and is noindex. Go-live checklist (only after
-explicit approval): connect DNS/custom domain + HTTPS, drop `/NEXAD` from the
-production basePath, enable `NEXT_PUBLIC_SITE_INDEXABLE=true`, verify final
-canonicals, Search Console, sitemap, redirects if needed, localized routes and
-the Gateway.
+✅ **Aruba hosting architecture implemented.** Production is hosted as a
+static export on Aruba via FTPS: `.github/workflows/deploy-aruba.yml` builds
+with `https://www.nexadlab.com` + empty basePath, verifies `out/`, runs the
+static SEO verifier, and uploads only the contents of `out/` (manual
+`workflow_dispatch`; no `dangerous-clean-slate`). GitHub Pages
+(`https://moobley.github.io/NEXAD/`) remains the pre-launch preview and is
+noindex.
+
+🟠 First Aruba deploy (pre-go-live): configure the GitHub Actions Secrets
+(`ARUBA_FTP_USERNAME`, `ARUBA_FTP_PASSWORD`) and Variables (`ARUBA_FTP_SERVER`,
+`ARUBA_FTP_PORT`, `ARUBA_FTP_PROTOCOL`, `ARUBA_FTP_SERVER_DIR`,
+`NEXT_PUBLIC_SITE_INDEXABLE=false`, `NEXT_PUBLIC_CONTACT_FORM_ENABLED=false`,
+`NEXT_PUBLIC_FORMSPREE_FORM_ID`), then run `deploy-aruba.yml` manually and
+smoke-test the canonical origin (still noindex, form off).
+
+🔴 Go-live checklist (only after explicit approval AND the Legal/Contact
+blockers are resolved): connect DNS/custom domain + HTTPS, set
+`NEXT_PUBLIC_SITE_INDEXABLE=true`, verify final canonicals, Search Console,
+sitemap, redirects if needed, localized routes and the Gateway, and run a
+final production smoke test.
 
 ## 🟡 Later
 

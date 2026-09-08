@@ -114,6 +114,10 @@ GitHub Pages:
 
 `NEXT_PUBLIC_BASE_PATH="/NEXAD"`
 
+Production (Aruba):
+
+`NEXT_PUBLIC_BASE_PATH=""` (see `deploy-aruba.yml`)
+
 Never hardcode `/NEXAD` in components or content.
 
 ## Environments
@@ -123,11 +127,15 @@ only (no code changes):
 
 - **PREVIEW (current, GitHub Pages):** `https://moobley.github.io/NEXAD/`.
   Origin `https://moobley.github.io`, basePath `/NEXAD`, always noindex
-  (`NEXT_PUBLIC_SITE_INDEXABLE=false`). Pre-launch site.
-- **PRODUCTION FUTURA (not live):** `https://www.nexadlab.com/`.
-  Origin `https://www.nexadlab.com` (canonical), empty basePath. Becomes
-  indexable only at explicit go-live. Do NOT connect the custom domain, create
-  a `CNAME`, change DNS or enable indexing yet.
+  (`NEXT_PUBLIC_SITE_INDEXABLE=false`), contact form disabled. Pre-launch site.
+- **PRODUCTION (Aruba static hosting via FTPS, first release pre-go-live):**
+  `https://www.nexadlab.com/`. Origin `https://www.nexadlab.com` (canonical),
+  empty basePath; the static export `out/` is uploaded to Aruba via the
+  manual `deploy-aruba.yml` workflow. For the first deployment it stays
+  noindex (`NEXT_PUBLIC_SITE_INDEXABLE=false`) and the contact form stays
+  disabled (`NEXT_PUBLIC_CONTACT_FORM_ENABLED=false`); indexing and form
+  activation are explicit go-live steps. Do NOT connect the custom domain,
+  create a `CNAME`, change DNS or enable indexing yet.
 
 ## SEO configuration
 SEO is environment-driven via `lib/seo.ts`:
@@ -311,15 +319,19 @@ Environment:
 
 Do not hardcode a Formspree ID.
 
-There is no public NEXAD email or WhatsApp yet — do not invent or suggest
-contact channels. Calls are
+The public NEXAD email is decided: `nexadlab@gmail.com`. It is the real
+recipient for contact enquiries, configured as the Formspree recipient inside
+the Formspree dashboard — never hardcoded in the frontend. There is still no
+public WhatsApp; do not invent or suggest contact channels. Calls are
 arranged manually through direct messaging; no calendar-booking product.
+
+Anti-spam for the first release is the Formspree `_gotcha` honeypot already
+implemented in the form. Do NOT add CAPTCHA; CAPTCHA or other anti-spam
+measures may only be re-evaluated if real spam requires them.
 
 Current pending items:
 
-- public NEXAD email;
 - WhatsApp number;
-- CAPTCHA/spam hardening;
 - final Privacy/Legal integration.
 
 Do not expose placeholder contact channels in the UI.
@@ -443,7 +455,8 @@ Before declaring implementation complete, normally run:
 
 For deployment/routing/path changes also run:
 
-- `NEXT_PUBLIC_BASE_PATH=/NEXAD npm run build`
+- `NEXT_PUBLIC_BASE_PATH=/NEXAD npm run build` (GitHub Pages preview)
+- `NEXT_PUBLIC_BASE_PATH= NEXT_PUBLIC_SITE_ORIGIN=https://www.nexadlab.com NEXT_PUBLIC_SITE_INDEXABLE=false NEXT_PUBLIC_CONTACT_FORM_ENABLED=false npm run build` (Aruba production)
 
 For SEO/deployment changes, after building also run the static SEO verifier
 against the generated `out/` with the same env used for the build, e.g.:
