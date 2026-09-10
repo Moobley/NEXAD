@@ -106,53 +106,53 @@
           "label": "Gestione continuativa",
           "items": [
             {
-              "title": "Contenido 1",
-              "eyebrow": "Presenza di base",
-              "description": "Per il locale piccolo o alle prime armi sul digitale, che vuole pubblicare con continuità e crescere in visibilità nella propria zona.",
+              "title": "Presenza",
+              "eyebrow": "Presenza essenziale",
+              "description": "Per locali e attività che vogliono costruire una presenza online costante, pubblicare con regolarità e aumentare la visibilità nella propria zona.",
               "features": [
                 "2 reel / video verticali al mese",
-                "4 post foto al mese",
+                "4 post fotografici al mese",
                 "1 storia al giorno",
-                "Gestione e pubblicazione del profilo Instagram",
-                "Campagna Meta continuativa per visibilità e copertura locale",
-                "Report mensile"
+                "Gestione del profilo Instagram",
+                "Campagne pubblicitarie continuative per la visibilità locale",
+                "Report mensile dei risultati"
               ]
             },
             {
-              "title": "Contenido 2",
+              "title": "Crescita",
               "eyebrow": "Presenza completa",
-              "description": "Per il locale già avviato che vuole una presenza Instagram curata e costante, affiancata dalla Vetrina Google e da campagne Meta per visibilità e contatti.",
+              "description": "Per locali già avviati che vogliono una presenza digitale più curata e costante, supportata dalla gestione del profilo Google e da campagne pubblicitarie orientate alla visibilità e all'acquisizione di nuovi clienti.",
               "features": [
                 "3 reel / video verticali al mese",
-                "2 post foto al mese",
+                "2 post fotografici al mese",
                 "1 storia al giorno",
-                "Gestione Instagram",
-                "Risposta ai commenti nei giorni lavorativi",
-                "Gestione Vetrina Google",
-                "Calendario editoriale mensile",
-                "Strategia Meta multi-campagna",
-                "Creatività dedicate alle campagne",
-                "Report settimanale e mensile"
+                "Gestione del profilo Instagram",
+                "Risposte ai commenti nei giorni lavorativi",
+                "Gestione del Profilo dell'attività su Google",
+                "Piano editoriale mensile",
+                "Gestione delle campagne pubblicitarie",
+                "Contenuti creativi per le campagne",
+                "Report settimanale e mensile dei risultati"
               ]
             },
             {
               "title": "Sala Llena",
               "eyebrow": "Sistema completo",
               "badge": "Consigliato",
-              "description": "Per il ristoratore che vuole un sistema di marketing completo: visibilità, contatti, prenotazioni, delivery e redditività del menu che lavorano insieme.",
+              "description": "Per ristoratori che vogliono un sistema di marketing completo in cui visibilità, acquisizione clienti, prenotazioni, delivery e redditività del menu lavorano insieme.",
               "features": [
-                "Gestione Instagram",
+                "Gestione del profilo Instagram",
                 "3 reel / video verticali al mese",
                 "Piano editoriale mensile",
                 "2 storie al giorno",
-                "Vetrina Google",
-                "Strategia Meta multi-campagna e multi-livello",
-                "Google Ads",
-                "Sistema di prenotazione integrato",
-                "Strategia di vendita per il delivery",
-                "Menu engineering",
-                "Shooting fotografico incluso",
-                "Report settimanale e mensile"
+                "Gestione del Profilo dell'attività su Google",
+                "Strategia pubblicitaria su più obiettivi",
+                "Contenuti creativi per le campagne",
+                "Automazione delle prenotazioni",
+                "Ottimizzazione del delivery",
+                "Ottimizzazione del menu e della redditività",
+                "Sessione di produzione contenuti inclusa",
+                "Report settimanale e mensile dei risultati"
               ]
             }
           ]
@@ -198,7 +198,7 @@
                 "Modulo contatti",
                 "WhatsApp",
                 "Mobile responsive",
-                "Meta Pixel",
+                "Tracciamento delle conversioni",
                 "Google Analytics",
                 "Ottimizzazione velocità"
               ]

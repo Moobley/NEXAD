@@ -106,53 +106,53 @@
           "label": "Ongoing management",
           "items": [
             {
-              "title": "Contenido 1",
+              "title": "Presence",
               "eyebrow": "Essential presence",
-              "description": "For smaller venues or businesses taking their first steps online that want to publish consistently and increase visibility in their local area.",
+              "description": "For venues and businesses that want to build a consistent online presence, publish regularly and increase visibility in their local area.",
               "features": [
                 "2 reels / vertical videos per month",
                 "4 photo posts per month",
                 "1 story per day",
-                "Instagram profile management and publishing",
-                "Ongoing Meta campaign for local visibility and reach",
-                "Monthly report"
+                "Instagram profile management",
+                "Ongoing advertising campaigns for local visibility",
+                "Monthly results report"
               ]
             },
             {
-              "title": "Contenido 2",
+              "title": "Growth",
               "eyebrow": "Complete presence",
-              "description": "For established venues that want a polished and consistent Instagram presence, supported by Google Business Profile management and Meta campaigns focused on visibility and leads.",
+              "description": "For established venues that want a more polished and consistent digital presence, supported by Google Business Profile management and advertising campaigns focused on visibility and customer acquisition.",
               "features": [
                 "3 reels / vertical videos per month",
                 "2 photo posts per month",
                 "1 story per day",
-                "Instagram management",
+                "Instagram profile management",
                 "Comment replies on working days",
                 "Google Business Profile management",
-                "Monthly editorial calendar",
-                "Multi-campaign Meta strategy",
-                "Dedicated campaign creatives",
-                "Weekly and monthly report"
+                "Monthly editorial plan",
+                "Advertising campaign management",
+                "Creative content for advertising campaigns",
+                "Weekly and monthly results reports"
               ]
             },
             {
               "title": "Sala Llena",
               "eyebrow": "Complete system",
               "badge": "Recommended",
-              "description": "For restaurant owners who want a complete marketing system where visibility, leads, bookings, delivery and menu profitability work together.",
+              "description": "For restaurant owners who want a complete marketing system where visibility, customer acquisition, bookings, delivery and menu profitability work together.",
               "features": [
-                "Instagram management",
+                "Instagram profile management",
                 "3 reels / vertical videos per month",
                 "Monthly editorial plan",
                 "2 stories per day",
-                "Google Business Profile",
-                "Multi-campaign, multi-level Meta strategy",
-                "Google Ads",
-                "Integrated booking system",
-                "Delivery sales strategy",
-                "Menu engineering",
-                "Photo shoot included",
-                "Weekly and monthly report"
+                "Google Business Profile management",
+                "Advertising strategy across multiple objectives",
+                "Creative content for advertising campaigns",
+                "Booking automation",
+                "Delivery optimization",
+                "Menu and profitability optimization",
+                "Content production session included",
+                "Weekly and monthly results reports"
               ]
             }
           ]
@@ -198,7 +198,7 @@
                 "Contact form",
                 "WhatsApp",
                 "Mobile responsive",
-                "Meta Pixel",
+                "Conversion tracking",
                 "Google Analytics",
                 "Speed optimization"
               ]

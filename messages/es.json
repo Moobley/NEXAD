@@ -105,53 +105,53 @@
           "label": "Gestión continuada",
           "items": [
             {
-              "title": "Contenido 1",
-              "eyebrow": "Presencia básica",
-              "description": "Para el local pequeño o que está dando sus primeros pasos en digital y quiere publicar de forma constante y aumentar su visibilidad en su zona.",
+              "title": "Presencia",
+              "eyebrow": "Presencia esencial",
+              "description": "Para locales y negocios que quieren construir una presencia online constante, publicar con regularidad y aumentar su visibilidad en la zona.",
               "features": [
                 "2 reels / vídeos verticales al mes",
-                "4 posts de foto al mes",
+                "4 publicaciones fotográficas al mes",
                 "1 historia al día",
-                "Gestión y publicación del perfil de Instagram",
-                "Campaña Meta continua para visibilidad y cobertura local",
-                "Informe mensual"
+                "Gestión del perfil de Instagram",
+                "Campañas publicitarias continuas para aumentar la visibilidad local",
+                "Informe mensual de resultados"
               ]
             },
             {
-              "title": "Contenido 2",
+              "title": "Crecimiento",
               "eyebrow": "Presencia completa",
-              "description": "Para el local ya consolidado que quiere una presencia en Instagram cuidada y constante, acompañada de su Perfil de Empresa en Google y campañas Meta orientadas a visibilidad y contactos.",
+              "description": "Para locales consolidados que quieren una presencia digital más cuidada y constante, apoyada por la gestión del Perfil de Empresa de Google y campañas publicitarias orientadas a la visibilidad y captación de nuevos clientes.",
               "features": [
                 "3 reels / vídeos verticales al mes",
-                "2 posts de foto al mes",
+                "2 publicaciones fotográficas al mes",
                 "1 historia al día",
-                "Gestión de Instagram",
+                "Gestión del perfil de Instagram",
                 "Respuesta a comentarios en días laborables",
-                "Gestión del Perfil de Empresa en Google",
-                "Calendario editorial mensual",
-                "Estrategia Meta multi-campaña",
-                "Creatividades dedicadas a las campañas",
-                "Informe semanal y mensual"
+                "Gestión del Perfil de Empresa de Google",
+                "Plan editorial mensual",
+                "Gestión de campañas publicitarias",
+                "Contenidos creativos para las campañas",
+                "Informe semanal y mensual de resultados"
               ]
             },
             {
               "title": "Sala Llena",
               "eyebrow": "Sistema completo",
               "badge": "Recomendado",
-              "description": "Para el restaurador que quiere un sistema de marketing completo donde visibilidad, contactos, reservas, delivery y rentabilidad del menú trabajen de forma coordinada.",
+              "description": "Para restauradores que quieren un sistema de marketing completo en el que visibilidad, captación de clientes, reservas, delivery y rentabilidad del menú trabajen de forma conjunta.",
               "features": [
-                "Gestión de Instagram",
+                "Gestión del perfil de Instagram",
                 "3 reels / vídeos verticales al mes",
                 "Plan editorial mensual",
                 "2 historias al día",
-                "Perfil de Empresa en Google",
-                "Estrategia Meta multi-campaña y multi-nivel",
-                "Google Ads",
-                "Sistema de reservas integrado",
-                "Estrategia de venta para delivery",
-                "Ingeniería de menú",
-                "Shooting fotográfico incluido",
-                "Informe semanal y mensual"
+                "Gestión del Perfil de Empresa de Google",
+                "Estrategia publicitaria para varios objetivos",
+                "Contenidos creativos para las campañas",
+                "Automatización de reservas",
+                "Optimización del delivery",
+                "Optimización del menú y de la rentabilidad",
+                "Sesión de producción de contenidos incluida",
+                "Informe semanal y mensual de resultados"
               ]
             }
           ]
@@ -197,7 +197,7 @@
                 "Formulario de contacto",
                 "WhatsApp",
                 "Mobile responsive",
-                "Meta Pixel",
+                "Seguimiento de conversiones",
                 "Google Analytics",
                 "Optimización de velocidad"
               ]

@@ -48,7 +48,7 @@ export async function Corazon() {
             >
               <div className="absolute inset-0 flex items-center justify-center bg-[radial-gradient(130%_130%_at_70%_15%,#e7e3d6_0%,#f2efe8_48%,#d8d2c3_100%)] p-10 md:p-16">
                 <Image
-                  src={asset("/projects/corazon/logoCNxNexo.png")}
+                  src={asset("/projects/corazon/logoCNxNexo.webp")}
                   alt={tc("title")}
                   width={1187}
                   height={266}
