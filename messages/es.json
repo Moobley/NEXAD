@@ -91,11 +91,172 @@
         }
       ]
     },
-    "statement": {
-      "line1": "No vendemos canales.",
-      "line2Prefix": "Resolvemos ",
-      "line2Accent": "problemas digitales",
-      "body": "Activamos lo que hace falta, sin imponer un canal por defecto."
+    "clients": {
+      "title": "Nuestros clientes"
+    },
+    "services": {
+      "eyebrow": "Servicios",
+      "title": "Nuestros servicios",
+      "support": "De la gestión continua al proyecto a medida: servicios para crecer en visibilidad, contactos y reservas de tu local.",
+      "categoryLabel": "Categorías de servicios",
+      "includedLabel": "Incluido en la cuota",
+      "categories": [
+        {
+          "label": "Gestión continuada",
+          "items": [
+            {
+              "title": "Contenido 1",
+              "eyebrow": "Presencia básica",
+              "description": "Para el local pequeño o que está dando sus primeros pasos en digital y quiere publicar de forma constante y aumentar su visibilidad en su zona.",
+              "features": [
+                "2 reels / vídeos verticales al mes",
+                "4 posts de foto al mes",
+                "1 historia al día",
+                "Gestión y publicación del perfil de Instagram",
+                "Campaña Meta continua para visibilidad y cobertura local",
+                "Informe mensual"
+              ]
+            },
+            {
+              "title": "Contenido 2",
+              "eyebrow": "Presencia completa",
+              "description": "Para el local ya consolidado que quiere una presencia en Instagram cuidada y constante, acompañada de su Perfil de Empresa en Google y campañas Meta orientadas a visibilidad y contactos.",
+              "features": [
+                "3 reels / vídeos verticales al mes",
+                "2 posts de foto al mes",
+                "1 historia al día",
+                "Gestión de Instagram",
+                "Respuesta a comentarios en días laborables",
+                "Gestión del Perfil de Empresa en Google",
+                "Calendario editorial mensual",
+                "Estrategia Meta multi-campaña",
+                "Creatividades dedicadas a las campañas",
+                "Informe semanal y mensual"
+              ]
+            },
+            {
+              "title": "Sala Llena",
+              "eyebrow": "Sistema completo",
+              "badge": "Recomendado",
+              "description": "Para el restaurador que quiere un sistema de marketing completo donde visibilidad, contactos, reservas, delivery y rentabilidad del menú trabajen de forma coordinada.",
+              "features": [
+                "Gestión de Instagram",
+                "3 reels / vídeos verticales al mes",
+                "Plan editorial mensual",
+                "2 historias al día",
+                "Perfil de Empresa en Google",
+                "Estrategia Meta multi-campaña y multi-nivel",
+                "Google Ads",
+                "Sistema de reservas integrado",
+                "Estrategia de venta para delivery",
+                "Ingeniería de menú",
+                "Shooting fotográfico incluido",
+                "Informe semanal y mensual"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Puntuales",
+          "items": [
+            {
+              "title": "Shooting fotográfico inicial",
+              "description": "Una sesión profesional para crear una biblioteca de contenidos evergreen del local, sus platos, el ambiente y el equipo.",
+              "features": [
+                "Sesión de grabación en el local",
+                "Fotos de los platos principales",
+                "Ambiente, sala, detalles y equipo",
+                "Retoque profesional",
+                "Entrega en alta resolución y formato social"
+              ]
+            },
+            {
+              "title": "Radiografía del local",
+              "description": "Análisis estratégico de márgenes, food cost y rentabilidad para identificar las principales áreas de mejora del local.",
+              "features": [
+                "Food cost real de los platos principales",
+                "Ingeniería de menú",
+                "Margen por plato y franja horaria",
+                "Análisis de precios",
+                "Estrategias para delivery",
+                "Estrategias de reserva",
+                "Documento final con prioridades de intervención"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Web",
+          "items": [
+            {
+              "title": "Landing page optimizada",
+              "description": "Una landing page diseñada para convertir el tráfico de las campañas en contactos y solicitudes.",
+              "features": [
+                "Página orientada a la conversión",
+                "Copy dedicado a la campaña",
+                "Formulario de contacto",
+                "WhatsApp",
+                "Mobile responsive",
+                "Meta Pixel",
+                "Google Analytics",
+                "Optimización de velocidad"
+              ]
+            },
+            {
+              "title": "Web completa para restaurantes",
+              "description": "Una presencia digital completa para presentar el restaurante, mostrar el menú y convertir las visitas online en reservas.",
+              "features": [
+                "Web multipágina",
+                "Menú digital con QR",
+                "Sistema de reservas",
+                "Galería fotográfica",
+                "Eventos",
+                "Multilingüe",
+                "SEO básico",
+                "Google Maps y contacto",
+                "Mobile responsive"
+              ]
+            },
+            {
+              "title": "Mantenimiento web",
+              "description": "Gestión técnica continua para mantener la web actualizada, segura y optimizada.",
+              "features": [
+                "Hosting y dominio",
+                "Actualizaciones técnicas",
+                "Backups",
+                "Monitorización de seguridad",
+                "Pequeños cambios",
+                "Soporte"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Extra",
+          "items": [
+            {
+              "title": "Reel extra",
+              "description": "Vídeos adicionales más allá de los incluidos en el paquete."
+            },
+            {
+              "title": "Gestión de Facebook",
+              "description": "Adaptación, publicación y gestión de Facebook utilizando los contenidos del plan editorial."
+            },
+            {
+              "title": "Gestión de TikTok",
+              "description": "Adaptación y publicación en TikTok de los contenidos ya producidos."
+            },
+            {
+              "title": "Vídeo manifiesto del local",
+              "description": "Vídeo de presentación del local de aproximadamente 60–90 segundos."
+            }
+          ]
+        }
+      ],
+      "cta": {
+        "title": "Encontramos el servicio adecuado para tu negocio",
+        "action": "Solicitar información"
+      }
     },
     "cta": {
       "titlePrefix": "¿Cuál es tu ",

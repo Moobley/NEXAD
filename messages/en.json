@@ -92,11 +92,172 @@
         }
       ]
     },
-    "statement": {
-      "line1": "We do not sell channels.",
-      "line2Prefix": "We solve ",
-      "line2Accent": "digital problems",
-      "body": "We activate what's needed, without imposing a default channel."
+    "clients": {
+      "title": "Our clients"
+    },
+    "services": {
+      "eyebrow": "Services",
+      "title": "Our services",
+      "support": "From ongoing management to one-off projects: services that grow your venue's visibility, leads and bookings.",
+      "categoryLabel": "Service categories",
+      "includedLabel": "Included in the plan",
+      "categories": [
+        {
+          "label": "Ongoing management",
+          "items": [
+            {
+              "title": "Contenido 1",
+              "eyebrow": "Essential presence",
+              "description": "For smaller venues or businesses taking their first steps online that want to publish consistently and increase visibility in their local area.",
+              "features": [
+                "2 reels / vertical videos per month",
+                "4 photo posts per month",
+                "1 story per day",
+                "Instagram profile management and publishing",
+                "Ongoing Meta campaign for local visibility and reach",
+                "Monthly report"
+              ]
+            },
+            {
+              "title": "Contenido 2",
+              "eyebrow": "Complete presence",
+              "description": "For established venues that want a polished and consistent Instagram presence, supported by Google Business Profile management and Meta campaigns focused on visibility and leads.",
+              "features": [
+                "3 reels / vertical videos per month",
+                "2 photo posts per month",
+                "1 story per day",
+                "Instagram management",
+                "Comment replies on working days",
+                "Google Business Profile management",
+                "Monthly editorial calendar",
+                "Multi-campaign Meta strategy",
+                "Dedicated campaign creatives",
+                "Weekly and monthly report"
+              ]
+            },
+            {
+              "title": "Sala Llena",
+              "eyebrow": "Complete system",
+              "badge": "Recommended",
+              "description": "For restaurant owners who want a complete marketing system where visibility, leads, bookings, delivery and menu profitability work together.",
+              "features": [
+                "Instagram management",
+                "3 reels / vertical videos per month",
+                "Monthly editorial plan",
+                "2 stories per day",
+                "Google Business Profile",
+                "Multi-campaign, multi-level Meta strategy",
+                "Google Ads",
+                "Integrated booking system",
+                "Delivery sales strategy",
+                "Menu engineering",
+                "Photo shoot included",
+                "Weekly and monthly report"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "One-off",
+          "items": [
+            {
+              "title": "Initial photo shoot",
+              "description": "A professional shoot designed to create an evergreen visual library of the venue, its dishes, atmosphere and team.",
+              "features": [
+                "On-site shooting session",
+                "Photos of the main dishes",
+                "Ambience, dining room, details and staff",
+                "Professional retouching",
+                "Delivery in high resolution and social format"
+              ]
+            },
+            {
+              "title": "Radiografía del local",
+              "description": "A strategic analysis of margins, food cost and profitability designed to identify the venue's highest-priority opportunities for improvement.",
+              "features": [
+                "Real food cost of the main dishes",
+                "Menu engineering",
+                "Margin per dish and time slot",
+                "Pricing analysis",
+                "Delivery strategies",
+                "Booking strategies",
+                "Final document with intervention priorities"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Web",
+          "items": [
+            {
+              "title": "Conversion-focused landing page",
+              "description": "A landing page designed to turn campaign traffic into leads and enquiries.",
+              "features": [
+                "Conversion-focused page",
+                "Campaign-specific copy",
+                "Contact form",
+                "WhatsApp",
+                "Mobile responsive",
+                "Meta Pixel",
+                "Google Analytics",
+                "Speed optimization"
+              ]
+            },
+            {
+              "title": "Complete restaurant website",
+              "description": "A complete digital presence designed to showcase the restaurant, present its menu and turn online visits into bookings.",
+              "features": [
+                "Multi-page website",
+                "Digital menu with QR",
+                "Booking system",
+                "Photo gallery",
+                "Events",
+                "Multilingual",
+                "Basic SEO",
+                "Google Maps and contact",
+                "Mobile responsive"
+              ]
+            },
+            {
+              "title": "Website maintenance",
+              "description": "Ongoing technical management to keep the website secure, updated and performing reliably.",
+              "features": [
+                "Hosting and domain",
+                "Technical updates",
+                "Backups",
+                "Security monitoring",
+                "Small changes",
+                "Support"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Extras",
+          "items": [
+            {
+              "title": "Extra reel",
+              "description": "Additional video content beyond the amount included in the package."
+            },
+            {
+              "title": "Facebook management",
+              "description": "Facebook content adaptation, publishing and page management using the existing editorial plan."
+            },
+            {
+              "title": "TikTok management",
+              "description": "Adaptation and publishing of existing content on TikTok."
+            },
+            {
+              "title": "Venue brand film",
+              "description": "A 60–90 second brand film introducing the venue."
+            }
+          ]
+        }
+      ],
+      "cta": {
+        "title": "Let's find the right service for your business",
+        "action": "Request information"
+      }
     },
     "cta": {
       "titlePrefix": "What is your ",

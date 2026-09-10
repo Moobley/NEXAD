@@ -4,8 +4,8 @@ import { getTranslations, setRequestLocale } from "next-intl/server"
 import { pageMetadata, siteUrl } from "@/lib/seo"
 import { Hero } from "@/components/sections/home/hero"
 import { Capabilities } from "@/components/sections/home/capabilities"
-import { Positioning } from "@/components/sections/home/positioning"
 import { Corazon } from "@/components/sections/home/corazon"
+import { Services } from "@/components/sections/home/services"
 import { FinalCta } from "@/components/sections/home/final-cta"
 import { SectionDivider } from "@/components/ui/section-divider"
 
@@ -36,9 +36,9 @@ export default async function HomePage({ params }: Props) {
       <SectionDivider />
       <Capabilities />
       <SectionDivider />
-      <Positioning />
-      <SectionDivider />
       <Corazon />
+      <SectionDivider />
+      <Services />
       <SectionDivider />
       <FinalCta />
     </>

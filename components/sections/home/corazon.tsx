@@ -5,27 +5,23 @@ import { Link } from "@/i18n/navigation"
 import { Reveal } from "@/components/ui/reveal"
 import { CaseMedia } from "@/components/ui/case-media"
 import { ForwardMark } from "@/components/ui/forward-mark"
+import { SignalDot } from "@/components/ui/signal-dot"
 import { asset } from "@/lib/asset"
 
 export async function Corazon() {
   const tc = await getTranslations("projects.corazon")
+  const tClients = await getTranslations("home.clients")
 
   return (
-    <div>
+    <section className="surface-obsidian">
       <div className="mx-auto w-full max-w-[1600px] px-6 pb-24 pt-14 md:px-10 md:pb-32 md:pt-20">
         <Reveal>
           <div className="flex items-center justify-between border-b border-border pb-6">
-            <span className="flex items-center gap-4">
-              <Image
-                src={asset("/projects/corazon/logoCN.webp")}
-                alt={tc("title")}
-                width={700}
-                height={201}
-                unoptimized
-                className="h-6 w-auto"
-              />
-            </span>
-            <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
+            <p className="flex items-center gap-2.5 font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
+              <SignalDot size="sm" />
+              {tClients("title")}
+            </p>
+            <p className="hidden font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground sm:block">
               {tc("clientLabel")} / {tc("category")}
             </p>
           </div>
@@ -75,7 +71,7 @@ export async function Corazon() {
             <Reveal delay={200}>
               <CaseMedia
                 label={tc("websiteLabel")}
-                tone="light"
+                tone="dark"
                 watermark={tc("websiteLabel")}
                 className="aspect-[4/3] lg:aspect-[16/10]"
               />
@@ -118,6 +114,6 @@ export async function Corazon() {
           </Reveal>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
