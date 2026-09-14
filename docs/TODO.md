@@ -8,8 +8,7 @@ Legend: ✅ Complete · 🔴 High priority · 🟠 Next · 🟡 Later · ⏸ Pau
 
 ## ✅ Complete
 
-- Routing / deploy (static export, trailingSlash, basePath env, GitHub Pages
-  workflow on `master`, no middleware).
+- Routing / deploy (static export, trailingSlash, basePath env, no middleware).
 - Services page (Hero → 5 Capabilities → System → Collaboration → CTA).
 - Studio page (Hero → Why NEXAD → Team → Principles → Network → CTA).
 - Work index + Corazón case study + Barber NEXAD Lab page.
@@ -36,10 +35,9 @@ Legend: ✅ Complete · 🔴 High priority · 🟠 Next · 🟡 Later · ⏸ Pau
   configured in the Formspree dashboard, never hardcoded in the frontend).
 - Spam-protection decision for v1 (D-032): Formspree `_gotcha` honeypot;
   no CAPTCHA added. Re-evaluate only if real spam requires it.
-- Production hosting architecture (D-030): Aruba static hosting via FTPS with
-  the manual `deploy-aruba.yml` workflow (static export `out/`, SHA-pinned
-  stable FTP action, no `dangerous-clean-slate`); GitHub Pages stays the
-  temporary preview.
+- Production hosting architecture (D-030): Aruba static hosting — local
+  `npm run build` produces `out/`, uploaded manually via FileZilla (no CI/CD,
+  no GitHub Actions; deploy workflows removed).
 
 ## ⏸ Paused
 
@@ -89,10 +87,9 @@ invent provider/company/tax data — NEXAD is pre-launch and early-stage.
   `ad_personalization` denied by default), Meta Pixel loaded only after
   advertising consent, centralized `trackConversion()` (no-op without IDs or
   consent).
-- Contact form marketing opt-in: separate, optional, un-checked newsletter
-  checkbox (independent from cookie advertising consent) submitted to
-  Formspree as `newsletter_consent=yes|no`,
-  `newsletter_consent_version=1`, `newsletter_source=contact_form`.
+- Contact form marketing opt-in: removed. The form now collects only first
+  name, surname, phone, email (required), optional message, and mandatory
+  Privacy Policy consent — no newsletter/marketing opt-in.
 
 ⚠️ Still required before enabling production submission: real
 service-provider identity, publishable address, final approved Privacy
@@ -109,9 +106,10 @@ Legal identity / provider data:
   complete address when legally required).
 - ✅ Public NEXAD contact email decided: `nexadlab@gmail.com` (Formspree
   recipient, configured in the Formspree dashboard, never in the frontend).
-- Create a dedicated NEXAD business messaging/WhatsApp channel before exposing
-  any WhatsApp CTA; later implement a direct-contact CTA and arrange calls
-  manually through messaging (no calendar booking).
+- ✅ Public NEXAD WhatsApp decided: `+34 610 77 51 40` (`34610775140`), shown
+  via the floating WhatsApp button on every localized page
+  (`components/layout/whatsapp-float.tsx`). Calls are arranged manually
+  through messaging (no calendar booking).
 
 Privacy:
 
@@ -157,9 +155,9 @@ Spam protection:
 - page-specific metadata for Gateway / Home / Services / Studio / Work /
   Contact / Corazón / Barber (`generateMetadata` + `seo` messages namespace)
 - absolute self-referencing canonicals; reciprocal hreflang es/en/it + x-default
-- robots meta driven by `NEXT_PUBLIC_SITE_INDEXABLE` (GitHub Pages stays
-  `noindex, follow`); fail-closed: indexable builds require an explicit valid
-  https `NEXT_PUBLIC_SITE_ORIGIN`
+- robots meta driven by `NEXT_PUBLIC_SITE_INDEXABLE` (production stays
+  `noindex, follow` until go-live); fail-closed: indexable builds require an
+  explicit valid https `NEXT_PUBLIC_SITE_ORIGIN`
 - `app/sitemap.ts` (22 canonical URLs) and `app/robots.ts` (allow-all, no
   `Disallow: /`); while noindex, `robots.txt` does not advertise the sitemap
 - Open Graph + Twitter cards with a static 1200×630 social preview
@@ -206,8 +204,10 @@ banner + preferences modal, `localStorage`-persisted (`nexad_cookie_consent`,
 no consent cookie), Google Consent Mode and Meta Pixel gated on consent, and
 the contact form's separate newsletter opt-in. Nothing non-essential loads
 before a stored choice, and both tag integrations tolerate missing IDs. The
-final Spanish legal PDFs (`public/legal/*.pdf`) are still pending. Re-audit
-when the legal PDFs, GA4 or any additional third-party embed is added.
+Meta Pixel ID (`1009835142128506`) is now configured; Google Ads remains
+unconfigured. The final Spanish legal PDFs (`public/legal/*.pdf`) are still
+pending. Re-audit when the legal PDFs, GA4 or any additional third-party embed
+is added.
 
 ### Performance / Core Web Vitals
 
@@ -226,19 +226,14 @@ semantics.
 ### Domain / production deployment
 
 ✅ **Aruba hosting architecture implemented.** Production is hosted as a
-static export on Aruba via FTPS: `.github/workflows/deploy-aruba.yml` builds
-with `https://www.nexadlab.com` + empty basePath, verifies `out/`, runs the
-static SEO verifier, and uploads only the contents of `out/` (manual
-`workflow_dispatch`; no `dangerous-clean-slate`). GitHub Pages
-(`https://moobley.github.io/NEXAD/`) remains the pre-launch preview and is
-noindex.
+static export on Aruba: `npm run build` (reads `.env.production`, origin
+`https://www.nexadlab.com` + empty basePath) produces `out/`, which is
+uploaded manually via FileZilla. No CI/CD, no GitHub Actions.
 
-🟠 First Aruba deploy (pre-go-live): configure the GitHub Actions Secrets
-(`ARUBA_FTP_USERNAME`, `ARUBA_FTP_PASSWORD`) and Variables (`ARUBA_FTP_SERVER`,
-`ARUBA_FTP_PORT`, `ARUBA_FTP_PROTOCOL`, `ARUBA_FTP_SERVER_DIR`,
-`NEXT_PUBLIC_SITE_INDEXABLE=false`, `NEXT_PUBLIC_CONTACT_FORM_ENABLED=false`,
-`NEXT_PUBLIC_FORMSPREE_FORM_ID`), then run `deploy-aruba.yml` manually and
-smoke-test the canonical origin (still noindex, form off).
+🟠 First Aruba deploy (pre-go-live): build locally with
+`NEXT_PUBLIC_SITE_INDEXABLE=false` + `NEXT_PUBLIC_CONTACT_FORM_ENABLED=false`
+(set in `.env.production`), upload `out/` via FileZilla, and smoke-test the
+canonical origin (still noindex, form off).
 
 🔴 Go-live checklist (only after explicit approval AND the Legal/Contact
 blockers are resolved): connect DNS/custom domain + HTTPS, set
@@ -275,9 +270,9 @@ connection, selective build in public.
 
 ### Newsletter / promotional communications setup
 
-🟡 Later / blocked until legal/contact identity is ready. The contact form now
-collects an optional, un-checked newsletter consent (submitted to Formspree as
-`newsletter_consent`). Still pending: choose a real provider, define purposes
+🟡 Later / blocked until legal/contact identity is ready. The contact form no
+longer collects a newsletter consent (the checkbox was removed). Still pending
+if a newsletter is reintroduced: choose a real provider, define purposes
 and workflow, implement an unsubscribe/revoke mechanism, update privacy/legal,
 verify processors/transfers, verify email tracking if used. Not to be
 implemented now.

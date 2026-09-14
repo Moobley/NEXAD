@@ -7,7 +7,6 @@ export const dynamic = "force-static"
 
 const LOCALIZED_ROUTES = [
   "/",
-  "/services",
   "/studio",
   "/work",
   "/contact",

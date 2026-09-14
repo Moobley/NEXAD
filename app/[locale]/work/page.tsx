@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server"
 
 import { pageMetadata } from "@/lib/seo"
 import { SectionDivider } from "@/components/ui/section-divider"
+import { WorkCta } from "@/components/sections/work/work-cta"
 import { WorkHero } from "@/components/sections/work/work-hero"
 import { WorkClientProject } from "@/components/sections/work/work-client-project"
 import { WorkLabProject } from "@/components/sections/work/work-lab-project"
@@ -34,6 +35,8 @@ export default async function WorkPage({ params }: Props) {
       <WorkClientProject />
       <SectionDivider />
       <WorkLabProject />
+      <SectionDivider />
+      <WorkCta />
     </>
   )
 }

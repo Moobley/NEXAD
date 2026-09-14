@@ -20,7 +20,6 @@ const LANGUAGE_ORDER = ["en", "es", "it"]
  */
 const PAGES: Array<[label: string, path: string]> = [
   ["Home", "/"],
-  ["Services", "/services"],
   ["Work", "/work"],
   ["Studio", "/studio"],
   ["Contact", "/contact"],

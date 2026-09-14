@@ -9,48 +9,24 @@ Next.js 16 + React 19 + TypeScript strict, static export (`output: "export"`),
 
 ## Environments
 
-Two environments exist; the architecture moves between them with env vars
-only (no code changes):
+One live environment exists (plus optional local previews), switched with env
+vars only (no code changes):
 
-| | PREVIEW | PRODUCTION |
-|---|---|---|
-| Hosting | GitHub Pages | Aruba static hosting via FTPS |
-| URL | `https://moobley.github.io/NEXAD/` | `https://www.nexadlab.com` (canonical) |
-| `NEXT_PUBLIC_BASE_PATH` | `/NEXAD` | `""` |
-| `NEXT_PUBLIC_SITE_ORIGIN` | `https://moobley.github.io` | `https://www.nexadlab.com` |
-| `NEXT_PUBLIC_SITE_INDEXABLE` | `false` | `false` until explicit go-live |
-| `NEXT_PUBLIC_CONTACT_FORM_ENABLED` | off | off until explicit go-live |
-| Trigger | automatic on push to `master` | manual (`workflow_dispatch`) |
+| | PRODUCTION |
+|---|---|
+| Hosting | Aruba static hosting |
+| URL | `https://www.nexadlab.com` (canonical) |
+| `NEXT_PUBLIC_BASE_PATH` | `""` |
+| `NEXT_PUBLIC_SITE_ORIGIN` | `https://www.nexadlab.com` |
+| `NEXT_PUBLIC_SITE_INDEXABLE` | `false` until explicit go-live |
+| `NEXT_PUBLIC_CONTACT_FORM_ENABLED` | off until explicit go-live |
+| Deploy | local `npm run build` → upload `out/` via FileZilla |
 
-The GitHub Pages preview is temporary and pre-launch: it stays `noindex, follow`
-and the contact form stays disabled. The production domain is decided but NOT
-live — indexing and form activation are separate, explicit go-live steps.
-
-## Workflows
-
-- `.github/workflows/deploy.yml` — GitHub Pages preview (automatic).
-- `.github/workflows/deploy-aruba.yml` — Aruba production (manual only). It
-  builds the production static export with the env above, verifies `out/`,
-  runs the static SEO verifier, then uploads **only the contents of `out/`**
-  to Aruba via FTPS. It never deletes anything already on the hosting space
-  (`dangerous-clean-slate` is not used).
-
-### Aruba configuration (GitHub Actions)
-
-Secrets (Settings → Secrets and variables → Actions → Secrets):
-
-- `ARUBA_FTP_USERNAME`
-- `ARUBA_FTP_PASSWORD`
-
-Variables (Settings → Secrets and variables → Actions → Variables):
-
-- `ARUBA_FTP_SERVER` — FTP host from the Aruba hosting panel
-- `ARUBA_FTP_PORT` — `21` (Aruba FTPS = explicit TLS on port 21); adjust to the plan
-- `ARUBA_FTP_PROTOCOL` — `ftps` (preferred) / `ftp` / `ftps-legacy`
-- `ARUBA_FTP_SERVER_DIR` — remote directory, must end with `/` (e.g. `/httpdocs/`)
-- `NEXT_PUBLIC_FORMSPREE_FORM_ID` — public Formspree form ID (not a secret)
-- `NEXT_PUBLIC_CONTACT_FORM_ENABLED` — keep `false`
-- `NEXT_PUBLIC_SITE_INDEXABLE` — keep `false`
+There is **no CI/CD** and no GitHub Actions workflow. The production build is
+done locally with `npm run build` (which reads `.env.production`), then the
+contents of `out/` are uploaded manually to Aruba via FileZilla. The production
+domain is decided but NOT live — indexing and form activation are separate,
+explicit go-live steps.
 
 Missing/empty values are fail-closed: an empty indexable flag stays `noindex`
 and an empty form flag/ID keeps the contact form disabled. `lib/seo.ts` also
@@ -64,11 +40,8 @@ public form ID at build time:
 
 - Copy `.env.example` to `.env.local` and set
   `NEXT_PUBLIC_FORMSPREE_FORM_ID=<your-form-id>` for local development.
-- For the GitHub Pages deploy, add the same value as a **repository variable**
-  named `NEXT_PUBLIC_FORMSPREE_FORM_ID`
-  (`Settings → Secrets and variables → Actions → Variables`). It is a public
-  value (it ships in the page bundle), so a variable — not a secret — is the
-  correct choice. The deploy workflows inject it during `npm run build`.
+  For the production build, set it in `.env.production` (already configured).
+  It is a public value — it ships in the page bundle — so it is not a secret.
 - The real recipient inbox is `nexadlab@gmail.com`; it is configured inside
   the Formspree dashboard, never in the repository.
 - Without the ID the page still builds and renders; submitting shows a
@@ -87,16 +60,11 @@ npm run typecheck
 npm run verify:seo # static SEO verifier against out/ (same env as the build)
 ```
 
-Preview build:
+Production build is done locally with `npm run build` (reads `.env.production`),
+then upload `out/` to Aruba via FileZilla:
 
 ```bash
-NEXT_PUBLIC_BASE_PATH=/NEXAD NEXT_PUBLIC_SITE_ORIGIN=https://moobley.github.io NEXT_PUBLIC_SITE_INDEXABLE=false npm run build
-```
-
-Aruba production build (pre-go-live, noindex + form off):
-
-```bash
-NEXT_PUBLIC_BASE_PATH= NEXT_PUBLIC_SITE_ORIGIN=https://www.nexadlab.com NEXT_PUBLIC_SITE_INDEXABLE=false NEXT_PUBLIC_CONTACT_FORM_ENABLED=false npm run build
+npm run build
 ```
 
 ## Project memory

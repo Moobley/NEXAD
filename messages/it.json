@@ -8,10 +8,6 @@
       "title": "NEXAD — Studio digitale a Las Palmas · Marketing, web e software",
       "description": "Studio digitale con base a Las Palmas de Gran Canaria che collega marketing e software in un unico sistema di crescita: strategia, contenuti, esperienze web e automazione."
     },
-    "services": {
-      "title": "Servizi — NEXAD · Strategia digitale, web e automazione",
-      "description": "Strategia digitale, paid media, social e contenuti, esperienze web, software e automazione, attivati in base agli obiettivi reali del progetto."
-    },
     "studio": {
       "title": "Studio — NEXAD",
       "description": "NEXAD è uno studio digitale con un team core e una rete di specialisti che connette strategia, marketing, contenuti, prodotto e software."
@@ -27,7 +23,7 @@
     "projects": {
       "corazon": {
         "title": "Corazón Napoletano — Client Work | NEXAD",
-        "description": "Progetto per Corazón Napoletano a Las Palmas: identità, web, contenuti, produzione e paid media. Risultato specifico del progetto: +49,1% di fatturato settimanale medio."
+        "description": "Progetto per Corazón Napoletano a Las Palmas: identità, web, contenuti, produzione e paid media. Risultato specifico del progetto: +49,1% di fatturato medio."
       },
       "barber": {
         "title": "Barber Booking — NEXAD Lab",
@@ -47,23 +43,26 @@
     "services": "Servizi",
     "studio": "Studio",
     "contact": "Contatti",
-    "cta": "Inizia un progetto",
+    "cta": "Parliamone",
+    "contactUs": "Contattaci",
     "menuOpen": "Apri menu",
     "menuClose": "Chiudi menu",
     "skip": "Salta al contenuto",
     "primary": "Navigazione principale"
+  },
+  "whatsapp": {
+    "label": "Contattaci su WhatsApp",
+    "message": "Ciao NEXAD, vorrei più informazioni."
   },
   "language": {
     "label": "Cambia lingua"
   },
   "home": {
     "hero": {
-      "meta": "Strategia · Marketing · Tecnologia",
-      "coords": "28.1° N — 15.4° W",
-      "titleLine1": "Crescita,",
-      "titleLine2": "con ingegneria.",
-      "support": "Uno studio dove marketing e software si progettano insieme: strategia, prodotto, contenuti e tecnologia allineati dal primo passo.",
-      "ctaPrimary": "Inizia un progetto",
+      "titleLine1": "Marketing che converte,",
+      "titleLine2": "software che scala.",
+      "support": "Strategia, acquisizione e tecnologia in un unico team.",
+      "ctaPrimary": "Parliamone",
       "ctaSecondary": "Vedi i risultati"
     },
     "capabilities": {
@@ -121,7 +120,7 @@
             {
               "title": "Crescita",
               "eyebrow": "Presenza completa",
-              "description": "Per locali già avviati che vogliono una presenza digitale più curata e costante, supportata dalla gestione del profilo Google e da campagne pubblicitarie orientate alla visibilità e all'acquisizione di nuovi clienti.",
+              "description": "Per chi vuole una presenza digitale più curata e costante, supportata dalla gestione del profilo Google e da campagne pubblicitarie orientate alla visibilità e all'acquisizione di nuovi clienti.",
               "features": [
                 "3 reel / video verticali al mese",
                 "2 post fotografici al mese",
@@ -139,7 +138,7 @@
               "title": "Sala Llena",
               "eyebrow": "Sistema completo",
               "badge": "Consigliato",
-              "description": "Per ristoratori che vogliono un sistema di marketing completo in cui visibilità, acquisizione clienti, prenotazioni, delivery e redditività del menu lavorano insieme.",
+              "description": "Per chi vuole un sistema di marketing completo in cui visibilità, acquisizione clienti, prenotazioni, delivery e redditività del menu lavorano insieme.",
               "features": [
                 "Gestione del profilo Instagram",
                 "3 reel / video verticali al mese",
@@ -172,7 +171,7 @@
               ]
             },
             {
-              "title": "Radiografía del local",
+              "title": "Radiografia del locale",
               "description": "Analisi strategica di margini, food cost e redditività per individuare le priorità di intervento del locale.",
               "features": [
                 "Food cost reale dei principali piatti",
@@ -263,7 +262,7 @@
       "titlePrefix": "Qual è il tuo ",
       "titleAccent": "obiettivo",
       "titleSuffix": "?",
-      "action": "Inizia un progetto"
+      "action": "Parliamone"
     }
   },
   "projects": {
@@ -277,7 +276,7 @@
       "support": "Identità, contenuti, menu, locale, sito e acquisizione pensati allo stesso tempo.",
       "scope": "Identità · Contenuti · Menu + Upselling · QR · Sito · Acquisizione",
       "resultAmount": "+49,1%",
-      "resultLabel": "Fatturato settimanale medio",
+      "resultLabel": "Fatturato medio",
       "cta": "Vedi il caso studio",
       "brandLabel": "Identità e applicazioni",
       "contentLabel": "Contenuti",
@@ -368,7 +367,7 @@
         "metrics": {
           "weeklyRevenue": {
             "value": "+49,1%",
-            "label": "Fatturato settimanale medio"
+            "label": "Fatturato medio"
           },
           "avgTicket": {
             "value": "+16%",
@@ -424,12 +423,12 @@
           "body": "Chi prenota vuole trovare un buco e concludere in pochi passaggi. Chi gestisce deve sapere chi arriva, quale servizio ha scelto, con quale professionista e come sta andando il business.",
           "closing": "Il prodotto deve semplificare entrambi i lati."
         },
-          "sides": {
-            "eyebrow": "Cosa abbiamo costruito",
-            "customer": {
-              "label": "Prenotare",
-              "status": "Sviluppato",
-              "flow": [
+        "sides": {
+          "eyebrow": "Cosa abbiamo costruito",
+          "customer": {
+            "label": "Prenotare",
+            "status": "Sviluppato",
+            "flow": [
               "Servizio",
               "Professionista",
               "Disponibilità",
@@ -437,10 +436,10 @@
             ],
             "body": "Ridurre le decisioni inutili e rendere immediato trovare un appuntamento disponibile."
           },
-            "business": {
-              "label": "Gestire",
-              "status": "Progettato",
-              "flow": [
+          "business": {
+            "label": "Gestire",
+            "status": "Progettato",
+            "flow": [
               "Agenda",
               "Servizi",
               "Team",
@@ -452,25 +451,25 @@
         },
         "customer": {
           "eyebrow": "Come funziona",
-"heading": "Meno passaggi tra intenzione e appuntamento.",
-      "steps": [
-        "Servizio",
-        "Disponibilità",
-        "Conferma"
-      ],
-      "features": [
-        "Selezione del servizio",
-        "Selezione del professionista",
-        "Calendario e disponibilità",
-        "Modificare o cancellare",
-        "Accesso con account"
-      ],
-      "alts": {
-        "serviceSelection": "Selezione del servizio in Barber Booking, app mobile",
-        "availability": "Calendario di disponibilità per prenotare un appuntamento in Barber Booking",
-        "bookingSummary": "Riepilogo e conferma della prenotazione in Barber Booking"
-      }
-    },
+          "heading": "Meno passaggi tra intenzione e appuntamento.",
+          "steps": [
+            "Servizio",
+            "Disponibilità",
+            "Conferma"
+          ],
+          "features": [
+            "Selezione del servizio",
+            "Selezione del professionista",
+            "Calendario e disponibilità",
+            "Modificare o cancellare",
+            "Accesso con account"
+          ],
+          "alts": {
+            "serviceSelection": "Selezione del servizio in Barber Booking, app mobile",
+            "availability": "Calendario di disponibilità per prenotare un appuntamento in Barber Booking",
+            "bookingSummary": "Riepilogo e conferma della prenotazione in Barber Booking"
+          }
+        },
         "status": {
           "eyebrow": "Stato del prodotto",
           "heading": "In sviluppo.",
@@ -492,107 +491,22 @@
       "titleLine2Accent": "percorso.",
       "support": "Progetti in cui strategia, marketing, design e tecnologia risolvono un problema concreto."
     },
-    "back": "Torna ai lavori"
-  },
-  "servicesPage": {
-    "hero": {
-      "eyebrow": "Servizi",
-      "titleLine1": "Non ti servono più canali.",
-      "titleLine2Prefix": "Ti serve farli lavorare ",
-      "titleLine2Accent": "insieme.",
-      "support": "Attiviamo solo ciò che serve all'obiettivo: strategia, marketing, contenuti, web o software.",
-      "cta": "Inizia un progetto"
-    },
-    "capabilities": {
-      "eyebrow": "Competenze",
-      "title": "Cinque competenze. Uno stesso approccio.",
-      "support": "Growth · Build · Systems — attiviamo solo ciò che serve all'obiettivo.",
-      "principleLabel": "Principio",
-      "list": [
-        {
-          "title": "Strategia digitale",
-          "body": "Definiamo cosa fare, perché farlo e come capire se funziona.",
-          "tags": "Posizionamento · Canali · Roadmap"
-        },
-        {
-          "title": "Paid Media",
-          "body": "Meta e Google collegati con messaggio, creatività e conversione.",
-          "tags": "Meta Ads · Google Ads · Ottimizzazione",
-          "note": "Altri canali quando la strategia lo giustifica."
-        },
-        {
-          "title": "Social e contenuti",
-          "body": "Strategia, produzione e pubblicazione per costruire attenzione e domanda.",
-          "tags": "Contenuti · Reel · Produzione"
-        },
-        {
-          "title": "Web ed esperienze",
-          "body": "Progettiamo e sviluppiamo esperienze chiare, veloci e orientate all'azione.",
-          "tags": "UX/UI · Sviluppo · Conversione"
-        },
-        {
-          "title": "Software e automazione",
-          "body": "Quando uno strumento standard non basta, costruiamo la soluzione giusta.",
-          "tags": "Gestione · Prenotazioni · Automazione",
-          "principle": "Tecnologia quando crea valore."
-        }
-      ]
-    },
-    "system": {
-      "eyebrow": "Il sistema",
-      "title": "Una sfida, la combinazione giusta.",
-      "support": "Non tutti i progetti hanno bisogno di tutto.",
-      "examples": [
-        {
-          "label": "Più clienti",
-          "flow": [
-            "Strategia",
-            "Contenuti",
-            "Meta / Google",
-            "Web",
-            "Conversione"
-          ],
-          "note": "Dall'attenzione a un'azione misurabile."
-        },
-        {
-          "label": "Operatività migliore",
-          "flow": [
-            "Processo",
-            "Software",
-            "Automazione",
-            "Dati"
-          ],
-          "note": "La tecnologia collega il processo."
-        }
-      ]
-    },
-    "collaboration": {
-      "eyebrow": "Collaborazione",
-      "title": "Due modi di lavorare.",
-      "project": {
-        "title": "Progetto",
-        "body": "Per un'esigenza concreta con un obiettivo e un perimetro definiti."
-      },
-      "continuous": {
-        "title": "Collaborazione continuativa",
-        "body": "Per eseguire, misurare e migliorare in modo costante."
-      }
-    },
     "cta": {
-      "titleLine1": "Cosa deve cambiare ",
-      "titleAccent": "perché il tuo business cresca?",
-      "support": "Raccontaci cosa succede. Ti aiutiamo a decidere cosa creare, lanciare o migliorare.",
-      "action": "Inizia un progetto"
-    }
+      "titleLine1": "Vuoi che facciamo ",
+      "titleAccent": "cambiare qualcosa?",
+      "support": "Raccontaci cosa vuoi ottenere e partiamo da lì.",
+      "action": "Contattaci"
+    },
+    "back": "Torna ai lavori"
   },
   "studioPage": {
     "hero": {
       "eyebrow": "Studio",
       "titleLine1": "Digitale, con qualcuno",
       "titleLine2": "dall'altra parte.",
-      "support": "NEXAD unisce marketing e tecnologia perché tu non debba coordinare pezzi, fornitori e decisioni separatamente.",
+      "support": "Marketing e tecnologia, uniti in un'unica direzione.",
       "ctaPrimary": "Come pensiamo",
-      "ctaSecondary": "Inizia un progetto",
+      "ctaSecondary": "Parliamone",
       "location": "Las Palmas · Gran Canaria"
     },
     "why": {
@@ -666,7 +580,7 @@
       "titleLine1": "Se qualcosa nel tuo business dovrebbe funzionare meglio, ",
       "titleAccent": "iniziamo dal capirlo.",
       "support": "Non devi arrivare con la soluzione. Raccontaci cosa vuoi cambiare.",
-      "action": "Inizia un progetto"
+      "action": "Parliamone"
     }
   },
   "contactPage": {
@@ -680,71 +594,23 @@
     "form": {
       "nameLabel": "Nome",
       "namePlaceholder": "Il tuo nome",
+      "surnameLabel": "Cognome",
+      "surnamePlaceholder": "Il tuo cognome",
+      "phoneLabel": "Telefono",
+      "phonePlaceholder": "+39 300 000 0000",
       "emailLabel": "Email",
       "emailPlaceholder": "tu@email.com",
-      "businessLabel": "Business o progetto",
-      "businessPlaceholder": "Come si chiama?",
-      "stageLabel": "A che punto sei?",
-      "stageOptions": [
-        {
-          "value": "new_business",
-          "label": "Sto lanciando una nuova attività"
-        },
-        {
-          "value": "existing_business",
-          "label": "Ho un'attività già avviata"
-        },
-        {
-          "value": "software_product",
-          "label": "Devo sviluppare un prodotto o software"
-        },
-        {
-          "value": "other",
-          "label": "Ho un altro tipo di progetto"
-        }
-      ],
-      "servicesLabel": "Dove pensi che possiamo aiutarti?",
-      "servicesSupport": "Puoi scegliere più di una voce. Se non ti è ancora chiaro, va bene lo stesso.",
-      "servicesOptions": [
-        {
-          "value": "strategy",
-          "label": "Strategia digitale"
-        },
-        {
-          "value": "paid_media",
-          "label": "Paid Media"
-        },
-        {
-          "value": "social_content",
-          "label": "Social e contenuti"
-        },
-        {
-          "value": "web",
-          "label": "Web ed esperienze digitali"
-        },
-        {
-          "value": "software_automation",
-          "label": "Software e automazione"
-        },
-        {
-          "value": "not_sure",
-          "label": "Non mi è ancora chiaro"
-        }
-      ],
       "messageLabel": "Cosa vuoi cambiare?",
-      "messageSupport": "Raccontaci cosa vuoi ottenere, cosa non sta funzionando o quale opportunità vedi.",
+      "messageSupport": "Opzionale: raccontaci cosa vuoi ottenere, cosa non sta funzionando o quale opportunità vedi.",
       "messagePlaceholder": "Per esempio: vogliamo aumentare le prenotazioni dirette, stiamo preparando una nuova apertura, abbiamo bisogno di organizzare meglio gli appuntamenti...",
-      "privacyConsent": "Ho letto l'<policy>Informativa sulla privacy</policy>.",
-      "privacyPolicyLabel": "Informativa sulla privacy",
-      "newsletterConsent": "Desidero ricevere via email novità, offerte e comunicazioni promozionali di NEXAD.",
-      "submit": "Invia il progetto",
+      "privacyConsent": "Ho letto l’<policy>Informativa sulla privacy</policy>.",
+      "submit": "Invia",
       "submitting": "Invio in corso…",
       "errors": {
         "name": "Raccontaci il tuo nome.",
+        "surname": "Raccontaci il tuo cognome.",
+        "phone": "Inserisci un numero di telefono valido.",
         "email": "Inserisci un'email valida.",
-        "business": "Come si chiama il tuo business o progetto?",
-        "stage": "Scegli il tuo punto di partenza.",
-        "message": "Raccontaci cosa vuoi cambiare.",
         "privacyConsent": "Spunta la casella per confermare di aver letto l'Informativa sulla privacy."
       },
       "submitError": "Non siamo riusciti a inviare il messaggio. Riprova."
@@ -794,10 +660,12 @@
     }
   },
   "pages": {
-    "back": "Torna alla home"
+    "back": "Torna alla home",
+    "servicesMoved": "La pagina dei servizi è stata integrata nella home, dove trovi pacchetti, progetti una tantum e web."
   },
   "footer": {
-    "tagline": "Crescita, con ingegneria. Strategia, marketing, contenuti, prodotto e software che lavorano nella stessa direzione.",
+    "tagline": "Crescita, con ingegneria.",
+    "available": "Disponibili per nuovi progetti",
     "location": "Las Palmas · Gran Canaria",
     "nav": "Navigazione",
     "studio": "Studio",

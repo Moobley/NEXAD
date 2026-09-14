@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server"
 
 import { Reveal } from "@/components/ui/reveal"
+import { SignalDot } from "@/components/ui/signal-dot"
 
 export async function StudioNetwork() {
   const t = await getTranslations("studioPage.network")
@@ -28,8 +29,13 @@ export async function StudioNetwork() {
               <p className="max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
                 {t("body")}
               </p>
-              <p className="mt-8 font-mono text-[11px] uppercase tracking-[0.18em] text-foreground/70">
-                {examples.join(" · ")}
+              <p className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-[11px] uppercase tracking-[0.18em] text-foreground/70">
+                {examples.map((example, i) => (
+                  <span key={example} className="flex items-center gap-3">
+                    {i > 0 && <SignalDot size="sm" />}
+                    {example}
+                  </span>
+                ))}
               </p>
             </Reveal>
           </div>

@@ -8,10 +8,6 @@
       "title": "NEXAD — Digital Studio in Las Palmas · Marketing, Web & Software",
       "description": "Digital studio based in Las Palmas de Gran Canaria connecting marketing and software as one growth system: strategy, content, web experiences and automation."
     },
-    "services": {
-      "title": "Services — NEXAD · Digital strategy, web & automation",
-      "description": "Digital strategy, paid media, social and content, web experiences, software and automation, aligned with each project's real objectives."
-    },
     "studio": {
       "title": "Studio — NEXAD",
       "description": "NEXAD is a digital studio with a core team and a network of specialists connecting strategy, marketing, content, product and software."
@@ -27,7 +23,7 @@
     "projects": {
       "corazon": {
         "title": "Corazón Napoletano — Client Work | NEXAD",
-        "description": "Project for Corazón Napoletano in Las Palmas: identity, web, content, production and paid media. Project-specific result: +49.1% average weekly revenue."
+        "description": "Project for Corazón Napoletano in Las Palmas: identity, web, content, production and paid media. Project-specific result: +49.1% average revenue."
       },
       "barber": {
         "title": "Barber Booking — NEXAD Lab",
@@ -47,23 +43,26 @@
     "services": "Services",
     "studio": "Studio",
     "contact": "Contact",
-    "cta": "Start a project",
+    "cta": "Let's talk",
+    "contactUs": "Contact us",
     "menuOpen": "Open menu",
     "menuClose": "Close menu",
     "skip": "Skip to content",
     "primary": "Primary navigation"
+  },
+  "whatsapp": {
+    "label": "Contact us on WhatsApp",
+    "message": "Hello NEXAD, I'd like more information."
   },
   "language": {
     "label": "Change language"
   },
   "home": {
     "hero": {
-      "meta": "Strategy · Marketing · Technology",
-      "coords": "28.1° N — 15.4° W",
-      "titleLine1": "Growth,",
-      "titleLine2": "engineered.",
-      "support": "A studio where marketing and software are designed together: strategy, product, content and technology aligned from the first move.",
-      "ctaPrimary": "Start a project",
+      "titleLine1": "Marketing that converts,",
+      "titleLine2": "software that scales.",
+      "support": "Strategy, acquisition and technology in one team.",
+      "ctaPrimary": "Let's talk",
       "ctaSecondary": "See results"
     },
     "capabilities": {
@@ -121,7 +120,7 @@
             {
               "title": "Growth",
               "eyebrow": "Complete presence",
-              "description": "For established venues that want a more polished and consistent digital presence, supported by Google Business Profile management and advertising campaigns focused on visibility and customer acquisition.",
+              "description": "For those who want a more polished and consistent digital presence, supported by Google Business Profile management and advertising campaigns focused on visibility and customer acquisition.",
               "features": [
                 "3 reels / vertical videos per month",
                 "2 photo posts per month",
@@ -139,7 +138,7 @@
               "title": "Sala Llena",
               "eyebrow": "Complete system",
               "badge": "Recommended",
-              "description": "For restaurant owners who want a complete marketing system where visibility, customer acquisition, bookings, delivery and menu profitability work together.",
+              "description": "For those who want a complete marketing system where visibility, customer acquisition, bookings, delivery and menu profitability work together.",
               "features": [
                 "Instagram profile management",
                 "3 reels / vertical videos per month",
@@ -172,7 +171,7 @@
               ]
             },
             {
-              "title": "Radiografía del local",
+              "title": "Venue diagnostic",
               "description": "A strategic analysis of margins, food cost and profitability designed to identify the venue's highest-priority opportunities for improvement.",
               "features": [
                 "Real food cost of the main dishes",
@@ -263,7 +262,7 @@
       "titlePrefix": "What is your ",
       "titleAccent": "goal",
       "titleSuffix": "?",
-      "action": "Start a project"
+      "action": "Let's talk"
     }
   },
   "projects": {
@@ -277,7 +276,7 @@
       "support": "Identity, content, menu, venue, website and acquisition planned at the same time.",
       "scope": "Identity · Content · Menu + Upselling · QR · Website · Acquisition",
       "resultAmount": "+49.1%",
-      "resultLabel": "Average weekly revenue",
+      "resultLabel": "Average revenue",
       "cta": "View case study",
       "brandLabel": "Identity & applications",
       "contentLabel": "Content",
@@ -368,7 +367,7 @@
         "metrics": {
           "weeklyRevenue": {
             "value": "+49.1%",
-            "label": "Average weekly revenue"
+            "label": "Average revenue"
           },
           "avgTicket": {
             "value": "+16%",
@@ -424,12 +423,12 @@
           "body": "The person booking wants to find a slot and finish in a few steps. The person managing needs to know who's coming, which service they chose, with which professional and how the business is doing.",
           "closing": "The product has to simplify both sides."
         },
-          "sides": {
-            "eyebrow": "What we built",
-            "customer": {
-              "label": "Booking",
-              "status": "Developed",
-              "flow": [
+        "sides": {
+          "eyebrow": "What we built",
+          "customer": {
+            "label": "Booking",
+            "status": "Developed",
+            "flow": [
               "Service",
               "Professional",
               "Availability",
@@ -437,10 +436,10 @@
             ],
             "body": "Reduce unnecessary decisions and make finding an available slot immediate."
           },
-            "business": {
-              "label": "Managing",
-              "status": "Designed",
-              "flow": [
+          "business": {
+            "label": "Managing",
+            "status": "Designed",
+            "flow": [
               "Schedule",
               "Services",
               "Team",
@@ -452,25 +451,25 @@
         },
         "customer": {
           "eyebrow": "How it works",
-"heading": "Fewer steps between intent and appointment.",
-      "steps": [
-        "Service",
-        "Availability",
-        "Confirmation"
-      ],
-      "features": [
-        "Service selection",
-        "Professional selection",
-        "Calendar and availability",
-        "Modify or cancel",
-        "Account access"
-      ],
-      "alts": {
-        "serviceSelection": "Service selection in Barber Booking, mobile app",
-        "availability": "Availability calendar for booking an appointment in Barber Booking",
-        "bookingSummary": "Booking summary and confirmation in Barber Booking"
-      }
-    },
+          "heading": "Fewer steps between intent and appointment.",
+          "steps": [
+            "Service",
+            "Availability",
+            "Confirmation"
+          ],
+          "features": [
+            "Service selection",
+            "Professional selection",
+            "Calendar and availability",
+            "Modify or cancel",
+            "Account access"
+          ],
+          "alts": {
+            "serviceSelection": "Service selection in Barber Booking, mobile app",
+            "availability": "Availability calendar for booking an appointment in Barber Booking",
+            "bookingSummary": "Booking summary and confirmation in Barber Booking"
+          }
+        },
         "status": {
           "eyebrow": "Product status",
           "heading": "In development.",
@@ -492,107 +491,22 @@
       "titleLine2Accent": "thinking.",
       "support": "Projects where strategy, marketing, design and technology solve a concrete problem."
     },
-    "back": "Back to work"
-  },
-  "servicesPage": {
-    "hero": {
-      "eyebrow": "Services",
-      "titleLine1": "You don't need more channels.",
-      "titleLine2Prefix": "You need them working ",
-      "titleLine2Accent": "together.",
-      "support": "We activate only what the objective needs: strategy, marketing, content, web or software.",
-      "cta": "Start a project"
-    },
-    "capabilities": {
-      "eyebrow": "Capabilities",
-      "title": "Five capabilities. One approach.",
-      "support": "Growth · Build · Systems — we activate only what the objective needs.",
-      "principleLabel": "Principle",
-      "list": [
-        {
-          "title": "Digital strategy",
-          "body": "We define what to do, why it matters and how to know if it's working.",
-          "tags": "Positioning · Channels · Roadmap"
-        },
-        {
-          "title": "Paid Media",
-          "body": "Meta and Google connected with message, creative and conversion.",
-          "tags": "Meta Ads · Google Ads · Optimisation",
-          "note": "Other channels when the strategy justifies them."
-        },
-        {
-          "title": "Social & content",
-          "body": "Strategy, production and publishing to build attention and demand.",
-          "tags": "Content · Reels · Production"
-        },
-        {
-          "title": "Web & experiences",
-          "body": "We design and build clear, fast, action-oriented experiences.",
-          "tags": "UX/UI · Development · Conversion"
-        },
-        {
-          "title": "Software & automation",
-          "body": "When a standard tool isn't enough, we build the right solution.",
-          "tags": "Management · Booking · Automation",
-          "principle": "Technology when it creates value."
-        }
-      ]
-    },
-    "system": {
-      "eyebrow": "The system",
-      "title": "One challenge, the right combination.",
-      "support": "Not every project needs everything.",
-      "examples": [
-        {
-          "label": "More customers",
-          "flow": [
-            "Strategy",
-            "Content",
-            "Meta / Google",
-            "Web",
-            "Conversion"
-          ],
-          "note": "From attention to a measurable action."
-        },
-        {
-          "label": "Better operations",
-          "flow": [
-            "Process",
-            "Software",
-            "Automation",
-            "Data"
-          ],
-          "note": "Technology connects the process."
-        }
-      ]
-    },
-    "collaboration": {
-      "eyebrow": "Collaboration",
-      "title": "Two ways to work.",
-      "project": {
-        "title": "Project",
-        "body": "For a concrete need with a defined objective and scope."
-      },
-      "continuous": {
-        "title": "Ongoing collaboration",
-        "body": "To execute, measure and improve consistently."
-      }
-    },
     "cta": {
-      "titleLine1": "What needs to change ",
-      "titleAccent": "for your business to grow?",
-      "support": "Tell us what's going on. We'll help you decide what to create, launch or improve.",
-      "action": "Start a project"
-    }
+      "titleLine1": "Want us to ",
+      "titleAccent": "make something change?",
+      "support": "Tell us what you want to achieve and we'll start from there.",
+      "action": "Contact us"
+    },
+    "back": "Back to work"
   },
   "studioPage": {
     "hero": {
       "eyebrow": "Studio",
       "titleLine1": "Digital, with someone",
       "titleLine2": "on the other side.",
-      "support": "NEXAD connects marketing and technology so you don't have to coordinate separate pieces, suppliers and decisions.",
+      "support": "Marketing and technology, moving in one direction.",
       "ctaPrimary": "How we think",
-      "ctaSecondary": "Start a project",
+      "ctaSecondary": "Let's talk",
       "location": "Las Palmas · Gran Canaria"
     },
     "why": {
@@ -666,7 +580,7 @@
       "titleLine1": "If something in your business should be working better, ",
       "titleAccent": "let's start by understanding it.",
       "support": "You don't need to arrive with the solution. Tell us what you want to change.",
-      "action": "Start a project"
+      "action": "Let's talk"
     }
   },
   "contactPage": {
@@ -680,71 +594,23 @@
     "form": {
       "nameLabel": "Name",
       "namePlaceholder": "Your name",
+      "surnameLabel": "Surname",
+      "surnamePlaceholder": "Your surname",
+      "phoneLabel": "Phone",
+      "phonePlaceholder": "+34 600 000 000",
       "emailLabel": "Email",
       "emailPlaceholder": "you@email.com",
-      "businessLabel": "Business or project",
-      "businessPlaceholder": "What's it called?",
-      "stageLabel": "Where are you now?",
-      "stageOptions": [
-        {
-          "value": "new_business",
-          "label": "I'm launching a new business"
-        },
-        {
-          "value": "existing_business",
-          "label": "I have an existing business"
-        },
-        {
-          "value": "software_product",
-          "label": "I need to build a product or software"
-        },
-        {
-          "value": "other",
-          "label": "I have another type of project"
-        }
-      ],
-      "servicesLabel": "Where do you think we can help?",
-      "servicesSupport": "Choose as many as you need. If you're not sure yet, that's fine too.",
-      "servicesOptions": [
-        {
-          "value": "strategy",
-          "label": "Digital strategy"
-        },
-        {
-          "value": "paid_media",
-          "label": "Paid Media"
-        },
-        {
-          "value": "social_content",
-          "label": "Social & content"
-        },
-        {
-          "value": "web",
-          "label": "Web & digital experiences"
-        },
-        {
-          "value": "software_automation",
-          "label": "Software & automation"
-        },
-        {
-          "value": "not_sure",
-          "label": "I'm not sure yet"
-        }
-      ],
       "messageLabel": "What do you want to change?",
-      "messageSupport": "Tell us what you want to achieve, what's not working or what opportunity you see.",
+      "messageSupport": "Optional: tell us what you want to achieve, what's not working or what opportunity you see.",
       "messagePlaceholder": "For example: we want more direct bookings, we're preparing a new opening, we need a better appointment system...",
       "privacyConsent": "I have read the <policy>Privacy Policy</policy>.",
-      "privacyPolicyLabel": "Privacy Policy",
-      "newsletterConsent": "I would like to receive news, offers and marketing communications from NEXAD by email.",
-      "submit": "Send your project",
+      "submit": "Send",
       "submitting": "Sending…",
       "errors": {
         "name": "Tell us your name.",
+        "surname": "Tell us your surname.",
+        "phone": "Enter a valid phone number.",
         "email": "Enter a valid email.",
-        "business": "What's your business or project called?",
-        "stage": "Choose where you are right now.",
-        "message": "Tell us what you want to change.",
         "privacyConsent": "Please tick the box to confirm you have read the Privacy Policy."
       },
       "submitError": "We couldn't send your message. Please try again."
@@ -794,10 +660,12 @@
     }
   },
   "pages": {
-    "back": "Back to home"
+    "back": "Back to home",
+    "servicesMoved": "The services page has been folded into the home page, where you'll find the packages, one-off projects and web."
   },
   "footer": {
-    "tagline": "Growth, engineered. Strategy, marketing, content, product and software working in the same direction.",
+    "tagline": "Growth, engineered.",
+    "available": "Available for new projects",
     "location": "Las Palmas · Gran Canaria",
     "nav": "Navigation",
     "studio": "Studio",

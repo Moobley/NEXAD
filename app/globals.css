@@ -367,7 +367,7 @@
     opacity: 1;
     width: 1rem;
     margin-inline-start: 0.75rem;
-    transform: translateX(0) scale(1);
+    transform: translateX(3px) scale(1);
   }
 
   /* Pointer intent. Scoped to hover-capable devices so touch taps never
@@ -380,7 +380,7 @@
       opacity: 1;
       width: 1rem;
       margin-inline-start: 0.75rem;
-      transform: translateX(0) scale(1);
+      transform: translateX(3px) scale(1);
     }
   }
 
@@ -400,6 +400,22 @@
     width: 0;
     margin-inline-start: 0;
     transform: translateX(-5px) scale(0.85);
+  }
+
+  /* Signal sweep — a title accent word (serif italic) blushes to Signal on
+     intent. Scoped to headings so only editorial accents are affected. */
+  @media (hover: hover) {
+    h1 em.font-serif,
+    h2 em.font-serif,
+    h3 em.font-serif {
+      transition: color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    h1:hover em.font-serif,
+    h2:hover em.font-serif,
+    h3:hover em.font-serif {
+      color: var(--color-signal);
+    }
   }
 
   /* Aurora background: two large gradient layers of soft pastel light.
@@ -526,6 +542,50 @@
   animation: fade-up-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
+/* Services marquee — a quiet mono strip of the capabilities separated by
+   Signal dots. Pure CSS scroll; the track is duplicated for a seamless loop. */
+.marquee {
+  overflow: hidden;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 36s linear infinite;
+}
+
+/* Slower variant for the home proof strip. */
+.marquee-slow .marquee-track {
+  animation-duration: 60s;
+}
+
+.marquee-group {
+  display: flex;
+  align-items: center;
+}
+
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.1rem 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+  white-space: nowrap;
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-fade-up-in {
     animation: none;
@@ -547,6 +607,11 @@
   .cta-forward {
     transition: none;
     transform: none !important;
+  }
+
+  /* Marquee: static strip, no scroll. */
+  .marquee-track {
+    animation: none;
   }
 }
 
@@ -642,10 +707,6 @@
   animation: gateway-wordmark-settle 0.45s ease 2.7s both;
 }
 
-.gateway-intro .gateway-descriptor {
-  animation: gateway-settle-in 0.5s ease 3.05s both;
-}
-
 .gateway-intro .gateway-langs {
   animation: gateway-settle-in 0.5s ease 3.2s both;
 }
@@ -680,7 +741,6 @@
   animation: gateway-exit-stage 0.42s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.gateway-exit .gateway-descriptor,
 .gateway-exit .gateway-langs {
   animation: gateway-exit-fade 0.3s ease forwards;
 }
@@ -877,7 +937,6 @@
   .gateway-intro .gateway-d-ring,
   .gateway-intro .gateway-nexa,
   .gateway-intro .gateway-wordmark,
-  .gateway-intro .gateway-descriptor,
   .gateway-intro .gateway-langs,
   .gateway-intro .gateway-forward,
   .gateway-intro .gateway-launch-ring,
@@ -885,7 +944,6 @@
   .gateway:has(.gateway-langs a:focus-visible) .gateway-forward,
   .gateway-exit .gateway-d-group,
   .gateway-exit .gateway-stage,
-  .gateway-exit .gateway-descriptor,
   .gateway-exit .gateway-langs {
     animation: none !important;
   }

@@ -7,6 +7,7 @@ import { routing } from "@/i18n/routing"
 import { organizationSchema } from "@/lib/seo"
 import { SiteHeader } from "@/components/layout/site-header"
 import { SiteFooter } from "@/components/layout/site-footer"
+import { WhatsAppFloat } from "@/components/layout/whatsapp-float"
 import { CookieConsentProvider } from "@/components/consent/consent-provider"
 import { CookieBanner } from "@/components/consent/cookie-banner"
 import { CookiePreferencesModal } from "@/components/consent/cookie-preferences-modal"
@@ -86,6 +87,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             <SiteHeader />
             <main id="main">{children}</main>
             <SiteFooter />
+            <WhatsAppFloat />
             <GoogleConsentManager />
             <MetaPixel />
             <CookieBanner />

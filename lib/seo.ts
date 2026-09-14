@@ -193,41 +193,6 @@ export function organizationSchema() {
 }
 
 /**
- * Services structured data, emitted on the Services page. Describes the
- * studio as a ProfessionalService with the five capabilities as an offer
- * catalog, sourced from the same messages the page renders. The URL is
- * locale-aware (localePrefix "always"), the provider references the
- * Organization node by @id, and no market area is invented.
- */
-export function servicesSchema(
-  locale: string,
-  services: Array<{ name: string; description: string }>
-) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "@id": entityId("professional-service"),
-    name: SITE_NAME,
-    url: siteUrl(localizedPathname(locale, "/services")),
-    inLanguage: locale,
-    provider: { "@id": entityId("organization") },
-    hasOfferCatalog: {
-      "@type": "OfferCatalog",
-      name: "NEXAD services",
-      itemListElement: services.map((service, index) => ({
-        "@type": "Offer",
-        position: index + 1,
-        itemOffered: {
-          "@type": "Service",
-          name: service.name,
-          description: service.description,
-        },
-      })),
-    },
-  }
-}
-
-/**
  * Assembles page metadata: robots policy, absolute canonical, reciprocal
  * hreflang (es / en / it + x-default), Open Graph and Twitter cards.
  *

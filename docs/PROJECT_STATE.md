@@ -48,22 +48,16 @@ large structured company.
 
 - `next.config.ts`: `output: "export"`, `trailingSlash: true`,
   `images.unoptimized: true`, `basePath` from `NEXT_PUBLIC_BASE_PATH`.
-- Local/dev: empty basePath. GitHub Pages: `NEXT_PUBLIC_BASE_PATH=/NEXAD`
-  injected at build. `/NEXAD` is never hardcoded in components (use
-  `asset()`/`@/i18n/navigation`).
+- Local/dev and production: empty basePath. A prefixed preview
+  (`NEXT_PUBLIC_BASE_PATH=/NEXAD`) is possible but nothing drives it. `/NEXAD`
+  is never hardcoded in components (use `asset()`/`@/i18n/navigation`).
 - Two root layouts: `app/(gateway)/` (the `/` Gateway, own `<html>/<body>`,
   carbon, no site header/footer) and `app/[locale]/` (localized site with
   header/footer).
-- Deploy: two separate GitHub Actions workflows, environments switched by env
-  vars only:
-  - **Preview (current, automatic):** GitHub Pages
-    `https://moobley.github.io/NEXAD/` (origin `https://moobley.github.io`,
-    basePath `/NEXAD`, noindex) via `deploy.yml` on push to `master`.
-  - **Production (Aruba static hosting via FTPS, manual):**
-    `https://www.nexadlab.com/` (canonical origin, empty basePath). The static
-    export `out/` is uploaded to Aruba via `deploy-aruba.yml`
-    (`workflow_dispatch` only). The first deployment is noindex with the
-    contact form off; indexing/form activation are explicit go-live steps.
+- Deploy: **no CI/CD, no GitHub Actions.** The production build is done locally
+  with `npm run build` (reads `.env.production`), then the contents of `out/`
+  are uploaded manually to Aruba via FileZilla. Environments are switched by
+  env vars only.
 
 ## Gateway
 
@@ -92,12 +86,11 @@ The root `/` is an intentional Gateway, not a localized homepage.
 Environment-driven foundation via `lib/seo.ts`:
 
 - `NEXT_PUBLIC_SITE_ORIGIN` — public origin (scheme + host, no basePath).
-  Preview: `https://moobley.github.io`; canonical production origin:
-  `https://www.nexadlab.com`.
+  Canonical production origin: `https://www.nexadlab.com`.
 - `NEXT_PUBLIC_SITE_INDEXABLE` — `"true"` enables index/follow; anything else
   (default) produces `noindex, follow`.
-- `NEXT_PUBLIC_BASE_PATH` — deployment prefix (GitHub Pages `/NEXAD`; production
-  empty).
+- `NEXT_PUBLIC_BASE_PATH` — deployment prefix (production empty; a prefixed
+  `/NEXAD` preview is possible but nothing drives it).
 
 Implementation:
 
@@ -128,14 +121,10 @@ non-indexable development builds.
 
 ## Current deployment
 
-- **Preview (live, GitHub Pages):** `https://moobley.github.io/NEXAD/`
-  intentionally **noindex** (`NEXT_PUBLIC_SITE_INDEXABLE=false` in the deploy
-  workflow) and the contact form is off. The sitemap is generated (22 URLs)
-  but not advertised while noindex and not submitted to Search Console.
 - **Production (Aruba, not live):** `https://www.nexadlab.com/` — canonical
-  origin decided; hosted as a static export on Aruba via FTPS
-  (`deploy-aruba.yml`, manual `workflow_dispatch` only). DNS/custom domain
-  not connected yet; the first deployment is **noindex** with the contact
+  origin decided; hosted as a static export on Aruba. The `out/` directory is
+  built locally and uploaded manually via FileZilla (no CI/CD). DNS/custom
+  domain not connected yet; the build is kept **noindex** with the contact
   form **disabled**; indexing and form activation are explicit go-live steps.
 
 ## Current page architecture
@@ -189,11 +178,11 @@ Pages were editorially compressed; do not re-expand without reason.
 - Anti-spam for the first release is the Formspree `_gotcha` honeypot already
   implemented in the form; no CAPTCHA is added. Re-evaluate anti-spam only if
   real spam requires it.
-- Fields: name, email, business/project, business stage (new opening /
-  existing / software product / other), optional multiple services, message.
-  No budget, timing or phone.
-- States: loading, success, error. The form collects an optional, un-checked
-  newsletter consent (separate from cookie advertising consent), per D-029.
+- Fields: first name, surname, phone (mobile), email (all required), plus an
+  optional free-text message and a mandatory Privacy Policy consent checkbox.
+  No budget, timing, business/project or services fields.
+- States: loading, success, error. No newsletter/marketing consent is
+  collected (the optional newsletter checkbox was removed).
 
 ## Legal / privacy
 
@@ -202,14 +191,16 @@ Pre-launch state — legal production setup is not complete.
 - No public Privacy Policy / Legal Notice exists (intentionally: no
   placeholder or invented legal pages).
 - The public NEXAD email is decided: `nexadlab@gmail.com` (the Formspree
-  recipient, configured in the Formspree dashboard). No public WhatsApp
-  exists; no calendar-booking product (calls are arranged manually through
-  direct messaging).
+  recipient, configured in the Formspree dashboard). The public WhatsApp
+  channel is decided: `+34 610 77 51 40` (`34610775140`), shown via the
+  floating WhatsApp button on every localized page; no calendar-booking
+  product (calls are arranged manually through direct messaging).
 - Contact collection is disabled by default; production activation is blocked
   until the legal/contact prerequisites are met (TODO 6B).
 - Missing real-world prerequisites: legal operator/controller identity,
-  publishable professional/service address, and a dedicated WhatsApp channel
-  if desired.
+  publishable professional/service address, and the contact form's mandatory
+  Privacy Policy consent checkbox references PDFs under `public/legal/` that
+  are still pending.
 - No newsletter/marketing consent is currently collected.
 
 ## Retention (future policy)

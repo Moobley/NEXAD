@@ -201,10 +201,8 @@ export function Services() {
                                     >
                                       <span
                                         aria-hidden
-                                        className="shrink-0 text-muted-foreground/60"
-                                      >
-                                        —
-                                      </span>
+                                        className="mt-2.5 size-1.5 shrink-0 rounded-full border border-signal"
+                                      />
                                       <span>{feature}</span>
                                     </li>
                                   ))}

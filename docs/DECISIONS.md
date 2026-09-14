@@ -372,10 +372,8 @@ replacing the previous lilac/iris identity with the Carbon/Ivory/Signal system.
   favicon = Forward D mark, package name `nexad-digital-studio`, messages
   and public copy NEXAD-native (Growth/Build/Systems vocabulary, tagline where
   it has hierarchy).
-- Deployment: GitHub Pages basePath moved to `/NEXAD` in `deploy.yml`
-  (matches the renamed `Moobley/NEXAD` repository). Still env-driven
-  (`NEXT_PUBLIC_BASE_PATH`); a custom domain uses an empty basePath without
-  code changes.
+- Deployment: a prefixed preview would use `NEXT_PUBLIC_BASE_PATH=/NEXAD`
+  (still env-driven); production uses an empty basePath.
 - Case facts preserved: Corazón `+20%` stays project-specific; Barber remains
   NEXAD Lab (no clients/users/metrics).
 
@@ -456,15 +454,15 @@ object, so the intro now starts from the D.
 
 **Decision**
 The canonical production origin of NEXAD is `https://www.nexadlab.com`
-(`www.nexadlab.com` is the canonical version). It is NOT live yet. The GitHub
-Pages deployment `https://moobley.github.io/NEXAD/` stays active as a
-temporary PRE-LAUNCH preview, built with `NEXT_PUBLIC_SITE_ORIGIN=https://moobley.github.io`,
-`NEXT_PUBLIC_BASE_PATH=/NEXAD`, `NEXT_PUBLIC_SITE_INDEXABLE=false`.
+(`www.nexadlab.com` is the canonical version). It is NOT live yet.
+
+> **Superseded by D-030 (revised):** the GitHub Pages preview was removed along
+> with the deploy workflows. There is now a single production environment —
+> local `npm run build` → manual FileZilla upload to Aruba. No CI/CD.
 
 **Why**
 Fix a single canonical origin for production (empty basePath, indexable only
-at go-live) while the GitHub Pages preview keeps serving the pre-launch site
-as noindex. The two environments are switched by env vars only.
+at go-live). Environments are switched by env vars only.
 
 **Do not**
 Connect the custom domain, create a `CNAME`, change DNS, or enable indexing
@@ -476,12 +474,13 @@ before the explicit go-live step.
 An indexable build (`NEXT_PUBLIC_SITE_INDEXABLE=true`) is only allowed with
 `NEXT_PUBLIC_SITE_ORIGIN` exactly `https://www.nexadlab.com` (after
 trailing-slash normalization) AND an empty `NEXT_PUBLIC_BASE_PATH`. The build
-fails otherwise. Non-indexable environments (GitHub Pages preview, localhost)
+fails otherwise. Non-indexable environments (prefixed preview, localhost)
 keep the existing permissive behaviour.
 
 **Why**
 Supersedes the generic fail-closed rule in D-022 with a hard pin: it makes an
-indexable build on the GitHub Pages origin or under `/NEXAD` impossible by
+indexable build under a prefixed `/NEXAD` path or a non-production origin
+impossible by
 construction, preventing accidental production indexing of the preview.
 
 **Do not**
@@ -547,39 +546,33 @@ Prepare the site to be GDPR + LSSI-compliant structurally while the real legal
 PDFs and tag IDs are still pending; tracking must never start before an
 explicit choice, and the site must keep working with no tag IDs configured.
 
+The Meta Pixel ID (`1009835142128506`) is now configured
+(`NEXT_PUBLIC_META_PIXEL_ID`, set in `.env.production` and passed through both
+deploy workflows); Google Ads remains unconfigured until its ID is decided.
+
 **Do not**
 Write legal documents, invent IDs/addresses/tax data, hardcode `{locale}` in
 legal PDF paths, add a paid CMP (Cookiebot/OneTrust…), load advertising
 scripts before consent, or tie the newsletter opt-in to cookie advertising
 consent.
 
-## D-030 — Production hosting: Aruba static hosting via FTPS, separate workflow
+## D-030 — Production hosting: Aruba static hosting, manual FileZilla upload
 
 **Decision**
-Production is hosted as a static export on Aruba (not GitHub Pages). A
-separate manual workflow `deploy-aruba.yml` (`workflow_dispatch` only — never
-on push) builds the site with `NEXT_PUBLIC_SITE_ORIGIN=https://www.nexadlab.com`
-and an empty `NEXT_PUBLIC_BASE_PATH`, verifies `out/`, runs the static SEO
-verifier, and uploads only the contents of `out/` via FTPS. Credentials are
-GitHub Actions Secrets (`ARUBA_FTP_USERNAME`, `ARUBA_FTP_PASSWORD`); server,
-port, protocol and remote directory are GitHub Actions Variables
-(`ARUBA_FTP_SERVER`, `ARUBA_FTP_PORT`, `ARUBA_FTP_PROTOCOL`,
-`ARUBA_FTP_SERVER_DIR`). FTPS is preferred over unencrypted FTP. The upload
-action is SHA-pinned to a stable release and never uses
-`dangerous-clean-slate`, so nothing already on the hosting space is deleted.
-The GitHub Pages workflow (`deploy.yml`) is unchanged and remains the
-temporary preview.
+Production is hosted as a static export on Aruba (not GitHub Pages). The
+production build is done **locally** with `npm run build` (which reads
+`.env.production`), then the contents of `out/` are uploaded **manually via
+FileZilla**. There is **no CI/CD** and no GitHub Actions workflow; the
+`deploy-aruba.yml` / `deploy.yml` workflows were removed.
 
 **Why**
-Two separate deployments keep the preview independent from production; a
-manual trigger means no production publish until the go-live is explicitly
-approved; configurable protocol/port/server-dir match the hosting plan;
-fail-closed validation prevents accidental uploads to the wrong directory.
+The operator prefers a direct local build + manual upload; no GitHub Actions
+Secrets/Variables are involved. Keeping stale workflow files would only cause
+wasted work and confusion.
 
 **Do not**
-Replace the GitHub Pages workflow, trigger Aruba deploys on push, hardcode
-FTP credentials or the FTP host in the repository, enable
-`dangerous-clean-slate`/equivalent cleanups, or upload anything outside `out/`.
+Reintroduce GitHub Actions deploy workflows (GitHub Pages or Aruba), hardcode
+FTP credentials/host in the repository, or upload anything outside `out/`.
 
 ## D-031 — Public NEXAD email decided: nexadlab@gmail.com
 

@@ -14,14 +14,6 @@ export function GrowthSystemVisual() {
         aria-hidden="true"
         className="h-auto w-full select-none"
       >
-        <text
-          x="0"
-          y="20"
-          className="fill-obsidian/55 font-mono text-[10px] tracking-[0.25em]"
-        >
-          SYSTEM / 001
-        </text>
-
         <line
           x1="16"
           y1="124"

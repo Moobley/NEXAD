@@ -4,8 +4,8 @@ import { Link } from "@/i18n/navigation"
 import { Reveal } from "@/components/ui/reveal"
 import { ForwardMark } from "@/components/ui/forward-mark"
 
-export async function ServicesCta() {
-  const t = await getTranslations("servicesPage.cta")
+export async function WorkCta() {
+  const t = await getTranslations("workPage.cta")
 
   return (
     <section className="surface-obsidian">

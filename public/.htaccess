@@ -1,0 +1,27 @@
+# NEXAD — cache rules for Aruba Linux (Apache).
+
+# Two families of files behave differently:
+#
+# 1) _next/static/*  -> FINGERPRINTED by Next.js. The name contains a hash that
+#    changes on every rebuild, so a new deploy publishes new URLs and old files
+#    are simply no longer referenced. These are the ONLY files safe to cache
+#    for a long time.
+#
+# 2) Everything else  -> STABLE names (HTML pages, and the images under public/
+#    e.g. projects/corazon/logoCN.webp). When you overwrite one, the URL does
+#    NOT change, so a long cache would keep serving the old version. These must
+#    stay fresh.
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # Tag fingerprinted build assets as safe for long caching.
+  RewriteRule ^_next/static/ - [E=HASHED_ASSET:1]
+</IfModule>
+
+<IfModule mod_headers.c>
+  # Default: keep everything fresh (no aggressive caching).
+  Header set Cache-Control "no-cache, must-revalidate"
+
+  # Fingerprinted assets only: cache 1 year (safe — names change each build).
+  Header set Cache-Control "public, max-age=31536000, immutable" env=HASHED_ASSET
+</IfModule>

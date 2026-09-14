@@ -3,11 +3,11 @@ import { getTranslations } from "next-intl/server"
 import { Link } from "@/i18n/navigation"
 import { Logo } from "@/components/layout/logo"
 import { CookieSettingsButton } from "@/components/consent/cookie-settings-button"
+import { SignalDot } from "@/components/ui/signal-dot"
 import { asset } from "@/lib/asset"
 
 const NAV_ITEMS = [
   { href: "/work", key: "work" },
-  { href: "/services", key: "services" },
   { href: "/studio", key: "studio" },
   { href: "/contact", key: "contact" },
 ] as const
@@ -27,6 +27,10 @@ export async function SiteFooter() {
             </p>
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-muted-foreground">
               {t("tagline")}
+            </p>
+            <p className="mt-6 flex items-center gap-2.5 font-mono text-[11px] uppercase tracking-[0.25em] text-stone">
+              <SignalDot size="sm" />
+              {t("available")}
             </p>
           </div>
 
@@ -74,7 +78,7 @@ export async function SiteFooter() {
               {t("legal")}
             </a>
             <a
-              href={asset("/legal/privacy-policy.pdf")}
+              href={asset("/legal/privacy.pdf")}
               target="_blank"
               rel="noopener noreferrer"
               className="interactive-link font-mono text-[11px] tracking-[0.15em]"

@@ -126,10 +126,7 @@ export const corazonMetricGroups: CorazonMetricGroup[] = [
 ]
 
 /**
- * TODO: replace with final restaurant plan name
- *
- * The name of the restaurant plan chosen by Corazón Napoletano is not decided
- * yet. It is injected into the case-study result line; update this constant
- * once the name is final (do not invent a commercial name).
+ * The restaurant plan chosen by Corazón Napoletano ("Sala Llena").
+ * Injected into the case-study result line.
  */
-export const CORAZON_PLAN_NAME = "TODO: replace with final restaurant plan name"
+export const CORAZON_PLAN_NAME = "Sala Llena"

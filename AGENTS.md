@@ -106,48 +106,38 @@ Do not recreate `public/index.html`.
 
 `NEXT_PUBLIC_BASE_PATH` controls the deployment prefix.
 
-Local development:
+Local development and production (Aruba):
 
 `NEXT_PUBLIC_BASE_PATH=""`
-
-GitHub Pages:
-
-`NEXT_PUBLIC_BASE_PATH="/NEXAD"`
-
-Production (Aruba):
-
-`NEXT_PUBLIC_BASE_PATH=""` (see `deploy-aruba.yml`)
 
 Never hardcode `/NEXAD` in components or content.
 
 ## Environments
 
-Two environments exist. The architecture moves between them with env vars
-only (no code changes):
+One live environment exists, plus optional local previews, switched with env
+vars only (no code changes):
 
-- **PREVIEW (current, GitHub Pages):** `https://moobley.github.io/NEXAD/`.
-  Origin `https://moobley.github.io`, basePath `/NEXAD`, always noindex
-  (`NEXT_PUBLIC_SITE_INDEXABLE=false`), contact form disabled. Pre-launch site.
-- **PRODUCTION (Aruba static hosting via FTPS, first release pre-go-live):**
-  `https://www.nexadlab.com/`. Origin `https://www.nexadlab.com` (canonical),
-  empty basePath; the static export `out/` is uploaded to Aruba via the
-  manual `deploy-aruba.yml` workflow. For the first deployment it stays
-  noindex (`NEXT_PUBLIC_SITE_INDEXABLE=false`) and the contact form stays
-  disabled (`NEXT_PUBLIC_CONTACT_FORM_ENABLED=false`); indexing and form
-  activation are explicit go-live steps. Do NOT connect the custom domain,
-  create a `CNAME`, change DNS or enable indexing yet.
+- **PRODUCTION (Aruba static hosting):** `https://www.nexadlab.com/` (canonical).
+  Empty basePath. The static export `out/` is built **locally**
+  (`npm run build`, which reads `.env.production`) and uploaded manually via
+  FileZilla. There is no CI/CD and no GitHub Actions workflow. Until go-live
+  the build is kept noindex (`NEXT_PUBLIC_SITE_INDEXABLE=false`) and the
+  contact form disabled (`NEXT_PUBLIC_CONTACT_FORM_ENABLED=false`); indexing
+  and form activation are explicit go-live steps. Do NOT connect the custom
+  domain, create a `CNAME`, change DNS or enable indexing yet.
+- **Local preview with a prefix** is possible via `NEXT_PUBLIC_BASE_PATH=/NEXAD`,
+  but nothing automated drives it.
 
 ## SEO configuration
 SEO is environment-driven via `lib/seo.ts`:
 
 - `NEXT_PUBLIC_SITE_ORIGIN` — public origin (scheme + host), without basePath
-  (preview: `https://moobley.github.io`; production:
-  `https://www.nexadlab.com`).
+  (production: `https://www.nexadlab.com`).
 - `NEXT_PUBLIC_SITE_INDEXABLE` — `"true"` enables index/follow; anything else
-  (default) produces `noindex, follow`. The current GitHub Pages deployment
+  (default) produces `noindex, follow`. Until go-live the production build
   MUST stay `false`.
-- `NEXT_PUBLIC_BASE_PATH` — deployment prefix as above (GitHub Pages `/NEXAD`;
-  production empty).
+- `NEXT_PUBLIC_BASE_PATH` — deployment prefix (production empty; a prefixed
+  preview like `/NEXAD` is possible but nothing drives it).
 
 Full URLs are built as `SITE_ORIGIN + BASE_PATH + localized pathname`
 (`siteUrl` / `localizedPathname` in `lib/seo.ts`); metadata is page-specific
@@ -162,13 +152,14 @@ Indexability is fail-closed and pinned to production:
 - An indexable build (`NEXT_PUBLIC_SITE_INDEXABLE=true`) requires
   `NEXT_PUBLIC_SITE_ORIGIN` to be exactly `https://www.nexadlab.com` (after
   trailing-slash normalization), an empty `NEXT_PUBLIC_BASE_PATH`, and a valid
-  https origin; the build fails otherwise. An indexable build on the GitHub
-  Pages preview origin or under `/NEXAD` is therefore impossible
-  (`PRODUCTION_ORIGIN` guardrail in `lib/seo.ts`).
+  https origin; the build fails otherwise. An indexable build under a prefixed
+  `/NEXAD` path is therefore impossible (`PRODUCTION_ORIGIN` guardrail in
+  `lib/seo.ts`).
 - Pre-launch builds remain `noindex, follow` and do not advertise the sitemap
   through `robots.txt` (the `Sitemap:` line is only emitted when indexable).
 
-Deployment is built from `master` through GitHub Actions.
+Deployment is a local `npm run build` (`out/`) uploaded manually via FileZilla —
+there is no CI/CD.
 
 ## Content and i18n
 All public UI copy lives in:
@@ -321,9 +312,14 @@ Do not hardcode a Formspree ID.
 
 The public NEXAD email is decided: `nexadlab@gmail.com`. It is the real
 recipient for contact enquiries, configured as the Formspree recipient inside
-the Formspree dashboard — never hardcoded in the frontend. There is still no
-public WhatsApp; do not invent or suggest contact channels. Calls are
-arranged manually through direct messaging; no calendar-booking product.
+the Formspree dashboard — never hardcoded in the frontend.
+
+The public WhatsApp channel is decided: `+34 610 77 51 40`
+(`34610775140`), shown via the floating WhatsApp button
+(`components/layout/whatsapp-float.tsx`, rendered on every localized page
+through `app/[locale]/layout.tsx`). Do not invent or suggest other contact
+channels. Calls are arranged manually through direct messaging; no
+calendar-booking product.
 
 Anti-spam for the first release is the Formspree `_gotcha` honeypot already
 implemented in the form. Do NOT add CAPTCHA; CAPTCHA or other anti-spam
@@ -331,7 +327,6 @@ measures may only be re-evaluated if real spam requires them.
 
 Current pending items:
 
-- WhatsApp number;
 - final Privacy/Legal integration.
 
 Do not expose placeholder contact channels in the UI.
@@ -455,13 +450,12 @@ Before declaring implementation complete, normally run:
 
 For deployment/routing/path changes also run:
 
-- `NEXT_PUBLIC_BASE_PATH=/NEXAD npm run build` (GitHub Pages preview)
-- `NEXT_PUBLIC_BASE_PATH= NEXT_PUBLIC_SITE_ORIGIN=https://www.nexadlab.com NEXT_PUBLIC_SITE_INDEXABLE=false NEXT_PUBLIC_CONTACT_FORM_ENABLED=false npm run build` (Aruba production)
+- `NEXT_PUBLIC_BASE_PATH=/NEXAD npm run build` (prefixed preview, if used)
+- `NEXT_PUBLIC_BASE_PATH= NEXT_PUBLIC_SITE_ORIGIN=https://www.nexadlab.com NEXT_PUBLIC_SITE_INDEXABLE=false NEXT_PUBLIC_CONTACT_FORM_ENABLED=false npm run build` (Aruba production, pre-go-live)
 
 For SEO/deployment changes, after building also run the static SEO verifier
 against the generated `out/` with the same env used for the build, e.g.:
 
-- `NEXT_PUBLIC_SITE_ORIGIN=https://moobley.github.io NEXT_PUBLIC_BASE_PATH=/NEXAD NEXT_PUBLIC_SITE_INDEXABLE=false npm run verify:seo`
 - `NEXT_PUBLIC_SITE_ORIGIN=https://www.nexadlab.com NEXT_PUBLIC_BASE_PATH= NEXT_PUBLIC_SITE_INDEXABLE=true npm run verify:seo`
 
 For visual tasks, perform responsive QA at relevant mobile and desktop widths.

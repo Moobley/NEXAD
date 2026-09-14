@@ -3,14 +3,14 @@ import { getTranslations } from "next-intl/server"
 import { Link } from "@/i18n/navigation"
 import { Reveal } from "@/components/ui/reveal"
 import { GrowthSystemVisual } from "@/components/sections/home/growth-system-visual"
+import { ProofMarquee } from "@/components/sections/home/proof-marquee"
 import { ForwardMark } from "@/components/ui/forward-mark"
-import { SignalDot } from "@/components/ui/signal-dot"
 
 export async function Hero() {
   const t = await getTranslations("home.hero")
 
   return (
-    <section className="relative flex min-h-svh flex-col overflow-hidden pt-24 md:pt-28">
+    <section className="relative flex min-h-svh flex-col overflow-hidden pt-16 md:pt-20">
       <div
         aria-hidden
         className="pointer-events-none absolute right-[max(2.5rem,calc((100vw-1600px)/2+2.5rem))] top-[10rem] hidden w-[400px] md:block lg:w-[520px]"
@@ -20,19 +20,7 @@ export async function Hero() {
         </Reveal>
       </div>
 
-      <div className="relative z-10 mx-auto w-full max-w-[1600px] px-6 md:px-10">
-        <Reveal trigger="load" variant="fade" delay={0}>
-          <div className="flex items-center justify-between border-b border-obsidian/10 pb-6">
-            <p className="flex items-center gap-2.5 font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
-              <SignalDot size="sm" />
-              {t("meta")}
-            </p>
-            <p className="hidden font-mono text-[11px] tracking-[0.25em] text-muted-foreground sm:block">
-              {t("coords")}
-            </p>
-          </div>
-        </Reveal>
-      </div>
+      <ProofMarquee />
 
       <div className="relative z-10 mx-auto flex w-full max-w-[1600px] flex-1 flex-col justify-center px-6 pb-10 md:px-10 md:pb-14 md:justify-start">
         {/* Controlled vertical offset instead of bottom-anchoring: the claim's first
@@ -40,10 +28,10 @@ export async function Hero() {
             above and below), while the second constraint keeps it clear of
             the cookie banner on shorter screens. */}
         <h1 className="max-w-6xl font-sans text-[clamp(2.5rem,6.8vw,5.75rem)] font-medium leading-[0.95] tracking-[-0.03em] md:mt-[clamp(6rem,min(calc(50vh_-_11rem),calc(100vh_-_33rem)),32rem)]">
-          <Reveal trigger="load" variant="mask-up" delay={120} as="span" className="block">
+          <Reveal trigger="load" variant="mask-up" delay={120} as="span" className="block text-balance">
             {t("titleLine1")}
           </Reveal>
-          <Reveal trigger="load" variant="mask-up" delay={260} as="span" className="block text-muted-foreground">
+          <Reveal trigger="load" variant="mask-up" delay={260} as="span" className="block text-balance text-muted-foreground">
             {t("titleLine2")}
           </Reveal>
         </h1>

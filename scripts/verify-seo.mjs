@@ -32,7 +32,6 @@ const LOCALES = ["es", "en", "it"]
 /** Locale-less routes with a human label, mirroring the localized site. */
 const LOCALIZED_ROUTES = [
   ["", "Home"],
-  ["services", "Services"],
   ["studio", "Studio"],
   ["work", "Work"],
   ["contact", "Contact"],

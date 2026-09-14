@@ -66,10 +66,6 @@ export function NexadGateway() {
           <GatewayLogo className="relative w-full" />
         </div>
 
-        <p className="gateway-descriptor mt-10 max-w-xl text-center font-mono text-[11px] leading-relaxed tracking-[0.28em] text-ivory/55 md:mt-14 md:text-xs">
-          GROWTH, ENGINEERED.
-        </p>
-
         <nav
           aria-label="Select language"
           className="gateway-langs mt-8 flex items-center justify-center gap-9 md:mt-12 md:gap-14"
