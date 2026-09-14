@@ -65,6 +65,15 @@
       "ctaPrimary": "Let's talk",
       "ctaSecondary": "See results"
     },
+    "proofMarquee": {
+      "lines": [
+        "+49.1% average revenue. The next number could be yours.",
+        "We don't promise you followers. We promise you customers.",
+        "Every month you wait is revenue you hand to someone else.",
+        "Your next result starts with a single conversation.",
+        "Measured growth, not noise."
+      ]
+    },
     "capabilities": {
       "title": "Capabilities",
       "panel": "Capabilities",

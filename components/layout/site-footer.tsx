@@ -28,14 +28,14 @@ export async function SiteFooter() {
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-muted-foreground">
               {t("tagline")}
             </p>
-            <p className="mt-6 flex items-center gap-2.5 font-mono text-[11px] uppercase tracking-[0.25em] text-stone">
+            <p className="mt-6 flex items-center gap-2.5 font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
               <SignalDot size="sm" />
               {t("available")}
             </p>
           </div>
 
           <div className="md:col-span-3">
-            <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-stone">
+            <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
               {t("nav")}
             </p>
             <ul className="mt-6 space-y-3">
@@ -53,7 +53,7 @@ export async function SiteFooter() {
           </div>
 
           <div className="md:col-span-2">
-            <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-stone">
+            <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
               {t("studio")}
             </p>
             <ul className="mt-6 space-y-3">
@@ -65,7 +65,7 @@ export async function SiteFooter() {
         </div>
 
         <div className="mt-16 flex flex-col gap-5 border-t border-border pt-8 md:flex-row md:items-center md:justify-between">
-          <p className="font-mono text-[11px] tracking-[0.15em] text-stone">
+          <p className="font-mono text-[11px] tracking-[0.15em] text-muted-foreground">
             © {year} NEXAD
           </p>
           <div className="flex flex-wrap items-center gap-x-8 gap-y-3">

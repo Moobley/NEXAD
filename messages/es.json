@@ -64,6 +64,15 @@
       "ctaPrimary": "Hablemos",
       "ctaSecondary": "Ver resultados"
     },
+    "proofMarquee": {
+      "lines": [
+        "+49,1% de facturación media. El próximo número podría ser el tuyo.",
+        "No te prometemos seguidores. Te prometemos clientes.",
+        "Cada mes que esperas es facturación que regalas a otro.",
+        "Tu próximo resultado empieza con una sola conversación.",
+        "Crecimiento medido, no ruido."
+      ]
+    },
     "capabilities": {
       "title": "Capacidades",
       "panel": "Capacidades",

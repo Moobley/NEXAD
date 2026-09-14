@@ -42,7 +42,7 @@ export async function BarberCustomer() {
                   sizes="(min-width: 1024px) 20vw, 40vw"
                   lightbox
                 />
-                <p className="mt-3 text-center font-mono text-[10px] uppercase tracking-[0.15em] text-muted-foreground">
+                <p className="mt-3 text-center font-mono text-[11px] uppercase tracking-[0.15em] text-muted-foreground">
                   01 · {steps[0]}
                 </p>
               </Reveal>
@@ -53,7 +53,7 @@ export async function BarberCustomer() {
                   sizes="(min-width: 1024px) 24vw, 46vw"
                   lightbox
                 />
-                <p className="mt-3 text-center font-mono text-[10px] uppercase tracking-[0.15em] text-muted-foreground">
+                <p className="mt-3 text-center font-mono text-[11px] uppercase tracking-[0.15em] text-muted-foreground">
                   02 · {steps[1]}
                 </p>
               </Reveal>
@@ -64,7 +64,7 @@ export async function BarberCustomer() {
                   sizes="(min-width: 1024px) 20vw, 40vw"
                   lightbox
                 />
-                <p className="mt-3 text-center font-mono text-[10px] uppercase tracking-[0.15em] text-muted-foreground">
+                <p className="mt-3 text-center font-mono text-[11px] uppercase tracking-[0.15em] text-muted-foreground">
                   03 · {steps[2]}
                 </p>
               </Reveal>

@@ -21,7 +21,7 @@ export async function WorkLabProject() {
                   <SignalDot size="sm" />
                   {t("clientLabel")}
                 </p>
-                <p className="mt-2 font-mono text-[11px] uppercase tracking-[0.2em] text-foreground/70">
+                <p className="mt-2 font-mono text-[11px] uppercase tracking-[0.2em] text-foreground/80">
                   {t("status")}
                 </p>
                 <h2 className="mt-4 font-sans text-4xl font-medium tracking-tight md:text-5xl">

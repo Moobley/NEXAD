@@ -5,15 +5,21 @@ import { Reveal } from "@/components/ui/reveal"
 import { GrowthSystemVisual } from "@/components/sections/home/growth-system-visual"
 import { ProofMarquee } from "@/components/sections/home/proof-marquee"
 import { ForwardMark } from "@/components/ui/forward-mark"
+import { AuroraBackground } from "@/components/ui/aurora-background"
 
 export async function Hero() {
   const t = await getTranslations("home.hero")
 
   return (
     <section className="relative flex min-h-svh flex-col overflow-hidden pt-16 md:pt-20">
+      <AuroraBackground intensity="soft" />
       <div
         aria-hidden
-        className="pointer-events-none absolute right-[max(2.5rem,calc((100vw-1600px)/2+2.5rem))] top-[10rem] hidden w-[400px] md:block lg:w-[520px]"
+        className="noise pointer-events-none absolute inset-0 z-0 opacity-25"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute right-[max(2.5rem,calc((100vw-1600px)/2+2.5rem))] top-[10rem] z-10 hidden w-[400px] md:block lg:w-[520px]"
       >
         <Reveal variant="fade" trigger="load" delay={360}>
           <GrowthSystemVisual />

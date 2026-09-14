@@ -31,7 +31,7 @@ export async function BarberSides() {
                 <p className="font-mono text-xs tracking-[0.2em] text-muted-foreground">
                   01 · {customer.label}
                 </p>
-                <span className="font-mono text-[10px] uppercase tracking-[0.15em] text-muted-foreground">
+                <span className="font-mono text-[11px] uppercase tracking-[0.15em] text-muted-foreground">
                   {customer.status}
                 </span>
               </div>
@@ -51,7 +51,7 @@ export async function BarberSides() {
                 <p className="font-mono text-xs tracking-[0.2em] text-muted-foreground">
                   02 · {business.label}
                 </p>
-                <span className="font-mono text-[10px] uppercase tracking-[0.15em] text-muted-foreground">
+                <span className="font-mono text-[11px] uppercase tracking-[0.15em] text-muted-foreground">
                   {business.status}
                 </span>
               </div>

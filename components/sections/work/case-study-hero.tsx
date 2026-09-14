@@ -46,7 +46,7 @@ export async function CaseStudyHero() {
             {tags.map((tag) => (
               <span
                 key={tag}
-                className="border border-obsidian/15 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground"
+                className="border border-obsidian/15 px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground"
               >
                 {tag}
               </span>

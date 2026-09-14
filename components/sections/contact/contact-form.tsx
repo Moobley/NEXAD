@@ -197,7 +197,7 @@ export function ContactForm() {
               htmlFor="contact-name"
               className="block font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground"
             >
-              {t("nameLabel")} <span aria-hidden className="text-foreground/60">*</span>
+              {t("nameLabel")} <span aria-hidden className="text-foreground/70">*</span>
             </label>
             <input
               id="contact-name"
@@ -229,7 +229,7 @@ export function ContactForm() {
               htmlFor="contact-surname"
               className="block font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground"
             >
-              {t("surnameLabel")} <span aria-hidden className="text-foreground/60">*</span>
+              {t("surnameLabel")} <span aria-hidden className="text-foreground/70">*</span>
             </label>
             <input
               id="contact-surname"
@@ -261,7 +261,7 @@ export function ContactForm() {
               htmlFor="contact-phone"
               className="block font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground"
             >
-              {t("phoneLabel")} <span aria-hidden className="text-foreground/60">*</span>
+              {t("phoneLabel")} <span aria-hidden className="text-foreground/70">*</span>
             </label>
             <input
               id="contact-phone"
@@ -294,7 +294,7 @@ export function ContactForm() {
               htmlFor="contact-email"
               className="block font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground"
             >
-              {t("emailLabel")} <span aria-hidden className="text-foreground/60">*</span>
+              {t("emailLabel")} <span aria-hidden className="text-foreground/70">*</span>
             </label>
             <input
               id="contact-email"

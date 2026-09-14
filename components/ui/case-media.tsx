@@ -79,7 +79,7 @@ export function CaseMedia({
       >
         <p
           className={cn(
-            "font-mono text-[10px] uppercase tracking-[0.3em]",
+            "font-mono text-[11px] uppercase tracking-[0.2em]",
             dark ? "text-ivory/70" : "text-obsidian/60"
           )}
         >

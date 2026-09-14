@@ -34,7 +34,7 @@ export async function Corazon() {
           <p className="mt-8 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
             {tc("support")}
           </p>
-          <p className="mt-6 font-mono text-[11px] uppercase leading-loose tracking-[0.22em] text-foreground/60">
+          <p className="mt-6 font-mono text-[11px] uppercase leading-loose tracking-[0.22em] text-foreground/70">
             {tc("scope")}
           </p>
         </Reveal>

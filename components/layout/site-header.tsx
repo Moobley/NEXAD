@@ -139,7 +139,7 @@ export function SiteHeader() {
 
           <div className="px-6 pb-10">
             <LanguageSwitcher />
-            <p className="mt-6 font-mono text-[11px] tracking-[0.25em] text-stone">
+            <p className="mt-6 font-mono text-[11px] tracking-[0.25em] text-muted-foreground">
               28.1° N — 15.4° W
             </p>
           </div>

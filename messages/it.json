@@ -65,6 +65,15 @@
       "ctaPrimary": "Parliamone",
       "ctaSecondary": "Vedi i risultati"
     },
+    "proofMarquee": {
+      "lines": [
+        "+49,1% di fatturato medio. Il prossimo numero potrebbe essere il tuo.",
+        "Non ti promettiamo follower. Ti promettiamo clienti.",
+        "Ogni mese che rimandi è fatturato che regali a qualcun altro.",
+        "Il tuo prossimo risultato parte da una sola conversazione.",
+        "Crescita misurata, non chiacchiere."
+      ]
+    },
     "capabilities": {
       "title": "Capacità",
       "panel": "Capacità",

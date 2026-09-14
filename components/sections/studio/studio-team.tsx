@@ -53,7 +53,7 @@ export async function StudioTeam() {
                   <p className="mt-5 max-w-md text-sm leading-relaxed text-muted-foreground md:text-base">
                     {member.description}
                   </p>
-                  <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.18em] text-foreground/70">
+                  <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.18em] text-foreground/80">
                     {member.capabilities}
                   </p>
                 </div>

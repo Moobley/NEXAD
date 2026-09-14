@@ -12,12 +12,12 @@ export function ScheduleUi() {
   return (
     <div
       aria-hidden
-      className="absolute inset-0 bg-[radial-gradient(120%_120%_at_70%_20%,#16161a_0%,#0b0b0d_60%)]"
+      className="absolute inset-0 bg-[radial-gradient(120%_120%_at_70%_20%,#16161a_0%,#0b0b0d_60%)] transition-transform duration-500 group-hover:scale-[1.02]"
     >
       <div className="absolute inset-x-6 bottom-12 top-6 space-y-2">
         {times.map((time, i) => (
           <div key={time} className="flex items-center gap-4">
-            <span className="w-11 font-mono text-[10px] tracking-[0.1em] text-ivory/45">
+            <span className="w-11 font-mono text-[11px] tracking-[0.1em] text-ivory/45">
               {time}
             </span>
             <span
@@ -51,7 +51,7 @@ export function DashboardUi({ blocks }: { blocks: string[] }) {
               i === 0 && "col-span-2"
             )}
           >
-            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-ivory/60">
+            <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-ivory/60">
               {block}
             </span>
           </div>

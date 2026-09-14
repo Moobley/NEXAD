@@ -17,7 +17,7 @@ export async function WhatsAppFloat() {
       rel="noopener noreferrer"
       aria-label={t("label")}
       title={t("label")}
-      className="fixed bottom-5 right-5 z-50 flex size-14 items-center justify-center rounded-full bg-signal text-ivory shadow-lg transition-transform hover:scale-105 focus-visible:scale-105 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal md:bottom-6 md:right-6"
+      className="fixed bottom-5 right-5 z-50 flex size-14 items-center justify-center rounded-[2px] bg-signal text-ivory transition-transform hover:scale-[1.04] focus-visible:scale-[1.04] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal md:bottom-6 md:right-6"
     >
       <WhatsAppIcon className="size-7" />
       <span className="sr-only">{t("label")}</span>

@@ -159,7 +159,7 @@ export function Services() {
                                     {item.title}
                                   </span>
                                   {item.badge && (
-                                    <span className="inline-flex shrink-0 items-center rounded-full border border-signal/60 px-2.5 py-0.5 font-mono text-[10px] tracking-[0.16em] text-signal uppercase">
+                                    <span className="inline-flex shrink-0 items-center rounded-full border border-signal/60 px-2.5 py-0.5 font-mono text-[11px] tracking-[0.16em] text-signal uppercase">
                                       {item.badge}
                                     </span>
                                   )}
@@ -190,7 +190,7 @@ export function Services() {
                           {isOpen && (
                             <div id={panelId} className="animate-fade-up-in pb-6 md:pb-8">
                               <div className="border-t border-obsidian/10 pl-12 md:pl-14 lg:pl-16">
-                                <p className="pt-5 font-mono text-[10px] tracking-[0.25em] text-muted-foreground uppercase">
+                                <p className="pt-5 font-mono text-[11px] tracking-[0.2em] text-muted-foreground uppercase">
                                   {t("includedLabel")}
                                 </p>
                                 <ul className="mt-4 grid max-w-3xl gap-x-12 gap-y-3 sm:grid-cols-2 md:gap-x-16">

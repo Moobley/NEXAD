@@ -29,7 +29,7 @@ export async function StudioNetwork() {
               <p className="max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
                 {t("body")}
               </p>
-              <p className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-[11px] uppercase tracking-[0.18em] text-foreground/70">
+              <p className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-[11px] uppercase tracking-[0.18em] text-foreground/80">
                 {examples.map((example, i) => (
                   <span key={example} className="flex items-center gap-3">
                     {i > 0 && <SignalDot size="sm" />}

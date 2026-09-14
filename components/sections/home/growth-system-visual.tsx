@@ -33,7 +33,7 @@ export function GrowthSystemVisual() {
         <circle cx="284" cy="124" r="2" className="system-travel fill-signal" />
 
         <g
-          className="fill-obsidian/60 font-mono text-[10px] tracking-[0.2em]"
+          className="fill-obsidian/60 font-mono text-[11px] tracking-[0.2em]"
           textAnchor="middle"
         >
           <text x="104" y="110">
@@ -51,7 +51,7 @@ export function GrowthSystemVisual() {
         </g>
 
         <g
-          className="fill-obsidian/40 font-mono text-[8px] tracking-[0.2em]"
+          className="fill-obsidian/40 font-mono text-[9px] tracking-[0.2em]"
           textAnchor="middle"
         >
           <text x="224" y="152">
