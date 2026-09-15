@@ -5,7 +5,7 @@ import { pageMetadata } from "@/lib/seo"
 import { SectionDivider } from "@/components/ui/section-divider"
 import { StudioHero } from "@/components/sections/studio/studio-hero"
 import { StudioWhy } from "@/components/sections/studio/studio-why"
-import { StudioTeam } from "@/components/sections/studio/studio-team"
+// import { StudioTeam } from "@/components/sections/studio/studio-team"
 import { StudioPrinciples } from "@/components/sections/studio/studio-principles"
 import { StudioNetwork } from "@/components/sections/studio/studio-network"
 import { StudioCta } from "@/components/sections/studio/studio-cta"
@@ -36,8 +36,9 @@ export default async function StudioPage({ params }: Props) {
       <SectionDivider />
       <StudioWhy />
       <SectionDivider />
-      <StudioTeam />
-      <SectionDivider />
+      {/* Team section removed for now — uncomment to restore */}
+      {/* <StudioTeam /> */}
+      {/* <SectionDivider /> */}
       <StudioPrinciples />
       <SectionDivider />
       <StudioNetwork />
