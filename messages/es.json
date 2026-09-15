@@ -280,7 +280,9 @@
       "category": "Restauración",
       "location": "Las Palmas · Gran Canaria",
       "url": "corazonnapoletano.com",
-      "headline": "Una nueva apertura construida de una sola vez.",
+      "headlinePrefix": "Una nueva apertura ",
+      "headlineAccent": "construida",
+      "headlineSuffix": " de una sola vez.",
       "support": "Identidad, contenido, carta, local, web y captación pensados al mismo tiempo.",
       "scope": "Identidad · Contenido · Carta + Upselling · QR · Web · Captación",
       "resultAmount": "+49,1%",
@@ -371,6 +373,13 @@
           "body": "El resultado general es fruto de cuatro palancas de intervención coordinadas: menú y rentabilidad, publicidad y adquisición, presencia digital, reservas y fidelización.",
           "statement": "Las cuatro palancas describen dónde intervenimos; los números, los resultados medibles disponibles. No asociamos un KPI a cada servicio.",
           "note": "Datos reales y aprobados por el cliente, relativos a este proyecto."
+        },
+        "website": {
+          "eyebrow": "Web",
+          "heading": "Una web pensada para la acción",
+          "body": "Una página móvil que lleva de la primera mirada a la reserva: carta, contactos e indicaciones siempre a un toque.",
+          "alt": "Captura móvil del sitio de Corazón Napoletano",
+          "caption": "Web móvil"
         },
         "metrics": {
           "weeklyRevenue": {
@@ -519,7 +528,9 @@
     },
     "why": {
       "eyebrow": "Por qué NEXAD",
-      "title": "Menos piezas sueltas. Más dirección.",
+      "titlePrefix": "Menos piezas sueltas. Más ",
+      "titleAccent": "dirección",
+      "titleSuffix": ".",
       "body": "Vimos negocios con potencial gestionando campañas, contenido, web y tecnología por separado. NEXAD une esas decisiones y acompaña el recorrido después del lanzamiento.",
       "flow": [
         "Medir",
@@ -531,7 +542,9 @@
     },
     "team": {
       "eyebrow": "El núcleo",
-      "title": "Dos perfiles. Una misma dirección.",
+      "titlePrefix": "Dos ",
+      "titleAccent": "perfiles",
+      "titleSuffix": ". Una misma dirección.",
       "intro": "NEXAD combina dos formas de mirar el mismo problema.",
       "members": [
         {

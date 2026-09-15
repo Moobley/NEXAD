@@ -20,7 +20,9 @@ export async function StudioWhy() {
 
         <Reveal variant="mask-up" delay={100}>
           <h2 className="mt-6 max-w-4xl font-sans text-[clamp(2rem,4.5vw,4rem)] font-medium leading-[1.05] tracking-[-0.02em]">
-            {t("title")}
+            {t("titlePrefix")}
+            <em className="font-serif italic">{t("titleAccent")}</em>
+            {t("titleSuffix")}
           </h2>
         </Reveal>
 

@@ -281,7 +281,9 @@
       "category": "Ristorazione",
       "location": "Las Palmas · Gran Canaria",
       "url": "corazonnapoletano.com",
-      "headline": "Una nuova apertura costruita in una sola volta.",
+      "headlinePrefix": "Una nuova apertura ",
+      "headlineAccent": "costruita",
+      "headlineSuffix": " in una sola volta.",
       "support": "Identità, contenuti, menu, locale, sito e acquisizione pensati allo stesso tempo.",
       "scope": "Identità · Contenuti · Menu + Upselling · QR · Sito · Acquisizione",
       "resultAmount": "+49,1%",
@@ -372,6 +374,13 @@
               "body": "Abbiamo usato i dati raccolti per rafforzare ciò che funziona."
             }
           ]
+        },
+        "website": {
+          "eyebrow": "Sito",
+          "heading": "Il sito, pensato per l'azione",
+          "body": "Una pagina mobile che porta dal primo sguardo alla prenotazione: menu, contatti e indicazioni sempre a portata di pollice.",
+          "alt": "Schermata mobile del sito di Corazón Napoletano",
+          "caption": "Sito mobile"
         },
         "metrics": {
           "weeklyRevenue": {
@@ -520,7 +529,9 @@
     },
     "why": {
       "eyebrow": "Perché NEXAD",
-      "title": "Meno pezzi scollegati. Più direzione.",
+      "titlePrefix": "Meno pezzi scollegati. Più ",
+      "titleAccent": "direzione",
+      "titleSuffix": ".",
       "body": "Abbiamo visto business con potenziale gestire campagne, contenuti, web e tecnologia separatamente. NEXAD unisce queste decisioni e accompagna il percorso dopo il lancio.",
       "flow": [
         "Misurare",
@@ -532,7 +543,9 @@
     },
     "team": {
       "eyebrow": "Il nucleo",
-      "title": "Due competenze. Una sola direzione.",
+      "titlePrefix": "Due ",
+      "titleAccent": "competenze",
+      "titleSuffix": ". Una sola direzione.",
       "intro": "NEXAD unisce due modi di guardare allo stesso problema.",
       "members": [
         {

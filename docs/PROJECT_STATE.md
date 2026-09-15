@@ -155,8 +155,9 @@ Pages were editorially compressed; do not re-expand without reason.
   superseded by +16% avg ticket). Always framed as project-specific, never a
   general promise. Excluded by the client: average CTR and tracked
   conversions. Client site:
-  `corazonnapoletano.com`. `public/projects/corazon/logoCNxNexo.png` is a real
-  NEXO-era co-branded asset that still needs a real NEXAD update.
+  `corazonnapoletano.com`. `public/projects/corazon/logoCNxNexad.webp` is the
+  co-branded asset (re-exported for the NEXAD brand); `webpage.png` is the real
+  mobile site screenshot mounted in the case study.
 - **Barber Booking** — NEXAD Lab. Personal demo product for barber shops,
   adaptable to other appointment businesses; in development; no clients, users
   or commercial results. Confirmed features: online booking, service
@@ -218,8 +219,10 @@ collected.
   signal}`), matching `NEXAD_Brand_Kit_v1.0`. Legacy NEXO assets removed.
 - `public/projects/barber/customer/` — 3 real mobile screenshots (Spanish,
   demo data, WebP): `service-selection`, `availability`, `booking-summary`.
-- `public/projects/corazon/` — real logo assets (`logoCN.webp`,
-  `logoCNxNexo.png`); full photography not mounted yet.
+- `public/projects/corazon/` — real assets: `logoCN.webp` (brand plate),
+  `logoCNxNexad.webp` (co-branded logo, NEXAD re-export) and `webpage.png`
+  (mobile site screenshot, mounted in the case study); full photography not
+  mounted yet.
 - `public/social/nexad-social.svg` (source) + `nexad-social.png` (rasterized
   1200×630 via `scripts/generate-social.mjs`).
 - All public paths go through the `asset()` helper (`lib/asset.ts`); asset
@@ -265,6 +268,5 @@ collected.
   query"`). The business side is now folded into the "Cosa abbiamo costruito"
   section with an abstract `Flow` diagram; the standalone `DashboardUi` visual
   was removed.
-- **Corazón co-branded logo** (`logoCNxNexo.png`) — the NEXO-era asset is still
-  shown on the home Corazón section; needs a real NEXAD update before the
-  rebrand is visually complete.
+- **Corazón co-branded logo** — re-exported as `logoCNxNexad.webp` and wired
+  into the home Corazón section; the NEXO-era file is removed.

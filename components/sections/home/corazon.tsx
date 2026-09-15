@@ -29,7 +29,9 @@ export async function Corazon() {
 
         <Reveal className="mt-14 md:mt-20">
           <h2 className="max-w-5xl font-sans text-[clamp(2.5rem,6vw,5rem)] font-medium leading-[0.98] tracking-[-0.02em] text-foreground">
-            {tc("headline")}
+            {tc("headlinePrefix")}
+            <em className="font-serif italic">{tc("headlineAccent")}</em>
+            {tc("headlineSuffix")}
           </h2>
           <p className="mt-8 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
             {tc("support")}
@@ -48,7 +50,7 @@ export async function Corazon() {
             >
               <div className="absolute inset-0 flex items-center justify-center bg-[radial-gradient(130%_130%_at_70%_15%,#e7e3d6_0%,#f2efe8_48%,#d8d2c3_100%)] p-10 md:p-16">
                 <Image
-                  src={asset("/projects/corazon/logoCNxNexo.webp")}
+                  src={asset("/projects/corazon/logoCNxNexad.webp")}
                   alt={tc("title")}
                   width={1187}
                   height={266}

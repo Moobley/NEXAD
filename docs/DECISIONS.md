@@ -381,7 +381,7 @@ replacing the previous lilac/iris identity with the Carbon/Ivory/Signal system.
 - Redraw, rotate, stretch or recolor the NEXAD logo; only the official SVGs.
 - Use Signal as a large background, or spread triangles everywhere.
 - Treat the NEXO-era `logoCNxNexo.png` as the final brand asset — it needs a
-  real NEXAD update.
+  real NEXAD update. (Resolved: re-exported as `logoCNxNexad.webp`.)
 - Reintroduce lilac/iris as accents or rename the whole codebase mechanically;
   `obsidian`/`stone` aliases stay until a low-risk cleanup.
 

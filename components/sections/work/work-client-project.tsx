@@ -52,7 +52,9 @@ export async function WorkClientProject() {
                   {t("location")} — {t("category")}
                 </p>
                 <p className="mt-8 font-sans text-2xl font-medium leading-snug tracking-tight md:text-3xl">
-                  {t("headline")}
+                  {t("headlinePrefix")}
+                  <em className="font-serif italic">{t("headlineAccent")}</em>
+                  {t("headlineSuffix")}
                 </p>
                 <p className="mt-4 max-w-md text-base leading-relaxed text-muted-foreground">
                   {t("support")}

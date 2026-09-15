@@ -229,9 +229,10 @@ for the business metrics.
 
 The earlier `+20%` revenue figure is superseded by the richer metrics above.
 
-The Corazón real-asset pass is paused until enough real material exists. Note:
-`public/projects/corazon/logoCNxNexo.png` is a real NEXO-era co-branded asset;
-it still needs a real NEXAD update before it can be shown as the current brand.
+The Corazón real-asset pass is underway. Note:
+`public/projects/corazon/logoCNxNexad.webp` is the co-branded asset (re-exported
+for the NEXAD brand, replacing the NEXO-era file); `webpage.png` is the real
+mobile site screenshot mounted in the case study via `MobileFrame`.
 
 Barber Booking is a NEXAD Lab demo product designed for barber shops,
 adaptable with limited re-engineering to other appointment businesses.

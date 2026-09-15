@@ -23,7 +23,9 @@ export async function StudioTeam() {
               {t("eyebrow")}
             </p>
             <h2 className="mt-3 font-sans text-4xl font-medium tracking-tight md:text-6xl">
-              {t("title")}
+              {t("titlePrefix")}
+              <em className="font-serif italic">{t("titleAccent")}</em>
+              {t("titleSuffix")}
             </h2>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground">
               {t("intro")}
